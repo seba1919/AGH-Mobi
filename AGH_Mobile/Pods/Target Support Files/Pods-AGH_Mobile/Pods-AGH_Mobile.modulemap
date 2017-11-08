@@ -1,0 +1,6 @@
+framework module Pods_AGH_Mobile {
+  umbrella header "Pods-AGH_Mobile-umbrella.h"
+
+  export *
+  module * { export * }
+}

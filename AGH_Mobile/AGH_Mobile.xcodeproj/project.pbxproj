@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DCDC5B8F7237143999626A0 /* Pods_AGH_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26240041D251BCFC11F8D90D /* Pods_AGH_Mobile.framework */; };
 		DCACED851FB3266A00239088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACED841FB3266A00239088 /* AppDelegate.swift */; };
 		DCACED871FB3266B00239088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACED861FB3266B00239088 /* ViewController.swift */; };
 		DCACED8A1FB3266B00239088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCACED881FB3266B00239088 /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26240041D251BCFC11F8D90D /* Pods_AGH_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D91C1E49199987E51162C55 /* Pods-AGH_Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH_Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH_Mobile/Pods-AGH_Mobile.release.xcconfig"; sourceTree = "<group>"; };
+		994F4FACF6F0C70B3F841AFC /* Pods-AGH_Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH_Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH_Mobile/Pods-AGH_Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		DCACED811FB3266A00239088 /* AGH_Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGH_Mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCACED841FB3266A00239088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCACED861FB3266B00239088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DCDC5B8F7237143999626A0 /* Pods_AGH_Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3109B3880A6B08CF15BE699B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26240041D251BCFC11F8D90D /* Pods_AGH_Mobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C85ECBAC3B24E37E8F8501E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				994F4FACF6F0C70B3F841AFC /* Pods-AGH_Mobile.debug.xcconfig */,
+				7D91C1E49199987E51162C55 /* Pods-AGH_Mobile.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DCACED781FB3266A00239088 = {
 			isa = PBXGroup;
 			children = (
 				DCACED831FB3266A00239088 /* AGH_Mobile */,
 				DCACED821FB3266A00239088 /* Products */,
+				6C85ECBAC3B24E37E8F8501E /* Pods */,
+				3109B3880A6B08CF15BE699B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DCACED931FB3266B00239088 /* Build configuration list for PBXNativeTarget "AGH_Mobile" */;
 			buildPhases = (
+				863FB371DDB13A54F97ABF58 /* [CP] Check Pods Manifest.lock */,
 				DCACED7D1FB3266A00239088 /* Sources */,
 				DCACED7E1FB3266A00239088 /* Frameworks */,
 				DCACED7F1FB3266A00239088 /* Resources */,
+				611064CD8CD5D7E6BBA78F87 /* [CP] Embed Pods Frameworks */,
+				DE96CE51F213475EF1A3A822 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		611064CD8CD5D7E6BBA78F87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AGH_Mobile/Pods-AGH_Mobile-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/Fuzi/Fuzi.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fuzi.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGH_Mobile/Pods-AGH_Mobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		863FB371DDB13A54F97ABF58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AGH_Mobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE96CE51F213475EF1A3A822 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGH_Mobile/Pods-AGH_Mobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DCACED7D1FB3266A00239088 /* Sources */ = {
@@ -272,6 +363,7 @@
 		};
 		DCACED941FB3266B00239088 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 994F4FACF6F0C70B3F841AFC /* Pods-AGH_Mobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -286,6 +378,7 @@
 		};
 		DCACED951FB3266B00239088 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D91C1E49199987E51162C55 /* Pods-AGH_Mobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
