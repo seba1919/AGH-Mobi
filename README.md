@@ -8,7 +8,6 @@ Parę informacji dla porządku:
 -Docelowo w strukturze projektu powinien istnieć podział na grupy (right-click + create new folder/group from selected),
 najlepiej by było gdyby jedna logiczna część zajmowałą jednen folder.  
 -Modyfikacje czyjegoś kodu byłoby miło najpierw skonsulotwać z jego autorem.  
--Wszystkie klasy powinny mieć prefix MKN i być pisane camelem.  
 -***Dla osób nie pracujących wcześniej z CocoaPods, należy otwierać projekt przy pomocy pliku .xcworkspace a nie .xcproject 
 od momentu w którym ten plik się pojawi (czyli gdy ktoś dołączy jakąś zewnętrzną bibliotekę), 
 otwieranie .xcproject spowoduje wtedy błąd kompilacji***  
