@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		2DCDC5B8F7237143999626A0 /* Pods_AGH_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26240041D251BCFC11F8D90D /* Pods_AGH_Mobile.framework */; };
+		DC4D86771FB3678C00BCA567 /* DegreeTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86681FB3678C00BCA567 /* DegreeTableViewDataSource.swift */; };
+		DC4D86781FB3678C00BCA567 /* DegreeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86691FB3678C00BCA567 /* DegreeListViewController.swift */; };
+		DC4D86791FB3678C00BCA567 /* ModuleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D866A1FB3678C00BCA567 /* ModuleTableViewDataSource.swift */; };
+		DC4D867A1FB3678C00BCA567 /* DepartmentTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D866B1FB3678C00BCA567 /* DepartmentTableViewDataSource.swift */; };
+		DC4D867B1FB3678C00BCA567 /* DepartmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D866C1FB3678C00BCA567 /* DepartmentListViewController.swift */; };
+		DC4D867C1FB3678C00BCA567 /* SyllabusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D866D1FB3678C00BCA567 /* SyllabusViewController.swift */; };
+		DC4D867D1FB3678C00BCA567 /* UniversityTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D866E1FB3678C00BCA567 /* UniversityTeacher.swift */; };
+		DC4D867E1FB3678C00BCA567 /* Degree.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D866F1FB3678C00BCA567 /* Degree.swift */; };
+		DC4D867F1FB3678C00BCA567 /* SyllabusDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86701FB3678C00BCA567 /* SyllabusDataSource.swift */; };
+		DC4D86801FB3678C00BCA567 /* ModuleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86711FB3678C00BCA567 /* ModuleDetailsViewController.swift */; };
+		DC4D86811FB3678C00BCA567 /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86721FB3678C00BCA567 /* Department.swift */; };
+		DC4D86821FB3678C00BCA567 /* ModuleActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86731FB3678C00BCA567 /* ModuleActivity.swift */; };
+		DC4D86831FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86741FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift */; };
+		DC4D86841FB3678C00BCA567 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86751FB3678C00BCA567 /* Module.swift */; };
+		DC4D86851FB3678C00BCA567 /* ModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86761FB3678C00BCA567 /* ModuleViewController.swift */; };
 		DCACED851FB3266A00239088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACED841FB3266A00239088 /* AppDelegate.swift */; };
 		DCACED871FB3266B00239088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACED861FB3266B00239088 /* ViewController.swift */; };
 		DCACED8A1FB3266B00239088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCACED881FB3266B00239088 /* Main.storyboard */; };
@@ -19,6 +34,21 @@
 		26240041D251BCFC11F8D90D /* Pods_AGH_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D91C1E49199987E51162C55 /* Pods-AGH_Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH_Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH_Mobile/Pods-AGH_Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		994F4FACF6F0C70B3F841AFC /* Pods-AGH_Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH_Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH_Mobile/Pods-AGH_Mobile.debug.xcconfig"; sourceTree = "<group>"; };
+		DC4D86681FB3678C00BCA567 /* DegreeTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreeTableViewDataSource.swift; sourceTree = "<group>"; };
+		DC4D86691FB3678C00BCA567 /* DegreeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreeListViewController.swift; sourceTree = "<group>"; };
+		DC4D866A1FB3678C00BCA567 /* ModuleTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTableViewDataSource.swift; sourceTree = "<group>"; };
+		DC4D866B1FB3678C00BCA567 /* DepartmentTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewDataSource.swift; sourceTree = "<group>"; };
+		DC4D866C1FB3678C00BCA567 /* DepartmentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentListViewController.swift; sourceTree = "<group>"; };
+		DC4D866D1FB3678C00BCA567 /* SyllabusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyllabusViewController.swift; sourceTree = "<group>"; };
+		DC4D866E1FB3678C00BCA567 /* UniversityTeacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityTeacher.swift; sourceTree = "<group>"; };
+		DC4D866F1FB3678C00BCA567 /* Degree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Degree.swift; sourceTree = "<group>"; };
+		DC4D86701FB3678C00BCA567 /* SyllabusDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyllabusDataSource.swift; sourceTree = "<group>"; };
+		DC4D86711FB3678C00BCA567 /* ModuleDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleDetailsViewController.swift; sourceTree = "<group>"; };
+		DC4D86721FB3678C00BCA567 /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		DC4D86731FB3678C00BCA567 /* ModuleActivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleActivity.swift; sourceTree = "<group>"; };
+		DC4D86741FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyllabusViewControllerProtocol.swift; sourceTree = "<group>"; };
+		DC4D86751FB3678C00BCA567 /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		DC4D86761FB3678C00BCA567 /* ModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleViewController.swift; sourceTree = "<group>"; };
 		DCACED811FB3266A00239088 /* AGH_Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGH_Mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCACED841FB3266A00239088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCACED861FB3266B00239088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +87,80 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DC4D86631FB3671600BCA567 /* Syllabus */ = {
+			isa = PBXGroup;
+			children = (
+				DC4D866D1FB3678C00BCA567 /* SyllabusViewController.swift */,
+				DC4D86741FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift */,
+				DC4D86881FB367CB00BCA567 /* Models */,
+				DC4D86871FB367BE00BCA567 /* ViewControllers */,
+				DC4D86861FB367B300BCA567 /* DataSources */,
+			);
+			path = Syllabus;
+			sourceTree = "<group>";
+		};
+		DC4D86641FB3671E00BCA567 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		DC4D86651FB3672F00BCA567 /* WD */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WD;
+			sourceTree = "<group>";
+		};
+		DC4D86661FB3673500BCA567 /* Aktualnosci */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Aktualnosci;
+			sourceTree = "<group>";
+		};
+		DC4D86671FB3674400BCA567 /* Plan */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Plan;
+			sourceTree = "<group>";
+		};
+		DC4D86861FB367B300BCA567 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				DC4D866B1FB3678C00BCA567 /* DepartmentTableViewDataSource.swift */,
+				DC4D86681FB3678C00BCA567 /* DegreeTableViewDataSource.swift */,
+				DC4D866A1FB3678C00BCA567 /* ModuleTableViewDataSource.swift */,
+				DC4D86701FB3678C00BCA567 /* SyllabusDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		DC4D86871FB367BE00BCA567 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC4D866C1FB3678C00BCA567 /* DepartmentListViewController.swift */,
+				DC4D86691FB3678C00BCA567 /* DegreeListViewController.swift */,
+				DC4D86761FB3678C00BCA567 /* ModuleViewController.swift */,
+				DC4D86711FB3678C00BCA567 /* ModuleDetailsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DC4D86881FB367CB00BCA567 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DC4D866F1FB3678C00BCA567 /* Degree.swift */,
+				DC4D86721FB3678C00BCA567 /* Department.swift */,
+				DC4D86751FB3678C00BCA567 /* Module.swift */,
+				DC4D86731FB3678C00BCA567 /* ModuleActivity.swift */,
+				DC4D866E1FB3678C00BCA567 /* UniversityTeacher.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DCACED781FB3266A00239088 = {
 			isa = PBXGroup;
 			children = (
@@ -79,7 +183,12 @@
 			isa = PBXGroup;
 			children = (
 				DCACED841FB3266A00239088 /* AppDelegate.swift */,
+				DC4D86631FB3671600BCA567 /* Syllabus */,
 				DCACED861FB3266B00239088 /* ViewController.swift */,
+				DC4D86671FB3674400BCA567 /* Plan */,
+				DC4D86661FB3673500BCA567 /* Aktualnosci */,
+				DC4D86651FB3672F00BCA567 /* WD */,
+				DC4D86641FB3671E00BCA567 /* Maps */,
 				DCACED881FB3266B00239088 /* Main.storyboard */,
 				DCACED8B1FB3266B00239088 /* Assets.xcassets */,
 				DCACED8D1FB3266B00239088 /* LaunchScreen.storyboard */,
@@ -227,8 +336,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4D86781FB3678C00BCA567 /* DegreeListViewController.swift in Sources */,
+				DC4D86851FB3678C00BCA567 /* ModuleViewController.swift in Sources */,
+				DC4D867E1FB3678C00BCA567 /* Degree.swift in Sources */,
+				DC4D867F1FB3678C00BCA567 /* SyllabusDataSource.swift in Sources */,
 				DCACED871FB3266B00239088 /* ViewController.swift in Sources */,
+				DC4D867A1FB3678C00BCA567 /* DepartmentTableViewDataSource.swift in Sources */,
+				DC4D86801FB3678C00BCA567 /* ModuleDetailsViewController.swift in Sources */,
+				DC4D86771FB3678C00BCA567 /* DegreeTableViewDataSource.swift in Sources */,
 				DCACED851FB3266A00239088 /* AppDelegate.swift in Sources */,
+				DC4D86831FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift in Sources */,
+				DC4D86821FB3678C00BCA567 /* ModuleActivity.swift in Sources */,
+				DC4D867C1FB3678C00BCA567 /* SyllabusViewController.swift in Sources */,
+				DC4D86811FB3678C00BCA567 /* Department.swift in Sources */,
+				DC4D867D1FB3678C00BCA567 /* UniversityTeacher.swift in Sources */,
+				DC4D86841FB3678C00BCA567 /* Module.swift in Sources */,
+				DC4D86791FB3678C00BCA567 /* ModuleTableViewDataSource.swift in Sources */,
+				DC4D867B1FB3678C00BCA567 /* DepartmentListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
