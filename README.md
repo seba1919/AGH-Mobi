@@ -4,6 +4,7 @@ Parę informacji dla porządku:
 -Swift v. 4.  
 -xCode v. 9.  
 -każdy powinien mieć prawo read/write do tego repozytorium.  
+-zapytania www muszą być https.  
 -Docelowo w strukturze projektu powinien istnieć podział na grupy (right-click + create new folder/group from selected),
 najlepiej by było gdyby jedna logiczna część zajmowałą jednen folder.  
 -Modyfikacje czyjegoś kodu byłoby miło najpierw skonsulotwać z jego autorem.  
@@ -31,4 +32,8 @@ W przyszłości planowane jest także przygotowanie wersji dla tabletów iPad or
 
 
 ## Lista Zewnętrznych Bibliotek ##
-
+-Alamofire,  
+-SwiftyJSON,  
+-Fuzi,  
+-AlamofireObjectMapper,  
+-Charts,  
