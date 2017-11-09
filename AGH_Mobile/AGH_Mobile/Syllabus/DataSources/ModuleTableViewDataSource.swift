@@ -57,7 +57,7 @@ class ModuleTableViewDataSource: SyllabusDataSource, UITableViewDataSource {
         var semestr9:[Module]=[]
         var semestr10:[Module]=[]
         
-        var json = JSON(responseData)["syllabus"]["assignments"]
+        let json = JSON(responseData)["syllabus"]["assignments"]
         
         for (_,degree):(String, JSON) in json{
             let p2=degree["assignment"]

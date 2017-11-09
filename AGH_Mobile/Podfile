@@ -11,5 +11,6 @@ target 'AGH_Mobile' do
   pod 'Fuzi'
   pod 'AlamofireObjectMapper'
   pod 'Charts'
+  pod 'TFHpple'
 
 end

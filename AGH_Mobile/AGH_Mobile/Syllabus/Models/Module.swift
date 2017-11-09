@@ -15,7 +15,7 @@ class Module: NSObject {
     var    prerequisites:String? //- wymagania wstępne i dodatkowe;
     var    notices:String?//- uwagi;
     var    literature:String?//- literatura;
-    var    moduleOwner:UniversityTeacher? //- osoba odpowiedzialna za moduł;
+    var    moduleOwner:UniversityTeacher? //- employeeName odpowiedzialna za moduł;
     var    teachers:[UniversityTeacher]?//- prowadzący zajęcia w module;
     var    moduleActivities :[ModuleActivity]?// - formy zajęć modułu (wykład, laboratoria itp.);
     var    moduleUrl :String?//- bezpośredni odnośnik do karty modułu;
