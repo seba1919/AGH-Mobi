@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C057EA21FC5A96400B5B4ED /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C057EA11FC5A96400B5B4ED /* MapViewController.swift */; };
+		0C56320A1FBDB9F200D93B40 /* SpotCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5632081FBDB9F200D93B40 /* SpotCollectionViewController.swift */; };
+		0C56320B1FBDB9F200D93B40 /* SpotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5632091FBDB9F200D93B40 /* SpotCollectionViewCell.swift */; };
+		0C56320D1FBDCE0000D93B40 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C56320C1FBDCE0000D93B40 /* MapKit.framework */; };
+		0C56320F1FBE049100D93B40 /* SpotDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C56320E1FBE049100D93B40 /* SpotDataSource.swift */; };
+		0C5632131FBE050900D93B40 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5632121FBE050900D93B40 /* Spot.swift */; };
+		0C5DE8D61FBF435D0016E880 /* SpotsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5DE8D51FBF435D0016E880 /* SpotsListTableViewController.swift */; };
+		0C5DE8D81FBF45030016E880 /* SpotsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5DE8D71FBF45030016E880 /* SpotsListTableViewCell.swift */; };
 		2DCDC5B8F7237143999626A0 /* Pods_AGH_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26240041D251BCFC11F8D90D /* Pods_AGH_Mobile.framework */; };
 		DC2E206F1FB4C917005E07AC /* AGH_MobileError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2E206E1FB4C917005E07AC /* AGH_MobileError.swift */; };
 		DC44B1411FB4B37B00F8CC14 /* SKOSPhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44B10F1FB4B37800F8CC14 /* SKOSPhoneTableViewCell.swift */; };
@@ -41,6 +49,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C057EA11FC5A96400B5B4ED /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		0C5632081FBDB9F200D93B40 /* SpotCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotCollectionViewController.swift; sourceTree = "<group>"; };
+		0C5632091FBDB9F200D93B40 /* SpotCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotCollectionViewCell.swift; sourceTree = "<group>"; };
+		0C56320C1FBDCE0000D93B40 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0C56320E1FBE049100D93B40 /* SpotDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDataSource.swift; sourceTree = "<group>"; };
+		0C5632121FBE050900D93B40 /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		0C5DE8D51FBF435D0016E880 /* SpotsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsListTableViewController.swift; sourceTree = "<group>"; };
+		0C5DE8D71FBF45030016E880 /* SpotsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotsListTableViewCell.swift; sourceTree = "<group>"; };
 		26240041D251BCFC11F8D90D /* Pods_AGH_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D91C1E49199987E51162C55 /* Pods-AGH_Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH_Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH_Mobile/Pods-AGH_Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		994F4FACF6F0C70B3F841AFC /* Pods-AGH_Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH_Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH_Mobile/Pods-AGH_Mobile.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C56320D1FBDCE0000D93B40 /* MapKit.framework in Frameworks */,
 				2DCDC5B8F7237143999626A0 /* Pods_AGH_Mobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +111,7 @@
 		3109B3880A6B08CF15BE699B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C56320C1FBDCE0000D93B40 /* MapKit.framework */,
 				26240041D251BCFC11F8D90D /* Pods_AGH_Mobile.framework */,
 			);
 			name = Frameworks;
@@ -136,6 +154,13 @@
 		DC4D86641FB3671E00BCA567 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				0C5632091FBDB9F200D93B40 /* SpotCollectionViewCell.swift */,
+				0C5632081FBDB9F200D93B40 /* SpotCollectionViewController.swift */,
+				0C057EA11FC5A96400B5B4ED /* MapViewController.swift */,
+				0C56320E1FBE049100D93B40 /* SpotDataSource.swift */,
+				0C5632121FBE050900D93B40 /* Spot.swift */,
+				0C5DE8D51FBF435D0016E880 /* SpotsListTableViewController.swift */,
+				0C5DE8D71FBF45030016E880 /* SpotsListTableViewCell.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -281,6 +306,11 @@
 					DCACED801FB3266A00239088 = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -392,9 +422,14 @@
 				DC4D86781FB3678C00BCA567 /* DegreeListViewController.swift in Sources */,
 				DC44B1611FB4B43900F8CC14 /* SKOSMailTableViewCell.swift in Sources */,
 				DC4D86851FB3678C00BCA567 /* ModuleViewController.swift in Sources */,
+				0C56320B1FBDB9F200D93B40 /* SpotCollectionViewCell.swift in Sources */,
 				DC4D867E1FB3678C00BCA567 /* Degree.swift in Sources */,
 				DC2E206F1FB4C917005E07AC /* AGH_MobileError.swift in Sources */,
 				DC4D867F1FB3678C00BCA567 /* SyllabusDataSource.swift in Sources */,
+				0C56320A1FBDB9F200D93B40 /* SpotCollectionViewController.swift in Sources */,
+				0C5632131FBE050900D93B40 /* Spot.swift in Sources */,
+				0C56320F1FBE049100D93B40 /* SpotDataSource.swift in Sources */,
+				0C057EA21FC5A96400B5B4ED /* MapViewController.swift in Sources */,
 				DCACED871FB3266B00239088 /* ViewController.swift in Sources */,
 				DC4D867A1FB3678C00BCA567 /* DepartmentTableViewDataSource.swift in Sources */,
 				DC4D86801FB3678C00BCA567 /* ModuleDetailsViewController.swift in Sources */,
@@ -410,9 +445,11 @@
 				DC44B1621FB4B43900F8CC14 /* SKOSDepartmentTableViewCell.swift in Sources */,
 				DC4D86811FB3678C00BCA567 /* Department.swift in Sources */,
 				DC4D867D1FB3678C00BCA567 /* UniversityTeacher.swift in Sources */,
+				0C5DE8D61FBF435D0016E880 /* SpotsListTableViewController.swift in Sources */,
 				DC4D86841FB3678C00BCA567 /* Module.swift in Sources */,
 				DC4D86791FB3678C00BCA567 /* ModuleTableViewDataSource.swift in Sources */,
 				DC4D867B1FB3678C00BCA567 /* DepartmentListViewController.swift in Sources */,
+				0C5DE8D81FBF45030016E880 /* SpotsListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
