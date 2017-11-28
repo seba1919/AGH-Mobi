@@ -14,12 +14,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
     var spotType: String = ""
     var spots: [Spot] = []
+    var currentUserLocation: CLLocation!
     
     @IBOutlet weak var mapView: MKMapView!
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.showsPointsOfInterest = false
         
         if (spots.count > 0) {
             addSpotAnnotations()
@@ -30,6 +32,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
             mapView.showsUserLocation = true
+            
         }
 
     }
@@ -38,48 +41,33 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        determineMyCurrentLocation()
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         removeAnnotations()
         spotType = ""
     }
     
-    func determineMyCurrentLocation() {
-
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentUserLocation = CLLocation(latitude: manager.location!.coordinate.latitude, longitude: manager.location!.coordinate.longitude)
+        mapView.showsUserLocation = true
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        var locValue: CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        mapView.showsUserLocation = true
+    static func getCurrentUserLocation() -> CLLocation {
+        //return currentUserLocation
+        return CLLocation(latitude: 50.066190, longitude: 19.922347)
     }
  
     func addSpotAnnotations() {
         for i in 0...spots.count-1 {
             let anno = MKPointAnnotation()
-            anno.coordinate = (spots[i].coordinates)!
+            anno.coordinate = CLLocationCoordinate2D(latitude: spots[i].latitude, longitude: spots[i].longitude)
             anno.title = spots[i].name
             mapView.addAnnotation(anno)
         }
-        let coord = mapView.annotations.first?.coordinate
-//        mapView.setCenter(coord!, animated: false)
+        let coord = CLLocationCoordinate2D(latitude: (spots.first?.latitude)!, longitude: (spots.first?.longitude)!)
         let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
-        let region = MKCoordinateRegion(center: coord!, span: span)
+        let region = MKCoordinateRegion(center: coord, span: span)
         mapView.setRegion(region, animated: true)
-        
-        mapView.centerCoordinate = coord!
+        mapView.centerCoordinate = coord
     }
     
     func removeAnnotations() {

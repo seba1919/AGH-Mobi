@@ -16,7 +16,8 @@ class SpotsListTableViewController: UIViewController, UITableViewDelegate, UITab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        listOfSpots = SpotDataSource.getSpotList(spotType: spotType)
+        listOfSpots = SpotDataSource.sortByLocation(spotsList: SpotDataSource.getSpotList(spotType: spotType),
+                                                    userLocation: MapViewController.getCurrentUserLocation())
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -98,10 +99,10 @@ class SpotsListTableViewController: UIViewController, UITableViewDelegate, UITab
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destController = segue.destination as? MapViewController {
             let choice = (sender as! SpotsListTableViewCell).label.text!
-            print("choice: \(choice)")
+            print(listOfSpots.first?.name)
             switch choice {
                 case "pokaż wszystkie":
-                    destController.spots = SpotDataSource.getSpotList(spotType: spotType)
+                    destController.spots = listOfSpots
                 default:
                     destController.spots = SpotDataSource.getParticularSpot(spotName: choice)
             }

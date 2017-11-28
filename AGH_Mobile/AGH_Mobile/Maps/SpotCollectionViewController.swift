@@ -10,7 +10,7 @@ import UIKit
 
 class SpotCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var spots = ["Wydziały", "Stołówki", "Kluby", "Akademiki"]
+    var spots = ["Wydziały", "Budynki AGH", "Stołówki", "Kawiarnie", "Kluby", "Akademiki", "Sport", "Ksero", "Bankomaty", "Rowery"]
     let reuseIdentifier = "cell"
 
     override func viewDidLoad() {
@@ -55,10 +55,8 @@ class SpotCollectionViewController: UIViewController, UICollectionViewDelegate, 
 
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SpotCollectionViewCell
-        print(indexPath.item)
-        print(spots[indexPath.item])
         cell.label.text = spots[indexPath.item]
-        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
         
@@ -113,8 +111,8 @@ class SpotCollectionViewController: UIViewController, UICollectionViewDelegate, 
 extension SpotCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let height = 100
-        let width = 100
+        let height = 103
+        let width = 103
         
         return  CGSize(width: width, height: height)
     }
