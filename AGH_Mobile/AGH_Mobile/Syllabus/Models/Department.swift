@@ -13,7 +13,7 @@ class Department:NSObject{
          var shortcut:String?
          var name:String?
         init(shortcut:String?,name:String?){
-            self.shortcut=shortcut
+            self.shortcut=shortcut?.lowercased()
             self.name=name
         }
    
