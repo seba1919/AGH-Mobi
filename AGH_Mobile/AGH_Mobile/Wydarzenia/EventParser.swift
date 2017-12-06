@@ -6,35 +6,9 @@
 //  Copyright © 2017 mackn. All rights reserved.
 //
 import Foundation
-import UIKit
 import Fuzi
 
 class EventParser {
-    // MARK: variables
-
-    var dataTask: URLSessionDataTask!
-    static var eventsParsed = [Event]()
-
-    
-    func getEvents(for page:Int, collection:UICollectionView){
-        // Current url for events page, on any changes - update
-        let wydarzenia = URL(string:"http://www.agh.edu.pl/wydarzenia/browse/\(page)")!
-        dataTask = URLSession.shared.dataTask(with: wydarzenia){(data,response,error) in
-            if error != nil {
-                print(error!)
-            }
-            else {
-                guard let data = data else {return}
-                guard let content = NSString(data:data,encoding:String.Encoding.utf8.rawValue) else {return}
-                EventParser.eventsParsed.append(contentsOf: self.parse(html:content))
-                DispatchQueue.main.async {
-                    collection.reloadData()
-                }
-            }
-        }
-        dataTask.resume()
-    }
-    
     // Parsing of events
     func parse(html:NSString) -> [Event]{
         var events = [Event]()
