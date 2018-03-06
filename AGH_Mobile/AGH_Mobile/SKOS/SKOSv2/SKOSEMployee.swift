@@ -16,6 +16,13 @@ class SKOSEmployee:NSObject {
     var basicData:[[String:String?]]=[]
     var additionalData:[[String:String?]]=[]
     var jobTitle:[[String:String?]]=[]
+    
+    override
+    init(){
+        employeeName=""
+        departmient=""
+        degree=""
+    }
 
     init(_employeeName:String?,_departmient:String?,_link:String?, _degree:String?){
         employeeName=_employeeName

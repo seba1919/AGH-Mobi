@@ -17,13 +17,13 @@ class SKOS {
     var dataIsUnavailable=false
     
     
-    func search(_ name:String,nazwisko:String,degree:String,viewController:SKOSViewController) {
+    func searchByName(_ name:String,nazwisko:String,degree:String,viewController:TableViewController) {
         EmployeeList=[]
         redict=false
         redictionURL=nil
         dataIsUnavailable=false
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        guard let url = URL(string: "https://skos.agh.edu.pl/search/?nazwisko=\(nazwisko)&imie=\(name)&tytul=\(degree)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
+        guard let url = URL(string: "https://skos.agh.edu.pl/search/?letter=\(nazwisko)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
 
         
         Alamofire.request(url).responseString{ response in
@@ -33,14 +33,52 @@ class SKOS {
                 //0,2,... osoby 1,3,... miejsce prawcy
                   var  i=0
                 while( i<data.count-1){
-//                    print(data![i].firstTextChild().content)
-//                    print(data![i].attributes.first!.1)
-//                    print(data![i+1].firstTextChild().content)
-                // taka jedna bez departmientu     employeeName	String	"Chmielewska-Synowska Zofia"
+                    
+                    
                     if (data[i].firstTextChild().content=="Chmielewska-Synowska Zofia"){
                         self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
                         i=i-1;
-                    }else{
+                    }else if(data[i].firstTextChild().content=="Czach Patryk"){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    } else if (data[i].firstTextChild().content=="Głowiak Dominika"){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    } else if (data[i].firstTextChild().content=="Janczyszyn Jerzy, dr hab. inż."){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    } else if (data[i].firstTextChild().content=="Kączka Krzysztof"){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    } else if (data[i].firstTextChild().content=="Lis Ryszard, mgr inż."){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    } else if (data[i].firstTextChild().content=="Mączyński Zbigniew, mgr inż."){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    } else if (data[i].firstTextChild().content=="Pyrć Tomasz, mgr inż."){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    } else if (data[i].firstTextChild().content=="Rękas Artur, dr inż."){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    } else if (data[i].firstTextChild().content=="Tyszownicka Grażyna, mgr"){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    } else if (data[i].firstTextChild().content=="Tytko Andrzej, prof. dr hab. inż."){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    }else if (data[i].firstTextChild().content=="Kowalik Stefan"){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    }else if (data[i].firstTextChild().content=="Bańdo Marian"){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    }else if (data[i].firstTextChild().content=="Bydałek Adam, prof. dr hab. inż."){
+                        self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: "brak", _link: data[i].attributes.first?.1 as? String))
+                        i=i-1;
+                    }else
+                    {
                         self.EmployeeList.append(SKOSEmployee(_employeeName:data[i].firstTextChild().content, _departmient: data[i+1].firstTextChild().content, _link: data[i].attributes.first?.1 as? String))
                     }
                 i=i+2
@@ -63,6 +101,7 @@ class SKOS {
                     }
                 }
                 DispatchQueue.main.async(execute: { () -> Void in
+                    
                     if (self.redict==false && self.dataIsUnavailable==false){
                     viewController.performSegue(withIdentifier: "EmployeeList", sender: self.EmployeeList)
                         self.EmployeeList=[SKOSEmployee]()
@@ -137,8 +176,6 @@ class SKOS {
         Alamofire.request(url).responseString{ response in
             if let list = response.result.value ,let statusCode=response.response {
                 if let tmp=TFHpple(htmlData: list.data(using: String.Encoding.utf8)){
-                    
-                    //Imie
                             if  let name=tmp.search(withXPathQuery: "//div[@class='c-col vcard']/h1") as? [TFHppleElement]{
                                 if name.count>0{
                                     employeeName.employeeName=name[0].firstChild.content
@@ -153,11 +190,6 @@ class SKOS {
                                 }
                                 }
                             }
-                    
-                    
-                    
-                    
-                    // Basic Data
                     if  let data=tmp.search(withXPathQuery: "//table[@class='info-osoba']") as? [TFHppleElement]{
                         if (data.count>0){
                             if let info=data[0].firstChild.children, info.count>0{
@@ -223,8 +255,7 @@ class SKOS {
                    
                 }
                 DispatchQueue.main.async(execute: { () -> Void in
-                    print(vc.employee?.basicData)
-                    vc.tableView.reloadData()
+                    vc.reloadData()
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 })
                 

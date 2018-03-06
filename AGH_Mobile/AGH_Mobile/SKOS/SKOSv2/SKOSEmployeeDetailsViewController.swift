@@ -12,6 +12,7 @@ class SKOSEmployeeDetailsViewController: UIViewController,UITableViewDelegate,UI
     var employee:SKOSEmployee?
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet weak var backBtn: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +20,10 @@ class SKOSEmployeeDetailsViewController: UIViewController,UITableViewDelegate,UI
         self.tableView.delegate=self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 300
+        
         if let employee=employee{
             SKOS.wyswietlOsobe(employee, vc: self)
         }
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -154,6 +155,20 @@ class SKOSEmployeeDetailsViewController: UIViewController,UITableViewDelegate,UI
         
             return 0
             
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    func showIt(employee:SKOSEmployee){
+        self.employee = employee
+        SKOS.wyswietlOsobe(employee, vc: self)
+    }
+    
+    func reloadData(){
+        viewWillAppear(true)
+        self.tableView.reloadData()
     }
     
 

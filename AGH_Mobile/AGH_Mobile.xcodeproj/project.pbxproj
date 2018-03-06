@@ -11,12 +11,14 @@
 		BFC9CDEA1FCDA7160023E23E /* WDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC9CDE91FCDA7160023E23E /* WDViewController.swift */; };
 		DC2E206F1FB4C917005E07AC /* AGH_MobileError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2E206E1FB4C917005E07AC /* AGH_MobileError.swift */; };
 		DC44B1411FB4B37B00F8CC14 /* SKOSPhoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44B10F1FB4B37800F8CC14 /* SKOSPhoneTableViewCell.swift */; };
-		DC44B1441FB4B37B00F8CC14 /* SKOSEmployeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44B1121FB4B37800F8CC14 /* SKOSEmployeeListViewController.swift */; };
-		DC44B1491FB4B37B00F8CC14 /* SKOSEMployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44B1191FB4B37800F8CC14 /* SKOSEMployee.swift */; };
 		DC44B14C1FB4B37B00F8CC14 /* SKOSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44B11C1FB4B37800F8CC14 /* SKOSTableViewCell.swift */; };
-		DC44B1591FB4B37B00F8CC14 /* SKOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44B1301FB4B37800F8CC14 /* SKOS.swift */; };
 		DC44B1611FB4B43900F8CC14 /* SKOSMailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44B15F1FB4B43900F8CC14 /* SKOSMailTableViewCell.swift */; };
 		DC44B1621FB4B43900F8CC14 /* SKOSDepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC44B1601FB4B43900F8CC14 /* SKOSDepartmentTableViewCell.swift */; };
+		DC4B9E89204F1A0200AC451F /* SKOSv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4B9E84204F1A0200AC451F /* SKOSv2.swift */; };
+		DC4B9E8A204F1A0200AC451F /* SKOSEMployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4B9E85204F1A0200AC451F /* SKOSEMployee.swift */; };
+		DC4B9E8B204F1A0200AC451F /* SKOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4B9E86204F1A0200AC451F /* SKOS.swift */; };
+		DC4B9E8C204F1A0200AC451F /* SKOSEmployeeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4B9E87204F1A0200AC451F /* SKOSEmployeeDetailsViewController.swift */; };
+		DC4B9E8D204F1A0200AC451F /* AlphabetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4B9E88204F1A0200AC451F /* AlphabetViewController.swift */; };
 		DC4D86771FB3678C00BCA567 /* DegreeTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86681FB3678C00BCA567 /* DegreeTableViewDataSource.swift */; };
 		DC4D86781FB3678C00BCA567 /* DegreeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86691FB3678C00BCA567 /* DegreeListViewController.swift */; };
 		DC4D86791FB3678C00BCA567 /* ModuleTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D866A1FB3678C00BCA567 /* ModuleTableViewDataSource.swift */; };
@@ -37,8 +39,7 @@
 		DCACED8A1FB3266B00239088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCACED881FB3266B00239088 /* Main.storyboard */; };
 		DCACED8C1FB3266B00239088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCACED8B1FB3266B00239088 /* Assets.xcassets */; };
 		DCACED8F1FB3266B00239088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCACED8D1FB3266B00239088 /* LaunchScreen.storyboard */; };
-		DCB269AB1FB4C273007B0121 /* SKOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB269AA1FB4C272007B0121 /* SKOSViewController.swift */; };
-		DCB269AD1FB4C335007B0121 /* SKOSEmployeeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB269AC1FB4C335007B0121 /* SKOSEmployeeDetailsViewController.swift */; };
+		DF5DB0D0204BF16200BC81EE /* AlphabetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DB0CF204BF16200BC81EE /* AlphabetTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,12 +50,14 @@
 		DC2E206D1FB4C83D005E07AC /* AGH-Mobile-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AGH-Mobile-Swift.h"; path = "AGH_Mobile/AGH-Mobile-Swift.h"; sourceTree = SOURCE_ROOT; };
 		DC2E206E1FB4C917005E07AC /* AGH_MobileError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGH_MobileError.swift; sourceTree = "<group>"; };
 		DC44B10F1FB4B37800F8CC14 /* SKOSPhoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSPhoneTableViewCell.swift; sourceTree = "<group>"; };
-		DC44B1121FB4B37800F8CC14 /* SKOSEmployeeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSEmployeeListViewController.swift; sourceTree = "<group>"; };
-		DC44B1191FB4B37800F8CC14 /* SKOSEMployee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSEMployee.swift; sourceTree = "<group>"; };
 		DC44B11C1FB4B37800F8CC14 /* SKOSTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSTableViewCell.swift; sourceTree = "<group>"; };
-		DC44B1301FB4B37800F8CC14 /* SKOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOS.swift; sourceTree = "<group>"; };
 		DC44B15F1FB4B43900F8CC14 /* SKOSMailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSMailTableViewCell.swift; sourceTree = "<group>"; };
 		DC44B1601FB4B43900F8CC14 /* SKOSDepartmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSDepartmentTableViewCell.swift; sourceTree = "<group>"; };
+		DC4B9E84204F1A0200AC451F /* SKOSv2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSv2.swift; sourceTree = "<group>"; };
+		DC4B9E85204F1A0200AC451F /* SKOSEMployee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSEMployee.swift; sourceTree = "<group>"; };
+		DC4B9E86204F1A0200AC451F /* SKOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOS.swift; sourceTree = "<group>"; };
+		DC4B9E87204F1A0200AC451F /* SKOSEmployeeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSEmployeeDetailsViewController.swift; sourceTree = "<group>"; };
+		DC4B9E88204F1A0200AC451F /* AlphabetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlphabetViewController.swift; sourceTree = "<group>"; };
 		DC4D86681FB3678C00BCA567 /* DegreeTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreeTableViewDataSource.swift; sourceTree = "<group>"; };
 		DC4D86691FB3678C00BCA567 /* DegreeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DegreeListViewController.swift; sourceTree = "<group>"; };
 		DC4D866A1FB3678C00BCA567 /* ModuleTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleTableViewDataSource.swift; sourceTree = "<group>"; };
@@ -77,8 +80,7 @@
 		DCACED8B1FB3266B00239088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCACED8E1FB3266B00239088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCACED901FB3266B00239088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCB269AA1FB4C272007B0121 /* SKOSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSViewController.swift; sourceTree = "<group>"; };
-		DCB269AC1FB4C335007B0121 /* SKOSEmployeeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKOSEmployeeDetailsViewController.swift; sourceTree = "<group>"; };
+		DF5DB0CF204BF16200BC81EE /* AlphabetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,11 +123,7 @@
 		DC44B15E1FB4B39D00F8CC14 /* SKOS */ = {
 			isa = PBXGroup;
 			children = (
-				DC44B1301FB4B37800F8CC14 /* SKOS.swift */,
-				DCB269AA1FB4C272007B0121 /* SKOSViewController.swift */,
-				DC44B1121FB4B37800F8CC14 /* SKOSEmployeeListViewController.swift */,
-				DCB269AC1FB4C335007B0121 /* SKOSEmployeeDetailsViewController.swift */,
-				DC44B1191FB4B37800F8CC14 /* SKOSEMployee.swift */,
+				DF5DB0CE204BF0E100BC81EE /* SKOSv2 */,
 				DCB269A91FB4BB56007B0121 /* SKOSTableViewCells */,
 			);
 			path = SKOS;
@@ -246,6 +244,19 @@
 				DC44B1601FB4B43900F8CC14 /* SKOSDepartmentTableViewCell.swift */,
 			);
 			path = SKOSTableViewCells;
+			sourceTree = "<group>";
+		};
+		DF5DB0CE204BF0E100BC81EE /* SKOSv2 */ = {
+			isa = PBXGroup;
+			children = (
+				DC4B9E88204F1A0200AC451F /* AlphabetViewController.swift */,
+				DC4B9E86204F1A0200AC451F /* SKOS.swift */,
+				DC4B9E85204F1A0200AC451F /* SKOSEMployee.swift */,
+				DC4B9E87204F1A0200AC451F /* SKOSEmployeeDetailsViewController.swift */,
+				DC4B9E84204F1A0200AC451F /* SKOSv2.swift */,
+				DF5DB0CF204BF16200BC81EE /* AlphabetTableViewController.swift */,
+			);
+			path = SKOSv2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,32 +400,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC44B1441FB4B37B00F8CC14 /* SKOSEmployeeListViewController.swift in Sources */,
-				DCB269AB1FB4C273007B0121 /* SKOSViewController.swift in Sources */,
-				DC44B1591FB4B37B00F8CC14 /* SKOS.swift in Sources */,
 				BFC9CDEA1FCDA7160023E23E /* WDViewController.swift in Sources */,
 				DC4D86781FB3678C00BCA567 /* DegreeListViewController.swift in Sources */,
 				DC44B1611FB4B43900F8CC14 /* SKOSMailTableViewCell.swift in Sources */,
 				DC4D86851FB3678C00BCA567 /* ModuleViewController.swift in Sources */,
+				DC4B9E89204F1A0200AC451F /* SKOSv2.swift in Sources */,
 				DC4D867E1FB3678C00BCA567 /* Degree.swift in Sources */,
 				DC2E206F1FB4C917005E07AC /* AGH_MobileError.swift in Sources */,
+				DC4B9E8C204F1A0200AC451F /* SKOSEmployeeDetailsViewController.swift in Sources */,
 				DC4D867F1FB3678C00BCA567 /* SyllabusDataSource.swift in Sources */,
+				DC4B9E8D204F1A0200AC451F /* AlphabetViewController.swift in Sources */,
 				DCACED871FB3266B00239088 /* ViewController.swift in Sources */,
 				DC4D867A1FB3678C00BCA567 /* DepartmentTableViewDataSource.swift in Sources */,
 				DC4D86801FB3678C00BCA567 /* ModuleDetailsViewController.swift in Sources */,
 				DC4D86771FB3678C00BCA567 /* DegreeTableViewDataSource.swift in Sources */,
 				DC44B1411FB4B37B00F8CC14 /* SKOSPhoneTableViewCell.swift in Sources */,
-				DCB269AD1FB4C335007B0121 /* SKOSEmployeeDetailsViewController.swift in Sources */,
 				DC44B14C1FB4B37B00F8CC14 /* SKOSTableViewCell.swift in Sources */,
 				DCACED851FB3266A00239088 /* AppDelegate.swift in Sources */,
+				DC4B9E8B204F1A0200AC451F /* SKOS.swift in Sources */,
 				DC4D86831FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift in Sources */,
 				DC4D86821FB3678C00BCA567 /* ModuleActivity.swift in Sources */,
 				DC4D867C1FB3678C00BCA567 /* SyllabusViewController.swift in Sources */,
-				DC44B1491FB4B37B00F8CC14 /* SKOSEMployee.swift in Sources */,
 				DC44B1621FB4B43900F8CC14 /* SKOSDepartmentTableViewCell.swift in Sources */,
 				DC4D86811FB3678C00BCA567 /* Department.swift in Sources */,
+				DF5DB0D0204BF16200BC81EE /* AlphabetTableViewController.swift in Sources */,
 				DC4D867D1FB3678C00BCA567 /* UniversityTeacher.swift in Sources */,
 				DC4D86841FB3678C00BCA567 /* Module.swift in Sources */,
+				DC4B9E8A204F1A0200AC451F /* SKOSEMployee.swift in Sources */,
 				DC4D86791FB3678C00BCA567 /* ModuleTableViewDataSource.swift in Sources */,
 				DC4D867B1FB3678C00BCA567 /* DepartmentListViewController.swift in Sources */,
 			);
