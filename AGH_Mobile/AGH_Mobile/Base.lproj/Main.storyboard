@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="atg-u9-1sC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="atg-u9-1sC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -569,7 +569,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="bfP-yh-5jN"/>
                     <connections>
-                        <outlet property="mapView" destination="UIm-UX-MXG" id="3bw-yb-6V9"/>
+                        <outlet property="mapView" destination="UIm-UX-MXG" id="OYw-Js-Td7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BHc-fU-yQi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -599,21 +599,28 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3t-zo-tss">
-                                            <rect key="frame" x="8" y="8" width="94" height="64"/>
+                                            <rect key="frame" x="8" y="8" width="94" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDD-PL-Pj4">
+                                            <rect key="frame" x="30" y="60" width="50" height="42"/>
+                                        </imageView>
                                     </subviews>
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="trailingMargin" secondItem="b3t-zo-tss" secondAttribute="trailing" id="8KC-rN-5rg"/>
+                                    <constraint firstItem="qDD-PL-Pj4" firstAttribute="leading" secondItem="cDf-t4-Yv9" secondAttribute="leadingMargin" constant="22" id="K3g-9X-dfW"/>
+                                    <constraint firstItem="qDD-PL-Pj4" firstAttribute="bottom" secondItem="cDf-t4-Yv9" secondAttribute="bottomMargin" id="VAC-3m-tUg"/>
                                     <constraint firstItem="b3t-zo-tss" firstAttribute="leading" secondItem="cDf-t4-Yv9" secondAttribute="leadingMargin" id="Y5v-oA-f4u"/>
+                                    <constraint firstItem="qDD-PL-Pj4" firstAttribute="bottom" secondItem="cDf-t4-Yv9" secondAttribute="bottomMargin" id="cXd-oe-89S"/>
                                     <constraint firstItem="b3t-zo-tss" firstAttribute="top" secondItem="cDf-t4-Yv9" secondAttribute="topMargin" id="f3l-C1-nOs"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="b3t-zo-tss" secondAttribute="bottom" constant="30" id="skN-sl-D3X"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="qDD-PL-Pj4" secondAttribute="trailing" constant="22" id="hP4-Yq-RAl"/>
                                 </constraints>
                                 <size key="customSize" width="110" height="110"/>
                                 <connections>
+                                    <outlet property="image" destination="qDD-PL-Pj4" id="dzX-mt-0UM"/>
                                     <outlet property="label" destination="b3t-zo-tss" id="Uz4-rS-bQO"/>
                                     <segue destination="bOW-cG-0mi" kind="show" id="g7T-CT-hZN"/>
                                 </connections>
@@ -655,8 +662,8 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="zB9-B8-TJo" firstAttribute="top" secondItem="amf-AJ-F7e" secondAttribute="top" constant="10" id="Jv6-Vy-TKi"/>
+                                        <constraint firstAttribute="trailing" secondItem="zB9-B8-TJo" secondAttribute="trailing" constant="30" id="YnZ-oh-wCL"/>
                                         <constraint firstAttribute="bottom" secondItem="zB9-B8-TJo" secondAttribute="bottom" constant="10" id="hbg-tW-d5B"/>
-                                        <constraint firstAttribute="trailing" secondItem="zB9-B8-TJo" secondAttribute="trailing" constant="30" id="uIJ-25-hlh"/>
                                         <constraint firstItem="zB9-B8-TJo" firstAttribute="leading" secondItem="amf-AJ-F7e" secondAttribute="leading" constant="30" id="x6L-FY-Onb"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -753,6 +760,6 @@
         <image name="ic_account_box_36pt" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xpa-BS-F5A"/>
+        <segue reference="phc-oP-2xD"/>
     </inferredMetricsTieBreakers>
 </document>

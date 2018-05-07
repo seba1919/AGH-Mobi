@@ -10,7 +10,6 @@ import UIKit
 
 class SpotCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var spots = ["Wydziały", "Budynki AGH", "Stołówki", "Kawiarnie", "Kluby", "Akademiki", "Sport", "Ksero", "Bankomaty", "Rowery"]
     let reuseIdentifier = "cell"
 
     override func viewDidLoad() {
@@ -50,24 +49,27 @@ class SpotCollectionViewController: UIViewController, UICollectionViewDelegate, 
 
      func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return spots.count
+        return SpotDataSource.spotTypes.count
     }
 
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! SpotCollectionViewCell
-        cell.label.text = spots[indexPath.item]
-        cell.layer.borderColor = UIColor.gray.cgColor
-        cell.layer.borderWidth = 1
+        let text = Array(SpotDataSource.spotTypes.keys)[indexPath.item]
+        cell.label.text = text
+        cell.image.image = SpotDataSource.spotTypes[text]
+        cell.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        cell.layer.shadowOpacity = 0.5
+        cell.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        cell.layer.shadowRadius = 10.0
+        cell.layer.cornerRadius = 5.0
+        cell.layer.backgroundColor = UIColor.white.cgColor
         cell.layer.cornerRadius = 8
         
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
     
-    
-     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
     }
     

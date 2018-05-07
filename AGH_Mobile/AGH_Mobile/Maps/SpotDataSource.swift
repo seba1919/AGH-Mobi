@@ -11,6 +11,21 @@ import MapKit
 
 class SpotDataSource: NSObject {
     
+    public static var spotsColor: [String : UIColor] =
+        ["Wydziały" : UIColor.blue,
+         "Stołówki" : UIColor(red: 60/255, green: 170/255, blue: 250/255, alpha: 1.0),
+         "Sklepy" : UIColor.darkGray,
+         "Kawiarnie" : UIColor(red: 76/255, green: 202/255, blue: 19/255, alpha: 1.0),
+         "Kluby" : UIColor.purple,
+         "Sport" : UIColor.blue,
+         "Ksero" : UIColor.gray,
+         "Bankomaty" : UIColor(red: 76/255, green: 202/255, blue: 19/255, alpha: 1.0),
+         "Akademiki" : UIColor.red,
+         "Rowery" : UIColor.orange,
+         "Budynki AGH" : UIColor.blue]
+    
+    public static var spotTypes = ["Wydziały": #imageLiteral(resourceName: "wydzialy"), "Budynki AGH": #imageLiteral(resourceName: "budynki"), "Stołówki": #imageLiteral(resourceName: "stolowki"), "Kawiarnie": #imageLiteral(resourceName: "kawiarnie"), "Kluby": #imageLiteral(resourceName: "beer"), "Akademiki": #imageLiteral(resourceName: "building"), "Sport": #imageLiteral(resourceName: "sport"), "Ksero": #imageLiteral(resourceName: "ksero"), "Bankomaty": #imageLiteral(resourceName: "bankomaty"), "Rowery": #imageLiteral(resourceName: "bicycle"), "Sklepy": #imageLiteral(resourceName: "sklepy")]
+    
     static var spots: [Spot] = [
         Spot(type: "Wydziały", name: "A0", latitude: 50.064506, longitude: 19.923320),
         Spot(type: "Wydziały", name: "A1", latitude: 50.065096, longitude: 19.922538),
@@ -48,9 +63,12 @@ class SpotDataSource: NSObject {
         Spot(type: "Stołówki", name: "Świniarnia", latitude: 50.068705, longitude: 19.907863),
         Spot(type: "Stołówki", name: "Oliwka", latitude: 50.068881, longitude: 19.904406),
         Spot(type: "Stołówki", name: "Góra Olimp Pizza & Pub", latitude: 50.066595, longitude: 19.922715),
+        Spot(type: "Stołówki", name: "Automat B4", latitude: 50.066309, longitude: 19.917402),
+        Spot(type: "Stołówki", name: "Automat C2", latitude: 50.066243, longitude: 19.921300),
         
         Spot(type: "Sklepy", name: "Avita", latitude: 50.066797, longitude: 19.921937),
         Spot(type: "Sklepy", name: "Żabka", latitude: 50.067419, longitude: 19.914247),
+        Spot(type: "Sklepy", name: "Lewiatan", latitude: 50.068725, longitude: 19.907582),
         
         Spot(type: "Kawiarnie", name: "Kawiory 8 Café", latitude: 50.067685, longitude: 19.913401),
         Spot(type: "Kawiarnie", name: "Microscup", latitude: 50.067438, longitude: 19.918633),
@@ -71,6 +89,7 @@ class SpotDataSource: NSObject {
         Spot(type: "Sport", name: "Boisko piłkarskie", latitude: 50.068230, longitude: 19.904289),
         Spot(type: "Sport", name: "Boisko koszykarskie", latitude: 50.067976, longitude: 19.905762),
         Spot(type: "Sport", name: "Korty tenisowe", latitude: 50.067636, longitude: 19.904076),
+        Spot(type: "Sport", name: "Kręgielnia", latitude: 50.068382, longitude: 19.900664),
         
         Spot(type: "Ksero", name: "CopyHeaven", latitude: 50.066928, longitude: 19.920153),
         Spot(type: "Ksero", name: "Drukmania", latitude: 50.067308, longitude: 19.920605),
