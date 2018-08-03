@@ -34,6 +34,14 @@
 		DC4D86831FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86741FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift */; };
 		DC4D86841FB3678C00BCA567 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86751FB3678C00BCA567 /* Module.swift */; };
 		DC4D86851FB3678C00BCA567 /* ModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86761FB3678C00BCA567 /* ModuleViewController.swift */; };
+		DC73E0C921147C7E00509D15 /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC73E0C721147C7E00509D15 /* Maps.storyboard */; };
+		DC73E0D221147D4C00509D15 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E0CB21147D4C00509D15 /* Spot.swift */; };
+		DC73E0D321147D4C00509D15 /* SpotDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E0CC21147D4C00509D15 /* SpotDataSource.swift */; };
+		DC73E0D421147D4C00509D15 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E0CD21147D4C00509D15 /* MapViewController.swift */; };
+		DC73E0D521147D4C00509D15 /* SpotCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E0CE21147D4C00509D15 /* SpotCollectionViewCell.swift */; };
+		DC73E0D621147D4C00509D15 /* SpotsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E0CF21147D4C00509D15 /* SpotsListTableViewCell.swift */; };
+		DC73E0D721147D4C00509D15 /* SpotCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E0D021147D4C00509D15 /* SpotCollectionViewController.swift */; };
+		DC73E0D821147D4C00509D15 /* SpotsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E0D121147D4C00509D15 /* SpotsListTableViewController.swift */; };
 		DCACED851FB3266A00239088 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACED841FB3266A00239088 /* AppDelegate.swift */; };
 		DCACED871FB3266B00239088 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCACED861FB3266B00239088 /* ViewController.swift */; };
 		DCACED8A1FB3266B00239088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCACED881FB3266B00239088 /* Main.storyboard */; };
@@ -73,6 +81,14 @@
 		DC4D86741FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyllabusViewControllerProtocol.swift; sourceTree = "<group>"; };
 		DC4D86751FB3678C00BCA567 /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		DC4D86761FB3678C00BCA567 /* ModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleViewController.swift; sourceTree = "<group>"; };
+		DC73E0C821147C7E00509D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Maps.storyboard; sourceTree = "<group>"; };
+		DC73E0CB21147D4C00509D15 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
+		DC73E0CC21147D4C00509D15 /* SpotDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotDataSource.swift; sourceTree = "<group>"; };
+		DC73E0CD21147D4C00509D15 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DC73E0CE21147D4C00509D15 /* SpotCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotCollectionViewCell.swift; sourceTree = "<group>"; };
+		DC73E0CF21147D4C00509D15 /* SpotsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsListTableViewCell.swift; sourceTree = "<group>"; };
+		DC73E0D021147D4C00509D15 /* SpotCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotCollectionViewController.swift; sourceTree = "<group>"; };
+		DC73E0D121147D4C00509D15 /* SpotsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotsListTableViewController.swift; sourceTree = "<group>"; };
 		DCACED811FB3266A00239088 /* AGH_Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AGH_Mobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCACED841FB3266A00239088 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DCACED861FB3266B00239088 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,13 +157,6 @@
 			path = Syllabus;
 			sourceTree = "<group>";
 		};
-		DC4D86641FB3671E00BCA567 /* Maps */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Maps;
-			sourceTree = "<group>";
-		};
 		DC4D86661FB3673500BCA567 /* Aktualnosci */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +205,21 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		DC73E0CA21147D4C00509D15 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				DC73E0CB21147D4C00509D15 /* Spot.swift */,
+				DC73E0CC21147D4C00509D15 /* SpotDataSource.swift */,
+				DC73E0CD21147D4C00509D15 /* MapViewController.swift */,
+				DC73E0CE21147D4C00509D15 /* SpotCollectionViewCell.swift */,
+				DC73E0CF21147D4C00509D15 /* SpotsListTableViewCell.swift */,
+				DC73E0D021147D4C00509D15 /* SpotCollectionViewController.swift */,
+				DC73E0D121147D4C00509D15 /* SpotsListTableViewController.swift */,
+			);
+			name = Maps;
+			path = AGH_Mobile/Maps;
+			sourceTree = SOURCE_ROOT;
+		};
 		DCACED781FB3266A00239088 = {
 			isa = PBXGroup;
 			children = (
@@ -226,8 +250,9 @@
 				DC44B15E1FB4B39D00F8CC14 /* SKOS */,
 				DC4D86671FB3674400BCA567 /* Plan */,
 				DC4D86661FB3673500BCA567 /* Aktualnosci */,
-				DC4D86641FB3671E00BCA567 /* Maps */,
 				DCACED881FB3266B00239088 /* Main.storyboard */,
+				DC73E0CA21147D4C00509D15 /* Maps */,
+				DC73E0C721147C7E00509D15 /* Maps.storyboard */,
 				DCACED8B1FB3266B00239088 /* Assets.xcassets */,
 				DCACED8D1FB3266B00239088 /* LaunchScreen.storyboard */,
 				DCACED901FB3266B00239088 /* Info.plist */,
@@ -323,6 +348,7 @@
 				DCACED8F1FB3266B00239088 /* LaunchScreen.storyboard in Resources */,
 				DCACED8C1FB3266B00239088 /* Assets.xcassets in Resources */,
 				DCACED8A1FB3266B00239088 /* Main.storyboard in Resources */,
+				DC73E0C921147C7E00509D15 /* Maps.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC73E0D521147D4C00509D15 /* SpotCollectionViewCell.swift in Sources */,
 				BFC9CDEA1FCDA7160023E23E /* WDViewController.swift in Sources */,
 				DC4D86781FB3678C00BCA567 /* DegreeListViewController.swift in Sources */,
 				DC44B1611FB4B43900F8CC14 /* SKOSMailTableViewCell.swift in Sources */,
@@ -391,19 +418,24 @@
 				DC4B9E89204F1A0200AC451F /* SKOSv2.swift in Sources */,
 				DC4D867E1FB3678C00BCA567 /* Degree.swift in Sources */,
 				DC2E206F1FB4C917005E07AC /* AGH_MobileError.swift in Sources */,
+				DC73E0D221147D4C00509D15 /* Spot.swift in Sources */,
 				DC4B9E8C204F1A0200AC451F /* SKOSEmployeeDetailsViewController.swift in Sources */,
 				DC4D867F1FB3678C00BCA567 /* SyllabusDataSource.swift in Sources */,
 				DC4B9E8D204F1A0200AC451F /* AlphabetViewController.swift in Sources */,
+				DC73E0D321147D4C00509D15 /* SpotDataSource.swift in Sources */,
 				DCACED871FB3266B00239088 /* ViewController.swift in Sources */,
 				DC4D867A1FB3678C00BCA567 /* DepartmentTableViewDataSource.swift in Sources */,
 				DC4D86801FB3678C00BCA567 /* ModuleDetailsViewController.swift in Sources */,
+				DC73E0D421147D4C00509D15 /* MapViewController.swift in Sources */,
 				DC4D86771FB3678C00BCA567 /* DegreeTableViewDataSource.swift in Sources */,
 				DC44B1411FB4B37B00F8CC14 /* SKOSPhoneTableViewCell.swift in Sources */,
 				DC44B14C1FB4B37B00F8CC14 /* SKOSTableViewCell.swift in Sources */,
 				DCACED851FB3266A00239088 /* AppDelegate.swift in Sources */,
+				DC73E0D721147D4C00509D15 /* SpotCollectionViewController.swift in Sources */,
 				DC4B9E8B204F1A0200AC451F /* SKOS.swift in Sources */,
 				DC4D86831FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift in Sources */,
 				DC4D86821FB3678C00BCA567 /* ModuleActivity.swift in Sources */,
+				DC73E0D821147D4C00509D15 /* SpotsListTableViewController.swift in Sources */,
 				DC4D867C1FB3678C00BCA567 /* SyllabusViewController.swift in Sources */,
 				DC44B1621FB4B43900F8CC14 /* SKOSDepartmentTableViewCell.swift in Sources */,
 				DC4D86811FB3678C00BCA567 /* Department.swift in Sources */,
@@ -413,12 +445,21 @@
 				DC4B9E8A204F1A0200AC451F /* SKOSEMployee.swift in Sources */,
 				DC4D86791FB3678C00BCA567 /* ModuleTableViewDataSource.swift in Sources */,
 				DC4D867B1FB3678C00BCA567 /* DepartmentListViewController.swift in Sources */,
+				DC73E0D621147D4C00509D15 /* SpotsListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		DC73E0C721147C7E00509D15 /* Maps.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC73E0C821147C7E00509D15 /* Base */,
+			);
+			name = Maps.storyboard;
+			sourceTree = "<group>";
+		};
 		DCACED881FB3266B00239088 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
