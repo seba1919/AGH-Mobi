@@ -40,7 +40,6 @@
 		DC4D86841FB3678C00BCA567 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86751FB3678C00BCA567 /* Module.swift */; };
 		DC4D86851FB3678C00BCA567 /* ModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4D86761FB3678C00BCA567 /* ModuleViewController.swift */; };
 		DC6F68FA21171D5300298526 /* TabBarIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC6F68F921171D5300298526 /* TabBarIcons.xcassets */; };
-		DC73E0C921147C7E00509D15 /* Maps.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC73E0C721147C7E00509D15 /* Maps.storyboard */; };
 		DC73E0D221147D4C00509D15 /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E0CB21147D4C00509D15 /* Spot.swift */; };
 		DC73E0D321147D4C00509D15 /* SpotDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E0CC21147D4C00509D15 /* SpotDataSource.swift */; };
 		DC73E0D421147D4C00509D15 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC73E0CD21147D4C00509D15 /* MapViewController.swift */; };
@@ -53,6 +52,7 @@
 		DCACED8A1FB3266B00239088 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCACED881FB3266B00239088 /* Main.storyboard */; };
 		DCACED8C1FB3266B00239088 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCACED8B1FB3266B00239088 /* Assets.xcassets */; };
 		DCACED8F1FB3266B00239088 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCACED8D1FB3266B00239088 /* LaunchScreen.storyboard */; };
+		DCF0FC7921176E630098F6D9 /* ModuleActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF0FC7821176E630098F6D9 /* ModuleActivityViewController.swift */; };
 		DF5DB0D0204BF16200BC81EE /* AlphabetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF5DB0CF204BF16200BC81EE /* AlphabetTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +93,6 @@
 		DC4D86751FB3678C00BCA567 /* Module.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		DC4D86761FB3678C00BCA567 /* ModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleViewController.swift; sourceTree = "<group>"; };
 		DC6F68F921171D5300298526 /* TabBarIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBarIcons.xcassets; sourceTree = "<group>"; };
-		DC73E0C821147C7E00509D15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Maps.storyboard; sourceTree = "<group>"; };
 		DC73E0CB21147D4C00509D15 /* Spot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		DC73E0CC21147D4C00509D15 /* SpotDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotDataSource.swift; sourceTree = "<group>"; };
 		DC73E0CD21147D4C00509D15 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		DCACED8B1FB3266B00239088 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCACED8E1FB3266B00239088 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DCACED901FB3266B00239088 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCF0FC7821176E630098F6D9 /* ModuleActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleActivityViewController.swift; sourceTree = "<group>"; };
 		DF5DB0CF204BF16200BC81EE /* AlphabetTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -201,6 +201,7 @@
 				DC4D86691FB3678C00BCA567 /* DegreeListViewController.swift */,
 				DC4D86761FB3678C00BCA567 /* ModuleViewController.swift */,
 				DC4D86711FB3678C00BCA567 /* ModuleDetailsViewController.swift */,
+				DCF0FC7821176E630098F6D9 /* ModuleActivityViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -270,7 +271,6 @@
 				DCACED881FB3266B00239088 /* Main.storyboard */,
 				DC6F68F921171D5300298526 /* TabBarIcons.xcassets */,
 				DC73E0CA21147D4C00509D15 /* Maps */,
-				DC73E0C721147C7E00509D15 /* Maps.storyboard */,
 				DCACED8B1FB3266B00239088 /* Assets.xcassets */,
 				DCACED8D1FB3266B00239088 /* LaunchScreen.storyboard */,
 				DCACED901FB3266B00239088 /* Info.plist */,
@@ -366,7 +366,6 @@
 				DCACED8F1FB3266B00239088 /* LaunchScreen.storyboard in Resources */,
 				DCACED8C1FB3266B00239088 /* Assets.xcassets in Resources */,
 				DCACED8A1FB3266B00239088 /* Main.storyboard in Resources */,
-				DC73E0C921147C7E00509D15 /* Maps.storyboard in Resources */,
 				DC6F68FA21171D5300298526 /* TabBarIcons.xcassets in Resources */,
 				DC3B629B2116FE4900BE3F81 /* Logos.xcassets in Resources */,
 			);
@@ -466,6 +465,7 @@
 				DCACED851FB3266A00239088 /* AppDelegate.swift in Sources */,
 				DC73E0D721147D4C00509D15 /* SpotCollectionViewController.swift in Sources */,
 				DC2E486A21149F6800A7A8D4 /* AGHTabBarControllerViewController.swift in Sources */,
+				DCF0FC7921176E630098F6D9 /* ModuleActivityViewController.swift in Sources */,
 				DC4B9E8B204F1A0200AC451F /* SKOS.swift in Sources */,
 				DC4D86831FB3678C00BCA567 /* SyllabusViewControllerProtocol.swift in Sources */,
 				DC4D86821FB3678C00BCA567 /* ModuleActivity.swift in Sources */,
@@ -486,14 +486,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DC73E0C721147C7E00509D15 /* Maps.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DC73E0C821147C7E00509D15 /* Base */,
-			);
-			name = Maps.storyboard;
-			sourceTree = "<group>";
-		};
 		DCACED881FB3266B00239088 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

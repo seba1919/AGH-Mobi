@@ -20,5 +20,11 @@ class UniversityTeacher: NSObject {
         self.email=email
         self.title=title
     }
+    func getDescription()-> String{
+        if let title=title{
+             return title+" "+name!+" "+surname!
+        }
+        return " "+name!+" "+surname!
+    }
 
 }
