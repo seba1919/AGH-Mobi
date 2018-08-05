@@ -13,12 +13,10 @@ class AGH_MobileError: NSObject {
         let alert = UIAlertController(title: "Uwaga", message: "Brak połączenia z internetem. Sprawdź ustawienia i spróbuj ponownie.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         widok.present(alert, animated: true, completion: nil)
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false;
     }
     static func dataIsUnavailable(_ widok:UIViewController){
         let alert = UIAlertController(title: "Uwaga", message: "Nie znaleziono pasującej osoby.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         widok.present(alert, animated: true, completion: nil)
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false;
     }
 }

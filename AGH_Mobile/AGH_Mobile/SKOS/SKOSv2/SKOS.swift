@@ -170,7 +170,6 @@ class SKOS {
     }
     static func wyswietlOsobe(_ employeeName:SKOSEmployee, vc:SKOSEmployeeDetailsViewController){
         
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let url = URL(string: ((employeeName.link)?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!) else {return}
        SwiftSpinner.show("Proszę Czekać")
         Alamofire.request(url).responseString{ response in
