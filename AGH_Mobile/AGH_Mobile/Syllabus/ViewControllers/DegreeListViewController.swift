@@ -26,6 +26,9 @@ class DegreeListViewController: SyllabusViewController, SyllabusViewControllerPr
         degreeList?.delegate=self
         degreeList?.getData()
         }
+        title="Kierunki"
+        navigationItem.title=title
+
 
         // Do any additional setup after loading the view.
     }

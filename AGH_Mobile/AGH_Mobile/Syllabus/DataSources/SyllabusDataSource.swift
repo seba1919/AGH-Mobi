@@ -9,8 +9,7 @@
 import UIKit
 
 class SyllabusDataSource:NSObject {
-    let language="pl"
-    let year="2013-2014"
+    
     func handleError(error:Error){
       print("Error Retriving Data")
     }

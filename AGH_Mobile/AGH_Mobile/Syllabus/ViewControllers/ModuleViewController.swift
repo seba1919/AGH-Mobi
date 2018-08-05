@@ -22,6 +22,8 @@ class ModuleViewController: SyllabusViewController,SyllabusViewControllerProtoco
             modules?.delegate=self
             modules?.getData()
         }
+        title="Przedmioty"
+        navigationItem.title=title
 
         // Do any additional setup after loading the view.
     }

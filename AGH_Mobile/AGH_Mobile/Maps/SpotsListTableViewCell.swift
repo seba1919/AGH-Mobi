@@ -7,10 +7,11 @@
 //
 
 import UIKit
-
+import Hero
 class SpotsListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var label: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

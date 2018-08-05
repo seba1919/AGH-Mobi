@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-
+import Hero
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     var spotType: String = ""
@@ -17,17 +17,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     var currentUserLocation: CLLocation!
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var chooseItemButtion: UIButton!
     
     var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title="Mapa"
+        navigationItem.title=title
         self.mapView.delegate = self
         mapView.showsPointsOfInterest = false
         mapView.showsUserLocation = true
         if (spots.count > 0) {
             self.addSpotAnnotations()
         }
+        chooseItemButtion.hero.id="ShowObjects"
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +42,11 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         removeAnnotations()
         spotType = ""
     }
-    
+    @IBAction func showSpot(segue: UIStoryboardSegue) {
+        if (spots.count > 0) {
+            self.addSpotAnnotations()
+        }
+    }
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let ann = annotation as! CustomAnnotation
         let annotationView = MKMarkerAnnotationView(annotation: ann, reuseIdentifier: "pin")

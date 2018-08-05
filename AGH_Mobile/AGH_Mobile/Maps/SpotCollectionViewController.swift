@@ -7,14 +7,14 @@
 //
 
 import UIKit
-
+import Hero
 class SpotCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     let reuseIdentifier = "cell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.hero.id="ShowObjects"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -65,7 +65,8 @@ class SpotCollectionViewController: UIViewController, UICollectionViewDelegate, 
         cell.layer.cornerRadius = 5.0
         cell.layer.backgroundColor = UIColor.white.cgColor
         cell.layer.cornerRadius = 8
-        
+        cell.hero.id="DetailList"
+
         return cell
     }
     

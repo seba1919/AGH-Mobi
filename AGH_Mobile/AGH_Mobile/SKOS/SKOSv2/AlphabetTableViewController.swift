@@ -18,11 +18,11 @@ class AlphabetCells:UITableViewCell{
         
         if(cellElem.isClicked){
             cellElem.isClicked = false;
-            btn.setTitle("Rozwiń", for: .normal)
+            btn.setTitle("↓", for: .normal)
             master.removeElements(letter: txt)
         }else {
             cellElem.isClicked = true
-            btn.setTitle("Zwiń", for: .normal)
+            btn.setTitle("↑", for: .normal)
             master.addElements(letter: txt)
         }
     }
@@ -50,6 +50,7 @@ class TableViewController: UITableViewController {
     var isFinished = false;
     var shouldGo:Bool = false
 
+    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
         alphabet = ["A","B","C","Ć","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Z"];
@@ -110,9 +111,9 @@ class TableViewController: UITableViewController {
         let cellElem = alphabetCell[indexPath.row]
         cell.cellElem = cellElem
         if(cell.cellElem.isClicked){
-            cell.btn.setTitle("Zwiń", for: .normal)
+            cell.btn.setTitle("↑", for: .normal)
         } else {
-            cell.btn.setTitle("Rozwiń", for: .normal)
+            cell.btn.setTitle("↓", for: .normal)
         }
         if(cell.cellElem.isMaster){
             cell.label1?.text = alphabet[indexPath.row];

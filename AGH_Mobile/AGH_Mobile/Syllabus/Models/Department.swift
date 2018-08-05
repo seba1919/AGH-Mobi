@@ -12,10 +12,16 @@ import UIKit
 class Department:NSObject{
          var shortcut:String?
          var name:String?
+        var image: UIImage?
         init(shortcut:String?,name:String?){
             self.shortcut=shortcut?.lowercased()
             self.name=name
         }
+    init(shortcut:String?,name:String?,image:UIImage?){
+        self.shortcut=shortcut?.lowercased()
+        self.name=name
+        self.image=image
+    }
    
 }
 

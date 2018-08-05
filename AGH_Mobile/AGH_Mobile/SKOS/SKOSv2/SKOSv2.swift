@@ -9,6 +9,7 @@
 import UIKit
 import TFHpple
 import Alamofire
+import SwiftSpinner
 class Skos2 {
     
     var EmployeeList:[SKOSEmployee]=[]
@@ -22,7 +23,7 @@ class Skos2 {
         redict=false
         redictionURL=nil
         dataIsUnavailable=false
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        SwiftSpinner.show("Proszę Czekać")
         guard let url = URL(string: "https://skos.agh.edu.pl/search/?letter=\(nazwisko)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
         
         
@@ -116,10 +117,12 @@ class Skos2 {
                                 self.dataIsUnavailable=false
                             }
                         }
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        SwiftSpinner.hide()
+
                     })
                 } else {
                     AGH_MobileError.ConnectionError(viewController)
+                    SwiftSpinner.hide()
                 }
             }
         }
@@ -135,6 +138,8 @@ class Skos2 {
         redictionURL=nil
         dataIsUnavailable=false
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        SwiftSpinner.show("Proszę Czekać")
+
         guard let url = URL(string: "https://skos.agh.edu.pl/search/?nazwisko=\(nazwisko)&imie=\(name)&tytul=\(degree)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
         
         
@@ -174,12 +179,13 @@ class Skos2 {
                                 self.dataIsUnavailable=false
                                 viewController.performSegue(withIdentifier: "GO", sender: nil)
                             }
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                        SwiftSpinner.hide()
                     })
                     
                     
                 } else {
                     AGH_MobileError.ConnectionError(viewController)
+                    SwiftSpinner.hide()
                     
                 }
             }

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Hero
 class SpotsListTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var spotType: String = ""
@@ -15,6 +15,8 @@ class SpotsListTableViewController: UIViewController, UITableViewDelegate, UITab
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.hero.id="DetailList"
+
         
         if (spotType == "Wydziały" || spotType == "Akademiki") {
             listOfSpots = SpotDataSource.getSpotList(spotType: spotType)
@@ -22,6 +24,7 @@ class SpotsListTableViewController: UIViewController, UITableViewDelegate, UITab
             listOfSpots = SpotDataSource.sortByLocation(spotsList: SpotDataSource.getSpotList(spotType: spotType),
                                                     userLocation: MapViewController.getCurrentUserLocation())
         }
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -104,7 +107,8 @@ class SpotsListTableViewController: UIViewController, UITableViewDelegate, UITab
         if let destController = segue.destination as? MapViewController {
             let choice = (sender as! SpotsListTableViewCell).label.text!
             switch choice {
-                case "pokaż wszystkie":
+    
+            case "pokaż wszystkie":
                     destController.spots = listOfSpots
                     destController.spotType = "all"
                 default:

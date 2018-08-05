@@ -9,6 +9,7 @@
 import UIKit
 import TFHpple
 import Alamofire
+import SwiftSpinner
 class SKOS {
     
     var EmployeeList:[SKOSEmployee]=[]
@@ -22,7 +23,7 @@ class SKOS {
         redict=false
         redictionURL=nil
         dataIsUnavailable=false
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        SwiftSpinner.show("Proszę Czekać")
         guard let url = URL(string: "https://skos.agh.edu.pl/search/?letter=\(nazwisko)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
 
         
@@ -117,11 +118,13 @@ class SKOS {
                         }
                     
                     }
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    SwiftSpinner.hide()
+
                 })
                 
                 
             } else {
+                SwiftSpinner.hide()
                 AGH_MobileError.ConnectionError(viewController)
                 
             }
@@ -132,7 +135,7 @@ class SKOS {
         }
     }
     func wyswietlLitere(_ litera:String, viewController:UIViewController){
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        SwiftSpinner.show("Proszę Czekać")
         guard let url = URL(string: "https://skos.agh.edu.pl/search/?letter=\(litera)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
       
         Alamofire.request(url).responseString{ response in
@@ -152,15 +155,12 @@ class SKOS {
                     self.redict=true
                     self.redictionURL=statusCode.url
                 }
-                DispatchQueue.main.async(execute: { () -> Void in
-                    
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                })
+                SwiftSpinner.hide()
                 
                 
             } else {
                 AGH_MobileError.ConnectionError(viewController)
-
+                SwiftSpinner.hide()
          
             }
         }
@@ -172,7 +172,7 @@ class SKOS {
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         guard let url = URL(string: ((employeeName.link)?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!) else {return}
-       
+       SwiftSpinner.show("Proszę Czekać")
         Alamofire.request(url).responseString{ response in
             if let list = response.result.value ,let statusCode=response.response {
                 if let tmp=TFHpple(htmlData: list.data(using: String.Encoding.utf8)){
@@ -255,13 +255,14 @@ class SKOS {
                    
                 }
                 DispatchQueue.main.async(execute: { () -> Void in
+               SwiftSpinner.hide()
                     vc.reloadData()
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                })
+                    })
                 
                 
             } else {
                 AGH_MobileError.ConnectionError(vc)
+                    SwiftSpinner.hide()
 
             }
         }

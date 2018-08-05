@@ -12,5 +12,10 @@ target 'AGH_Mobile' do
   pod 'AlamofireObjectMapper'
   pod 'Charts'
   pod 'TFHpple'
-
+  pod 'SwiftMessages'
+  pod 'FoldingCell'
+  pod 'Hero'
+  pod 'Hue'
+  pod 'SwiftSpinner'
+  
 end
