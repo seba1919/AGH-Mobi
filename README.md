@@ -11,7 +11,7 @@ najlepiej by było gdyby jedna logiczna część zajmowałą jednen folder.
 -***Dla osób nie pracujących wcześniej z CocoaPods, należy otwierać projekt przy pomocy pliku .xcworkspace a nie .xcproject 
 od momentu w którym ten plik się pojawi (czyli gdy ktoś dołączy jakąś zewnętrzną bibliotekę), 
 otwieranie .xcproject spowoduje wtedy błąd kompilacji***  
-
+-[Jak pisać commit message](https://chris.beams.io/posts/git-commit/)
 
 
 ## Stara Informacja o tym jaki kiedyś był projekt ##
