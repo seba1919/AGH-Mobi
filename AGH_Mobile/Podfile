@@ -13,7 +13,6 @@ target 'AGH_Mobile' do
   pod 'Charts'
   pod 'TFHpple'
   pod 'SwiftMessages'
-  pod 'FoldingCell'
   pod 'Hero'
   pod 'Hue'
   pod 'SwiftSpinner'

@@ -32,7 +32,7 @@ class DegreeTableViewDataSource: SyllabusDataSource,UITableViewDataSource {
         let year=UserData.year
         guard let url = URL(string: "https://syllabuskrk.agh.edu.pl/\(year)/magnesite/api/faculties/\(validUrl)/study_plans".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else {return}
         SwiftSpinner.show("Proszę Czekać")
-        Alamofire.request(url, headers: ["Accept":"application/vnd.syllabus.agh.edu.pl.v2+json", "Accept-Language":UserData.language]).responseJSON{ response in
+        AF.request(url, headers: ["Accept":"application/vnd.syllabus.agh.edu.pl.v2+json", "Accept-Language":UserData.language]).responseJSON{ response in
                         SwiftSpinner.hide()
                         switch response.result {
                         case .success:

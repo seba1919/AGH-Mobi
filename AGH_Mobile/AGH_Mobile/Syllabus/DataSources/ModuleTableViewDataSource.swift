@@ -28,23 +28,26 @@ class ModuleTableViewDataSource: SyllabusDataSource, UITableViewDataSource {
             let url = URL(string: "https://syllabuskrk.agh.edu.pl/\(year)/magnesite/api/faculties/\(department)/study_plans/\(validUrl)/modules/".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
             SwiftSpinner.show("Proszę Czekać")
 
-        Alamofire.request(url, headers: ["Accept":"application/vnd.syllabus.agh.edu.pl.v2+json", "Accept-Language":UserData.language]).responseJSON{ response in
-            SwiftSpinner.hide()
-            switch response.result {
-            case .success:
-                self.handleJSON(response: response.result.value)
-                
-            case .failure(let error):
-                self.handleError(error: error)
-                let error = MessageView.viewFromNib(layout: .tabView)
-                error.configureTheme(.error)
-                error.configureContent(title: "Błąd", body: "Wystąpił problem z pobraniem danych.")
-                error.button?.setTitle("OK", for: .normal)
-                SwiftMessages.show(view: error)
-            }
             
+            AF.request(url, headers: ["Accept":"application/vnd.syllabus.agh.edu.pl.v2+json", "Accept-Language":UserData.language]).responseJSON
+                { response in
+                
+                    SwiftSpinner.hide()
+                    switch response.result {
+                    case .success:
+                    self.handleJSON(response: response.result.value)
+                    
+                    case .failure(let error):
+                    self.handleError(error: error)
+                    let error = MessageView.viewFromNib(layout: .tabView)
+                    error.configureTheme(.error)
+                    error.configureContent(title: "Błąd", body: "Wystąpił problem z pobraniem danych.")
+                    error.button?.setTitle("OK", for: .normal)
+                    SwiftMessages.show(view: error)
+                    }
+                
+                }
         }
-    }
     }
     
      private func handleJSON(response:Any?){

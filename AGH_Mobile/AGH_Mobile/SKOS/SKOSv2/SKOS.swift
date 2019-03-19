@@ -26,8 +26,7 @@ class SKOS {
         SwiftSpinner.show("Proszę Czekać")
         guard let url = URL(string: "https://skos.agh.edu.pl/search/?letter=\(nazwisko)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
 
-        
-        Alamofire.request(url).responseString{ response in
+        AF.request(url).responseString{ response in
             if let list = response.result.value ,let statusCode=response.response {
                 if let data=TFHpple(htmlData:list.data(using: String.Encoding.utf8) ).search(withXPathQuery: "//table[@class='lista-osob']//a") as? [TFHppleElement]{
                 if data.count>0{
@@ -138,7 +137,7 @@ class SKOS {
         SwiftSpinner.show("Proszę Czekać")
         guard let url = URL(string: "https://skos.agh.edu.pl/search/?letter=\(litera)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
       
-        Alamofire.request(url).responseString{ response in
+        AF.request(url).responseString{ response in
             if let list = response.result.value ,let statusCode=response.response {
                 if let data=TFHpple(htmlData: list.data(using: String.Encoding.utf8)).search(withXPathQuery: "//table[@class='lista-osob']//a") as? [TFHppleElement]{
                     if data.count>0{
@@ -172,7 +171,7 @@ class SKOS {
         
         guard let url = URL(string: ((employeeName.link)?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!) else {return}
        SwiftSpinner.show("Proszę Czekać")
-        Alamofire.request(url).responseString{ response in
+        AF.request(url).responseString{ response in
             if let list = response.result.value ,let statusCode=response.response {
                 if let tmp=TFHpple(htmlData: list.data(using: String.Encoding.utf8)){
                             if  let name=tmp.search(withXPathQuery: "//div[@class='c-col vcard']/h1") as? [TFHppleElement]{

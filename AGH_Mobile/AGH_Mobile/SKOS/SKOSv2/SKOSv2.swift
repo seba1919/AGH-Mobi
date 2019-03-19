@@ -10,13 +10,13 @@ import UIKit
 import TFHpple
 import Alamofire
 import SwiftSpinner
+
 class Skos2 {
     
     var EmployeeList:[SKOSEmployee]=[]
     var redict=false
     var redictionURL:URL?
     var dataIsUnavailable=false
-    
     
     func search(_ name:String,nazwisko:String,degree:String,viewController:TableViewController) {
         EmployeeList=[]
@@ -27,7 +27,7 @@ class Skos2 {
         guard let url = URL(string: "https://skos.agh.edu.pl/search/?letter=\(nazwisko)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
         
         
-        Alamofire.request(url).responseString{ response in
+        AF.request(url).responseString{ response in
             if let list = response.result.value ,let statusCode=response.response {
                 if let data=TFHpple(htmlData:list.data(using: String.Encoding.utf8) ).search(withXPathQuery: "//table[@class='lista-osob']//a") as? [TFHppleElement]{
                     if data.count>0{
@@ -141,8 +141,7 @@ class Skos2 {
 
         guard let url = URL(string: "https://skos.agh.edu.pl/search/?nazwisko=\(nazwisko)&imie=\(name)&tytul=\(degree)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
         
-        
-        Alamofire.request(url).responseString{ response in
+        AF.request(url).responseString{ response in
             if let list = response.result.value ,let statusCode=response.response {
                 if let data=TFHpple(htmlData:list.data(using: String.Encoding.utf8) ).search(withXPathQuery: "//table[@class='lista-osob']//a") as? [TFHppleElement]{
                     

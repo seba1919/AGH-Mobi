@@ -12,7 +12,7 @@ class AGHNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationBar.barTintColor=AGHColours.getNavigationBarColour()
-        let textAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         self.navigationBar.titleTextAttributes = textAttributes
         self.navigationBar.tintColor=UIColor.white
         // Do any additional setup after loading the view.
