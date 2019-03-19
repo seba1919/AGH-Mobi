@@ -195,9 +195,9 @@ class SKOS {
                                 for element in info{
                                     if let tmp=(element as AnyObject).children{
                                     var i=0
-                                    while(i<tmp.count-1){
+                                        while(i<tmp!.count-1){
                                     
-                                        employeeName.basicData.append([(tmp[i] as AnyObject).content : (tmp[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
+                                            employeeName.basicData.append([(tmp![i] as AnyObject).content : (tmp?[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
                                         i=i+2
                                     }
                                 }
@@ -209,8 +209,8 @@ class SKOS {
                                     for element in specialRole{
                                         if let tmp=(element as AnyObject).children{
                                             var i=0
-                                            while(i<tmp.count-1){
-                                                employeeName.jobTitle.append([(tmp[i] as AnyObject).content : (tmp[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
+                                            while(i<tmp!.count-1){
+                                                employeeName.jobTitle.append([(tmp![i] as AnyObject).content : (tmp?[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
                                                 i+=2
                                             }
                                     }
