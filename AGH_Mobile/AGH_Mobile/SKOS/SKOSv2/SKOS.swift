@@ -26,7 +26,8 @@ class SKOS {
         SwiftSpinner.show("Proszę Czekać")
         guard let url = URL(string: "https://skos.agh.edu.pl/search/?letter=\(nazwisko)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
 
-        AF.request(url).responseString{ response in
+        
+        Alamofire.request(url).responseString{ response in
             if let list = response.result.value ,let statusCode=response.response {
                 if let data=TFHpple(htmlData:list.data(using: String.Encoding.utf8) ).search(withXPathQuery: "//table[@class='lista-osob']//a") as? [TFHppleElement]{
                 if data.count>0{
@@ -137,7 +138,7 @@ class SKOS {
         SwiftSpinner.show("Proszę Czekać")
         guard let url = URL(string: "https://skos.agh.edu.pl/search/?letter=\(litera)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) else{return}
       
-        AF.request(url).responseString{ response in
+        Alamofire.request(url).responseString{ response in
             if let list = response.result.value ,let statusCode=response.response {
                 if let data=TFHpple(htmlData: list.data(using: String.Encoding.utf8)).search(withXPathQuery: "//table[@class='lista-osob']//a") as? [TFHppleElement]{
                     if data.count>0{
@@ -171,7 +172,7 @@ class SKOS {
         
         guard let url = URL(string: ((employeeName.link)?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!) else {return}
        SwiftSpinner.show("Proszę Czekać")
-        AF.request(url).responseString{ response in
+        Alamofire.request(url).responseString{ response in
             if let list = response.result.value ,let statusCode=response.response {
                 if let tmp=TFHpple(htmlData: list.data(using: String.Encoding.utf8)){
                             if  let name=tmp.search(withXPathQuery: "//div[@class='c-col vcard']/h1") as? [TFHppleElement]{
@@ -194,9 +195,9 @@ class SKOS {
                                 for element in info{
                                     if let tmp=(element as AnyObject).children{
                                     var i=0
-                                        while(i<tmp!.count-1){
+                                    while(i<tmp.count-1){
                                     
-                                            employeeName.basicData.append([(tmp![i] as AnyObject).content : (tmp?[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
+                                        employeeName.basicData.append([(tmp[i] as AnyObject).content : (tmp[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
                                         i=i+2
                                     }
                                 }
@@ -208,8 +209,8 @@ class SKOS {
                                     for element in specialRole{
                                         if let tmp=(element as AnyObject).children{
                                             var i=0
-                                            while(i<tmp!.count-1){
-                                                employeeName.jobTitle.append([(tmp![i] as AnyObject).content : (tmp?[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
+                                            while(i<tmp.count-1){
+                                                employeeName.jobTitle.append([(tmp[i] as AnyObject).content : (tmp[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
                                                 i+=2
                                             }
                                     }
