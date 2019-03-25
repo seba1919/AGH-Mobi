@@ -13,6 +13,8 @@ od momentu w którym ten plik się pojawi (czyli gdy ktoś dołączy jakąś zew
 otwieranie .xcproject spowoduje wtedy błąd kompilacji***  
 -[Jak pisać commit message](https://chris.beams.io/posts/git-commit/)
 
+- Należy ustawić kompilację projektu na Swift 4.0 oraz w bibliotece SwiftSpinner na Swift 4.2 
+
 
 ## Stara Informacja o tym jaki kiedyś był projekt ##
 
