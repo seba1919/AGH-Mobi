@@ -9,6 +9,10 @@
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
 Pods/
 
+### OS generated files ###
+.DS_Store
+.DS_Store?
+
 ### Xcode ###
 # Xcode
 #
@@ -40,5 +44,5 @@ DerivedData/
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
-.DS_Store
+
 # End of https://www.gitignore.io/api/xcode,cocoapods
