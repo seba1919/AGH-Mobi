@@ -206,7 +206,7 @@ class SKOS {
 
                                 if  let specialRole=data[1].firstChild.children,specialRole.count>0{
                                     for element in specialRole{
-                                        if let tmp=(element as AnyObject).children{
+                                        if let tmp=(element as? AnyObject)!.children{
                                             var i=0
                                             while(i<tmp!.count-1){
                                                 employeeName.jobTitle.append([(tmp![i] as AnyObject).content : (tmp?[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
