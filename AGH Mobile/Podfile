@@ -1,0 +1,24 @@
+project 'AGH Mobile.xcodeproj'
+
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'AGH Mobile' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for AGH Mobile
+  pod 'Alamofire', '~> 5.0.0-beta.3'
+  pod 'SwiftyJSON', '~> 4.2'
+
+  target 'AGH MobileTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'AGH MobileUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
