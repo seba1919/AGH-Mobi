@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C74224BDCF7008340B3 /* AppDelegate.swift */; };
-		61AD7C77224BDCF7008340B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C76224BDCF7008340B3 /* ViewController.swift */; };
-		61AD7C7A224BDCF7008340B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AD7C78224BDCF7008340B3 /* Main.storyboard */; };
 		61AD7C7C224BDCF7008340B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61AD7C7B224BDCF7008340B3 /* Assets.xcassets */; };
-		61AD7C7F224BDCF7008340B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61AD7C7D224BDCF7008340B3 /* LaunchScreen.storyboard */; };
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
 		61AD7C95224BDCF8008340B3 /* AGH_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C94224BDCF8008340B3 /* AGH_MobileUITests.swift */; };
 		76ED7A09ADF48FAF996EEFD2 /* Pods_AGH_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */; };
@@ -43,10 +40,7 @@
 		57B0E798F6F514B98BE09314 /* Pods-AGH MobileUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.release.xcconfig"; sourceTree = "<group>"; };
 		61AD7C71224BDCF7008340B3 /* AGH Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AGH Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AD7C74224BDCF7008340B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		61AD7C76224BDCF7008340B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		61AD7C79224BDCF7008340B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61AD7C7B224BDCF7008340B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		61AD7C7E224BDCF7008340B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		61AD7C80224BDCF7008340B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61AD7C85224BDCF8008340B3 /* AGH MobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AGH MobileTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGH_MobileTests.swift; sourceTree = "<group>"; };
@@ -105,9 +99,9 @@
 				61AD7C73224BDCF7008340B3 /* AGH Mobile */,
 				61AD7C88224BDCF8008340B3 /* AGH MobileTests */,
 				61AD7C93224BDCF8008340B3 /* AGH MobileUITests */,
-				61AD7C72224BDCF7008340B3 /* Products */,
-				C08FECE8D4AF6BDCAEAA9087 /* Pods */,
 				00254FAC30A9861E5494FE43 /* Frameworks */,
+				C08FECE8D4AF6BDCAEAA9087 /* Pods */,
+				61AD7C72224BDCF7008340B3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,12 +118,13 @@
 		61AD7C73224BDCF7008340B3 /* AGH Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				61AD7C74224BDCF7008340B3 /* AppDelegate.swift */,
-				61AD7C76224BDCF7008340B3 /* ViewController.swift */,
-				61AD7C78224BDCF7008340B3 /* Main.storyboard */,
-				61AD7C7B224BDCF7008340B3 /* Assets.xcassets */,
-				61AD7C7D224BDCF7008340B3 /* LaunchScreen.storyboard */,
-				61AD7C80224BDCF7008340B3 /* Info.plist */,
+				61ECE897224D1F2300A9A806 /* AppDelegate */,
+				61ECE89C224D200200A9A806 /* Controllers */,
+				61ECE898224D1F5500A9A806 /* Models */,
+				61ECE899224D1F5F00A9A806 /* Networking */,
+				61ECE89A224D1F7B00A9A806 /* Resources */,
+				61ECE89D224D201500A9A806 /* ViewModels */,
+				61ECE89B224D1FC500A9A806 /* Views */,
 			);
 			path = "AGH Mobile";
 			sourceTree = "<group>";
@@ -150,6 +145,58 @@
 				61AD7C96224BDCF8008340B3 /* Info.plist */,
 			);
 			path = "AGH MobileUITests";
+			sourceTree = "<group>";
+		};
+		61ECE897224D1F2300A9A806 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				61AD7C74224BDCF7008340B3 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		61ECE898224D1F5500A9A806 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		61ECE899224D1F5F00A9A806 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		61ECE89A224D1F7B00A9A806 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				61AD7C7B224BDCF7008340B3 /* Assets.xcassets */,
+				61AD7C80224BDCF7008340B3 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		61ECE89B224D1FC500A9A806 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		61ECE89C224D200200A9A806 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		61ECE89D224D201500A9A806 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		C08FECE8D4AF6BDCAEAA9087 /* Pods */ = {
@@ -273,9 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61AD7C7F224BDCF7008340B3 /* LaunchScreen.storyboard in Resources */,
 				61AD7C7C224BDCF7008340B3 /* Assets.xcassets in Resources */,
-				61AD7C7A224BDCF7008340B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +422,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61AD7C77224BDCF7008340B3 /* ViewController.swift in Sources */,
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,25 +456,6 @@
 			targetProxy = 61AD7C91224BDCF8008340B3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		61AD7C78224BDCF7008340B3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				61AD7C79224BDCF7008340B3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		61AD7C7D224BDCF7008340B3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				61AD7C7E224BDCF7008340B3 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		61AD7C97224BDCF8008340B3 /* Debug */ = {
@@ -556,7 +581,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RSVCT9A9H;
-				INFOPLIST_FILE = "AGH Mobile/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -575,7 +600,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RSVCT9A9H;
-				INFOPLIST_FILE = "AGH Mobile/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
