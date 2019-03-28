@@ -11,6 +11,12 @@
 		61AD7C7C224BDCF7008340B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61AD7C7B224BDCF7008340B3 /* Assets.xcassets */; };
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
 		61AD7C95224BDCF8008340B3 /* AGH_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C94224BDCF8008340B3 /* AGH_MobileUITests.swift */; };
+		61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */; };
+		61ECE8AE224D6A7400A9A806 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8AD224D6A7400A9A806 /* UserViewController.swift */; };
+		61ECE8B0224D6A8200A9A806 /* StudiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8AF224D6A8200A9A806 /* StudiesViewController.swift */; };
+		61ECE8B2224D6A9900A9A806 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8B1224D6A9900A9A806 /* MapsViewController.swift */; };
+		61ECE8B4224D6AAA00A9A806 /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8B3224D6AAA00A9A806 /* InformationsViewController.swift */; };
+		61ECE8B6224D6AB600A9A806 /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8B5224D6AB600A9A806 /* ForYouViewController.swift */; };
 		76ED7A09ADF48FAF996EEFD2 /* Pods_AGH_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */; };
 		8F3A8D473740ED8EC2AF437E /* Pods_AGH_MobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */; };
 		AA7425C01AFAEC2A6CE94699 /* Pods_AGH_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9454BF74EFD6E6A8CE744B70 /* Pods_AGH_Mobile.framework */; };
@@ -48,6 +54,12 @@
 		61AD7C90224BDCF8008340B3 /* AGH MobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AGH MobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AD7C94224BDCF8008340B3 /* AGH_MobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGH_MobileUITests.swift; sourceTree = "<group>"; };
 		61AD7C96224BDCF8008340B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		61ECE8AD224D6A7400A9A806 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		61ECE8AF224D6A8200A9A806 /* StudiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudiesViewController.swift; sourceTree = "<group>"; };
+		61ECE8B1224D6A9900A9A806 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		61ECE8B3224D6AAA00A9A806 /* InformationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
+		61ECE8B5224D6AB600A9A806 /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		77F59FBE253B8BA7BCED5272 /* Pods-AGH MobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_MobileUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9454BF74EFD6E6A8CE744B70 /* Pods_AGH_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,12 +131,12 @@
 			isa = PBXGroup;
 			children = (
 				61ECE897224D1F2300A9A806 /* AppDelegate */,
-				61ECE89C224D200200A9A806 /* Controllers */,
-				61ECE898224D1F5500A9A806 /* Models */,
-				61ECE899224D1F5F00A9A806 /* Networking */,
+				61ECE89C224D200200A9A806 /* Controller */,
+				61ECE898224D1F5500A9A806 /* Model */,
 				61ECE89A224D1F7B00A9A806 /* Resources */,
-				61ECE89D224D201500A9A806 /* ViewModels */,
-				61ECE89B224D1FC500A9A806 /* Views */,
+				61ECE899224D1F5F00A9A806 /* Service */,
+				61ECE89B224D1FC500A9A806 /* View */,
+				61ECE89D224D201500A9A806 /* View Model */,
 			);
 			path = "AGH Mobile";
 			sourceTree = "<group>";
@@ -155,18 +167,18 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
-		61ECE898224D1F5500A9A806 /* Models */ = {
+		61ECE898224D1F5500A9A806 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		61ECE899224D1F5F00A9A806 /* Networking */ = {
+		61ECE899224D1F5F00A9A806 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Networking;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		61ECE89A224D1F7B00A9A806 /* Resources */ = {
@@ -178,25 +190,112 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		61ECE89B224D1FC500A9A806 /* Views */ = {
+		61ECE89B224D1FC500A9A806 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				61ECE8A7224D699C00A9A806 /* For You */,
+				61ECE8AB224D69D600A9A806 /* Studies */,
+				61ECE8AA224D69CE00A9A806 /* Maps */,
+				61ECE8A8224D69B500A9A806 /* Informations */,
+				61ECE8AC224D69DD00A9A806 /* User */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
-		61ECE89C224D200200A9A806 /* Controllers */ = {
+		61ECE89C224D200200A9A806 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		61ECE89D224D201500A9A806 /* ViewModels */ = {
+		61ECE89D224D201500A9A806 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = ViewModels;
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		61ECE8A7224D699C00A9A806 /* For You */ = {
+			isa = PBXGroup;
+			children = (
+				61ECE8BB224D6AE600A9A806 /* Controller */,
+			);
+			path = "For You";
+			sourceTree = "<group>";
+		};
+		61ECE8A8224D69B500A9A806 /* Informations */ = {
+			isa = PBXGroup;
+			children = (
+				61ECE8BA224D6AE200A9A806 /* Controller */,
+			);
+			path = Informations;
+			sourceTree = "<group>";
+		};
+		61ECE8AA224D69CE00A9A806 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				61ECE8B9224D6ADF00A9A806 /* Controller */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		61ECE8AB224D69D600A9A806 /* Studies */ = {
+			isa = PBXGroup;
+			children = (
+				61ECE8B8224D6ADB00A9A806 /* Controller */,
+			);
+			path = Studies;
+			sourceTree = "<group>";
+		};
+		61ECE8AC224D69DD00A9A806 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				61ECE8B7224D6ABC00A9A806 /* Controller */,
+			);
+			name = User;
+			path = "Użytkownik";
+			sourceTree = "<group>";
+		};
+		61ECE8B7224D6ABC00A9A806 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				61ECE8AD224D6A7400A9A806 /* UserViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		61ECE8B8224D6ADB00A9A806 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				61ECE8AF224D6A8200A9A806 /* StudiesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		61ECE8B9224D6ADF00A9A806 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				61ECE8B1224D6A9900A9A806 /* MapsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		61ECE8BA224D6AE200A9A806 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				61ECE8B3224D6AAA00A9A806 /* InformationsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		61ECE8BB224D6AE600A9A806 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				61ECE8B5224D6AB600A9A806 /* ForYouViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		C08FECE8D4AF6BDCAEAA9087 /* Pods */ = {
@@ -280,7 +379,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "AGH?";
+				ORGANIZATIONNAME = "AGH University of Science and Technology";
 				TargetAttributes = {
 					61AD7C70224BDCF7008340B3 = {
 						CreatedOnToolsVersion = 10.2;
@@ -422,6 +521,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61ECE8B4224D6AAA00A9A806 /* InformationsViewController.swift in Sources */,
+				61ECE8B2224D6A9900A9A806 /* MapsViewController.swift in Sources */,
+				61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */,
+				61ECE8B6224D6AB600A9A806 /* ForYouViewController.swift in Sources */,
+				61ECE8AE224D6A7400A9A806 /* UserViewController.swift in Sources */,
+				61ECE8B0224D6A8200A9A806 /* StudiesViewController.swift in Sources */,
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

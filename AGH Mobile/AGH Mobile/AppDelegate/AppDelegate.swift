@@ -3,7 +3,7 @@
 //  AGH Mobile
 //
 //  Created by Mateusz Bąk on 27/03/2019.
-//  Copyright © 2019 AGH?. All rights reserved.
+//  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
 import UIKit
@@ -11,10 +11,20 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    static var shared: AppDelegate? {
+        return UIApplication.shared.delegate as? AppDelegate
+    }
+    
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        
+        window?.rootViewController = HomeTabBarController()
+        
         // Override point for customization after application launch.
         return true
     }
