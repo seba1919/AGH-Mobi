@@ -7,3 +7,11 @@
 //
 
 import UIKit
+
+class ForYouView: UIView {
+    
+    override func awakeFromNib() {
+        backgroundColor = .red
+    }
+    
+}
