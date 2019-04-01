@@ -10,10 +10,9 @@ import UIKit
 
 class InformationsViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-    }
+    var infromationsView: InformationsView { return self.view as! InformationsView }
     
+    override func loadView() {
+        self.view = InformationsView(frame: UIScreen.main.bounds)
+    }
 }

@@ -1,18 +1,18 @@
 //
-//  ForYouView.swift
+//  InformationsView.swift
 //  AGH Mobile
 //
-//  Created by Mateusz Bąk on 31/03/2019.
+//  Created by Mateusz Bąk on 01/04/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
 import UIKit
 
-class ForYouView: UIView {
+class InformationsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .darkGray
+        self.backgroundColor = .gray
     }
     
     required init?(coder aDecoder: NSCoder) {

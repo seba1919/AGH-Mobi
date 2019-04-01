@@ -10,10 +10,10 @@ import UIKit
 
 class MapsViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    var mapsView: MapsView { return self.view as! MapsView }
+    
+    override func loadView() {
+        self.view = MapsView(frame: UIScreen.main.bounds)
     }
-
+    
 }

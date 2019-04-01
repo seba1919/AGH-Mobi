@@ -10,10 +10,10 @@ import UIKit
 
 class StudiesViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+    var studiesView: StudiesView { return self.view as! StudiesView }
+    
+    override func loadView() {
+        self.view = StudiesView(frame: UIScreen.main.bounds)
     }
     
 }

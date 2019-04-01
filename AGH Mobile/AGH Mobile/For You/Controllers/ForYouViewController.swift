@@ -10,30 +10,10 @@ import UIKit
 
 class ForYouViewController: UIViewController {
 
-//    override func loadView() {
-//        let castomView = ForYouView()
-//        view = castomView
-//    }
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//    }
-   
+    var forYouView: ForYouView { return self.view as! ForYouView }
     
-    let myView = ForYouView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupMyView()
-    }
-    
-    private func setupMyView() {
-        view.addSubview(myView)
-        //10 lines of constraints or so
-        //myView.delegate = self
-        //We now have both 'view' and 'myView'...
+    override func loadView() {
+        self.view = ForYouView(frame: UIScreen.main.bounds)
     }
     
 }

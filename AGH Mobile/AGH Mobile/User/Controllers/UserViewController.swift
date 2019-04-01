@@ -10,10 +10,10 @@ import UIKit
 
 class UserViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+    var userView: UserView { return self.view as! UserView }
+    
+    override func loadView() {
+        self.view = UserView(frame: UIScreen.main.bounds)
     }
     
 }
