@@ -3,7 +3,7 @@
 //  AGH MobileTests
 //
 //  Created by Mateusz Bąk on 27/03/2019.
-//  Copyright © 2019 AGH?. All rights reserved.
+//  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
 import XCTest
