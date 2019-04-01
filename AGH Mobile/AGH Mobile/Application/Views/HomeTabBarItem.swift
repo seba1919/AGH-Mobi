@@ -6,7 +6,13 @@
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// MARK: - Import
+
 import UIKit
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// MARK: - Implementation
 
 class HomeTabBarItem: UITabBarItem {
     
