@@ -12,7 +12,7 @@ class MapsView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .lightGray
+        self.backgroundColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {

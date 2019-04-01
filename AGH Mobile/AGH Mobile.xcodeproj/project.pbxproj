@@ -156,45 +156,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		611F4AEC2250DA830056416E /* Template Group */ = {
-			isa = PBXGroup;
-			children = (
-				611F4AED2250DAB40056416E /* Controllers */,
-				611F4AEE2250DABD0056416E /* Models */,
-				611F4AF02250DAF10056416E /* Resources */,
-				611F4AEF2250DAE30056416E /* Views */,
-			);
-			path = "Template Group";
-			sourceTree = "<group>";
-		};
-		611F4AED2250DAB40056416E /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		611F4AEE2250DABD0056416E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		611F4AEF2250DAE30056416E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		611F4AF02250DAF10056416E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		611F4AFB2250E0480056416E /* Informations */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +361,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		6124132622526E70007D04C0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		61AD7C68224BDCF7008340B3 = {
 			isa = PBXGroup;
 			children = (
@@ -432,7 +400,7 @@
 				611F4AFB2250E0480056416E /* Informations */,
 				611F4B012250E0480056416E /* User */,
 				61ECE899224D1F5F00A9A806 /* Service */,
-				611F4AEC2250DA830056416E /* Template Group */,
+				6124132622526E70007D04C0 /* Extensions */,
 			);
 			path = "AGH Mobile";
 			sourceTree = "<group>";
