@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B6B0147225C9960001BF0F1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0146225C9960001BF0F1 /* Model.swift */; };
+		4B6B0149225C9B70001BF0F1 /* WD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0148225C9B70001BF0F1 /* WD.swift */; };
+		4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B014D225CC9A1001BF0F1 /* Course.swift */; };
+		4B6B0150225CCBC5001BF0F1 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B014F225CCBC5001BF0F1 /* Grade.swift */; };
+		4B6B0152225CCD7C001BF0F1 /* Grades.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0151225CCD7C001BF0F1 /* Grades.swift */; };
+		4B6B0154225CCE2A001BF0F1 /* CourseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0153225CCE2A001BF0F1 /* CourseType.swift */; };
+		4B6B0157225CD289001BF0F1 /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0156225CD289001BF0F1 /* TestModel.swift */; };
 		611F4B192250E0480056416E /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4AFF2250E0480056416E /* InformationsViewController.swift */; };
 		611F4B1A2250E0480056416E /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B052250E0480056416E /* UserViewController.swift */; };
 		611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B0B2250E0480056416E /* MapsViewController.swift */; };
@@ -49,6 +56,13 @@
 /* Begin PBXFileReference section */
 		03112BCDD937195F7F665054 /* Pods-AGH Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		3A8133F53DCB3FBF2ECD7701 /* Pods-AGH Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile.release.xcconfig"; sourceTree = "<group>"; };
+		4B6B0146225C9960001BF0F1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4B6B0148225C9B70001BF0F1 /* WD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WD.swift; sourceTree = "<group>"; };
+		4B6B014D225CC9A1001BF0F1 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		4B6B014F225CCBC5001BF0F1 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
+		4B6B0151225CCD7C001BF0F1 /* Grades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grades.swift; sourceTree = "<group>"; };
+		4B6B0153225CCE2A001BF0F1 /* CourseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseType.swift; sourceTree = "<group>"; };
+		4B6B0156225CD289001BF0F1 /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B0E798F6F514B98BE09314 /* Pods-AGH MobileUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.release.xcconfig"; sourceTree = "<group>"; };
 		611F4AFF2250E0480056416E /* InformationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +133,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4B6B0143225C98B6001BF0F1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		4B6B0144225C98FC001BF0F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B6B0155225CD27A001BF0F1 /* TestModel */,
+				4B6B0145225C991D001BF0F1 /* v2 */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B6B0145225C991D001BF0F1 /* v2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = v2;
+			sourceTree = "<group>";
+		};
+		4B6B014C225CC7C4001BF0F1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4B6B014F225CCBC5001BF0F1 /* Grade.swift */,
+				4B6B014D225CC9A1001BF0F1 /* Course.swift */,
+				4B6B0151225CCD7C001BF0F1 /* Grades.swift */,
+				4B6B0153225CCE2A001BF0F1 /* CourseType.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4B6B0155225CD27A001BF0F1 /* TestModel */ = {
+			isa = PBXGroup;
+			children = (
+				4B6B0156225CD289001BF0F1 /* TestModel.swift */,
+			);
+			path = TestModel;
+			sourceTree = "<group>";
+		};
 		611F4AE62250D9A80056416E /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,25 +216,9 @@
 			isa = PBXGroup;
 			children = (
 				611F4AFE2250E0480056416E /* Controllers */,
-				611F4AFD2250E0480056416E /* Models */,
-				611F4AFC2250E0480056416E /* Resources */,
 				611F4B002250E0480056416E /* Views */,
 			);
 			path = Informations;
-			sourceTree = "<group>";
-		};
-		611F4AFC2250E0480056416E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		611F4AFD2250E0480056416E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		611F4AFE2250E0480056416E /* Controllers */ = {
@@ -201,25 +241,9 @@
 			isa = PBXGroup;
 			children = (
 				611F4B042250E0480056416E /* Controllers */,
-				611F4B032250E0480056416E /* Models */,
-				611F4B022250E0480056416E /* Resources */,
 				611F4B062250E0480056416E /* Views */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		611F4B022250E0480056416E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		611F4B032250E0480056416E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		611F4B042250E0480056416E /* Controllers */ = {
@@ -242,25 +266,9 @@
 			isa = PBXGroup;
 			children = (
 				611F4B0A2250E0480056416E /* Controllers */,
-				611F4B092250E0480056416E /* Models */,
-				611F4B082250E0480056416E /* Resources */,
 				611F4B0C2250E0480056416E /* Views */,
 			);
 			path = Maps;
-			sourceTree = "<group>";
-		};
-		611F4B082250E0480056416E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		611F4B092250E0480056416E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		611F4B0A2250E0480056416E /* Controllers */ = {
@@ -283,25 +291,9 @@
 			isa = PBXGroup;
 			children = (
 				611F4B102250E0480056416E /* Controllers */,
-				611F4B0F2250E0480056416E /* Models */,
-				611F4B0E2250E0480056416E /* Resources */,
 				611F4B122250E0480056416E /* Views */,
 			);
 			path = Studies;
-			sourceTree = "<group>";
-		};
-		611F4B0E2250E0480056416E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		611F4B0F2250E0480056416E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		611F4B102250E0480056416E /* Controllers */ = {
@@ -324,25 +316,9 @@
 			isa = PBXGroup;
 			children = (
 				611F4B162250E0480056416E /* Controllers */,
-				611F4B152250E0480056416E /* Models */,
-				611F4B142250E0480056416E /* Resources */,
 				611F4B182250E0480056416E /* Views */,
 			);
 			path = "For You";
-			sourceTree = "<group>";
-		};
-		611F4B142250E0480056416E /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		611F4B152250E0480056416E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		611F4B162250E0480056416E /* Controllers */ = {
@@ -359,13 +335,6 @@
 				611F4B1E225104240056416E /* ForYouView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		6124132622526E70007D04C0 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		61AD7C68224BDCF7008340B3 = {
@@ -393,14 +362,17 @@
 		61AD7C73224BDCF7008340B3 /* AGH Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				4B6B014C225CC7C4001BF0F1 /* Data */,
+				4B6B0144225C98FC001BF0F1 /* Model */,
+				4B6B0143225C98B6001BF0F1 /* UI */,
 				611F4AE62250D9A80056416E /* Application */,
 				611F4B132250E0480056416E /* For You */,
 				611F4B0D2250E0480056416E /* Studies */,
 				611F4B072250E0480056416E /* Maps */,
 				611F4AFB2250E0480056416E /* Informations */,
 				611F4B012250E0480056416E /* User */,
-				61ECE899224D1F5F00A9A806 /* Service */,
-				6124132622526E70007D04C0 /* Extensions */,
+				4B6B0146225C9960001BF0F1 /* Model.swift */,
+				4B6B0148225C9B70001BF0F1 /* WD.swift */,
 			);
 			path = "AGH Mobile";
 			sourceTree = "<group>";
@@ -429,13 +401,6 @@
 				61AD7C74224BDCF7008340B3 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		61ECE899224D1F5F00A9A806 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		61ECE89A224D1F7B00A9A806 /* Resources */ = {
@@ -669,12 +634,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */,
+				4B6B0147225C9960001BF0F1 /* Model.swift in Sources */,
+				4B6B0157225CD289001BF0F1 /* TestModel.swift in Sources */,
 				61241323225267E3007D04C0 /* InformationsView.swift in Sources */,
 				611F4B1A2250E0480056416E /* UserViewController.swift in Sources */,
+				4B6B0152225CCD7C001BF0F1 /* Grades.swift in Sources */,
 				611F4B1D2250E0480056416E /* ForYouViewController.swift in Sources */,
 				611F4B1F225104240056416E /* ForYouView.swift in Sources */,
 				6124131F22526752007D04C0 /* StudiesView.swift in Sources */,
 				61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */,
+				4B6B0154225CCE2A001BF0F1 /* CourseType.swift in Sources */,
 				611F4B192250E0480056416E /* InformationsViewController.swift in Sources */,
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 				611F4B1C2250E0480056416E /* StudiesViewController.swift in Sources */,
@@ -682,6 +652,8 @@
 				61241321225267A9007D04C0 /* MapsView.swift in Sources */,
 				611F4B6422511F3C0056416E /* HomeTabBar.swift in Sources */,
 				611F4B68225127F80056416E /* HomeTabBarItem.swift in Sources */,
+				4B6B0149225C9B70001BF0F1 /* WD.swift in Sources */,
+				4B6B0150225CCBC5001BF0F1 /* Grade.swift in Sources */,
 				61241325225267FC007D04C0 /* UserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -840,13 +812,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9RSVCT9A9H;
+				DEVELOPMENT_TEAM = 46FR58MBB3;
 				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Application/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "pl.edu.agh.mackn.AGH-Mobile";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.edu.agh.mackn.AGH-Mobi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -859,13 +832,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9RSVCT9A9H;
+				DEVELOPMENT_TEAM = 46FR58MBB3;
 				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Application/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "pl.edu.agh.mackn.AGH-Mobile";
+				PRODUCT_BUNDLE_IDENTIFIER = "pl.edu.agh.mackn.AGH-Mobi";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
