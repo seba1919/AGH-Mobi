@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4B6B0147225C9960001BF0F1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0146225C9960001BF0F1 /* Model.swift */; };
+		4B6B0147225C9960001BF0F1 /* ModelWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0146225C9960001BF0F1 /* ModelWD.swift */; };
 		4B6B0149225C9B70001BF0F1 /* WD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0148225C9B70001BF0F1 /* WD.swift */; };
 		4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B014D225CC9A1001BF0F1 /* Course.swift */; };
 		4B6B0150225CCBC5001BF0F1 /* Grade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B014F225CCBC5001BF0F1 /* Grade.swift */; };
@@ -56,7 +56,7 @@
 /* Begin PBXFileReference section */
 		03112BCDD937195F7F665054 /* Pods-AGH Mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH Mobile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		3A8133F53DCB3FBF2ECD7701 /* Pods-AGH Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile.release.xcconfig"; sourceTree = "<group>"; };
-		4B6B0146225C9960001BF0F1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4B6B0146225C9960001BF0F1 /* ModelWD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWD.swift; sourceTree = "<group>"; };
 		4B6B0148225C9B70001BF0F1 /* WD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WD.swift; sourceTree = "<group>"; };
 		4B6B014D225CC9A1001BF0F1 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		4B6B014F225CCBC5001BF0F1 /* Grade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grade.swift; sourceTree = "<group>"; };
@@ -140,13 +140,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		4B6B0144225C98FC001BF0F1 /* Model */ = {
+		4B6B0144225C98FC001BF0F1 /* Dziekanat */ = {
 			isa = PBXGroup;
 			children = (
 				4B6B0155225CD27A001BF0F1 /* TestModel */,
 				4B6B0145225C991D001BF0F1 /* v2 */,
 			);
-			path = Model;
+			path = Dziekanat;
 			sourceTree = "<group>";
 		};
 		4B6B0145225C991D001BF0F1 /* v2 */ = {
@@ -363,7 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				4B6B014C225CC7C4001BF0F1 /* Data */,
-				4B6B0144225C98FC001BF0F1 /* Model */,
+				4B6B0144225C98FC001BF0F1 /* Dziekanat */,
 				4B6B0143225C98B6001BF0F1 /* UI */,
 				611F4AE62250D9A80056416E /* Application */,
 				611F4B132250E0480056416E /* For You */,
@@ -371,7 +371,7 @@
 				611F4B072250E0480056416E /* Maps */,
 				611F4AFB2250E0480056416E /* Informations */,
 				611F4B012250E0480056416E /* User */,
-				4B6B0146225C9960001BF0F1 /* Model.swift */,
+				4B6B0146225C9960001BF0F1 /* ModelWD.swift */,
 				4B6B0148225C9B70001BF0F1 /* WD.swift */,
 			);
 			path = "AGH Mobile";
@@ -635,7 +635,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */,
-				4B6B0147225C9960001BF0F1 /* Model.swift in Sources */,
+				4B6B0147225C9960001BF0F1 /* ModelWD.swift in Sources */,
 				4B6B0157225CD289001BF0F1 /* TestModel.swift in Sources */,
 				61241323225267E3007D04C0 /* InformationsView.swift in Sources */,
 				611F4B1A2250E0480056416E /* UserViewController.swift in Sources */,

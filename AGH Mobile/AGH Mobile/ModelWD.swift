@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol Model {
+protocol ModelWD {
     func getGrades() -> Grades
+    
+    
 }

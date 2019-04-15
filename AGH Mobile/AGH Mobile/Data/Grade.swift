@@ -13,6 +13,6 @@ struct Grade {
     public var term1, term2, term3 : Double? // terminy
     public var issuedBy : String // wystawil
     public var type : CourseType
-    public var groupShort : String // skrot grupy
-    public var hoursAmount : Int
+//    public var groupShort : String // skrot grupy
+//    public var hoursAmount : Int
 }
