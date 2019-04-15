@@ -1,15 +1,13 @@
 //
-//  Model.swift
+//  ModelSkos.swift
 //  AGH Mobile
 //
-//  Created by Sebastian Wiatrzyk on 09/04/2019.
+//  Created by Sebastian Wiatrzyk on 15/04/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
 import Foundation
 
-protocol ModelWD {
-    func getGrades() -> Grades
-    
-    
+protocol ModelSkos {
+    func getSkos() -> [Employee]
 }

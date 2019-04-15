@@ -1,5 +1,5 @@
 //
-//  WD.swift
+//  Model.swift
 //  AGH Mobile
 //
 //  Created by Sebastian Wiatrzyk on 09/04/2019.
@@ -8,9 +8,6 @@
 
 import Foundation
 
-final class WD {
-    private static var model = TestModel()
-    public static func getGrades() -> Grades {
-        return model.getGrades()
-    }
+protocol ModelWD {
+    func getGrades() -> Grades
 }

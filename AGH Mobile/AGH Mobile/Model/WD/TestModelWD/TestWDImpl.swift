@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class TestModel : Model {
+final class TestWDImpl : ModelWD {
     func getGrades() -> Grades {
         let ex1 = Course(
             grades: [Grade(formOfClasses: "Ćwiczenia audytoryjne", term1: 3.5, term2: nil, term3: nil, issuedBy: "dr inż. Maciej Gierdziewicz", type: CourseType.Retake), Grade(formOfClasses: "Egzamin", term1: 5.0, term2: nil, term3: nil, issuedBy: "dr hab. Konrad Kułaowski", type: CourseType.Retake)], courseName: "Algorytmy i struktury danych", ects: 4, finalGrade: 4.5)
