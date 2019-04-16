@@ -20,7 +20,7 @@ class InformationsView: UIView {
         super.init(frame: frame)
         
         // Setup background color to distinguish in TabBar
-        self.backgroundColor = .gray
+        self.backgroundColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {

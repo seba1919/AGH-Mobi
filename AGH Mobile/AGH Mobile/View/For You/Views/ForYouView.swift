@@ -20,7 +20,7 @@ class ForYouView: UIView {
         super.init(frame: frame)
         
         // Setup background color to distinguish in TabBar
-        self.backgroundColor = .darkGray
+        self.backgroundColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
