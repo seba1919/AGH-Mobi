@@ -19,6 +19,8 @@
 		4B87CCD32264E6B10028930A /* WDImplv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B87CCD22264E6B10028930A /* WDImplv2.swift */; };
 		4B87CCD52264E8130028930A /* TestSkosImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B87CCD42264E8130028930A /* TestSkosImpl.swift */; };
 		4B87CCD72264E9170028930A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B87CCD62264E9170028930A /* Employee.swift */; };
+		4BC1567422660AC600ED633C /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1567322660AC600ED633C /* Summary.swift */; };
+		4BC156782266102B00ED633C /* StudyProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC156772266102B00ED633C /* StudyProgress.swift */; };
 		611F4B192250E0480056416E /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4AFF2250E0480056416E /* InformationsViewController.swift */; };
 		611F4B1A2250E0480056416E /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B052250E0480056416E /* UserViewController.swift */; };
 		611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B0B2250E0480056416E /* MapsViewController.swift */; };
@@ -73,6 +75,8 @@
 		4B87CCD22264E6B10028930A /* WDImplv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDImplv2.swift; sourceTree = "<group>"; };
 		4B87CCD42264E8130028930A /* TestSkosImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSkosImpl.swift; sourceTree = "<group>"; };
 		4B87CCD62264E9170028930A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
+		4BC1567322660AC600ED633C /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		4BC156772266102B00ED633C /* StudyProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyProgress.swift; sourceTree = "<group>"; };
 		554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B0E798F6F514B98BE09314 /* Pods-AGH MobileUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.release.xcconfig"; sourceTree = "<group>"; };
 		611F4AFF2250E0480056416E /* InformationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
@@ -158,10 +162,7 @@
 		4B6B0144225C98FC001BF0F1 /* WD */ = {
 			isa = PBXGroup;
 			children = (
-				4B6B0151225CCD7C001BF0F1 /* Grades.swift */,
-				4B6B0153225CCE2A001BF0F1 /* CourseType.swift */,
-				4B6B014D225CC9A1001BF0F1 /* Course.swift */,
-				4B6B014F225CCBC5001BF0F1 /* Grade.swift */,
+				4BC156702266094700ED633C /* Structures */,
 				4B6B0155225CD27A001BF0F1 /* TestModelWD */,
 				4B6B0145225C991D001BF0F1 /* v2 */,
 			);
@@ -235,6 +236,35 @@
 				4B6B0146225C9960001BF0F1 /* ModelWD.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4BC156702266094700ED633C /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				4BC156722266099300ED633C /* PersonalInfo */,
+				4BC156712266097600ED633C /* Grades */,
+			);
+			path = Structures;
+			sourceTree = "<group>";
+		};
+		4BC156712266097600ED633C /* Grades */ = {
+			isa = PBXGroup;
+			children = (
+				4B6B0151225CCD7C001BF0F1 /* Grades.swift */,
+				4B6B014F225CCBC5001BF0F1 /* Grade.swift */,
+				4B6B014D225CC9A1001BF0F1 /* Course.swift */,
+				4B6B0153225CCE2A001BF0F1 /* CourseType.swift */,
+			);
+			path = Grades;
+			sourceTree = "<group>";
+		};
+		4BC156722266099300ED633C /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				4BC1567322660AC600ED633C /* Summary.swift */,
+				4BC156772266102B00ED633C /* StudyProgress.swift */,
+			);
+			path = PersonalInfo;
 			sourceTree = "<group>";
 		};
 		611F4AE62250D9A80056416E /* Application */ = {
@@ -708,11 +738,13 @@
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 				611F4B1C2250E0480056416E /* StudiesViewController.swift in Sources */,
 				611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */,
+				4BC1567422660AC600ED633C /* Summary.swift in Sources */,
 				61241321225267A9007D04C0 /* MapsView.swift in Sources */,
 				611F4B6422511F3C0056416E /* HomeTabBar.swift in Sources */,
 				611F4B68225127F80056416E /* HomeTabBarItem.swift in Sources */,
 				4B6B0149225C9B70001BF0F1 /* WDViewModel.swift in Sources */,
 				4B6B0150225CCBC5001BF0F1 /* Grade.swift in Sources */,
+				4BC156782266102B00ED633C /* StudyProgress.swift in Sources */,
 				4B87CCD32264E6B10028930A /* WDImplv2.swift in Sources */,
 				61241325225267FC007D04C0 /* UserView.swift in Sources */,
 			);
