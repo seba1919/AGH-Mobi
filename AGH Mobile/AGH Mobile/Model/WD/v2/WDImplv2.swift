@@ -8,8 +8,12 @@
 
 import Foundation
 
-final class WDImplv2 : ModelWD
+final class WDImplv2 //: ModelWD
 {
+//    func getPicture() -> Data {
+//
+//    }
+    
     func getGrades() -> Grades {
         return Grades(courses: [], avgSem: nil, avgYear: nil)
     }
