@@ -19,7 +19,7 @@
 		4B87CCD32264E6B10028930A /* WDImplv2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B87CCD22264E6B10028930A /* WDImplv2.swift */; };
 		4B87CCD52264E8130028930A /* TestSkosImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B87CCD42264E8130028930A /* TestSkosImpl.swift */; };
 		4B87CCD72264E9170028930A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B87CCD62264E9170028930A /* Employee.swift */; };
-		4BC1567422660AC600ED633C /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1567322660AC600ED633C /* Summary.swift */; };
+		4BC1567422660AC600ED633C /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1567322660AC600ED633C /* PersonalInfo.swift */; };
 		4BC156782266102B00ED633C /* StudyProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC156772266102B00ED633C /* StudyProgress.swift */; };
 		611F4B192250E0480056416E /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4AFF2250E0480056416E /* InformationsViewController.swift */; };
 		611F4B1A2250E0480056416E /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B052250E0480056416E /* UserViewController.swift */; };
@@ -75,7 +75,7 @@
 		4B87CCD22264E6B10028930A /* WDImplv2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDImplv2.swift; sourceTree = "<group>"; };
 		4B87CCD42264E8130028930A /* TestSkosImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSkosImpl.swift; sourceTree = "<group>"; };
 		4B87CCD62264E9170028930A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
-		4BC1567322660AC600ED633C /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		4BC1567322660AC600ED633C /* PersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
 		4BC156772266102B00ED633C /* StudyProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyProgress.swift; sourceTree = "<group>"; };
 		554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B0E798F6F514B98BE09314 /* Pods-AGH MobileUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -261,7 +261,7 @@
 		4BC156722266099300ED633C /* PersonalInfo */ = {
 			isa = PBXGroup;
 			children = (
-				4BC1567322660AC600ED633C /* Summary.swift */,
+				4BC1567322660AC600ED633C /* PersonalInfo.swift */,
 				4BC156772266102B00ED633C /* StudyProgress.swift */,
 			);
 			path = PersonalInfo;
@@ -738,7 +738,7 @@
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 				611F4B1C2250E0480056416E /* StudiesViewController.swift in Sources */,
 				611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */,
-				4BC1567422660AC600ED633C /* Summary.swift in Sources */,
+				4BC1567422660AC600ED633C /* PersonalInfo.swift in Sources */,
 				61241321225267A9007D04C0 /* MapsView.swift in Sources */,
 				611F4B6422511F3C0056416E /* HomeTabBar.swift in Sources */,
 				611F4B68225127F80056416E /* HomeTabBarItem.swift in Sources */,

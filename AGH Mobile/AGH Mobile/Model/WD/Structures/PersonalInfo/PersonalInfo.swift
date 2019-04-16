@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Summary {
+struct PersonalInfo {
     var albumNr : Int // nr indeksu
     var picture : UIImage // zdjecie profilowe
     var fullName : String // imiona i nazwisko
