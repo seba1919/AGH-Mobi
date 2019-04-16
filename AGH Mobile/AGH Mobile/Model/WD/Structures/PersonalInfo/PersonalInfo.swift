@@ -10,13 +10,12 @@ import UIKit
 
 struct PersonalInfo {
     var albumNr : Int // nr indeksu
-    var picture : UIImage // zdjecie profilowe
     var fullName : String // imiona i nazwisko
     var faculty : String // wydzial
     var fieldOfStudy : String // kierunek
     var specialty : String // specjalizacja
     var formOfStudies : String // forma studiow, np stacjonarne
-    var studyDegree : String // poziom studiow, np. pierwsze (SEBASTIAN WYMYSLAL NAZWE)
+    var studyDegree : String // poziom studiow, np. pierwsze
     var educationProfile : String // profil ksztalcenia, np. ogolnoakademicki
     var fieldOfStudyStatus : String // status kierunku, np. pierwszy
     var fieldOfStudyInfo : String // "Platny" / "Nieplatny"
