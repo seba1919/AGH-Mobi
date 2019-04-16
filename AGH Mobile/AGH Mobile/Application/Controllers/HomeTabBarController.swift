@@ -45,10 +45,10 @@ class HomeTabBarController: UITabBarController {
                                                      withTitle: "Informacje",
                                                      andImageName: "informationsTabBarIcon",
                                                      for: InformationsViewController()),
-                           createDummyViewController(
-                                                     withTitle: "Użytkownik",
-                                                     andImageName: "userTabBarIcon",
-                                                     for: UserViewController())]
+                           createDummyNavigationController(
+                                                           withTitle: "Użytkownik",
+                                                           andImageName: "userTabBarIcon",
+                                                           for: UserViewController())]
     }
     
     private func setupUI() {
@@ -85,6 +85,13 @@ extension HomeTabBarController {
         viewController.tabBarItem.title = title
         viewController.tabBarItem.image = UIImage(named: imageName)
         return viewController
+    }
+    
+    private func createDummyNavigationController(withTitle title: String, andImageName imageName: String, for viewController: UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem.title = title
+        navigationController.tabBarItem.image = UIImage(named: imageName)
+        return navigationController
     }
     
 }
