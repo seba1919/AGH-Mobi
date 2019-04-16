@@ -21,6 +21,8 @@
 		4B87CCD72264E9170028930A /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B87CCD62264E9170028930A /* Employee.swift */; };
 		4BC1567422660AC600ED633C /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1567322660AC600ED633C /* PersonalInfo.swift */; };
 		4BC156782266102B00ED633C /* StudyProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC156772266102B00ED633C /* StudyProgress.swift */; };
+		4BC1567B22661D4B00ED633C /* DayTimetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1567A22661D4B00ED633C /* DayTimetable.swift */; };
+		4BC1567D22661EE700ED633C /* TimetableEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1567C22661EE700ED633C /* TimetableEntry.swift */; };
 		611F4B192250E0480056416E /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4AFF2250E0480056416E /* InformationsViewController.swift */; };
 		611F4B1A2250E0480056416E /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B052250E0480056416E /* UserViewController.swift */; };
 		611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B0B2250E0480056416E /* MapsViewController.swift */; };
@@ -77,6 +79,8 @@
 		4B87CCD62264E9170028930A /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		4BC1567322660AC600ED633C /* PersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
 		4BC156772266102B00ED633C /* StudyProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyProgress.swift; sourceTree = "<group>"; };
+		4BC1567A22661D4B00ED633C /* DayTimetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimetable.swift; sourceTree = "<group>"; };
+		4BC1567C22661EE700ED633C /* TimetableEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableEntry.swift; sourceTree = "<group>"; };
 		554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B0E798F6F514B98BE09314 /* Pods-AGH MobileUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.release.xcconfig"; sourceTree = "<group>"; };
 		611F4AFF2250E0480056416E /* InformationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 		4BC156702266094700ED633C /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				4BC1567922661B4500ED633C /* Schedule */,
 				4BC156722266099300ED633C /* PersonalInfo */,
 				4BC156712266097600ED633C /* Grades */,
 			);
@@ -265,6 +270,15 @@
 				4BC156772266102B00ED633C /* StudyProgress.swift */,
 			);
 			path = PersonalInfo;
+			sourceTree = "<group>";
+		};
+		4BC1567922661B4500ED633C /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				4BC1567A22661D4B00ED633C /* DayTimetable.swift */,
+				4BC1567C22661EE700ED633C /* TimetableEntry.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		611F4AE62250D9A80056416E /* Application */ = {
@@ -719,6 +733,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BC1567B22661D4B00ED633C /* DayTimetable.swift in Sources */,
 				4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */,
 				4B6B0147225C9960001BF0F1 /* ModelWD.swift in Sources */,
 				4B6B0157225CD289001BF0F1 /* TestWDImpl.swift in Sources */,
@@ -732,6 +747,7 @@
 				611F4B1F225104240056416E /* ForYouView.swift in Sources */,
 				4B87CCCF2264E05F0028930A /* ModelSkos.swift in Sources */,
 				6124131F22526752007D04C0 /* StudiesView.swift in Sources */,
+				4BC1567D22661EE700ED633C /* TimetableEntry.swift in Sources */,
 				61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */,
 				4B6B0154225CCE2A001BF0F1 /* CourseType.swift in Sources */,
 				611F4B192250E0480056416E /* InformationsViewController.swift in Sources */,

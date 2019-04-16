@@ -10,4 +10,10 @@ import Foundation
 
 protocol ModelWD {
     func getGrades() -> Grades
+    
+    func getPersonalInfo() -> PersonalInfo
+    
+    func getScheduleForDays(daysCount : Int) -> [DaySchedule]
+    
+    //func getPicture() ->
 }
