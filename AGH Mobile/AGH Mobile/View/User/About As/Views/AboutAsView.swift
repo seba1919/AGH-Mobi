@@ -39,6 +39,7 @@ public class AboutAsView: UIView {
     private func setupUI() {
         setupView()
         setupteamGallery()
+        setupAboutAsDescription()
     }
     
     private func setupView() {
@@ -46,17 +47,37 @@ public class AboutAsView: UIView {
     }
     
     private func setupteamGallery() {
-        teamGallery.backgroundColor = .yellow
+        teamGallery.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         self.addSubview(teamGallery)
         
         teamGallery.translatesAutoresizingMaskIntoConstraints =  false
         NSLayoutConstraint.activate([
-            teamGallery.topAnchor.constraint(equalTo: self.topAnchor),
+            teamGallery.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: frame.height * 0.064),
             teamGallery.leftAnchor.constraint(equalTo: self.leftAnchor),
             teamGallery.rightAnchor.constraint(equalTo: self.rightAnchor),
-            teamGallery.heightAnchor.constraint(equalToConstant: 200)
+            teamGallery.heightAnchor.constraint(equalToConstant: frame.height*0.205)
             ])
     }
+    
+    private func setupAboutAsDescription() {
+        let aboutAsDescription = DescriptionTextView(
+            text: """
+            Aplikacja powstała w ramach działania koła naukowego MacKN i nie jest oficjalną aplikacją Akademii Górniczo-Hutniczej w Krakowie.
+
+            Koło Naukowe MacKN zrzesza pasjonatów programowania na iOS i macOS oraz pasjonatów fotografii. Działamy przy Katedrze Informatyki Stosowanej Wydziału Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie.
+            """)
+            .build()
+        self.addSubview(aboutAsDescription)
+        
+        aboutAsDescription.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            aboutAsDescription.topAnchor.constraint(equalTo: teamGallery.bottomAnchor, constant: frame.height * 0.05),
+            aboutAsDescription.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 7),
+            aboutAsDescription.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -7),
+            aboutAsDescription.heightAnchor.constraint(equalToConstant: 220)
+            ])
+    }
+    
 }
 
 
