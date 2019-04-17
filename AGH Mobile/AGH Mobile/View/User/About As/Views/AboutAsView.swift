@@ -38,7 +38,7 @@ public class AboutAsView: UIView {
     
     private func setupUI() {
         setupView()
-        setupteamGallery()
+        setupTeamGallery()
         setupAboutAsDescription()
     }
     
@@ -46,7 +46,7 @@ public class AboutAsView: UIView {
         backgroundColor = .white
     }
     
-    private func setupteamGallery() {
+    private func setupTeamGallery() {
         teamGallery.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         self.addSubview(teamGallery)
         
