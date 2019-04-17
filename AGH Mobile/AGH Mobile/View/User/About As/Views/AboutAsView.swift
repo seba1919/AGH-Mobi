@@ -19,14 +19,13 @@ public class AboutAsView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
     
-    lazy var teamScrollView = TeamScrollView()
+    lazy var teamGallery = UIView()
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupUI()
     }
     
@@ -38,19 +37,26 @@ public class AboutAsView: UIView {
     // MARK: - Setup
     
     private func setupUI() {
+        setupView()
+        setupteamGallery()
+    }
+    
+    private func setupView() {
         backgroundColor = .white
     }
     
-    private func setupTeamScrollViewConstraint() {
-        teamScrollView.translatesAutoresizingMaskIntoConstraints = false
+    private func setupteamGallery() {
+        teamGallery.backgroundColor = .yellow
+        self.addSubview(teamGallery)
+        
+        teamGallery.translatesAutoresizingMaskIntoConstraints =  false
         NSLayoutConstraint.activate([
-            teamScrollView.topAnchor.constraint(equalTo: self.topAnchor),
-            teamScrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            teamScrollView.rightAnchor.constraint(equalTo: self.rightAnchor),
-            teamScrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 150)
+            teamGallery.topAnchor.constraint(equalTo: self.topAnchor),
+            teamGallery.leftAnchor.constraint(equalTo: self.leftAnchor),
+            teamGallery.rightAnchor.constraint(equalTo: self.rightAnchor),
+            teamGallery.heightAnchor.constraint(equalToConstant: 200)
             ])
     }
-    
 }
 
 
