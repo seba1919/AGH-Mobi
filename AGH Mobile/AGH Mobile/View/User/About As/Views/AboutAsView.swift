@@ -48,7 +48,7 @@ public class AboutAsView: UIView {
     }
     
     private func setupConstraints() {
-        // Team Gallery
+        // MARK: Team Gallery
         teamGallery.translatesAutoresizingMaskIntoConstraints =  false
         NSLayoutConstraint.activate([
             teamGallery.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
@@ -58,7 +58,7 @@ public class AboutAsView: UIView {
             teamGallery.heightAnchor.constraint(equalToConstant: frame.height*0.205)
             ])
         
-        // About As Description
+        // MARK: About As Description
         aboutAsDescription.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             aboutAsDescription.topAnchor.constraint(equalTo: teamGallery.bottomAnchor,
@@ -74,13 +74,13 @@ public class AboutAsView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Elements of View
     
-    let teamGallery: UIView = {
+    private let teamGallery: UIView = {
         let view = UIView()
         view.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         return view
     }()
     
-    let aboutAsDescription: UITextView = {
+    private let aboutAsDescription: UITextView = {
         let descriptionTextView = DescriptionTextView(
             text: """
             Aplikacja powstała w ramach działania koła naukowego MacKN i nie jest oficjalną aplikacją Akademii Górniczo-Hutniczej w Krakowie.
@@ -90,6 +90,8 @@ public class AboutAsView: UIView {
             .build()
         return descriptionTextView
     }()
+    
+    
     
 }
 
