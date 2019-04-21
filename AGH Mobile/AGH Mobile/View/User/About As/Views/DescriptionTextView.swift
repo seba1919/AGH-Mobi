@@ -27,10 +27,11 @@ final class DescriptionTextView {
     init(text: String) {
         descriptionTextView = UITextView()
         descriptionTextView.isEditable = false
+        descriptionTextView.isScrollEnabled = false
         descriptionTextView.text = text
         descriptionTextView.textAlignment = .natural
         descriptionTextView.textColor = UIColor(red: 147/255, green: 147/255, blue: 147/255, alpha: 1)
-        descriptionTextView.font = descriptionTextView.font?.withSize(15.5)
+        //descriptionTextView.font = descriptionTextView.font?.withSize(16)
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -41,3 +42,5 @@ final class DescriptionTextView {
     }
     
 }
+
+

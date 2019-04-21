@@ -250,8 +250,6 @@
 			children = (
 				61ECE897224D1F2300A9A806 /* AppDelegate */,
 				611F4AE72250D9CD0056416E /* Controllers */,
-				61ECE89A224D1F7B00A9A806 /* Resources */,
-				611F4AE92250D9FC0056416E /* Supporting Files */,
 				611F4AEB2250DA5E0056416E /* Views */,
 			);
 			path = Application;
@@ -464,6 +462,8 @@
 				4B87CCD82264EFC10028930A /* Model */,
 				4B6B0143225C98B6001BF0F1 /* View */,
 				4B87CCD92264F00A0028930A /* ViewModel */,
+				61ECE89A224D1F7B00A9A806 /* Resources */,
+				611F4AE92250D9FC0056416E /* Supporting Files */,
 			);
 			path = "AGH Mobile";
 			sourceTree = "<group>";
@@ -913,7 +913,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RSVCT9A9H;
-				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Application/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -933,7 +933,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RSVCT9A9H;
-				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Application/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
