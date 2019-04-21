@@ -28,9 +28,9 @@ final class DescriptionTextView {
         descriptionTextView = UITextView()
         descriptionTextView.isEditable = false
         descriptionTextView.text = text
-        descriptionTextView.textAlignment = .left
+        descriptionTextView.textAlignment = .natural
         descriptionTextView.textColor = UIColor(red: 147/255, green: 147/255, blue: 147/255, alpha: 1)
-        descriptionTextView.font = descriptionTextView.font?.withSize(16)
+        descriptionTextView.font = descriptionTextView.font?.withSize(15.5)
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
