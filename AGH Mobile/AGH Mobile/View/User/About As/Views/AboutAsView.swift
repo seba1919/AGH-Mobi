@@ -17,9 +17,9 @@ import UIKit
 public class AboutAsView: UIView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
+    // MARK: - Instance Variables
     
-    
+    private lazy var freeSpaceBetweenComponents = self.frame.height * 0.0225
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -41,7 +41,7 @@ public class AboutAsView: UIView {
     }
     
     private func setupViews() {
-        self.backgroundColor = #colorLiteral(red: 0.9672492146, green: 0.9614989161, blue: 0.9716691375, alpha: 1)
+        self.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
         self.addSubview(teamGallery)
         self.addSubview(aboutAsDescription)
         self.addSubview(iconOfMacKN)
@@ -56,12 +56,12 @@ public class AboutAsView: UIView {
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Elements of View:
+    // MARK: - Components of View:
     
     // Team Gallery
     private let teamGallery: UIView = {
         let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         return view
     }()
     
@@ -70,10 +70,11 @@ public class AboutAsView: UIView {
         teamGallery.translatesAutoresizingMaskIntoConstraints =  false
         NSLayoutConstraint.activate([
             teamGallery.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
-                                             constant: self.frame.height * 0.064),
+                                             constant: self.frame.height * 0.034),
+            teamGallery.bottomAnchor.constraint(equalTo: aboutAsDescription.topAnchor,
+                                                constant: self.frame.height * -0.05),
             teamGallery.leftAnchor.constraint(equalTo: self.leftAnchor),
             teamGallery.rightAnchor.constraint(equalTo: self.rightAnchor),
-            teamGallery.heightAnchor.constraint(equalToConstant: self.frame.height*0.205)
             ])
     }
     
@@ -93,10 +94,8 @@ public class AboutAsView: UIView {
     fileprivate func setupAboutAsDescriptionConstraints() {
         aboutAsDescription.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            aboutAsDescription.topAnchor.constraint(equalTo: teamGallery.bottomAnchor,
-                                                    constant: self.frame.height * 0.05),
             aboutAsDescription.bottomAnchor.constraint(equalTo: iconOfMacKN.topAnchor,
-                                                       constant: self.frame.height * -0.016),
+                                                       constant: -freeSpaceBetweenComponents),
             aboutAsDescription.leftAnchor.constraint(equalTo: self.leftAnchor,
                                                      constant: 16),
             aboutAsDescription.rightAnchor.constraint(equalTo: self.rightAnchor,
@@ -117,10 +116,10 @@ public class AboutAsView: UIView {
         iconOfMacKN.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             iconOfMacKN.bottomAnchor.constraint(equalTo: webPageButton.topAnchor,
-                                                constant: self.frame.height * -0.0369),
+                                                constant: -freeSpaceBetweenComponents),
+            iconOfMacKN.heightAnchor.constraint(equalToConstant: self.frame.height * 0.123),
             iconOfMacKN.widthAnchor.constraint(equalTo: iconOfMacKN.heightAnchor,
                                                multiplier: iconOfMacKN.frame.width / iconOfMacKN.frame.height),
-            iconOfMacKN.heightAnchor.constraint(equalToConstant: self.frame.height * 0.123),
             iconOfMacKN.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor)
             ])
     }
@@ -138,7 +137,7 @@ public class AboutAsView: UIView {
         webPageButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             webPageButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: self.frame.height * -0.08374),
+                                                  constant: self.frame.height * -0.05),
             webPageButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor)
             ])
     }
