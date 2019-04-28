@@ -192,11 +192,11 @@ class SKOS {
                         if (data.count>0){
                             if let info=data[0].firstChild.children, info.count>0{
                                 for element in info{
-                                    if let tmp=(element as AnyObject).children{
+                                    if let tmp=(element as! TFHppleElement).children{
                                     var i=0
-                                        while(i<tmp!.count-1){
+                                        while(i<tmp.count-1){
                                     
-                                            employeeName.basicData.append([(tmp![i] as AnyObject).content : (tmp?[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
+                                            employeeName.basicData.append([(tmp[i] as AnyObject).content : (tmp[i+1] as AnyObject).content!.replacingOccurrences(of: "w Krakowie", with: "w Krakowie\n").replacingOccurrences(of: "Katedra", with: "\nKatedra").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Zespół", with: "\nZespół").replacingOccurrences(of: "Sekcja", with: "\nSekcja").replacingOccurrences(of: "Dział", with: "\nDział").replacingOccurrences(of: "Komisja", with: "\nKomisja").replacingOccurrences(of: "Centrum", with: "\nCentrum").replacingOccurrences(of: "Biuro", with: "\nBiuro")])
                                         i=i+2
                                     }
                                 }
