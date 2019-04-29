@@ -14,7 +14,7 @@ import UIKit
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
 
-public class AboutAsView: UIView {
+final class AboutAsView: UIView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
@@ -48,13 +48,6 @@ public class AboutAsView: UIView {
         self.addSubview(webPageButton)
     }
     
-    private func setupConstraints() {
-        setupTeamGalleryConstraints()
-        setupAboutAsDescriptionConstraints()
-        setupIconOfMacKNConstraints()
-        setupWebPageButtonConstraints()
-    }
-    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View:
     
@@ -64,19 +57,6 @@ public class AboutAsView: UIView {
         view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         return view
     }()
-    
-    // Constraints
-    fileprivate func setupTeamGalleryConstraints() {
-        teamGallery.translatesAutoresizingMaskIntoConstraints =  false
-        NSLayoutConstraint.activate([
-            teamGallery.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
-                                             constant: self.frame.height * 0.034),
-            teamGallery.bottomAnchor.constraint(equalTo: aboutAsDescription.topAnchor,
-                                                constant: self.frame.height * -0.05),
-            teamGallery.leftAnchor.constraint(equalTo: self.leftAnchor),
-            teamGallery.rightAnchor.constraint(equalTo: self.rightAnchor),
-            ])
-    }
     
     // About as Description
     private let aboutAsDescription: UITextView = {
@@ -90,39 +70,13 @@ public class AboutAsView: UIView {
         return descriptionTextView
     }()
     
-    // Constraints
-    fileprivate func setupAboutAsDescriptionConstraints() {
-        aboutAsDescription.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            aboutAsDescription.bottomAnchor.constraint(equalTo: iconOfMacKN.topAnchor,
-                                                       constant: -freeSpaceBetweenComponents),
-            aboutAsDescription.leftAnchor.constraint(equalTo: self.leftAnchor,
-                                                     constant: 16),
-            aboutAsDescription.rightAnchor.constraint(equalTo: self.rightAnchor,
-                                                      constant: -16),
-            ])
-    }
-    
     // MacKN Icon
     private let iconOfMacKN: UIImageView = {
         let image = UIImage(named: "MacKNIcon")
         let icon = UIImageView(image: image)
-        //more setups
+        //more setups?
         return icon
     }()
-    
-    // Constraints
-    fileprivate func setupIconOfMacKNConstraints() {
-        iconOfMacKN.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            iconOfMacKN.bottomAnchor.constraint(equalTo: webPageButton.topAnchor,
-                                                constant: -freeSpaceBetweenComponents),
-            iconOfMacKN.heightAnchor.constraint(equalToConstant: self.frame.height * 0.123),
-            iconOfMacKN.widthAnchor.constraint(equalTo: iconOfMacKN.heightAnchor,
-                                               multiplier: iconOfMacKN.frame.width / iconOfMacKN.frame.height),
-            iconOfMacKN.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor)
-            ])
-    }
     
     // Web Page Button
     private let webPageButton: UIButton = {
@@ -132,14 +86,48 @@ public class AboutAsView: UIView {
         return button
     }()
     
-    // Constraints
-    fileprivate func setupWebPageButtonConstraints() {
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Constraints
+    
+    fileprivate func setupConstraints() {
+        
+        teamGallery.translatesAutoresizingMaskIntoConstraints = false
+        aboutAsDescription.translatesAutoresizingMaskIntoConstraints = false
+        iconOfMacKN.translatesAutoresizingMaskIntoConstraints = false
         webPageButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
+            // Team Gallery
+            teamGallery.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
+                                             constant: self.frame.height * 0.047),
+            teamGallery.bottomAnchor.constraint(equalTo: aboutAsDescription.topAnchor,
+                                                constant: self.frame.height * -0.045),
+            teamGallery.leftAnchor.constraint(equalTo: self.leftAnchor),
+            teamGallery.rightAnchor.constraint(equalTo: self.rightAnchor),
+            
+            
+            // About As Description
+            aboutAsDescription.bottomAnchor.constraint(equalTo: iconOfMacKN.topAnchor,
+                                                       constant: -freeSpaceBetweenComponents),
+            aboutAsDescription.leftAnchor.constraint(equalTo: self.leftAnchor,
+                                                     constant: 16),
+            aboutAsDescription.rightAnchor.constraint(equalTo: self.rightAnchor,
+                                                      constant: -16),
+            
+            
+            // Icon Of MacKN
+            iconOfMacKN.bottomAnchor.constraint(equalTo: webPageButton.topAnchor,
+                                                constant: -freeSpaceBetweenComponents),
+            iconOfMacKN.heightAnchor.constraint(equalToConstant: self.frame.height * 0.123),
+            iconOfMacKN.widthAnchor.constraint(equalTo: iconOfMacKN.heightAnchor,
+                                               multiplier: iconOfMacKN.frame.width / iconOfMacKN.frame.height),
+            iconOfMacKN.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
+            
+            
+            // Web Page Button
             webPageButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: self.frame.height * -0.05),
+                                                  constant: self.frame.height * -0.047),
             webPageButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor)
             ])
     }
-    
 }
