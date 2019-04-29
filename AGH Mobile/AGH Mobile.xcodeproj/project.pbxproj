@@ -36,6 +36,7 @@
 		615779212265F7D400C1BCDC /* AboutAsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779202265F7D400C1BCDC /* AboutAsView.swift */; };
 		6157792722662EB200C1BCDC /* TemporaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157792622662EB200C1BCDC /* TemporaryButton.swift */; };
 		615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779282267089100C1BCDC /* DescriptionTextView.swift */; };
+		61A743ED227743BB00DFCB35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A743EC227743BB00DFCB35 /* Colors.swift */; };
 		61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C74224BDCF7008340B3 /* AppDelegate.swift */; };
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
 		61AD7C95224BDCF8008340B3 /* AGH_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C94224BDCF8008340B3 /* AGH_MobileUITests.swift */; };
@@ -97,6 +98,7 @@
 		615779202265F7D400C1BCDC /* AboutAsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAsView.swift; sourceTree = "<group>"; };
 		6157792622662EB200C1BCDC /* TemporaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryButton.swift; sourceTree = "<group>"; };
 		615779282267089100C1BCDC /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
+		61A743EC227743BB00DFCB35 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		61AD7C71224BDCF7008340B3 /* AGH Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AGH Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AD7C74224BDCF7008340B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61AD7C80224BDCF7008340B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -436,6 +438,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		61A743EB2277439900DFCB35 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				61A743EC227743BB00DFCB35 /* Colors.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		61AD7C68224BDCF7008340B3 = {
 			isa = PBXGroup;
 			children = (
@@ -466,6 +476,7 @@
 				4B6B0143225C98B6001BF0F1 /* View */,
 				4B87CCD92264F00A0028930A /* ViewModel */,
 				61ECE89A224D1F7B00A9A806 /* Resources */,
+				61A743EB2277439900DFCB35 /* Extension */,
 				611F4AE92250D9FC0056416E /* Supporting Files */,
 			);
 			path = "AGH Mobile";
@@ -753,6 +764,7 @@
 				611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */,
 				61241321225267A9007D04C0 /* MapsView.swift in Sources */,
 				611F4B6422511F3C0056416E /* HomeTabBar.swift in Sources */,
+				61A743ED227743BB00DFCB35 /* Colors.swift in Sources */,
 				611F4B68225127F80056416E /* HomeTabBarItem.swift in Sources */,
 				4B6B0149225C9B70001BF0F1 /* WDViewModel.swift in Sources */,
 				4B6B0150225CCBC5001BF0F1 /* Grade.swift in Sources */,

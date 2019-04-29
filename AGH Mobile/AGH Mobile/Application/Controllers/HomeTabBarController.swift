@@ -55,7 +55,7 @@ class HomeTabBarController: UITabBarController {
         // TabBar background color
         self.tabBar.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.82)
         // TabBar tint color
-        self.tabBar.tintColor = UIColor(red: 181/255, green: 101/255, blue: 101/255, alpha: 1)
+        self.tabBar.tintColor = .mainRed
         // Setups for each items in TabBar
         if let items = self.tabBar.items {
             for item in items {
@@ -67,7 +67,7 @@ class HomeTabBarController: UITabBarController {
                 // Text attributes for selected state
                 item.setTitleTextAttributes([
                     NSAttributedString.Key.font : UIFont.systemFont(ofSize: 10.5),
-                    NSAttributedString.Key.foregroundColor: UIColor(red: 181/255, green: 101/255, blue: 101/255, alpha: 1)
+                    NSAttributedString.Key.foregroundColor: UIColor.mainRed
                     ], for: .selected)
             }
         }
