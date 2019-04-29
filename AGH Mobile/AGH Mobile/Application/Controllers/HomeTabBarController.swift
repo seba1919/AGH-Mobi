@@ -53,7 +53,7 @@ class HomeTabBarController: UITabBarController {
     
     private func setupUI() {
         // TabBar background color
-        self.tabBar.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.82)
+        self.tabBar.backgroundColor = .customLightGray
         // TabBar tint color
         self.tabBar.tintColor = .mainRed
         // Setups for each items in TabBar
@@ -62,7 +62,7 @@ class HomeTabBarController: UITabBarController {
                 // Text attributes for normal state
                 item.setTitleTextAttributes([
                     NSAttributedString.Key.font : UIFont.systemFont(ofSize: 10.5),
-                    NSAttributedString.Key.foregroundColor: UIColor(red: 142/255, green: 142/255, blue: 147/255, alpha: 1)
+                    NSAttributedString.Key.foregroundColor: UIColor.customDarkGray
                     ], for: .normal)
                 // Text attributes for selected state
                 item.setTitleTextAttributes([

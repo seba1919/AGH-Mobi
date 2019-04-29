@@ -1,5 +1,5 @@
 //
-//  Colours.swift
+//  Colors.swift
 //  AGH Mobile
 //
 //  Created by Mateusz Bąk on 29/04/2019.
@@ -19,28 +19,12 @@ extension UIColor {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup Custom Colours
     
+    // Main Colors
     public static let mainRed = UIColor(red: 181/255, green: 101/255, blue: 101/255, alpha: 1)
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Init
+    // Tab Bar Colors
     
-//    // Create a UIColor from RGB
-//        convenience init(red: Int, green: Int, blue: Int, a: CGFloat = 1.0) {
-//        self.init(
-//            red: CGFloat(red) / 255.0,
-//            green: CGFloat(green) / 255.0,
-//            blue: CGFloat(blue) / 255.0,
-//            alpha: a
-//        )
-//    }
-//
-//    // Create a UIColor from a hex value (E.g 0x000000)
-//    convenience init(hex: Int, a: CGFloat = 1.0) {
-//        self.init(
-//            red: (hex >> 16) & 0xFF,
-//            green: (hex >> 8) & 0xFF,
-//            blue: hex & 0xFF,
-//            a: a
-//        )
-//    }
+    public static let customLightGray = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.82)
+    public static let customDarkGray = UIColor(red: 142/255, green: 142/255, blue: 147/255, alpha: 1)
+    
 }
