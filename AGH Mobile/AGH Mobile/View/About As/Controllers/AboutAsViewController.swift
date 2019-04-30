@@ -14,27 +14,42 @@ import UIKit
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
 
-class AboutAsViewController : UIViewController {
+final class AboutAsViewController : UIViewController {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
     
-    var aboutAsView: AboutAsView { return self.view as! AboutAsView }
+    private var aboutAsView: AboutAsView { return self.view as! AboutAsView }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
     
     override func loadView() {
         super.loadView()
-
+        
         self.view = AboutAsView(frame: UIScreen.main.bounds)
-        aboutAsView.setupUI()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        aboutAsView.setupUI()
     }
     
 }
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// MARK: - Extensions of UICollectionView
+
+extension AboutAsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
+    
+}
+

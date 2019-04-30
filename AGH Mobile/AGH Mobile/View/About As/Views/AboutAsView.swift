@@ -10,6 +10,7 @@
 // MARK: - Import
 
 import UIKit
+import SnapKit
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
@@ -20,6 +21,10 @@ final class AboutAsView: UIView {
     // MARK: - Instance Variables
     
     private lazy var freeSpaceBetweenComponents = self.frame.height * 0.0225
+    private lazy var topPadding = self.frame.height * 0.047
+    private lazy var bottomPadding = self.frame.height * -0.030
+    
+    private let layout = UICollectionViewFlowLayout()
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -33,9 +38,9 @@ final class AboutAsView: UIView {
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup
+    // MARK: - Setup view methods
     
-    func setupUI() {
+    public func setupUI() {
         setupViews()
         setupConstraints()
     }
@@ -52,14 +57,15 @@ final class AboutAsView: UIView {
     // MARK: - Components of View:
     
     // Team Gallery
-    private let teamGallery: UIView = {
-        let view = UIView()
-        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        return view
+    private lazy var teamGallery: UICollectionView = {
+        layout.scrollDirection = UICollectionView.ScrollDirection.vertical
+        let colection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        colection.backgroundColor = .red
+        return colection
     }()
     
     // About as Description
-    private let aboutAsDescription: UITextView = {
+    private lazy var aboutAsDescription: UITextView = {
         let descriptionTextView = DescriptionTextView(
             text: """
             Aplikacja powstała w ramach działania koła naukowego MacKN i nie jest oficjalną aplikacją Akademii Górniczo-Hutniczej w Krakowie.
@@ -71,63 +77,63 @@ final class AboutAsView: UIView {
     }()
     
     // MacKN Icon
-    private let iconOfMacKN: UIImageView = {
+    private lazy var iconOfMacKN: UIImageView = {
         let image = UIImage(named: "MacKNIcon")
         let icon = UIImageView(image: image)
-        //more setups?
         return icon
     }()
     
     // Web Page Button
-    private let webPageButton: UIButton = {
+    private lazy var webPageButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("strona internetowa koła", for: .normal)
-        button.setTitleColor(UIColor(red: 181/255, green: 101/255, blue: 101/255, alpha: 1), for: .normal)
+        button.setTitleColor(UIColor.mainRed, for: .normal)
         return button
     }()
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Constraints
     
-    fileprivate func setupConstraints() {
+    private func setupConstraints() {
         
         teamGallery.translatesAutoresizingMaskIntoConstraints = false
         aboutAsDescription.translatesAutoresizingMaskIntoConstraints = false
         iconOfMacKN.translatesAutoresizingMaskIntoConstraints = false
         webPageButton.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([
-            // Team Gallery
-            teamGallery.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,
-                                             constant: self.frame.height * 0.047),
-            teamGallery.bottomAnchor.constraint(equalTo: aboutAsDescription.topAnchor,
-                                                constant: self.frame.height * -0.045),
-            teamGallery.leftAnchor.constraint(equalTo: self.leftAnchor),
-            teamGallery.rightAnchor.constraint(equalTo: self.rightAnchor),
-            
-            
-            // About As Description
-            aboutAsDescription.bottomAnchor.constraint(equalTo: iconOfMacKN.topAnchor,
-                                                       constant: -freeSpaceBetweenComponents),
-            aboutAsDescription.leftAnchor.constraint(equalTo: self.leftAnchor,
-                                                     constant: 16),
-            aboutAsDescription.rightAnchor.constraint(equalTo: self.rightAnchor,
-                                                      constant: -16),
-            
-            
-            // Icon Of MacKN
-            iconOfMacKN.bottomAnchor.constraint(equalTo: webPageButton.topAnchor,
-                                                constant: -freeSpaceBetweenComponents),
-            iconOfMacKN.heightAnchor.constraint(equalToConstant: self.frame.height * 0.123),
-            iconOfMacKN.widthAnchor.constraint(equalTo: iconOfMacKN.heightAnchor,
-                                               multiplier: iconOfMacKN.frame.width / iconOfMacKN.frame.height),
-            iconOfMacKN.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            
-            
-            // Web Page Button
-            webPageButton.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor,
-                                                  constant: self.frame.height * -0.047),
-            webPageButton.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor)
-            ])
+        // Team Gallery
+        teamGallery.snp.makeConstraints { (make) in
+            make.height.greaterThanOrEqualTo(self.frame.height * 0.0685).priority(.high)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(topPadding)
+            make.bottom.equalTo(aboutAsDescription.snp.top).offset(-freeSpaceBetweenComponents)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
+
+        // About As Description
+        aboutAsDescription.snp.makeConstraints { (make) in
+            make.bottom.equalTo(iconOfMacKN.snp.top).offset(-freeSpaceBetweenComponents)
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+        }
+
+        // Icon Of MacKN
+        iconOfMacKN.snp.makeConstraints { (make) in
+            make.bottom.equalTo(webPageButton.snp.top).offset(-freeSpaceBetweenComponents)
+            make.height.equalTo(self.frame.height * 0.123)
+            make.width.equalTo(iconOfMacKN.snp.height).multipliedBy(iconOfMacKN.frame.width / iconOfMacKN.frame.height)
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+        }
+        
+        // Web Page Button
+        webPageButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(bottomPadding)
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+        }
     }
 }
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// MARK: - Extensions of UICollectionView
+
+extension AboutAsView: UICollectionViewDelegateFlowLayout {}

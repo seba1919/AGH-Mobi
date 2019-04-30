@@ -30,8 +30,16 @@ final class DescriptionTextView {
         descriptionTextView.isScrollEnabled = false
         descriptionTextView.text = text
         descriptionTextView.textAlignment = .natural
-        descriptionTextView.textColor = UIColor(red: 147/255, green: 147/255, blue: 147/255, alpha: 1)
-        descriptionTextView.font = descriptionTextView.font?.withSize(13)
+        descriptionTextView.textColor = UIColor.customGrayText
+        
+        if UIScreen.main.bounds.height < 668 {
+            descriptionTextView.font = descriptionTextView.font?.withSize(12.5)
+        } else if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
+            descriptionTextView.font = descriptionTextView.font?.withSize(13.6)
+        } else if UIScreen.main.bounds.height > 737 {
+            descriptionTextView.font = descriptionTextView.font?.withSize(15)
+        }
+        
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -42,5 +50,6 @@ final class DescriptionTextView {
     }
     
 }
+
 
 

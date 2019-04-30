@@ -22,6 +22,9 @@ extension UIColor {
     // Main Colors
     public static let mainRed = UIColor(red: 181/255, green: 101/255, blue: 101/255, alpha: 1)
     
+    // Text Colors
+    public static let customGrayText = UIColor(red: 147/255, green: 147/255, blue: 147/255, alpha: 1)
+    
     // Tab Bar Colors
     
     public static let customLightGray = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.82)

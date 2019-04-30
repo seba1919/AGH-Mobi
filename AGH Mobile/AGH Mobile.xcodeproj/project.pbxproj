@@ -158,6 +158,7 @@
 		4B6B0143225C98B6001BF0F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6157791B2265F75200C1BCDC /* About As */,
 				611F4B012250E0480056416E /* User */,
 				611F4AFB2250E0480056416E /* Informations */,
 				611F4B072250E0480056416E /* Maps */,
@@ -312,7 +313,6 @@
 		611F4B012250E0480056416E /* User */ = {
 			isa = PBXGroup;
 			children = (
-				6157791B2265F75200C1BCDC /* About As */,
 				611F4B042250E0480056416E /* Controllers */,
 				611F4B062250E0480056416E /* Views */,
 			);
@@ -700,18 +700,20 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC28EA5BC9F2FD32587539BC /* [CP] Check Pods Manifest.lock */ = {
