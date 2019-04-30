@@ -64,6 +64,7 @@ final class AboutAsView: UIView {
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.isScrollEnabled = true
         collection.showsHorizontalScrollIndicator = false
+        collection.showsVerticalScrollIndicator = false
         return collection
     }()
     
