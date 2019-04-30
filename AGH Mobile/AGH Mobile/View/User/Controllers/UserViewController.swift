@@ -21,7 +21,7 @@ class UserViewController: UIViewController {
     
     var userView: UserView { return self.view as! UserView }
     
-    private let tempbutton = TemporaryButton(title: "Go to about as!")
+    private let tempbutton = TemporaryButton(title: "Temporary go to about as!")
         .addTarget(self, action: #selector(nextButtonActionHandler(_:)), for: .touchUpInside)
         .build()
     
@@ -48,7 +48,7 @@ class UserViewController: UIViewController {
 
         NSLayoutConstraint.activate([
             tempbutton.bottomAnchor.constraint(equalTo: userView.safeAreaLayoutGuide.bottomAnchor, constant: -36),
-            tempbutton.widthAnchor.constraint(equalToConstant: 200),
+            tempbutton.widthAnchor.constraint(equalToConstant: 250),
             tempbutton.heightAnchor.constraint(equalToConstant: 50),
             tempbutton.centerXAnchor.constraint(equalTo: userView.safeAreaLayoutGuide.centerXAnchor),
             ])

@@ -25,7 +25,7 @@ final class AboutAsView: UIView {
     private lazy var bottomPadding = self.frame.height * -0.030
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Lifecycle
+    // MARK: - Init
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,16 +52,18 @@ final class AboutAsView: UIView {
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Components of View:
+    // MARK: - Components of View
     
     // Team Gallery
-    private lazy var teamGallery: UICollectionView = {
+    // Public bo w VC trzeba się dostać do tego (?)
+    public private(set) lazy var teamGallery: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         layout.scrollDirection = .horizontal
-        collection.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        collection.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.isScrollEnabled = true
+        collection.showsHorizontalScrollIndicator = false
         return collection
     }()
     
@@ -74,6 +76,7 @@ final class AboutAsView: UIView {
             Koło Naukowe MacKN zrzesza pasjonatów programowania na iOS i macOS oraz pasjonatów fotografii. Działamy przy Katedrze Informatyki Stosowanej Wydziału Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie.
             """)
             .build()
+        descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
         return descriptionTextView
     }()
     
@@ -81,6 +84,7 @@ final class AboutAsView: UIView {
     private lazy var iconOfMacKN: UIImageView = {
         let image = UIImage(named: "MacKNIcon")
         let icon = UIImageView(image: image)
+        icon.translatesAutoresizingMaskIntoConstraints = false
         return icon
     }()
     
@@ -89,6 +93,7 @@ final class AboutAsView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("strona internetowa koła", for: .normal)
         button.setTitleColor(UIColor.mainRed, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -96,11 +101,6 @@ final class AboutAsView: UIView {
     // MARK: - Constraints
     
     private func setupConstraints() {
-        
-        teamGallery.translatesAutoresizingMaskIntoConstraints = false
-        aboutAsDescription.translatesAutoresizingMaskIntoConstraints = false
-        iconOfMacKN.translatesAutoresizingMaskIntoConstraints = false
-        webPageButton.translatesAutoresizingMaskIntoConstraints = false
         
         // Team Gallery
         teamGallery.snp.makeConstraints { (make) in
@@ -134,8 +134,3 @@ final class AboutAsView: UIView {
         }
     }
 }
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Extensions of UICollectionView
-
-//extension AboutAsView: UICollectionViewDelegateFlowLayout {}
