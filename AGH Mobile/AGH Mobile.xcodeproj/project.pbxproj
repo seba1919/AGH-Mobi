@@ -40,7 +40,6 @@
 		61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C74224BDCF7008340B3 /* AppDelegate.swift */; };
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
 		61AD7C95224BDCF8008340B3 /* AGH_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C94224BDCF8008340B3 /* AGH_MobileUITests.swift */; };
-		61B885BC226E13DA007FF363 /* MemberProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B885BB226E13DA007FF363 /* MemberProfile.swift */; };
 		61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */; };
 		76ED7A09ADF48FAF996EEFD2 /* Pods_AGH_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */; };
 		8F3A8D473740ED8EC2AF437E /* Pods_AGH_MobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */; };
@@ -108,7 +107,6 @@
 		61AD7C90224BDCF8008340B3 /* AGH MobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AGH MobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AD7C94224BDCF8008340B3 /* AGH_MobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGH_MobileUITests.swift; sourceTree = "<group>"; };
 		61AD7C96224BDCF8008340B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61B885BB226E13DA007FF363 /* MemberProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfile.swift; sourceTree = "<group>"; };
 		61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		77F59FBE253B8BA7BCED5272 /* Pods-AGH MobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_MobileUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -425,7 +423,6 @@
 			children = (
 				615779202265F7D400C1BCDC /* AboutAsView.swift */,
 				615779282267089100C1BCDC /* DescriptionTextView.swift */,
-				61B885BB226E13DA007FF363 /* MemberProfile.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -749,7 +746,6 @@
 				611F4B1A2250E0480056416E /* UserViewController.swift in Sources */,
 				615779212265F7D400C1BCDC /* AboutAsView.swift in Sources */,
 				4B6B0152225CCD7C001BF0F1 /* Grades.swift in Sources */,
-				61B885BC226E13DA007FF363 /* MemberProfile.swift in Sources */,
 				4B87CCD72264E9170028930A /* Employee.swift in Sources */,
 				611F4B1D2250E0480056416E /* ForYouViewController.swift in Sources */,
 				4B87CCCD2264E0430028930A /* SkosViewModel.swift in Sources */,

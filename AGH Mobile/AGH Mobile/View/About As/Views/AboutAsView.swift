@@ -24,8 +24,6 @@ final class AboutAsView: UIView {
     private lazy var topPadding = self.frame.height * 0.047
     private lazy var bottomPadding = self.frame.height * -0.030
     
-    private let layout = UICollectionViewFlowLayout()
-    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
     
@@ -58,10 +56,13 @@ final class AboutAsView: UIView {
     
     // Team Gallery
     private lazy var teamGallery: UICollectionView = {
-        layout.scrollDirection = UICollectionView.ScrollDirection.vertical
-        let colection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        colection.backgroundColor = .red
-        return colection
+        let layout = UICollectionViewFlowLayout()
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.scrollDirection = .horizontal
+        collection.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.isScrollEnabled = true
+        return collection
     }()
     
     // About as Description
@@ -108,6 +109,7 @@ final class AboutAsView: UIView {
             make.bottom.equalTo(aboutAsDescription.snp.top).offset(-freeSpaceBetweenComponents)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
 
         // About As Description
@@ -136,4 +138,4 @@ final class AboutAsView: UIView {
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Extensions of UICollectionView
 
-extension AboutAsView: UICollectionViewDelegateFlowLayout {}
+//extension AboutAsView: UICollectionViewDelegateFlowLayout {}
