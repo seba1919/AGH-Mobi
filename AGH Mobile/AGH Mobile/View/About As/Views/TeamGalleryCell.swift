@@ -21,7 +21,7 @@ class TeamGalleryCell: UICollectionViewCell {
     // MARK: - Instance Variables
     
     public static let identifier = "teamGalleryCell"
-    private lazy var memberPhotoImageHight = self.frame.height * 0.7
+    private lazy var memberPhotoImageHight = self.frame.height * 0.75
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init 
@@ -47,6 +47,21 @@ class TeamGalleryCell: UICollectionViewCell {
         self.addSubview(memberPhoto)
         self.addSubview(memberName)
         self.addSubview(memberSpecialization)
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Public Methods
+    
+    public func setupImage(named Name: String) {
+        memberPhoto.image = UIImage(named: Name)
+    }
+    
+    public func setupName(as Name: String) {
+        memberName.text = Name
+    }
+    
+    public func setupSpecialization(as Name: String) {
+        memberSpecialization.text = Name
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -98,7 +113,7 @@ class TeamGalleryCell: UICollectionViewCell {
             make.top.equalTo(self.snp.top)
             make.height.equalTo(memberPhotoImageHight)
             make.width.equalTo(memberPhoto.snp.height)
-            //make.bottom.equalTo(memberName.snp.top).offset(self.frame.height * -0.1)
+            make.bottom.lessThanOrEqualTo(memberName.snp.top).offset(self.frame.height * -0.1)
         }
 
         // Member Name
