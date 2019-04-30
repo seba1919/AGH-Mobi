@@ -44,7 +44,7 @@ final class AboutAsView: UIView {
     }
     
     private func setupViews() {
-        self.backgroundColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.addSubview(teamGallery)
         self.addSubview(aboutAsDescription)
         self.addSubview(iconOfMacKN)

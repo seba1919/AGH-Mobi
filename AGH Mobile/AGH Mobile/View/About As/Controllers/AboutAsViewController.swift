@@ -38,7 +38,7 @@ final class AboutAsViewController : UIViewController {
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup UICollectionView
+    // MARK: - Setup Collection View
     
     private func setupCollectionView() {
         aboutAsView.teamGallery.delegate = self
@@ -61,6 +61,7 @@ extension AboutAsViewController: UICollectionViewDataSource {
         let cell = aboutAsView.teamGallery.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier, for: indexPath) as! TeamGalleryCell
         cell.setupImage(named: "testPersonPhoto")
         cell.setupName(as: "Mateusz Bąk")
+        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return cell
     }
     
@@ -97,7 +98,7 @@ extension AboutAsViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
+        return 15 // Space Between Calls
     }
     
 }

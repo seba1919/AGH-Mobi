@@ -113,19 +113,19 @@ class TeamGalleryCell: UICollectionViewCell {
             make.top.equalTo(self.snp.top)
             make.height.equalTo(memberPhotoImageHight)
             make.width.equalTo(memberPhoto.snp.height)
-            make.bottom.lessThanOrEqualTo(memberName.snp.top).offset(self.frame.height * -0.1)
+            make.bottom.lessThanOrEqualTo(memberName.snp.top).offset(self.frame.height * -0.1).priority(.low)
         }
 
         // Member Name
         memberName.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.bottom.equalTo(memberSpecialization.snp.top).offset(self.frame.height * -0.0125)
+            make.bottom.equalTo(memberSpecialization.snp.top).offset(self.frame.height * -0.0125).priority(.required)
         }
 
         // Member Specialization
         memberSpecialization.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.bottom.equalTo(self.snp.bottom)
+            make.bottom.equalTo(self.snp.bottom).priority(.required)
         }
     }
 }
