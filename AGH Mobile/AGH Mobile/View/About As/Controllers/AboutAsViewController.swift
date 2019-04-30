@@ -21,7 +21,7 @@ final class AboutAsViewController : UIViewController {
     // MARK: - Instance Variables
     
     private var aboutAsView: AboutAsView { return self.view as! AboutAsView }
-    private let cellWidthMultiplie: CGFloat = 0.46
+    private let cellWidthMultiplie: CGFloat = 0.5
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -58,12 +58,13 @@ extension AboutAsViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = aboutAsView.teamGallery.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier, for: indexPath)
+        let cell = aboutAsView.teamGallery.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier, for: indexPath) as! TeamGalleryCell
+        cell.setupImage(named: "testPersonPhoto")
+        cell.setupName(as: "Mateusz Bąk")
         return cell
     }
     
 }
-
 
 extension AboutAsViewController: UICollectionViewDelegate {
     
@@ -89,6 +90,14 @@ extension AboutAsViewController: UICollectionViewDelegateFlowLayout {
                             left: freeSpaceBetweenEdgesAndCalls,
                             bottom: 0,
                             right: freeSpaceBetweenEdgesAndCalls)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 15
     }
     
 }
