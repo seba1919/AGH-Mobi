@@ -21,7 +21,8 @@ final class AboutAsViewController : UIViewController {
     // MARK: - Instance Variables
     
     private var aboutAsView: AboutAsView { return self.view as! AboutAsView }
-    private let cellWidthMultiplie: CGFloat = 0.5
+    private let cellWidthScaling: CGFloat = 0.5
+    private lazy var screenWidth = UIScreen.main.bounds.size.width
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -53,6 +54,10 @@ final class AboutAsViewController : UIViewController {
 
 extension AboutAsViewController: UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -61,7 +66,6 @@ extension AboutAsViewController: UICollectionViewDataSource {
         let cell = aboutAsView.teamGallery.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier, for: indexPath) as! TeamGalleryCell
         cell.setupImage(named: "testPersonPhoto")
         cell.setupName(as: "Mateusz Bąk")
-        cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         return cell
     }
     
@@ -79,14 +83,14 @@ extension AboutAsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellHeight = aboutAsView.teamGallery.frame.height
-        let cellWidth = self.view.frame.width * cellWidthMultiplie
+        let cellWidth = screenWidth * cellWidthScaling
         return CGSize(width: cellWidth,
                       height: cellHeight)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        let cellWidth = self.view.frame.width * cellWidthMultiplie
-        let freeSpaceBetweenEdgesAndCalls = self.view.frame.width / 2 - cellWidth / 2
+        let cellWidth = screenWidth * cellWidthScaling
+        let freeSpaceBetweenEdgesAndCalls = (view.bounds.width - cellWidth) / 2.0
         return UIEdgeInsets(top: 0,
                             left: freeSpaceBetweenEdgesAndCalls,
                             bottom: 0,
