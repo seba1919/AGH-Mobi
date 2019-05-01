@@ -29,7 +29,7 @@ final class DescriptionTextView {
         descriptionTextView.isEditable = false
         descriptionTextView.isScrollEnabled = false
         descriptionTextView.text = text
-        descriptionTextView.textAlignment = .natural
+        descriptionTextView.textAlignment = .justified
         descriptionTextView.textColor = UIColor.customGrayText
         
         if UIScreen.main.bounds.height < 668 {

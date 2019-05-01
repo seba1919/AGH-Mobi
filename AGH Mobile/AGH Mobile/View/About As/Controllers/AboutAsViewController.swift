@@ -27,7 +27,7 @@ final class AboutAsViewController : UIViewController {
     private let cellWidthScaling: CGFloat = 0.5
     private let minimumLineSpacing: CGFloat = 15.0
     // AutoScroll
-    private var timer = Timer()
+    private var timer: Timer?
     private var counter = 0
     private var isAscending = true
     private let dataSize = 10
@@ -48,9 +48,7 @@ final class AboutAsViewController : UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.async {
-            self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
-        }
+        self.startAutoScrolling()
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -65,6 +63,19 @@ final class AboutAsViewController : UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - AutoScroll Methods
     
+    private func startAutoScrolling() {
+        if timer == nil {
+            self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
+        }
+    }
+    
+    private func stopAutoScrolling() {
+        if timer != nil {
+            timer!.invalidate()
+            timer = nil
+        }
+    }
+    
     @objc private func autoScroll() {
         if isAscending {
             scrollForward()
@@ -76,14 +87,19 @@ final class AboutAsViewController : UIViewController {
     private func scrollForward() {
         scroll()
         counter += 1
-        if counter == (dataSize - 1) {
-            isAscending = false
-        }
+        checkIfIsAscendingNeedChange()
     }
     
     private func scrollBackwards() {
         scroll()
         counter -= 1
+        checkIfIsAscendingNeedChange()
+    }
+    
+    private func checkIfIsAscendingNeedChange() {
+        if counter == (dataSize - 1) {
+            isAscending = false
+        }
         if counter == 0 {
             isAscending = true
         }
@@ -123,8 +139,8 @@ extension AboutAsViewController: UICollectionViewDataSource {
 // Delegate
 extension AboutAsViewController: UIScrollViewDelegate, UICollectionViewDelegate {
     
-    // Cell stay in the middle by this code
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        // Cell stay in the middle by this code
         let cellWidth = screenWidth * cellWidthScaling
         let cellWidthIncludingSpacing = cellWidth + minimumLineSpacing
         var offset = targetContentOffset.pointee
@@ -134,10 +150,32 @@ extension AboutAsViewController: UIScrollViewDelegate, UICollectionViewDelegate 
         offset = CGPoint(x: roundedIndex * cellWidthIncludingSpacing - scrollView.contentInset.left,
                          y: -scrollView.contentInset.top)
         targetContentOffset.pointee = offset
+        
+        // Change AutoScrolling direction depend on Dragging Direction
+        let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        
+        if translation.x > 0 {
+            isAscending = false // Direction: <---
+        } else {
+            isAscending = true  // Direction: --->
+        }
+        
+        // AutoScrolling
+        counter = Int(roundedIndex)
+        checkIfIsAscendingNeedChange()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(300)) { // Delay 0.3 s
+            // Start AutoScrolling when scrollView will end dragging
+            self.startAutoScrolling()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //nav bar
+        // nav bar
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        // Stop AutoScrolling when scrollView will begin dragging
+        self.stopAutoScrolling()
     }
     
 }
@@ -171,39 +209,6 @@ extension AboutAsViewController: UICollectionViewDelegateFlowLayout {
     // Cell Minimum Line Spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return minimumLineSpacing // Space Between Calls
-    }
-    
-}
-
-class AutoScroll {
-    
-    var endPoint: CGPoint!
-    var startingPoint: CGPoint!
-    var scrollingPoint: CGPoint!
-    var timer: Timer!
-    let collectionView: UICollectionView
-    let size: Int
-    
-    init(collectionView: UICollectionView, size: Int) {
-        self.collectionView = collectionView
-        self.size = size
-    }
-    
-    func setup() {
-        var i = 0
-        var indexPath = IndexPath(row: i, section: 0)
-        if i < size - 1 && i > 0 {
-            i += 1
-        } else {
-            i = 0
-        }
-        
-    }
-    
-    func scroll(index: IndexPath) {
-        self.collectionView.scrollToItem(at: index,
-                                         at: .centeredHorizontally,
-                                         animated: true)
     }
     
 }
