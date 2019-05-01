@@ -30,7 +30,7 @@ final class AboutAsViewController : UIViewController {
     private var timer: Timer?
     private var counter = 0
     private var isAscending = true
-    private let dataSize = 10
+    private let dataSize = 10 // CHANGE!
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -42,22 +42,24 @@ final class AboutAsViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        aboutAsView.setupUI()
-        setupCollectionView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+        self.aboutAsView.setupUI()
+        self.setupCollectionView()
+        self.setupNavigationAttributs()
         self.startAutoScrolling()
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup Collection View
+    // MARK: - Setup
     
     private func setupCollectionView() {
         aboutAsView.teamGallery.delegate = self
         aboutAsView.teamGallery.dataSource = self
         aboutAsView.teamGallery.register(TeamGalleryCell.self, forCellWithReuseIdentifier: TeamGalleryCell.identifier)
+    }
+    
+    private func setupNavigationAttributs() {
+        self.navigationItem.title = "O nas"
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -191,7 +193,7 @@ extension AboutAsViewController: UICollectionViewDelegateFlowLayout {
                       height: cellHeight)
     }
 
-    // Cell Insets Edges
+    // Cells Insets Edges
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let cellWidth = screenWidth * cellWidthScaling
         let freeSpaceBetweenEdgesAndCalls = (view.bounds.width - cellWidth) / 2.0

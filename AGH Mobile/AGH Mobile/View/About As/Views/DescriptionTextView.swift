@@ -38,6 +38,7 @@ final class DescriptionTextView {
             descriptionTextView.font = descriptionTextView.font?.withSize(13.6)
         } else if UIScreen.main.bounds.height > 737 {
             descriptionTextView.font = descriptionTextView.font?.withSize(15)
+            descriptionTextView.textAlignment = .center // justified looks awfully
         }
         
     }
