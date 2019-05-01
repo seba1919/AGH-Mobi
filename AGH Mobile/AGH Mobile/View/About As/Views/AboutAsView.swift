@@ -99,6 +99,13 @@ final class AboutAsView: UIView {
     }()
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Actions
+    
+    public func addTargetToWebPageButton(_ target: AnyObject?, action: Selector, forControlEvents events: UIControl.Event) {
+        webPageButton.addTarget(target, action: action, for: events)
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Constraints
     
     private func setupConstraints() {
