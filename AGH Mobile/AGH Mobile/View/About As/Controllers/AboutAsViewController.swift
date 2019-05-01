@@ -20,10 +20,17 @@ final class AboutAsViewController : UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
     
+    // View
     private var aboutAsView: AboutAsView { return self.view as! AboutAsView }
+    private lazy var screenWidth = UIScreen.main.bounds.size.width
+    // Collection View
     private let cellWidthScaling: CGFloat = 0.5
     private let minimumLineSpacing: CGFloat = 15.0
-    private lazy var screenWidth = UIScreen.main.bounds.size.width
+    // AutoScroll
+    private var timer = Timer()
+    private var counter = 0
+    private var isAscending = true
+    private let dataSize = 10
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -39,6 +46,13 @@ final class AboutAsViewController : UIViewController {
         setupCollectionView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
+        }
+    }
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup Collection View
     
@@ -46,6 +60,39 @@ final class AboutAsViewController : UIViewController {
         aboutAsView.teamGallery.delegate = self
         aboutAsView.teamGallery.dataSource = self
         aboutAsView.teamGallery.register(TeamGalleryCell.self, forCellWithReuseIdentifier: TeamGalleryCell.identifier)
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - AutoScroll Methods
+    
+    @objc private func autoScroll() {
+        if isAscending {
+            scrollForward()
+        } else {
+            scrollBackwards()
+        }
+    }
+    
+    private func scrollForward() {
+        scroll()
+        counter += 1
+        if counter == (dataSize - 1) {
+            isAscending = false
+        }
+    }
+    
+    private func scrollBackwards() {
+        scroll()
+        counter -= 1
+        if counter == 0 {
+            isAscending = true
+        }
+    }
+    
+    private func scroll() {
+        let collection = self.aboutAsView.teamGallery
+        let index = IndexPath(item: counter, section: 0)
+        collection.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
     }
     
 }
@@ -124,6 +171,39 @@ extension AboutAsViewController: UICollectionViewDelegateFlowLayout {
     // Cell Minimum Line Spacing
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return minimumLineSpacing // Space Between Calls
+    }
+    
+}
+
+class AutoScroll {
+    
+    var endPoint: CGPoint!
+    var startingPoint: CGPoint!
+    var scrollingPoint: CGPoint!
+    var timer: Timer!
+    let collectionView: UICollectionView
+    let size: Int
+    
+    init(collectionView: UICollectionView, size: Int) {
+        self.collectionView = collectionView
+        self.size = size
+    }
+    
+    func setup() {
+        var i = 0
+        var indexPath = IndexPath(row: i, section: 0)
+        if i < size - 1 && i > 0 {
+            i += 1
+        } else {
+            i = 0
+        }
+        
+    }
+    
+    func scroll(index: IndexPath) {
+        self.collectionView.scrollToItem(at: index,
+                                         at: .centeredHorizontally,
+                                         animated: true)
     }
     
 }

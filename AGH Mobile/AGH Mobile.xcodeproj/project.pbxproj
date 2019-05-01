@@ -37,6 +37,7 @@
 		6157792722662EB200C1BCDC /* TemporaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157792622662EB200C1BCDC /* TemporaryButton.swift */; };
 		615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779282267089100C1BCDC /* DescriptionTextView.swift */; };
 		6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E0227898B6008D664F /* TeamGalleryCell.swift */; };
+		6198C8E32278EE76008D664F /* AutoScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E22278EE76008D664F /* AutoScroller.swift */; };
 		61A743ED227743BB00DFCB35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A743EC227743BB00DFCB35 /* Colors.swift */; };
 		61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C74224BDCF7008340B3 /* AppDelegate.swift */; };
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
@@ -99,6 +100,7 @@
 		6157792622662EB200C1BCDC /* TemporaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryButton.swift; sourceTree = "<group>"; };
 		615779282267089100C1BCDC /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
 		6198C8E0227898B6008D664F /* TeamGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGalleryCell.swift; sourceTree = "<group>"; };
+		6198C8E22278EE76008D664F /* AutoScroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScroller.swift; sourceTree = "<group>"; };
 		61A743EC227743BB00DFCB35 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		61AD7C71224BDCF7008340B3 /* AGH Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AGH Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AD7C74224BDCF7008340B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -434,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				6157791E2265F77E00C1BCDC /* AboutAsViewController.swift */,
+				6198C8E22278EE76008D664F /* AutoScroller.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 				4B6B0154225CCE2A001BF0F1 /* CourseType.swift in Sources */,
 				611F4B192250E0480056416E /* InformationsViewController.swift in Sources */,
 				6157791F2265F77E00C1BCDC /* AboutAsViewController.swift in Sources */,
+				6198C8E32278EE76008D664F /* AutoScroller.swift in Sources */,
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 				611F4B1C2250E0480056416E /* StudiesViewController.swift in Sources */,
 				611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */,
