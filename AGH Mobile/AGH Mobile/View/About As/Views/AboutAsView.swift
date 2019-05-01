@@ -20,9 +20,12 @@ final class AboutAsView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
     
+    // Private
     private lazy var freeSpaceBetweenComponents = self.frame.height * 0.0225
     private lazy var topPadding = self.frame.height * 0.047
     private lazy var bottomPadding = self.frame.height * -0.030
+    // Public
+    public var openWebPage: (() -> Void)?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -55,7 +58,6 @@ final class AboutAsView: UIView {
     // MARK: - Components of View
     
     // Team Gallery
-    // Public bo w VC trzeba się dostać do tego (?)
     public private(set) lazy var teamGallery: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -95,15 +97,9 @@ final class AboutAsView: UIView {
         button.setTitle("strona internetowa koła", for: .normal)
         button.setTitleColor(UIColor.mainRed, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(onPressOpenWeb), for: .touchUpInside)
         return button
     }()
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Actions
-    
-    public func addTargetToWebPageButton(_ target: AnyObject?, action: Selector, forControlEvents events: UIControl.Event) {
-        webPageButton.addTarget(target, action: action, for: events)
-    }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Constraints
@@ -141,4 +137,12 @@ final class AboutAsView: UIView {
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
     }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Selectors
+    
+    @objc private func onPressOpenWeb() {
+        openWebPage?()
+    }
+    
 }

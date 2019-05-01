@@ -31,6 +31,8 @@ final class AboutAsViewController : UIViewController {
     private var counter = 0
     private var isAscending = true
     private let dataSize = 10 // CHANGE!
+    // WebPage
+    private let webPageAddress = "https://www.mackn.agh.edu.pl"
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -45,6 +47,7 @@ final class AboutAsViewController : UIViewController {
         self.aboutAsView.setupUI()
         self.setupCollectionView()
         self.setupNavigationAttributs()
+        self.setupActions()
         self.startAutoScrolling()
     }
     
@@ -111,6 +114,17 @@ final class AboutAsViewController : UIViewController {
         let collection = self.aboutAsView.teamGallery
         let index = IndexPath(item: counter, section: 0)
         collection.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Actions
+    
+    private func setupActions() {
+        aboutAsView.openWebPage = {
+            if let url = URL(string: self.webPageAddress) {
+                UIApplication.shared.open(url)
+            }
+        }
     }
     
 }
