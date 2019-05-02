@@ -37,6 +37,9 @@
 		6157792722662EB200C1BCDC /* TemporaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157792622662EB200C1BCDC /* TemporaryButton.swift */; };
 		615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779282267089100C1BCDC /* DescriptionTextView.swift */; };
 		6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E0227898B6008D664F /* TeamGalleryCell.swift */; };
+		6198C8E62279E8F2008D664F /* MemberProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */; };
+		6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E92279E947008D664F /* MemberProfileView.swift */; };
+		6198C8EC227A0C65008D664F /* MemberWebPagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8EB227A0C65008D664F /* MemberWebPagesCell.swift */; };
 		61A743ED227743BB00DFCB35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A743EC227743BB00DFCB35 /* Colors.swift */; };
 		61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C74224BDCF7008340B3 /* AppDelegate.swift */; };
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
@@ -99,6 +102,9 @@
 		6157792622662EB200C1BCDC /* TemporaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryButton.swift; sourceTree = "<group>"; };
 		615779282267089100C1BCDC /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
 		6198C8E0227898B6008D664F /* TeamGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGalleryCell.swift; sourceTree = "<group>"; };
+		6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileViewController.swift; sourceTree = "<group>"; };
+		6198C8E92279E947008D664F /* MemberProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileView.swift; sourceTree = "<group>"; };
+		6198C8EB227A0C65008D664F /* MemberWebPagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberWebPagesCell.swift; sourceTree = "<group>"; };
 		61A743EC227743BB00DFCB35 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		61AD7C71224BDCF7008340B3 /* AGH Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AGH Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AD7C74224BDCF7008340B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 		4B6B0143225C98B6001BF0F1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6198C8E42279E8C6008D664F /* MemberProfile */,
 				6157791B2265F75200C1BCDC /* About As */,
 				611F4B012250E0480056416E /* User */,
 				611F4AFB2250E0480056416E /* Informations */,
@@ -434,6 +441,32 @@
 			isa = PBXGroup;
 			children = (
 				6157791E2265F77E00C1BCDC /* AboutAsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6198C8E42279E8C6008D664F /* MemberProfile */ = {
+			isa = PBXGroup;
+			children = (
+				6198C8E82279E92D008D664F /* Controllers */,
+				6198C8E72279E926008D664F /* Views */,
+			);
+			path = MemberProfile;
+			sourceTree = "<group>";
+		};
+		6198C8E72279E926008D664F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6198C8E92279E947008D664F /* MemberProfileView.swift */,
+				6198C8EB227A0C65008D664F /* MemberWebPagesCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6198C8E82279E92D008D664F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -743,6 +776,7 @@
 			files = (
 				4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */,
 				4B6B0147225C9960001BF0F1 /* ModelWD.swift in Sources */,
+				6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */,
 				4B6B0157225CD289001BF0F1 /* TestWDImpl.swift in Sources */,
 				61241323225267E3007D04C0 /* InformationsView.swift in Sources */,
 				4B87CCD52264E8130028930A /* TestSkosImpl.swift in Sources */,
@@ -761,6 +795,7 @@
 				4B6B0154225CCE2A001BF0F1 /* CourseType.swift in Sources */,
 				611F4B192250E0480056416E /* InformationsViewController.swift in Sources */,
 				6157791F2265F77E00C1BCDC /* AboutAsViewController.swift in Sources */,
+				6198C8E62279E8F2008D664F /* MemberProfileViewController.swift in Sources */,
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 				611F4B1C2250E0480056416E /* StudiesViewController.swift in Sources */,
 				611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */,
@@ -768,6 +803,7 @@
 				611F4B6422511F3C0056416E /* HomeTabBar.swift in Sources */,
 				61A743ED227743BB00DFCB35 /* Colors.swift in Sources */,
 				611F4B68225127F80056416E /* HomeTabBarItem.swift in Sources */,
+				6198C8EC227A0C65008D664F /* MemberWebPagesCell.swift in Sources */,
 				4B6B0149225C9B70001BF0F1 /* WDViewModel.swift in Sources */,
 				4B6B0150225CCBC5001BF0F1 /* Grade.swift in Sources */,
 				6157792722662EB200C1BCDC /* TemporaryButton.swift in Sources */,

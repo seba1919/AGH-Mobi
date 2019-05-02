@@ -10,7 +10,6 @@
 // MARK: - Import
 
 import UIKit
-import SnapKit
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
@@ -70,7 +69,7 @@ final class AboutAsViewController : UIViewController {
     
     private func startAutoScrolling() {
         if timer == nil {
-            self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
         }
     }
     
@@ -186,7 +185,8 @@ extension AboutAsViewController: UIScrollViewDelegate, UICollectionViewDelegate 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // nav bar
+        self.navigationController?.pushViewController(MemberProfileViewController(), animated: true)
+        self.stopAutoScrolling()
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
