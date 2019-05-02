@@ -10,6 +10,7 @@
 // MARK: - Import
 
 import UIKit
+import FirebaseDatabase
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
@@ -32,6 +33,8 @@ final class AboutAsViewController : UIViewController {
     private let dataSize = 10 // CHANGE!
     // WebPage
     private let webPageAddress = "https://www.mackn.agh.edu.pl"
+    // Firebase
+    private let firebaseRef = Database.database().reference()
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -56,7 +59,8 @@ final class AboutAsViewController : UIViewController {
     private func setupCollectionView() {
         aboutAsView.teamGallery.delegate = self
         aboutAsView.teamGallery.dataSource = self
-        aboutAsView.teamGallery.register(TeamGalleryCell.self, forCellWithReuseIdentifier: TeamGalleryCell.identifier)
+        aboutAsView.teamGallery.register(TeamGalleryCell.self,
+                                         forCellWithReuseIdentifier: TeamGalleryCell.identifier)
     }
     
     private func setupNavigationAttributs() {
@@ -69,7 +73,11 @@ final class AboutAsViewController : UIViewController {
     
     private func startAutoScrolling() {
         if timer == nil {
-            self.timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 3.0,
+                                              target: self,
+                                              selector: #selector(self.autoScroll),
+                                              userInfo: nil,
+                                              repeats: true)
         }
     }
     
@@ -112,7 +120,9 @@ final class AboutAsViewController : UIViewController {
     private func scroll() {
         let collection = self.aboutAsView.teamGallery
         let index = IndexPath(item: counter, section: 0)
-        collection.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+        collection.scrollToItem(at: index,
+                                at: .centeredHorizontally,
+                                animated: true)
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

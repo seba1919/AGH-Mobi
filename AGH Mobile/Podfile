@@ -8,9 +8,12 @@ target 'AGH Mobile' do
   use_frameworks!
 
   # Pods for AGH Mobile
-  pod 'Alamofire', '~> 5.0.0-beta.3'
-  pod 'SwiftyJSON', '~> 4.2'
+  pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'SwiftyJSON'
   pod 'SnapKit', '~> 5.0.0'
+  pod 'Firebase/Database'
+  pod 'Firebase/Core'
+
 
   target 'AGH MobileTests' do
     inherit! :search_paths

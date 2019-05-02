@@ -40,6 +40,7 @@
 		6198C8E62279E8F2008D664F /* MemberProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */; };
 		6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E92279E947008D664F /* MemberProfileView.swift */; };
 		6198C8EC227A0C65008D664F /* MemberWebPagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8EB227A0C65008D664F /* MemberWebPagesCell.swift */; };
+		6198C8EF227AEA43008D664F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6198C8EE227AEA43008D664F /* GoogleService-Info.plist */; };
 		61A743ED227743BB00DFCB35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A743EC227743BB00DFCB35 /* Colors.swift */; };
 		61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C74224BDCF7008340B3 /* AppDelegate.swift */; };
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
@@ -105,6 +106,7 @@
 		6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileViewController.swift; sourceTree = "<group>"; };
 		6198C8E92279E947008D664F /* MemberProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileView.swift; sourceTree = "<group>"; };
 		6198C8EB227A0C65008D664F /* MemberWebPagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberWebPagesCell.swift; sourceTree = "<group>"; };
+		6198C8EE227AEA43008D664F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61A743EC227743BB00DFCB35 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		61AD7C71224BDCF7008340B3 /* AGH Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AGH Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AD7C74224BDCF7008340B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 		61AD7C73224BDCF7008340B3 /* AGH Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				6198C8EE227AEA43008D664F /* GoogleService-Info.plist */,
 				611F4AE62250D9A80056416E /* Application */,
 				4B87CCD82264EFC10028930A /* Model */,
 				4B6B0143225C98B6001BF0F1 /* View */,
@@ -671,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				611F4B62225115DF0056416E /* Assets.xcassets in Resources */,
+				6198C8EF227AEA43008D664F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,14 +739,20 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
