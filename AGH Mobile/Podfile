@@ -11,8 +11,6 @@ target 'AGH Mobile' do
   pod 'Alamofire', '~> 5.0.0-beta.5'
   pod 'SwiftyJSON'
   pod 'SnapKit', '~> 5.0.0'
-  pod 'Firebase/Database'
-  pod 'Firebase/Core'
 
 
   target 'AGH MobileTests' do

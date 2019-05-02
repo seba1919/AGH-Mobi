@@ -10,7 +10,6 @@
 // MARK: - Import
 
 import UIKit
-import FirebaseDatabase
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
@@ -33,8 +32,6 @@ final class AboutAsViewController : UIViewController {
     private let dataSize = 10 // CHANGE!
     // WebPage
     private let webPageAddress = "https://www.mackn.agh.edu.pl"
-    // Firebase
-    private let firebaseRef = Database.database().reference()
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
