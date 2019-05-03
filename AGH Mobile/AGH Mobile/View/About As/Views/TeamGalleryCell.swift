@@ -86,7 +86,6 @@ class TeamGalleryCell: UICollectionViewCell {
         label.textColor = .customGrayText
         label.text = "robb stark".uppercased()
         label.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-        
         return label
     }()
     
@@ -98,7 +97,6 @@ class TeamGalleryCell: UICollectionViewCell {
         label.textColor = .mainRed
         label.text = "king of the north".uppercased()
         label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        
         return label
     }()
     

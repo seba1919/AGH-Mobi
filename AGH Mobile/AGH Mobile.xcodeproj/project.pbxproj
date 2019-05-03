@@ -34,12 +34,13 @@
 		61241325225267FC007D04C0 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61241324225267FC007D04C0 /* UserView.swift */; };
 		6157791F2265F77E00C1BCDC /* AboutAsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157791E2265F77E00C1BCDC /* AboutAsViewController.swift */; };
 		615779212265F7D400C1BCDC /* AboutAsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779202265F7D400C1BCDC /* AboutAsView.swift */; };
-		6157792722662EB200C1BCDC /* TemporaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157792622662EB200C1BCDC /* TemporaryButton.swift */; };
 		615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779282267089100C1BCDC /* DescriptionTextView.swift */; };
 		6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E0227898B6008D664F /* TeamGalleryCell.swift */; };
 		6198C8E62279E8F2008D664F /* MemberProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */; };
 		6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E92279E947008D664F /* MemberProfileView.swift */; };
 		6198C8EC227A0C65008D664F /* MemberWebPagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8EB227A0C65008D664F /* MemberWebPagesCell.swift */; };
+		6198C8F4227C2294008D664F /* TabBarPageTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8F3227C2294008D664F /* TabBarPageTitle.swift */; };
+		6198C8F6227C25CA008D664F /* UserWDProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8F5227C25CA008D664F /* UserWDProfile.swift */; };
 		61A743ED227743BB00DFCB35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A743EC227743BB00DFCB35 /* Colors.swift */; };
 		61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C74224BDCF7008340B3 /* AppDelegate.swift */; };
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
@@ -99,12 +100,13 @@
 		61241324225267FC007D04C0 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		6157791E2265F77E00C1BCDC /* AboutAsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAsViewController.swift; sourceTree = "<group>"; };
 		615779202265F7D400C1BCDC /* AboutAsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAsView.swift; sourceTree = "<group>"; };
-		6157792622662EB200C1BCDC /* TemporaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryButton.swift; sourceTree = "<group>"; };
 		615779282267089100C1BCDC /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
 		6198C8E0227898B6008D664F /* TeamGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGalleryCell.swift; sourceTree = "<group>"; };
 		6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileViewController.swift; sourceTree = "<group>"; };
 		6198C8E92279E947008D664F /* MemberProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileView.swift; sourceTree = "<group>"; };
 		6198C8EB227A0C65008D664F /* MemberWebPagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberWebPagesCell.swift; sourceTree = "<group>"; };
+		6198C8F3227C2294008D664F /* TabBarPageTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPageTitle.swift; sourceTree = "<group>"; };
+		6198C8F5227C25CA008D664F /* UserWDProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWDProfile.swift; sourceTree = "<group>"; };
 		61A743EC227743BB00DFCB35 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		61AD7C71224BDCF7008340B3 /* AGH Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AGH Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AD7C74224BDCF7008340B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -338,7 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				61241324225267FC007D04C0 /* UserView.swift */,
-				6157792622662EB200C1BCDC /* TemporaryButton.swift */,
+				6198C8F5227C25CA008D664F /* UserWDProfile.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -431,7 +433,6 @@
 			isa = PBXGroup;
 			children = (
 				615779202265F7D400C1BCDC /* AboutAsView.swift */,
-				615779282267089100C1BCDC /* DescriptionTextView.swift */,
 				6198C8E0227898B6008D664F /* TeamGalleryCell.swift */,
 			);
 			path = Views;
@@ -471,9 +472,19 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		6198C8F2227C2275008D664F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				615779282267089100C1BCDC /* DescriptionTextView.swift */,
+				6198C8F3227C2294008D664F /* TabBarPageTitle.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		61A743EB2277439900DFCB35 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6198C8F2227C2275008D664F /* Views */,
 				61A743EC227743BB00DFCB35 /* Colors.swift */,
 			);
 			path = Extension;
@@ -783,6 +794,7 @@
 				6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */,
 				611F4B1A2250E0480056416E /* UserViewController.swift in Sources */,
 				615779212265F7D400C1BCDC /* AboutAsView.swift in Sources */,
+				6198C8F6227C25CA008D664F /* UserWDProfile.swift in Sources */,
 				4B6B0152225CCD7C001BF0F1 /* Grades.swift in Sources */,
 				4B87CCD72264E9170028930A /* Employee.swift in Sources */,
 				611F4B1D2250E0480056416E /* ForYouViewController.swift in Sources */,
@@ -799,6 +811,7 @@
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 				611F4B1C2250E0480056416E /* StudiesViewController.swift in Sources */,
 				611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */,
+				6198C8F4227C2294008D664F /* TabBarPageTitle.swift in Sources */,
 				61241321225267A9007D04C0 /* MapsView.swift in Sources */,
 				611F4B6422511F3C0056416E /* HomeTabBar.swift in Sources */,
 				61A743ED227743BB00DFCB35 /* Colors.swift in Sources */,
@@ -806,7 +819,6 @@
 				6198C8EC227A0C65008D664F /* MemberWebPagesCell.swift in Sources */,
 				4B6B0149225C9B70001BF0F1 /* WDViewModel.swift in Sources */,
 				4B6B0150225CCBC5001BF0F1 /* Grade.swift in Sources */,
-				6157792722662EB200C1BCDC /* TemporaryButton.swift in Sources */,
 				4B87CCD32264E6B10028930A /* WDImplv2.swift in Sources */,
 				61241325225267FC007D04C0 /* UserView.swift in Sources */,
 			);

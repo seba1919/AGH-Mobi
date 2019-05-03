@@ -19,7 +19,8 @@ class UserViewController: UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
     
-    var userView: UserView { return self.view as! UserView }
+    // View
+    private var userView: UserView { return self.view as! UserView }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -30,7 +31,16 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.userView.setupUI()
+        self.setupNavigationAttributs()
     }
     
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Setup
+    
+    private func setupNavigationAttributs() {
+        self.navigationItem.title = ""
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
     
 }
