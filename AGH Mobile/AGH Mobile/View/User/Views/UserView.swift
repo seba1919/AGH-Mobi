@@ -50,6 +50,8 @@ class UserView: UIView {
         self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.addSubview(userTabBarTitle)
         self.addSubview(userProfile)
+        
+        self.addSubview(logoutButton)
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -65,13 +67,23 @@ class UserView: UIView {
     }()
     
     // User Profile
-    private lazy var userProfile: UserWDProfile = {
+    public private(set) lazy var userProfile: UserWDProfile = {
         let profile = UserWDProfile()
         profile.translatesAutoresizingMaskIntoConstraints = false
+        profile.setupImage(named: "testPersonPhoto")
         return profile
     }()
     
+    //...
     
+    // Logout Button
+    private lazy var logoutButton: UIButton = {
+        let button = AGHButton(
+            title: "Wyloguj się")
+            .build()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup Constraints
@@ -86,10 +98,20 @@ class UserView: UIView {
         
         // User Profile
         userProfile.snp.makeConstraints { (make) in
-            make.top.equalTo(userTabBarTitle.snp.bottom).offset(screenHeight * 0.036)
+            make.top.equalTo(userTabBarTitle.snp.bottom).offset(screenHeight * 0.04)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
             make.height.equalTo(Double(screenHeight) * UserView.userProfileHightMultipliValue)
+        }
+        
+        //...
+        
+        // Logout Button
+        logoutButton.snp.makeConstraints { (make) in
+            make.bottom.equalToSuperview().offset(screenHeight * -0.125)
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+            make.height.equalTo(50)
+            make.width.equalTo(250)
         }
     }
     

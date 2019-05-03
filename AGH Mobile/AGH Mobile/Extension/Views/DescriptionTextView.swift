@@ -26,9 +26,16 @@ final class DescriptionTextView {
     
     init(text: String) {
         descriptionTextView = UITextView()
+        descriptionTextView.text = text
+        self.setupLayout()
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Setup
+    
+    private func setupLayout() {
         descriptionTextView.isEditable = false
         descriptionTextView.isScrollEnabled = false
-        descriptionTextView.text = text
         descriptionTextView.textAlignment = .justified
         descriptionTextView.textColor = UIColor.customGrayText
         
@@ -40,7 +47,6 @@ final class DescriptionTextView {
             descriptionTextView.font = descriptionTextView.font?.withSize(15)
             descriptionTextView.textAlignment = .center // justified looks awfully
         }
-        
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

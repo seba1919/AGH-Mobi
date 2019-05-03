@@ -1,5 +1,5 @@
 //
-//  TabBarPageTitle.swift
+//  AGHButton.swift
 //  AGH Mobile
 //
 //  Created by Mateusz Bąk on 03/05/2019.
@@ -10,40 +10,51 @@
 // MARK: - Import
 
 import UIKit
+import SnapKit
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
 
-final class TabBarPageTitle {
-    
+final class AGHButton {
+ 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
     
-    private let tabBarPageTitle: UILabel
+    private let AGHButton: UIButton
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
     
     init(title: String) {
-        tabBarPageTitle = UILabel()
-        tabBarPageTitle.text = title
+        AGHButton = UIButton()
+        AGHButton.setTitle(title, for: .normal)
         self.setupLayout()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup
     
     private func setupLayout() {
-        tabBarPageTitle.textAlignment = .center
-        tabBarPageTitle.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        tabBarPageTitle.textColor = .black
+        AGHButton.layer.cornerRadius = 25
+        AGHButton.backgroundColor = .mainRed
+        AGHButton.setTitleColor(.white, for: .normal)
+        AGHButton.titleLabel?.textAlignment = .center
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Public methods
+    // MARK: - Public Methods
     
-    public func build() -> UILabel {
-        return tabBarPageTitle
+    public func addTarget(_ target: Any?, action: Selector, for event: UIControl.Event) -> Self {
+        AGHButton.addTarget(target, action: action, for: event)
+        return self
+    }
+    
+    public func build() -> UIButton {
+        return AGHButton
     }
     
 }
