@@ -46,6 +46,7 @@ class MemberProfileViewController: UIViewController {
         memberProfileView.memberWebPages.delegate = self
         memberProfileView.memberWebPages.dataSource = self
         memberProfileView.memberWebPages.register(MemberWebPagesCell.self, forCellReuseIdentifier: MemberWebPagesCell.identifier)
+        memberProfileView.setupImage(named: "testPersonPhoto")
     }
     
     private func setupNavigationAttributs() {

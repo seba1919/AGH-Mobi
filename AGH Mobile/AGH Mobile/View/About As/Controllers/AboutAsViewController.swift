@@ -27,7 +27,7 @@ final class AboutAsViewController : UIViewController {
     private let minimumLineSpacing: CGFloat = 15.0
     // AutoScroll
     private var timer: Timer?
-    private var counter = 0
+    private var counter = 1
     private var isAscending = true
     private let dataSize = 10 // CHANGE!
     // WebPage
