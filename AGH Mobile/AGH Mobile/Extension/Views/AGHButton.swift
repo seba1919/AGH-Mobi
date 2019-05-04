@@ -10,7 +10,6 @@
 // MARK: - Import
 
 import UIKit
-import SnapKit
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
@@ -26,7 +25,7 @@ final class AGHButton {
     // MARK: - Init
     
     init(title: String) {
-        AGHButton = UIButton()
+        AGHButton = UIButton(type: .system)
         AGHButton.setTitle(title, for: .normal)
         self.setupLayout()
     }
@@ -39,10 +38,21 @@ final class AGHButton {
     // MARK: - Setup
     
     private func setupLayout() {
-        AGHButton.layer.cornerRadius = 25
+        self.setupCornerRadius()
         AGHButton.backgroundColor = .mainRed
         AGHButton.setTitleColor(.white, for: .normal)
+        AGHButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
         AGHButton.titleLabel?.textAlignment = .center
+    }
+    
+    private func setupCornerRadius() {
+        if UIScreen.main.bounds.height < 668 {
+            AGHButton.layer.cornerRadius = 22
+        } else if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
+            AGHButton.layer.cornerRadius = 24
+        } else if UIScreen.main.bounds.height > 737 {
+            AGHButton.layer.cornerRadius = 26
+        }
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
