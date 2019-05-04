@@ -1,5 +1,5 @@
 //
-//  TabBarPageTitle.swift
+//  TabBarPageTitleLabel.swift
 //  AGH Mobile
 //
 //  Created by Mateusz Bąk on 03/05/2019.
@@ -14,7 +14,7 @@ import UIKit
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
 
-final class TabBarPageTitle {
+final class TabBarPageTitleLabel {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties

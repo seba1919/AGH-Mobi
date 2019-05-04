@@ -50,7 +50,7 @@ class UserView: UIView {
         self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         self.addSubview(userTabBarTitle)
         self.addSubview(userProfile)
-        
+        self.addSubview(userSettingsContent)
         self.addSubview(logoutButton)
     }
     
@@ -59,7 +59,7 @@ class UserView: UIView {
     
     // User TabBar Title
     private lazy var userTabBarTitle: UILabel = {
-        let tabBarPageTitle = TabBarPageTitle(
+        let tabBarPageTitle = TabBarPageTitleLabel(
             title: "Ustawienia Użytkownika")
             .build()
         tabBarPageTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -67,6 +67,7 @@ class UserView: UIView {
     }()
     
     // User Profile
+    // Public Methods in this property
     public private(set) lazy var userProfile: UserWDProfile = {
         let profile = UserWDProfile()
         profile.translatesAutoresizingMaskIntoConstraints = false
@@ -74,7 +75,12 @@ class UserView: UIView {
         return profile
     }()
     
-    //...
+    // User Settings
+    private lazy var userSettingsContent: UserSettingsContent = {
+        let view = UserSettingsContent()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     // Logout Button
     private lazy var logoutButton: UIButton = {
@@ -104,14 +110,28 @@ class UserView: UIView {
             make.height.equalTo(Double(screenHeight) * UserView.userProfileHightMultipliValue)
         }
         
-        //...
+        // User Settings
+        userSettingsContent.snp.makeConstraints { (make) in
+            make.top.equalTo(userProfile.snp.bottom).offset(screenHeight * 0.052)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
+            make.bottom.equalTo(logoutButton.snp.top).offset(screenHeight * -0.052)
+        }
         
         // Logout Button
         logoutButton.snp.makeConstraints { (make) in
             make.bottom.equalToSuperview().offset(screenHeight * -0.125)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-            make.height.equalTo(50)
-            make.width.equalTo(250)
+            //make.height.equalTo(screenHeight * 0.058)
+            if UIScreen.main.bounds.height < 668 {
+                make.height.equalTo(22*2)
+            } else if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
+                make.height.equalTo(24*2)
+            } else if UIScreen.main.bounds.height > 737 {
+                make.height.equalTo(26*2)
+            }
+            make.left.equalTo(self.snp.left).offset(screenWidth * 0.18)
+            make.right.equalTo(self.snp.right).offset(screenWidth * -0.18)
         }
     }
     

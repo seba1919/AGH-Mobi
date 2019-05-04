@@ -39,7 +39,6 @@ class UserViewController: UIViewController {
     // MARK: - Setup
     
     private func setupNavigationAttributs() {
-        self.navigationItem.title = ""
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
