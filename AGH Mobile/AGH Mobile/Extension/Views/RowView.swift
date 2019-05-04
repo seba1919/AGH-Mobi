@@ -20,17 +20,24 @@ final class RowView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
     
-    private var topPadding: CGFloat = 5
-    private var bottomPadding: CGFloat = -5
+    // Variables
+    private var topPadding: CGFloat = 12
+    private var bottomPadding: CGFloat = -12
     private var fontSize: CGFloat = 17
+    // Constantly
+    private let rightPadding: CGFloat = -5
     
     // Styles
-    enum Style {
+    public enum Style {
         case normal
+        case normalWithIndentation
+        case withSwitch
+        case imageOnTheLeft
+        case empty
     }
     
-    // Separator Position
-    enum SeparatorPosition {
+    // Separator Positions
+    public enum SeparatorPosition {
         case top
         case bottom
         case topAndBottom
@@ -45,6 +52,10 @@ final class RowView: UIView {
         
         switch style {
         case .normal: setupNormalStyle()
+        case .normalWithIndentation: setupNormalWithIndentationStyle()
+        case .withSwitch: setupWithSwitchStyle()
+        case .imageOnTheLeft: setupImageOnTheLeftStyle()
+        case .empty: setupEmptyStyle()
         }
         
         switch separatorPosition {
@@ -61,7 +72,7 @@ final class RowView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setups
     
-    // Setups for Styles
+    // MARK: Setups for Styles
     
     private func setupNormalStyle() {
         self.addSubview(title)
@@ -69,7 +80,30 @@ final class RowView: UIView {
         self.setupNormalStyleConstraints()
     }
     
-    // Setups for Separators
+    private func setupNormalWithIndentationStyle() {
+        self.setupNormalStyle()
+        self.updateNormalStyleConstraintsToNormalWithIndentation()
+    }
+    
+    private func setupWithSwitchStyle() {
+        self.addSubview(title)
+        self.addSubview(castomSwitch)
+        self.setupWithSwitchStyleConstraints()
+    }
+    
+    private func setupImageOnTheLeftStyle() {
+        self.addSubview(title)
+        self.addSubview(leftImage)
+        self.addSubview(rightImage)
+        self.setupImageOnTheLeftStyleConstraints()
+    }
+    
+    private func setupEmptyStyle() {
+        self.addSubview(title)
+        self.setupEmptyStyleConstraints()
+    }
+    
+    // MARK: Setups for Separators
     
     private func setupTopSeparator() {
         self.addSubview(topSeparator)
@@ -87,32 +121,50 @@ final class RowView: UIView {
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Adjustment of size to resolution
-    
-    private func adjustSizes() {
-        // Iphones 6, 6s, 7, 8
-        if UIScreen.main.bounds.height < 668 {
-            self.setupVariables(topPadding: 3,
-                                bottomPadding: -3,
-                                fontSize: 15)
-        // Iphones 6+, 6s+, 7+, 8+
-        } else if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
-            self.setupVariables(topPadding: 4,
-                                bottomPadding: -4,
-                                fontSize: 16)
-        // and bigger Iphones
-        } else if UIScreen.main.bounds.height > 737 {
-            self.setupVariables(topPadding: 6,
-                                bottomPadding: -6,
-                                fontSize: 17)
-        }
-    }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public Methods
     
     public func setupTitle(as name: String) {
         title.text = name
+    }
+    
+    public func setupLeftImage(named name: String) {
+        leftImage.image = UIImage(named: name)
+    }
+
+    // MARK: Setups Variables Depend From Requirements
+    
+    // For Iphones 6, 6s, 7, 8
+    public func setupVariablesForSmallResolution(
+                customtopPadding: CGFloat,
+                custombottomPadding: CGFloat,
+                customfontSize: CGFloat) {
+        if UIScreen.main.bounds.height < 668 {
+            self.setupVariables(topPadding: customtopPadding,
+                                bottomPadding: custombottomPadding,
+                                fontSize: customfontSize)
+        }
+    }
+    // For Iphones 6+, 6s+, 7+, 8+
+    public func setupVariablesForMediumResolution(
+        customtopPadding: CGFloat,
+        custombottomPadding: CGFloat,
+        customfontSize: CGFloat) {
+        if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
+            self.setupVariables(topPadding: customtopPadding,
+                                bottomPadding: custombottomPadding,
+                                fontSize: customfontSize)
+        }
+    }
+    // For Iphones XS, XR, X, XS Max
+    public func setupVariablesForHighResolution(
+        customtopPadding: CGFloat,
+        custombottomPadding: CGFloat,
+        customfontSize: CGFloat) {
+        if UIScreen.main.bounds.height > 737 {
+            self.setupVariables(topPadding: customtopPadding,
+                                bottomPadding: custombottomPadding,
+                                fontSize: customfontSize)
+        }
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -139,6 +191,25 @@ final class RowView: UIView {
         return image
     }()
     
+    // Left Image
+    private lazy var leftImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.clipsToBounds = true
+        image.contentMode = .scaleAspectFill
+        image.backgroundColor = .red
+        return image
+    }()
+    
+    // Switch
+    private lazy var castomSwitch: UISwitch = {
+        let Switch = UISwitch()
+        Switch.onTintColor = .mainRed
+        Switch.tintColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.4481485445)
+        Switch.translatesAutoresizingMaskIntoConstraints = false
+        return Switch
+    }()
+    
     // Top Separator
     private lazy var topSeparator: UIView = {
         let view = SeparatorView().build()
@@ -155,28 +226,67 @@ final class RowView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Constraints
     
-    // Constraints for Styles
+    // MARK: Constraints for Styles
     
     private func setupNormalStyleConstraints() {
         // Title
-        title.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp.top).offset(topPadding)
-            make.left.equalTo(self.snp.left).offset(15)
-            make.bottom.equalTo(self.snp.bottom).offset(bottomPadding)
-        }
-        
+        self.reusableTitleConstraints()
         // Right Image
         rightImage.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp.top).offset(topPadding)
-            make.right.equalTo(self.snp.right).offset(-5)
-            make.bottom.equalTo(self.snp.bottom).offset(bottomPadding)
-            make.height.equalTo(25) //Temp
-            make.width.equalTo(25) //Temp
+            make.centerY.equalTo(self.snp.centerY)
+            make.right.equalTo(self.snp.right).offset(rightPadding)
+            make.height.equalTo(20) //Temp
+            make.width.equalTo(20) //Temp
         }
     }
     
-    // Constraints for Separators
+    private func updateNormalStyleConstraintsToNormalWithIndentation() {
+        // Title
+        title.snp.updateConstraints { (update) in
+            update.left.equalTo(self.snp.left).offset(16)
+        }
+    }
     
+    private func setupWithSwitchStyleConstraints() {
+        // Title
+        self.reusableTitleConstraints()
+        // Switch
+        castomSwitch.snp.makeConstraints { (make) in
+            make.centerY.equalTo(self.snp.centerY)
+            make.right.equalTo(self.snp.right).offset(rightPadding)
+        }
+    }
+    
+    private func setupImageOnTheLeftStyleConstraints() {
+        // Left Image
+        leftImage.snp.makeConstraints { (make) in
+            make.centerY.equalTo(self.snp.centerY)
+            make.left.equalTo(self.snp.left)
+            make.height.equalTo(20) //Temp
+            make.width.equalTo(20) //Temp
+        }
+        // Title
+        title.snp.makeConstraints { (make) in
+            make.left.equalTo(leftImage.snp.right).offset(8)
+            make.top.equalTo(self.snp.top).offset(topPadding)
+            make.bottom.equalTo(self.snp.bottom).offset(bottomPadding)
+        }
+        // Right Image
+        rightImage.snp.makeConstraints { (make) in
+            make.centerY.equalTo(self.snp.centerY)
+            make.right.equalTo(self.snp.right).offset(rightPadding)
+            make.height.equalTo(20) //Temp
+            make.width.equalTo(20) //Temp
+        }
+    }
+    
+    private func setupEmptyStyleConstraints() {
+        // Title
+        self.reusableTitleConstraints()
+    }
+    
+    // MARK: Constraints for Separators
+
     private func setupTopSeparatorConstraints() {
         // Top Separator
         topSeparator.snp.makeConstraints { (make) in
@@ -192,13 +302,47 @@ final class RowView: UIView {
             make.width.equalToSuperview()
         }
     }
+    
+    // MARK: Reusable Constraints
+    
+    private func reusableTitleConstraints() {
+        // Title
+        title.snp.makeConstraints { (make) in
+            make.top.equalTo(self.snp.top).offset(topPadding)
+            make.left.equalTo(self.snp.left)
+            make.bottom.equalTo(self.snp.bottom).offset(bottomPadding)
+        }
+    }
 
 }
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Extensions
+// MARK: - Private Extension RowView
 
-extension RowView {
+private extension RowView {
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Adjustment size to resolution
+    
+    private func adjustSizes() {
+        // Iphones 6, 6s, 7, 8
+        if UIScreen.main.bounds.height < 668 {
+            self.setupVariables(topPadding: 11,
+                                bottomPadding: -11,
+                                fontSize: 15)
+            // Iphones 6+, 6s+, 7+, 8+
+        } else if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
+            self.setupVariables(topPadding: 12,
+                                bottomPadding: -12,
+                                fontSize: 16.5)
+            // and bigger Iphones
+        } else if UIScreen.main.bounds.height > 737 {
+            self.setupVariables(topPadding: 12,
+                                bottomPadding: -12,
+                                fontSize: 17)
+        }
+    }
+    
     private func setupVariables(
         topPadding: CGFloat,
         bottomPadding: CGFloat,
@@ -208,4 +352,5 @@ extension RowView {
         self.bottomPadding = bottomPadding
         self.fontSize = fontSize
     }
+    
 }
