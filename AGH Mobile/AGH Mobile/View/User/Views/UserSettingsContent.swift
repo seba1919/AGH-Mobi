@@ -26,6 +26,7 @@ class UserSettingsContent: UIView {
     private let rowFreeSpace: CGFloat = 3
     // Public
     public var pushAboutAsVC: (() -> Void)?
+    public var openMailApp: (() -> Void)?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -65,7 +66,6 @@ class UserSettingsContent: UIView {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .top)
         view.setupTitle(as: "Wirtualna Uczelnia")
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -74,7 +74,6 @@ class UserSettingsContent: UIView {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .top)
         view.setupTitle(as: "UPEL")
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -83,7 +82,6 @@ class UserSettingsContent: UIView {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: "Panel Usług Sieciowych")
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -92,7 +90,6 @@ class UserSettingsContent: UIView {
         let view = RowView(style: .withSwitch,
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: "Powiadomienia o ocenach")
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -101,7 +98,6 @@ class UserSettingsContent: UIView {
         let view = RowView(style: .normal,
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: "O nas")
-        view.translatesAutoresizingMaskIntoConstraints = false
         view.addTapGestureRecognizer(self, action: #selector(onPressPushAboutAsVC))
         return view
     }()
@@ -111,7 +107,7 @@ class UserSettingsContent: UIView {
         let view = RowView(style: .empty,
                            separatorPosition: .bottom)
         view.setupTitle(as: "Skontaktuj się z nami")
-        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTapGestureRecognizer(self, action: #selector(onPressOpenMailApp))
         return view
     }()
     
@@ -159,6 +155,10 @@ class UserSettingsContent: UIView {
     
     @objc private func onPressPushAboutAsVC() {
         pushAboutAsVC?()
+    }
+    
+    @objc private func onPressOpenMailApp() {
+        openMailApp?()
     }
 }
 

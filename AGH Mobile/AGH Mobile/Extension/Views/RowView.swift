@@ -48,6 +48,7 @@ final class RowView: UIView {
 
     required init(style: Style = .normal, separatorPosition: SeparatorPosition = .top){
         super.init(frame: CGRect.zero)
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.adjustSizes()
         
         switch style {
@@ -123,11 +124,11 @@ final class RowView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public Methods
     
-    public func setTitle(as name: String) {
+    public func setupTitle(as name: String) {
         title.text = name
     }
     
-    public func setLeftAccessory(named name: String) {
+    public func setupLeftImage(named name: String) {
         leftAccessory.image = UIImage(named: name)
     }
     

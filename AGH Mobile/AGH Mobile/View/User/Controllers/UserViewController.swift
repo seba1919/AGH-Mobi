@@ -50,8 +50,19 @@ class UserViewController: UIViewController {
     // MARK: - Actions
     
     private func setupActions() {
+        
         userView.userSettingsContent.pushAboutAsVC = {
             self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
         }
+        
+        userView.userSettingsContent.openMailApp = {
+            let email = "mackn@agh.edu.pl"
+            // Doesn't work in simulator
+            if let url = URL(string: "mailto:\(email)") {
+                UIApplication.shared.open(url)
+            }
+        }
+        
     }
+    
 }
