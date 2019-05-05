@@ -32,6 +32,10 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.userView.setupUI()
+        self.setupActions()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.setupNavigationAttributs()
     }
     
@@ -42,4 +46,12 @@ class UserViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Actions
+    
+    private func setupActions() {
+        userView.userSettingsContent.pushAboutAsVC = {
+            self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
+        }
+    }
 }

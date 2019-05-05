@@ -25,6 +25,7 @@ class UserSettingsContent: UIView {
     private lazy var screenWidth =  UIScreen.main.bounds.size.width
     private let rowFreeSpace: CGFloat = 3
     // Public
+    public var pushAboutAsVC: (() -> Void)?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -113,6 +114,7 @@ class UserSettingsContent: UIView {
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: "O nas")
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTapGestureRecognizer(self, action: #selector(onPressPushAboutAsVC))
         return view
     }()
     
@@ -168,9 +170,14 @@ class UserSettingsContent: UIView {
             make.top.equalTo(rowNo5.snp.bottom)
             make.width.equalToSuperview()
         }
-        
     }
     
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Selectors
+    
+    @objc private func onPressPushAboutAsVC() {
+        pushAboutAsVC?()
+    }
 }
 
 

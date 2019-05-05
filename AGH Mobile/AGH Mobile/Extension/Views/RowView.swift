@@ -25,7 +25,7 @@ final class RowView: UIView {
     private var bottomPadding: CGFloat = -12
     private var fontSize: CGFloat = 17
     // Constantly
-    private let rightPadding: CGFloat = -5
+    private let rightPadding: CGFloat = -2
     
     // Styles
     public enum Style {
@@ -129,6 +129,12 @@ final class RowView: UIView {
     
     public func setupLeftImage(named name: String) {
         leftImage.image = UIImage(named: name)
+    }
+    
+    public func addTapGestureRecognizer(_ target: Any?, action: Selector) {
+        let gesture = UITapGestureRecognizer(target: target, action: action)
+        gesture.numberOfTapsRequired = 1
+        self.addGestureRecognizer(gesture)
     }
 
     // MARK: Setups Variables Depend From Requirements

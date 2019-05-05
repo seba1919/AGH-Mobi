@@ -76,7 +76,7 @@ class UserView: UIView {
     }()
     
     // User Settings
-    private lazy var userSettingsContent: UserSettingsContent = {
+    public private(set) lazy var userSettingsContent: UserSettingsContent = {
         let view = UserSettingsContent()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
