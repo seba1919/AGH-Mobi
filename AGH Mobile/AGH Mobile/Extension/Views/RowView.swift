@@ -43,10 +43,16 @@ final class RowView: UIView {
         case topAndBottom
     }
     
+    // Touch Animation
+    public enum TouchAnimation {
+        case on
+        case off
+    }
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
 
-    required init(style: Style = .normal, separatorPosition: SeparatorPosition = .top){
+    required init(style: Style = .normal, separatorPosition: SeparatorPosition = .top, touchAnimation: TouchAnimation = .off){
         super.init(frame: CGRect.zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.adjustSizes()
@@ -63,6 +69,10 @@ final class RowView: UIView {
         case .top: setupTopSeparator()
         case .bottom: setupBottomSeparator()
         case .topAndBottom: setupTopAndBottomSeparators()
+        }
+        
+        if touchAnimation == .on {
+            self.addTouchAnimation()
         }
     }
     
@@ -142,35 +152,35 @@ final class RowView: UIView {
     
     // For Iphones 6, 6s, 7, 8
     public func setupVariablesForSmallResolution(
-                customtopPadding: CGFloat,
-                custombottomPadding: CGFloat,
-                customfontSize: CGFloat) {
+                customTopPadding: CGFloat,
+                customBottomPadding: CGFloat,
+                customFontSize: CGFloat) {
         if UIScreen.main.bounds.height < 668 {
-            self.setupVariables(topPadding: customtopPadding,
-                                bottomPadding: custombottomPadding,
-                                fontSize: customfontSize)
+            self.setupVariables(topPadding: customTopPadding,
+                                bottomPadding: customBottomPadding,
+                                fontSize: customFontSize)
         }
     }
     // For Iphones 6+, 6s+, 7+, 8+
     public func setupVariablesForMediumResolution(
-        customtopPadding: CGFloat,
-        custombottomPadding: CGFloat,
-        customfontSize: CGFloat) {
+        customTopPadding: CGFloat,
+        customBottomPadding: CGFloat,
+        customFontSize: CGFloat) {
         if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
-            self.setupVariables(topPadding: customtopPadding,
-                                bottomPadding: custombottomPadding,
-                                fontSize: customfontSize)
+            self.setupVariables(topPadding: customTopPadding,
+                                bottomPadding: customBottomPadding,
+                                fontSize: customFontSize)
         }
     }
     // For Iphones XS, XR, X, XS Max
     public func setupVariablesForHighResolution(
-        customtopPadding: CGFloat,
-        custombottomPadding: CGFloat,
-        customfontSize: CGFloat) {
+        customTopPadding: CGFloat,
+        customBottomPadding: CGFloat,
+        customFontSize: CGFloat) {
         if UIScreen.main.bounds.height > 737 {
-            self.setupVariables(topPadding: customtopPadding,
-                                bottomPadding: custombottomPadding,
-                                fontSize: customfontSize)
+            self.setupVariables(topPadding: customTopPadding,
+                                bottomPadding: customBottomPadding,
+                                fontSize: customFontSize)
         }
     }
     
@@ -318,6 +328,26 @@ final class RowView: UIView {
             make.top.equalTo(self.snp.top).offset(topPadding)
             make.left.equalTo(self.snp.left)
             make.bottom.equalTo(self.snp.bottom).offset(bottomPadding)
+        }
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Animations
+    
+    private func addTouchAnimation() {
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(onTouchChangeBackgroundColor(_:)))
+        gesture.minimumPressDuration = 0.0
+        self.addGestureRecognizer(gesture)
+    }
+    
+    @objc private func onTouchChangeBackgroundColor(_ sender: UILongPressGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            self.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        case .ended:
+            self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        case .changed: print("change")
+        default: return
         }
     }
 
