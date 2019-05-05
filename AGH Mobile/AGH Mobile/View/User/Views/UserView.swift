@@ -47,9 +47,10 @@ class UserView: UIView {
     }
     
     private func setupView() {
-        self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.addSubview(userTabBarTitle)
         self.addSubview(userProfile)
+        self.addSubview(sectionTitle)
         self.addSubview(userSettingsContent)
         self.addSubview(logoutButton)
     }
@@ -67,12 +68,22 @@ class UserView: UIView {
     }()
     
     // User Profile
-    // Public Methods in this property
     public private(set) lazy var userProfile: UserWDProfile = {
         let profile = UserWDProfile()
         profile.translatesAutoresizingMaskIntoConstraints = false
         profile.setupImage(named: "testPersonPhoto")
         return profile
+    }()
+    
+    // Section Title
+    private lazy var sectionTitle : UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.textColor = .customGrayText
+        label.text = "INTEGRACJA KONT".uppercased()
+        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        return label
     }()
     
     // User Settings
@@ -110,9 +121,15 @@ class UserView: UIView {
             make.height.equalTo(Double(screenHeight) * UserView.userProfileHightMultipliValue)
         }
         
+        // Section Title
+        sectionTitle.snp.makeConstraints { (make) in
+            make.top.equalTo(userProfile.snp.bottom).offset(screenHeight * 0.052)
+            make.left.equalToSuperview().offset(20)
+        }
+        
         // User Settings
         userSettingsContent.snp.makeConstraints { (make) in
-            make.top.equalTo(userProfile.snp.bottom).offset(screenHeight * 0.052)
+            make.top.equalTo(sectionTitle.snp.bottom)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
             make.bottom.equalTo(logoutButton.snp.top).offset(screenHeight * -0.052)
@@ -122,15 +139,7 @@ class UserView: UIView {
         logoutButton.snp.makeConstraints { (make) in
             //make.top.equalTo(userSettingsContent.snp.bottom).offset(screenHeight * -0.01)
             make.bottom.equalToSuperview().offset(screenHeight * -0.125)
-            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-            //make.height.equalTo(screenHeight * 0.058)
-            if UIScreen.main.bounds.height < 668 {
-                make.height.equalTo(22*2)
-            } else if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
-                make.height.equalTo(24*2)
-            } else if UIScreen.main.bounds.height > 737 {
-                make.height.equalTo(26*2)
-            }
+            make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)            
             make.left.equalTo(self.snp.left).offset(screenWidth * 0.18)
             make.right.equalTo(self.snp.right).offset(screenWidth * -0.18)
         }

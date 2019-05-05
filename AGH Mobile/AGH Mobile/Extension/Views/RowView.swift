@@ -123,11 +123,11 @@ final class RowView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public Methods
     
-    public func setupTitle(as name: String) {
+    public func setTitle(as name: String) {
         title.text = name
     }
     
-    public func setupLeftImage(named name: String) {
+    public func setLeftAccessory(named name: String) {
         leftAccessory.image = UIImage(named: name)
     }
     
