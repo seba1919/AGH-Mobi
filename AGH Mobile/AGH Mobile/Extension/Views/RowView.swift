@@ -32,7 +32,7 @@ final class RowView: UIView {
         case normal
         case normalWithIndentation
         case withSwitch
-        case imageOnTheLeft
+        case withLeftAccessory
         case empty
     }
     
@@ -54,7 +54,7 @@ final class RowView: UIView {
         case .normal: setupNormalStyle()
         case .normalWithIndentation: setupNormalWithIndentationStyle()
         case .withSwitch: setupWithSwitchStyle()
-        case .imageOnTheLeft: setupImageOnTheLeftStyle()
+        case .withLeftAccessory: setupWithLeftAccessoryStyle()
         case .empty: setupEmptyStyle()
         }
         
@@ -76,7 +76,7 @@ final class RowView: UIView {
     
     private func setupNormalStyle() {
         self.addSubview(title)
-        self.addSubview(rightImage)
+        self.addSubview(rightAccessory)
         self.setupNormalStyleConstraints()
     }
     
@@ -91,11 +91,11 @@ final class RowView: UIView {
         self.setupWithSwitchStyleConstraints()
     }
     
-    private func setupImageOnTheLeftStyle() {
+    private func setupWithLeftAccessoryStyle() {
         self.addSubview(title)
-        self.addSubview(leftImage)
-        self.addSubview(rightImage)
-        self.setupImageOnTheLeftStyleConstraints()
+        self.addSubview(leftAccessory)
+        self.addSubview(rightAccessory)
+        self.setupWithLeftAccessoryStyleConstraints()
     }
     
     private func setupEmptyStyle() {
@@ -128,7 +128,7 @@ final class RowView: UIView {
     }
     
     public func setupLeftImage(named name: String) {
-        leftImage.image = UIImage(named: name)
+        leftAccessory.image = UIImage(named: name)
     }
     
     public func addTapGestureRecognizer(_ target: Any?, action: Selector) {
@@ -187,8 +187,8 @@ final class RowView: UIView {
         return label
     }()
     
-    // Right Image
-    private lazy var rightImage: UIImageView = {
+    // Right Accessory
+    private lazy var rightAccessory: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
@@ -197,8 +197,8 @@ final class RowView: UIView {
         return image
     }()
     
-    // Left Image
-    private lazy var leftImage: UIImageView = {
+    // Left Accessory
+    private lazy var leftAccessory: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
@@ -237,8 +237,8 @@ final class RowView: UIView {
     private func setupNormalStyleConstraints() {
         // Title
         self.reusableTitleConstraints()
-        // Right Image
-        rightImage.snp.makeConstraints { (make) in
+        // Right Accessory
+        rightAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
             make.right.equalTo(self.snp.right).offset(rightPadding)
             make.height.equalTo(20) //Temp
@@ -263,9 +263,9 @@ final class RowView: UIView {
         }
     }
     
-    private func setupImageOnTheLeftStyleConstraints() {
-        // Left Image
-        leftImage.snp.makeConstraints { (make) in
+    private func setupWithLeftAccessoryStyleConstraints() {
+        // Left Accessory
+        leftAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
             make.left.equalTo(self.snp.left)
             make.height.equalTo(20) //Temp
@@ -273,12 +273,12 @@ final class RowView: UIView {
         }
         // Title
         title.snp.makeConstraints { (make) in
-            make.left.equalTo(leftImage.snp.right).offset(8)
+            make.left.equalTo(leftAccessory.snp.right).offset(8)
             make.top.equalTo(self.snp.top).offset(topPadding)
             make.bottom.equalTo(self.snp.bottom).offset(bottomPadding)
         }
-        // Right Image
-        rightImage.snp.makeConstraints { (make) in
+        // Right Accessory
+        rightAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
             make.right.equalTo(self.snp.right).offset(rightPadding)
             make.height.equalTo(20) //Temp
@@ -336,12 +336,12 @@ private extension RowView {
             self.setupVariables(topPadding: 11,
                                 bottomPadding: -11,
                                 fontSize: 15)
-            // Iphones 6+, 6s+, 7+, 8+
+        // Iphones 6+, 6s+, 7+, 8+
         } else if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
             self.setupVariables(topPadding: 12,
                                 bottomPadding: -12,
                                 fontSize: 16.5)
-            // and bigger Iphones
+        // and bigger Iphones
         } else if UIScreen.main.bounds.height > 737 {
             self.setupVariables(topPadding: 12,
                                 bottomPadding: -12,
