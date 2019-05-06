@@ -20,21 +20,24 @@ final class RowView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
     
-    // Variables
+    // View
     private var topPadding: CGFloat = 12
     private var bottomPadding: CGFloat = -12
     private var fontSize: CGFloat = 17
-    // Constantly
+    
     private let rightPadding: CGFloat = -2
     private let leftMargin: CGFloat = 20
     private let rightMargin: CGFloat = -20
     
-    // Gestures
-    private var touchGesture: UILongPressGestureRecognizer = {
+    // Gesture
+    private lazy var touchGesture: UILongPressGestureRecognizer = {
         let gesture = UILongPressGestureRecognizer(target: self, action: #selector(onTouchChangeBackgroundColor(_:)))
         gesture.minimumPressDuration = 0.0
         return gesture
     }()
+    
+    // Action
+    public var makeAction: (() -> Void)?
     
     // Styles
     public enum Style {
@@ -147,7 +150,7 @@ final class RowView: UIView {
         title.text = name
     }
     
-    public func setupLeftImage(named name: String) {
+    public func setupLeftAccessory(named name: String) {
         leftAccessory.image = UIImage(named: name)
     }
     
@@ -155,42 +158,6 @@ final class RowView: UIView {
         let gesture = UITapGestureRecognizer(target: target, action: action)
         gesture.numberOfTapsRequired = 1
         self.addGestureRecognizer(gesture)
-    }
-
-    // MARK: Setups Variables Depend From Requirements
-    
-    // For Iphones 6, 6s, 7, 8
-    public func setupVariablesForSmallResolution(
-                customTopPadding: CGFloat,
-                customBottomPadding: CGFloat,
-                customFontSize: CGFloat) {
-        if UIScreen.main.bounds.height < 668 {
-            self.setupVariables(topPadding: customTopPadding,
-                                bottomPadding: customBottomPadding,
-                                fontSize: customFontSize)
-        }
-    }
-    // For Iphones 6+, 6s+, 7+, 8+
-    public func setupVariablesForMediumResolution(
-        customTopPadding: CGFloat,
-        customBottomPadding: CGFloat,
-        customFontSize: CGFloat) {
-        if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
-            self.setupVariables(topPadding: customTopPadding,
-                                bottomPadding: customBottomPadding,
-                                fontSize: customFontSize)
-        }
-    }
-    // For Iphones XS, XR, X, XS Max
-    public func setupVariablesForHighResolution(
-        customTopPadding: CGFloat,
-        customBottomPadding: CGFloat,
-        customFontSize: CGFloat) {
-        if UIScreen.main.bounds.height > 737 {
-            self.setupVariables(topPadding: customTopPadding,
-                                bottomPadding: customBottomPadding,
-                                fontSize: customFontSize)
-        }
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -347,6 +314,17 @@ final class RowView: UIView {
     
     private func addTouchAnimation() {
         self.addGestureRecognizer(touchGesture)
+    }
+    
+    @objc private func onTouchActions(_ sender: UILongPressGestureRecognizer) {
+        switch sender.state {
+        case .began:
+            self.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        case .ended:
+            self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            self.action
+        default: print("err...?")
+        }
     }
     
     @objc private func onTouchChangeBackgroundColor(_ sender: UILongPressGestureRecognizer) {
