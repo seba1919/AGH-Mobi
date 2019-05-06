@@ -756,7 +756,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -769,7 +769,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC28EA5BC9F2FD32587539BC /* [CP] Check Pods Manifest.lock */ = {

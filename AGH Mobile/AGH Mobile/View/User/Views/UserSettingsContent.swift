@@ -99,7 +99,7 @@ class UserSettingsContent: UIView {
         let view = RowView(style: .normal,
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: "O nas")
-        view.addTapGestureRecognizer(self, action: #selector(onPressPushAboutAsVC))
+        view.setAction = { self.onPressPushAboutAsVC() }
         return view
     }()
     
@@ -108,7 +108,6 @@ class UserSettingsContent: UIView {
         let view = RowView(style: .empty,
                            separatorPosition: .bottom)
         view.setupTitle(as: "Skontaktuj się z nami")
-        view.addTapGestureRecognizer(self, action: #selector(onPressOpenMailApp))
         return view
     }()
     
@@ -152,15 +151,16 @@ class UserSettingsContent: UIView {
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Selectors
+    // MARK: - Actions
     
-    @objc private func onPressPushAboutAsVC() {
+     private func onPressPushAboutAsVC() {
         pushAboutAsVC?()
     }
     
-    @objc private func onPressOpenMailApp() {
+    private func onPressOpenMailApp() {
         openMailApp?()
     }
+    
 }
 
 

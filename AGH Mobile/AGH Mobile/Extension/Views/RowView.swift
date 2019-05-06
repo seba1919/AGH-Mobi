@@ -31,13 +31,13 @@ final class RowView: UIView {
     
     // Gesture
     private lazy var touchGesture: UILongPressGestureRecognizer = {
-        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(onTouchChangeBackgroundColor(_:)))
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(onTouchAnimateRowAndDoAction(_:)))
         gesture.minimumPressDuration = 0.0
         return gesture
     }()
     
-    // Action
-    public var makeAction: (() -> Void)?
+    // Set Action
+    public var setAction: (() -> Void)?
     
     // Styles
     public enum Style {
@@ -84,7 +84,7 @@ final class RowView: UIView {
         }
         
         if touchAnimation == .on {
-            self.addTouchAnimation()
+            self.addTouchGestureRecognizer()
         }
     }
     
@@ -154,12 +154,6 @@ final class RowView: UIView {
         leftAccessory.image = UIImage(named: name)
     }
     
-    public func addTapGestureRecognizer(_ target: Any?, action: Selector) {
-        let gesture = UITapGestureRecognizer(target: target, action: action)
-        gesture.numberOfTapsRequired = 1
-        self.addGestureRecognizer(gesture)
-    }
-    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
     
@@ -168,7 +162,7 @@ final class RowView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.text = "Error" // Chow if not use setupTitle method
+        label.text = "Title is not set" // Chow if not use setupTitle method
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: fontSize, weight: .regular)
         return label
@@ -312,29 +306,18 @@ final class RowView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Animations and Gestures
     
-    private func addTouchAnimation() {
+    private func addTouchGestureRecognizer() {
         self.addGestureRecognizer(touchGesture)
     }
     
-    @objc private func onTouchActions(_ sender: UILongPressGestureRecognizer) {
+    @objc private func onTouchAnimateRowAndDoAction(_ sender: UILongPressGestureRecognizer) {
         switch sender.state {
         case .began:
             self.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         case .ended:
             self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            self.action
+            self.setAction?()
         default: print("err...?")
-        }
-    }
-    
-    @objc private func onTouchChangeBackgroundColor(_ sender: UILongPressGestureRecognizer) {
-        switch sender.state {
-        case .began:
-            self.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        case .ended:
-            self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        case .changed: print("change")
-        default: return
         }
     }
 
