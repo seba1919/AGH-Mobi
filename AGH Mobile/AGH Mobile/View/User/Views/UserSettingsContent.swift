@@ -107,6 +107,7 @@ class UserSettingsContent: UIView {
         let view = RowView(style: .empty,
                            separatorPosition: .bottom)
         view.setupTitle(as: "Skontaktuj się z nami")
+        view.setAction = { self.onPressOpenMailApp() }
         return view
     }()
     

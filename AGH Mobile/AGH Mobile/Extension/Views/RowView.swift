@@ -319,6 +319,12 @@ final class RowView: UIView {
         self.addGestureRecognizer(touchGesture)
     }
     
+    private func animateRowBackgroundColor(to color: UIColor) {
+        UIView.animate(withDuration: 0.2) {
+            self.backgroundColor = color
+        }
+    }
+    
     @objc private func onTouchAnimateRowAndDoAction(_ sender: UILongPressGestureRecognizer) {
         
         let positionOfTouch = sender.location(in: self)
@@ -326,16 +332,17 @@ final class RowView: UIView {
         switch sender.state {
         case .began:
             if !(touchDetectStatus == .onWithAnimationOff) {
-                self.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                self.animateRowBackgroundColor(to: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.6677279538))
             }
         case .ended:
-            self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            self.animateRowBackgroundColor(to: .white)
             self.setAction?()
         case .changed:
             if (!self.bounds.contains(positionOfTouch)) {
                 sender.state = .cancelled
             }
-        case .cancelled: self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        case .cancelled:
+            self.animateRowBackgroundColor(to: .white)
         default: print("err...?")
         }
     }
