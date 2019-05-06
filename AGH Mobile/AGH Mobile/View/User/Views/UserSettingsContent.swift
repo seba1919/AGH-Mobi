@@ -80,8 +80,7 @@ class UserSettingsContent: UIView {
     // Row no. 3
     private lazy var rowNo3: RowView = {
         let view = RowView(style: .normalWithIndentation,
-                           separatorPosition: .topAndBottom,
-                           touchAnimation: .on)
+                           separatorPosition: .topAndBottom)
         view.setupTitle(as: "Panel Usług Sieciowych")
         return view
     }()

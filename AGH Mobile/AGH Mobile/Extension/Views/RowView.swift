@@ -55,37 +55,46 @@ final class RowView: UIView {
         case topAndBottom
     }
     
-    // Touch Animation
-    public enum TouchAnimation {
+    // Touch Detect
+    public enum TouchDetect {
         case on
+        case onWithAnimationOff
         case off
     }
+    private var touchDetectStatus: TouchDetect?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
 
-    required init(style: Style = .normal, separatorPosition: SeparatorPosition = .top, touchAnimation: TouchAnimation = .off){
+    required init(style: Style = .normal, separatorPosition: SeparatorPosition = .top, touchDetect: TouchDetect = .on){
         super.init(frame: CGRect.zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.adjustSizes()
+        self.touchDetectStatus = touchDetect
         
+        // Style
         switch style {
         case .normal: setupNormalStyle()
         case .normalWithIndentation: setupNormalWithIndentationStyle()
-        case .withSwitch: setupWithSwitchStyle()
+        case .withSwitch:
+            setupWithSwitchStyle()
+            touchDetectStatus = .off
         case .withLeftAccessory: setupWithLeftAccessoryStyle()
         case .empty: setupEmptyStyle()
         }
         
+        // Separator Position
         switch separatorPosition {
         case .top: setupTopSeparator()
         case .bottom: setupBottomSeparator()
         case .topAndBottom: setupTopAndBottomSeparators()
         }
         
-        if touchAnimation == .on {
+        // Touch Detect
+        if !(touchDetectStatus == .off) {
             self.addTouchGestureRecognizer()
         }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -311,12 +320,22 @@ final class RowView: UIView {
     }
     
     @objc private func onTouchAnimateRowAndDoAction(_ sender: UILongPressGestureRecognizer) {
+        
+        let positionOfTouch = sender.location(in: self)
+        
         switch sender.state {
         case .began:
-            self.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            if !(touchDetectStatus == .onWithAnimationOff) {
+                self.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            }
         case .ended:
             self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             self.setAction?()
+        case .changed:
+            if (!self.bounds.contains(positionOfTouch)) {
+                sender.state = .cancelled
+            }
+        case .cancelled: self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         default: print("err...?")
         }
     }
