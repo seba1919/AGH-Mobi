@@ -26,6 +26,15 @@ final class RowView: UIView {
     private var fontSize: CGFloat = 17
     // Constantly
     private let rightPadding: CGFloat = -2
+    private let leftMargin: CGFloat = 20
+    private let rightMargin: CGFloat = -20
+    
+    // Gestures
+    private var touchGesture: UILongPressGestureRecognizer = {
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(onTouchChangeBackgroundColor(_:)))
+        gesture.minimumPressDuration = 0.0
+        return gesture
+    }()
     
     // Styles
     public enum Style {
@@ -204,7 +213,7 @@ final class RowView: UIView {
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFill
-        image.backgroundColor = .red
+        image.backgroundColor = .mainRed
         return image
     }()
     
@@ -251,16 +260,16 @@ final class RowView: UIView {
         // Right Accessory
         rightAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
-            make.right.equalTo(self.snp.right).offset(rightPadding)
+            make.right.equalTo(self.snp.right).offset(rightMargin + rightPadding)
             make.height.equalTo(20) //Temp
-            make.width.equalTo(20) //Temp
+            make.width.equalTo(5) //Temp
         }
     }
     
     private func updateNormalStyleConstraintsToNormalWithIndentation() {
         // Title
         title.snp.updateConstraints { (update) in
-            update.left.equalTo(self.snp.left).offset(16)
+            update.left.equalTo(self.snp.left).offset(leftMargin + 16)
         }
     }
     
@@ -270,7 +279,7 @@ final class RowView: UIView {
         // Switch
         castomSwitch.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
-            make.right.equalTo(self.snp.right).offset(rightPadding)
+            make.right.equalTo(self.snp.right).offset(rightMargin + rightPadding)
         }
     }
     
@@ -278,7 +287,7 @@ final class RowView: UIView {
         // Left Accessory
         leftAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
-            make.left.equalTo(self.snp.left)
+            make.left.equalTo(self.snp.left).offset(leftMargin)
             make.height.equalTo(20) //Temp
             make.width.equalTo(20) //Temp
         }
@@ -291,7 +300,7 @@ final class RowView: UIView {
         // Right Accessory
         rightAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
-            make.right.equalTo(self.snp.right).offset(rightPadding)
+            make.right.equalTo(self.snp.right).offset(rightMargin + rightPadding)
             make.height.equalTo(20) //Temp
             make.width.equalTo(20) //Temp
         }
@@ -308,7 +317,8 @@ final class RowView: UIView {
         // Top Separator
         topSeparator.snp.makeConstraints { (make) in
             make.top.equalTo(self.snp.top)
-            make.width.equalToSuperview()
+            make.left.equalTo(self.snp.left).offset(leftMargin)
+            make.right.equalTo(self.snp.right).offset(rightMargin)
         }
     }
     
@@ -316,7 +326,8 @@ final class RowView: UIView {
         // Bottom Separator
         bottomSeparator.snp.makeConstraints { (make) in
             make.bottom.equalTo(self.snp.bottom)
-            make.width.equalToSuperview()
+            make.left.equalTo(self.snp.left).offset(leftMargin)
+            make.right.equalTo(self.snp.right).offset(rightMargin)
         }
     }
     
@@ -326,18 +337,16 @@ final class RowView: UIView {
         // Title
         title.snp.makeConstraints { (make) in
             make.top.equalTo(self.snp.top).offset(topPadding)
-            make.left.equalTo(self.snp.left)
+            make.left.equalTo(self.snp.left).offset(leftMargin)
             make.bottom.equalTo(self.snp.bottom).offset(bottomPadding)
         }
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Animations
+    // MARK: - Animations and Gestures
     
     private func addTouchAnimation() {
-        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(onTouchChangeBackgroundColor(_:)))
-        gesture.minimumPressDuration = 0.0
-        self.addGestureRecognizer(gesture)
+        self.addGestureRecognizer(touchGesture)
     }
     
     @objc private func onTouchChangeBackgroundColor(_ sender: UILongPressGestureRecognizer) {

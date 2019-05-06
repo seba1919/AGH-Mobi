@@ -130,8 +130,8 @@ class UserView: UIView {
         // User Settings
         userSettingsContent.snp.makeConstraints { (make) in
             make.top.equalTo(sectionTitle.snp.bottom)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
             make.bottom.equalTo(logoutButton.snp.top).offset(screenHeight * -0.052)
         }
         
