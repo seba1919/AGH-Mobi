@@ -76,9 +76,8 @@ final class RowView: UIView {
         switch style {
         case .normal: setupNormalStyle()
         case .normalWithIndentation: setupNormalWithIndentationStyle()
-        case .withSwitch:
-            setupWithSwitchStyle()
-            touchDetectStatus = .off
+        case .withSwitch: setupWithSwitchStyle()
+                          touchDetectStatus = .off
         case .withLeftAccessory: setupWithLeftAccessoryStyle()
         case .empty: setupEmptyStyle()
         }
@@ -193,7 +192,7 @@ final class RowView: UIView {
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFill
-        image.backgroundColor = .red
+        image.backgroundColor = .mainRed
         return image
     }()
     
@@ -272,7 +271,7 @@ final class RowView: UIView {
             make.centerY.equalTo(self.snp.centerY)
             make.right.equalTo(self.snp.right).offset(rightMargin + rightPadding)
             make.height.equalTo(20) //Temp
-            make.width.equalTo(20) //Temp
+            make.width.equalTo(5) //Temp
         }
     }
     

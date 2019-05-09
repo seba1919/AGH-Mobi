@@ -32,6 +32,8 @@
 		61241321225267A9007D04C0 /* MapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61241320225267A9007D04C0 /* MapsView.swift */; };
 		61241323225267E3007D04C0 /* InformationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61241322225267E3007D04C0 /* InformationsView.swift */; };
 		61241325225267FC007D04C0 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61241324225267FC007D04C0 /* UserView.swift */; };
+		613324B6228483C100C7C474 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613324B5228483C100C7C474 /* SectionTitle.swift */; };
+		613324B8228486DD00C7C474 /* InformationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613324B7228486DD00C7C474 /* InformationContent.swift */; };
 		6157791F2265F77E00C1BCDC /* AboutAsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157791E2265F77E00C1BCDC /* AboutAsViewController.swift */; };
 		615779212265F7D400C1BCDC /* AboutAsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779202265F7D400C1BCDC /* AboutAsView.swift */; };
 		615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779282267089100C1BCDC /* DescriptionTextView.swift */; };
@@ -105,6 +107,8 @@
 		61241320225267A9007D04C0 /* MapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsView.swift; sourceTree = "<group>"; };
 		61241322225267E3007D04C0 /* InformationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsView.swift; sourceTree = "<group>"; };
 		61241324225267FC007D04C0 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		613324B5228483C100C7C474 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
+		613324B7228486DD00C7C474 /* InformationContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationContent.swift; sourceTree = "<group>"; };
 		6157791E2265F77E00C1BCDC /* AboutAsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAsViewController.swift; sourceTree = "<group>"; };
 		615779202265F7D400C1BCDC /* AboutAsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAsView.swift; sourceTree = "<group>"; };
 		615779282267089100C1BCDC /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
@@ -330,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				61241322225267E3007D04C0 /* InformationsView.swift */,
+				613324B7228486DD00C7C474 /* InformationContent.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -497,6 +502,7 @@
 				6198C8FF227C89B0008D664F /* RowView.swift */,
 				6198C8FD227C8215008D664F /* SeparatorView.swift */,
 				6198C8F3227C2294008D664F /* TabBarPageTitleLabel.swift */,
+				613324B5228483C100C7C474 /* SectionTitle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -840,6 +846,7 @@
 				4B87CCD52264E8130028930A /* TestSkosImpl.swift in Sources */,
 				6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */,
 				611F4B1A2250E0480056416E /* UserViewController.swift in Sources */,
+				613324B8228486DD00C7C474 /* InformationContent.swift in Sources */,
 				615779212265F7D400C1BCDC /* AboutAsView.swift in Sources */,
 				6198C8FE227C8215008D664F /* SeparatorView.swift in Sources */,
 				6198C900227C89B0008D664F /* RowView.swift in Sources */,
@@ -854,6 +861,7 @@
 				6198C9092280EC2E008D664F /* AGHTextField.swift in Sources */,
 				6124131F22526752007D04C0 /* StudiesView.swift in Sources */,
 				61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */,
+				613324B6228483C100C7C474 /* SectionTitle.swift in Sources */,
 				6198C9072280E6C3008D664F /* LoginPageView.swift in Sources */,
 				4B6B0154225CCE2A001BF0F1 /* CourseType.swift in Sources */,
 				611F4B192250E0480056416E /* InformationsViewController.swift in Sources */,

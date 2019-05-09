@@ -41,7 +41,7 @@ class HomeTabBarController: UITabBarController {
                                                      withTitle: "Mapy",
                                                      andImageName: "mapsTabBarIcon",
                                                      for: MapsViewController()),
-                           createDummyViewController(
+                           createDummyNavigationController(
                                                      withTitle: "Informacje",
                                                      andImageName: "informationsTabBarIcon",
                                                      for: InformationsViewController()),

@@ -1,8 +1,8 @@
 //
-//  TabBarPageTitleLabel.swift
+//  SectionTitle.swift
 //  AGH Mobile
 //
-//  Created by Mateusz Bąk on 03/05/2019.
+//  Created by Mateusz Bąk on 09/05/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
@@ -14,19 +14,19 @@ import UIKit
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
 
-final class TabBarPageTitleLabel {
+final class SectionTitle {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
     
-    private let tabBarPageTitle: UILabel
+    private let sectionTitle: UILabel
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
     
     init(title: String) {
-        tabBarPageTitle = UILabel()
-        tabBarPageTitle.text = title
+        sectionTitle = UILabel()
+        sectionTitle.text = title
         self.setupLayout()
     }
     
@@ -34,17 +34,18 @@ final class TabBarPageTitleLabel {
     // MARK: - Setup
     
     private func setupLayout() {
-        tabBarPageTitle.translatesAutoresizingMaskIntoConstraints = false
-        tabBarPageTitle.textAlignment = .center
-        tabBarPageTitle.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
-        tabBarPageTitle.textColor = .black
+        sectionTitle.translatesAutoresizingMaskIntoConstraints = false
+        sectionTitle.textAlignment = .left
+        sectionTitle.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        sectionTitle.textColor = .customGrayText
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public methods
     
     public func build() -> UILabel {
-        return tabBarPageTitle
+        return sectionTitle
     }
     
 }
+

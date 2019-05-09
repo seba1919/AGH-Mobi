@@ -22,7 +22,7 @@ class UserView: UIView {
     
     // Private
     private lazy var screenHeight = self.frame.height
-    private lazy var screenWidth =  self.frame.width
+    private lazy var screenWidth = self.frame.width
     private lazy var topPadding = self.frame.height * 0.0225
     // Public
     public static let userProfileHightMultipliValue = 0.07
@@ -64,7 +64,6 @@ class UserView: UIView {
         let tabBarPageTitle = TabBarPageTitleLabel(
             title: "Ustawienia Użytkownika")
             .build()
-        tabBarPageTitle.translatesAutoresizingMaskIntoConstraints = false
         return tabBarPageTitle
     }()
     
@@ -78,12 +77,9 @@ class UserView: UIView {
     
     // Section Title
     private lazy var sectionTitle : UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        label.textColor = .customGrayText
-        label.text = "INTEGRACJA KONT".uppercased()
-        label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
+        let label = SectionTitle(
+            title: "INTEGRACJA KONT")
+            .build()
         return label
     }()
     
@@ -131,8 +127,7 @@ class UserView: UIView {
         // User Settings
         userSettingsContent.snp.makeConstraints { (make) in
             make.top.equalTo(sectionTitle.snp.bottom)
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.left.right.equalToSuperview()
             make.bottom.equalTo(logoutButton.snp.top).offset(screenHeight * -0.052)
         }
         
