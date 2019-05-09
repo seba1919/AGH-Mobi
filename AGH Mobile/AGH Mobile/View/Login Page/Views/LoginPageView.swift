@@ -102,6 +102,7 @@ class LoginPageView: UIView {
     // ID TextField
     private lazy var IDTextField: AGHTextField = {
         let textField = AGHTextField(placeholder: "Identyfikator")
+        textField.keyboardType = UIKeyboardType.numberPad
         return textField
     }()
     
