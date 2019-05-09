@@ -26,6 +26,7 @@ class UserView: UIView {
     private lazy var topPadding = self.frame.height * 0.0225
     // Public
     public static let userProfileHightMultipliValue = 0.07
+    public var pushLoginPageVC: (() -> Void)?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -48,7 +49,7 @@ class UserView: UIView {
     
     private func setupView() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(userTabBarTitle)
+        self.addSubview(tabBarTitle)
         self.addSubview(userProfile)
         self.addSubview(sectionTitle)
         self.addSubview(userSettingsContent)
@@ -58,8 +59,8 @@ class UserView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
     
-    // User TabBar Title
-    private lazy var userTabBarTitle: UILabel = {
+    // TabBar Title
+    private lazy var tabBarTitle: UILabel = {
         let tabBarPageTitle = TabBarPageTitleLabel(
             title: "Ustawienia Użytkownika")
             .build()
@@ -98,7 +99,7 @@ class UserView: UIView {
         let button = AGHButton(
             title: "Wyloguj się")
             .build()
-        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(onPressPushLoginPage), for: .touchUpInside)
         return button
     }()
     
@@ -107,15 +108,15 @@ class UserView: UIView {
     
     private func setupConstraints() {
         
-        // User TabBar Title
-        userTabBarTitle.snp.makeConstraints { (make) in
+        // TabBar Title
+        tabBarTitle.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(topPadding)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         
         // User Profile
         userProfile.snp.makeConstraints { (make) in
-            make.top.equalTo(userTabBarTitle.snp.bottom).offset(screenHeight * 0.04)
+            make.top.equalTo(tabBarTitle.snp.bottom).offset(screenHeight * 0.04)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
             make.height.equalTo(Double(screenHeight) * UserView.userProfileHightMultipliValue)
@@ -145,4 +146,10 @@ class UserView: UIView {
         }
     }
     
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Selectors
+    
+    @objc private func onPressPushLoginPage() {
+        pushLoginPageVC?()
+    }
 }

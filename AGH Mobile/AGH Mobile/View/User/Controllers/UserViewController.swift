@@ -63,6 +63,10 @@ class UserViewController: UIViewController {
             }
         }
         
+        userView.pushLoginPageVC = {
+            self.navigationController?.pushViewController(LoginPageViewController(), animated: true)
+        }
+        
     }
     
 }

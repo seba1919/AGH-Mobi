@@ -50,7 +50,7 @@ final class AboutAsView: UIView {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.addSubview(teamGallery)
         self.addSubview(aboutAsDescription)
-        self.addSubview(iconOfMacKN)
+        self.addSubview(MacKNLogo)
         self.addSubview(webPageButton)
     }
     
@@ -83,8 +83,8 @@ final class AboutAsView: UIView {
         return descriptionTextView
     }()
     
-    // MacKN Icon
-    private lazy var iconOfMacKN: UIImageView = {
+    // MacKN Logo
+    private lazy var MacKNLogo: UIImageView = {
         let image = UIImage(named: "MacKNIcon")
         let icon = UIImageView(image: image)
         icon.translatesAutoresizingMaskIntoConstraints = false
@@ -118,16 +118,16 @@ final class AboutAsView: UIView {
 
         // About As Description
         aboutAsDescription.snp.makeConstraints { (make) in
-            make.bottom.equalTo(iconOfMacKN.snp.top).offset(-freeSpaceBetweenComponents)
+            make.bottom.equalTo(MacKNLogo.snp.top).offset(-freeSpaceBetweenComponents)
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)
         }
 
-        // Icon Of MacKN
-        iconOfMacKN.snp.makeConstraints { (make) in
+        // MacKN Logo
+        MacKNLogo.snp.makeConstraints { (make) in
             make.bottom.equalTo(webPageButton.snp.top).offset(-freeSpaceBetweenComponents)
             make.height.equalTo(self.frame.height * 0.123)
-            make.width.equalTo(iconOfMacKN.snp.height).multipliedBy(iconOfMacKN.frame.width / iconOfMacKN.frame.height)
+            make.width.equalTo(MacKNLogo.snp.height).multipliedBy(MacKNLogo.frame.width / MacKNLogo.frame.height)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         

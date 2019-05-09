@@ -48,7 +48,7 @@ class HomeTabBarController: UITabBarController {
                            createDummyNavigationController(
                                                            withTitle: "Użytkownik",
                                                            andImageName: "userTabBarIcon",
-                                                           for: UserViewController())]
+                                                           for: LoginPageViewController())]
     }
     
     private func setupUI() {

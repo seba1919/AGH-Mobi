@@ -31,15 +31,12 @@ final class AGHButton {
         self.setupLayout()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup
     
     private func setupLayout() {
         self.setupConstraintsAndCornerRadius()
+        AGHButton.translatesAutoresizingMaskIntoConstraints = false
         AGHButton.backgroundColor = .mainRed
         AGHButton.setTitleColor(.white, for: .normal)
         AGHButton.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .medium)
