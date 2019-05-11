@@ -127,6 +127,9 @@ final class AboutAsView: UIView {
         MacKNLogo.snp.makeConstraints { (make) in
             make.bottom.equalTo(webPageButton.snp.top).offset(-freeSpaceBetweenComponents)
             make.height.equalTo(self.frame.height * 0.123)
+            if (UIScreen.main.bounds.height < 569) {
+                make.height.equalTo(self.frame.height * 0.07)
+            }
             make.width.equalTo(MacKNLogo.snp.height).multipliedBy(MacKNLogo.frame.width / MacKNLogo.frame.height)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }

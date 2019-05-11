@@ -348,18 +348,25 @@ private extension RowView {
     // MARK: - Adjustment size to resolution
     
     private func adjustSizes() {
+        let screenHeight = UIScreen.main.bounds.height
+        
+        // Iphones SE, 5s and other small things
+        if (screenHeight < 569) {
+            self.setupVariables(topPadding: 10,
+                                bottomPadding: -10,
+                                fontSize: 13)
         // Iphones 6, 6s, 7, 8
-        if UIScreen.main.bounds.height < 668 {
+        } else if (screenHeight > 569 && screenHeight < 668) {
             self.setupVariables(topPadding: 11,
                                 bottomPadding: -11,
                                 fontSize: 15)
         // Iphones 6+, 6s+, 7+, 8+
-        } else if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
+        } else if (screenHeight > 668 && screenHeight < 737) {
             self.setupVariables(topPadding: 12,
                                 bottomPadding: -12,
                                 fontSize: 16.5)
         // and bigger Iphones
-        } else if UIScreen.main.bounds.height > 737 {
+        } else if screenHeight > 737 {
             self.setupVariables(topPadding: 12,
                                 bottomPadding: -12,
                                 fontSize: 17)

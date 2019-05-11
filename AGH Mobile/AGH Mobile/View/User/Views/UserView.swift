@@ -134,7 +134,11 @@ class UserView: UIView {
         // Logout Button
         logoutButton.snp.makeConstraints { (make) in
             //make.top.equalTo(userSettingsContent.snp.bottom).offset(screenHeight * -0.01)
-            make.bottom.equalToSuperview().offset(screenHeight * -0.125)
+            if (UIScreen.main.bounds.height < 569) {
+                make.bottom.equalToSuperview().offset(screenHeight * -0.11)
+            } else {
+                make.bottom.equalToSuperview().offset(screenHeight * -0.125)
+            }
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)            
             make.left.equalTo(self.snp.left).offset(screenWidth * 0.18)
             make.right.equalTo(self.snp.right).offset(screenWidth * -0.18)

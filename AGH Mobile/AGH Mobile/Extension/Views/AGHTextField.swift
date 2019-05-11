@@ -70,16 +70,20 @@ final class AGHTextField: UITextField {
     }
     
     private func setupCornerRadius() {
-        if UIScreen.main.bounds.height < 668 {
+        
+        let screenHight = UIScreen.main.bounds.height
+        if (screenHight < 569) {
+            height = 17
+            self.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        } else if (screenHight > 569 && screenHight < 668) {
             height = 22
-            self.layer.cornerRadius = height
-        } else if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
+        } else if (screenHight > 668 && screenHight < 737) {
             height = 24
-            self.layer.cornerRadius = height
-        } else if UIScreen.main.bounds.height > 737 {
+        } else if screenHight > 737 {
             height = 26
-            self.layer.cornerRadius = height
         }
+        self.layer.cornerRadius = height
+
     }
     
     private func setupConstraints() {

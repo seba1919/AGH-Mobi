@@ -170,15 +170,15 @@ class LoginPageView: UIView {
         
         // AGH logo
         AGHLogo.snp.makeConstraints { (make) in
-            make.top.equalTo(tabBarTitle.snp.bottom).offset(screenHeight * 0.055)
+            make.top.equalTo(tabBarTitle.snp.bottom).offset(screenHeight * 0.030)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-            make.height.equalTo(screenHeight * 0.222)
+            make.height.equalTo(screenHeight * 0.252)
             make.width.equalTo(AGHLogo.snp.height).multipliedBy(0.633)
         }
         
         // Information label
         infoLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(AGHLogo.snp.bottom).offset(screenHeight * 0.05)
+            make.top.equalTo(AGHLogo.snp.bottom).offset(screenHeight * 0.030)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.bottom.equalTo(IDTextField.snp.top).offset(screenHeight * -0.028)
         }
@@ -186,36 +186,37 @@ class LoginPageView: UIView {
         // ID TextField
         IDTextField.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+            make.top.equalTo(infoLabel.snp.bottom).offset(screenHeight * 0.028)
             make.left.equalTo(self.snp.left).offset(screenWidth * leftMarginMultiplier)
             make.right.equalTo(self.snp.right).offset(screenWidth * rightMarginMultiplier)
-            make.bottom.equalTo(passwordTextField.snp.top).offset(screenHeight * -0.016)
         }
         
         // Password TextField
         passwordTextField.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+            make.top.equalTo(IDTextField.snp.bottom).offset(screenHeight * 0.016)
             make.left.equalTo(self.snp.left).offset(screenWidth * leftMarginMultiplier)
             make.right.equalTo(self.snp.right).offset(screenWidth * rightMarginMultiplier)
-            make.bottom.equalTo(loginButton.snp.top).offset(screenHeight * -0.037)
         }
         
         // Login Button
         loginButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(screenHeight * 0.037)
             make.left.equalTo(self.snp.left).offset(screenWidth * leftMarginMultiplier)
             make.right.equalTo(self.snp.right).offset(screenWidth * rightMarginMultiplier)
-            make.bottom.equalTo(remindPasswordButton.snp.top).offset(-5)
+            make.bottom.equalTo(remindPasswordButton.snp.top).offset(-3)
         }
         
         // Remind Password Button
         remindPasswordButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-            make.bottom.equalTo(MacKNLogo.snp.top).offset(screenHeight * -0.033)
         }
         
         // MacKN Logo
         MacKNLogo.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
+            make.top.greaterThanOrEqualTo(remindPasswordButton.snp.bottom).offset(screenHeight * 0.036)
             make.height.equalTo(screenHeight * 0.062)
             make.width.equalTo(MacKNLogo.snp.height).multipliedBy(MacKNLogo.frame.width / MacKNLogo.frame.height)
             make.bottom.equalTo(aboutAsButton.snp.top).offset(-3)

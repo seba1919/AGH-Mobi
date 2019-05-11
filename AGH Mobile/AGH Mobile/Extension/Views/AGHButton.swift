@@ -44,22 +44,23 @@ final class AGHButton {
     }
     
     private func setupConstraintsAndCornerRadius() {
+        let screenHeight = UIScreen.main.bounds.height
+        var height: CGFloat = 26
         
-        AGHButton.snp.makeConstraints { (make) in
-            if UIScreen.main.bounds.height < 668 {
-                let height: CGFloat = 22
-                make.height.equalTo(height * 2)
-                AGHButton.layer.cornerRadius = height
-            } else if (UIScreen.main.bounds.height > 668 && UIScreen.main.bounds.height < 737) {
-                let height: CGFloat = 24
-                make.height.equalTo(height * 2)
-                AGHButton.layer.cornerRadius = height
-            } else if UIScreen.main.bounds.height > 737 {
-                let height: CGFloat = 26
-                make.height.equalTo(height * 2)
-                AGHButton.layer.cornerRadius = height
-            }
+        if (screenHeight < 569) {
+            height = 17
+            AGHButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        } else if (screenHeight > 569 && screenHeight < 668) {
+            height = 22
+        } else if (screenHeight > 668 && screenHeight < 737) {
+            height = 24
+        } else if screenHeight > 737 {
+            height = 26
         }
+        AGHButton.snp.makeConstraints { (make) in
+            make.height.equalTo(height * 2)
+        }
+        AGHButton.layer.cornerRadius = height
         
     }
     
