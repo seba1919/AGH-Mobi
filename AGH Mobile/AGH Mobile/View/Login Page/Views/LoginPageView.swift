@@ -80,6 +80,7 @@ class LoginPageView: UIView {
     private lazy var AGHLogo: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "agh_znak")
         image.backgroundColor = .mainRed
         return image
     }()
@@ -171,13 +172,13 @@ class LoginPageView: UIView {
         AGHLogo.snp.makeConstraints { (make) in
             make.top.equalTo(tabBarTitle.snp.bottom).offset(screenHeight * 0.055)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-            make.height.equalTo(screenHeight * 0.222).priority(.low)
-            make.width.equalTo(screenWidth * 0.248)
+            make.height.equalTo(screenHeight * 0.222)
+            make.width.equalTo(AGHLogo.snp.height).multipliedBy(0.633)
         }
         
         // Information label
         infoLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(AGHLogo.snp.bottom).offset(screenHeight * 0.067)
+            make.top.equalTo(AGHLogo.snp.bottom).offset(screenHeight * 0.05)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.bottom.equalTo(IDTextField.snp.top).offset(screenHeight * -0.028)
         }
@@ -215,7 +216,7 @@ class LoginPageView: UIView {
         // MacKN Logo
         MacKNLogo.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-            make.height.equalTo(self.frame.height * 0.062)
+            make.height.equalTo(screenHeight * 0.062)
             make.width.equalTo(MacKNLogo.snp.height).multipliedBy(MacKNLogo.frame.width / MacKNLogo.frame.height)
             make.bottom.equalTo(aboutAsButton.snp.top).offset(-3)
         }
