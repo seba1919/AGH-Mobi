@@ -45,7 +45,6 @@
 		6198C8E62279E8F2008D664F /* MemberProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */; };
 		6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E92279E947008D664F /* MemberProfileView.swift */; };
 		6198C8EC227A0C65008D664F /* MemberWebPagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8EB227A0C65008D664F /* MemberWebPagesCell.swift */; };
-		6198C8F4227C2294008D664F /* TabBarPageTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8F3227C2294008D664F /* TabBarPageTitleLabel.swift */; };
 		6198C8F6227C25CA008D664F /* UserWDProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8F5227C25CA008D664F /* UserWDProfile.swift */; };
 		6198C8F8227C3BD7008D664F /* UserSettingsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8F7227C3BD7008D664F /* UserSettingsContent.swift */; };
 		6198C8FC227C3F9E008D664F /* AGHButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8FB227C3F9E008D664F /* AGHButton.swift */; };
@@ -54,6 +53,7 @@
 		6198C9052280E6AB008D664F /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C9042280E6AB008D664F /* LoginPageViewController.swift */; };
 		6198C9072280E6C3008D664F /* LoginPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C9062280E6C3008D664F /* LoginPageView.swift */; };
 		6198C9092280EC2E008D664F /* AGHTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C9082280EC2E008D664F /* AGHTextField.swift */; };
+		61A42D8022869DE000761A0E /* TabBarPageTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A42D7F22869DE000761A0E /* TabBarPageTitleLabel.swift */; };
 		61A743ED227743BB00DFCB35 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A743EC227743BB00DFCB35 /* Colors.swift */; };
 		61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C74224BDCF7008340B3 /* AppDelegate.swift */; };
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
@@ -124,7 +124,6 @@
 		6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileViewController.swift; sourceTree = "<group>"; };
 		6198C8E92279E947008D664F /* MemberProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileView.swift; sourceTree = "<group>"; };
 		6198C8EB227A0C65008D664F /* MemberWebPagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberWebPagesCell.swift; sourceTree = "<group>"; };
-		6198C8F3227C2294008D664F /* TabBarPageTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPageTitleLabel.swift; sourceTree = "<group>"; };
 		6198C8F5227C25CA008D664F /* UserWDProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWDProfile.swift; sourceTree = "<group>"; };
 		6198C8F7227C3BD7008D664F /* UserSettingsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsContent.swift; sourceTree = "<group>"; };
 		6198C8FB227C3F9E008D664F /* AGHButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGHButton.swift; sourceTree = "<group>"; };
@@ -133,6 +132,7 @@
 		6198C9042280E6AB008D664F /* LoginPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		6198C9062280E6C3008D664F /* LoginPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageView.swift; sourceTree = "<group>"; };
 		6198C9082280EC2E008D664F /* AGHTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGHTextField.swift; sourceTree = "<group>"; };
+		61A42D7F22869DE000761A0E /* TabBarPageTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPageTitleLabel.swift; sourceTree = "<group>"; };
 		61A743EC227743BB00DFCB35 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		61AD7C71224BDCF7008340B3 /* AGH Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AGH Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61AD7C74224BDCF7008340B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -545,8 +545,8 @@
 				615779282267089100C1BCDC /* DescriptionTextView.swift */,
 				6198C8FF227C89B0008D664F /* RowView.swift */,
 				6198C8FD227C8215008D664F /* SeparatorView.swift */,
-				6198C8F3227C2294008D664F /* TabBarPageTitleLabel.swift */,
 				613324B5228483C100C7C474 /* SectionTitle.swift */,
+				61A42D7F22869DE000761A0E /* TabBarPageTitleLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -917,6 +917,7 @@
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 				611F4B1C2250E0480056416E /* StudiesViewController.swift in Sources */,
 				611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */,
+				61A42D8022869DE000761A0E /* TabBarPageTitleLabel.swift in Sources */,
 				4BC1567422660AC600ED633C /* PersonalInfo.swift in Sources */,
 				61241321225267A9007D04C0 /* MapsView.swift in Sources */,
 				611F4B6422511F3C0056416E /* HomeTabBar.swift in Sources */,
