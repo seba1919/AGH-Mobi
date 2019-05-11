@@ -41,33 +41,33 @@ class HomeTabBarController: UITabBarController {
                                                      withTitle: "Mapy",
                                                      andImageName: "mapsTabBarIcon",
                                                      for: MapsViewController()),
-                           createDummyViewController(
+                           createDummyNavigationController(
                                                      withTitle: "Informacje",
                                                      andImageName: "informationsTabBarIcon",
                                                      for: InformationsViewController()),
-                           createDummyViewController(
-                                                     withTitle: "Użytkownik",
-                                                     andImageName: "userTabBarIcon",
-                                                     for: UserViewController())]
+                           createDummyNavigationController(
+                                                           withTitle: "Użytkownik",
+                                                           andImageName: "userTabBarIcon",
+                                                           for: LoginPageViewController())]
     }
     
     private func setupUI() {
         // TabBar background color
-        self.tabBar.backgroundColor = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.82)
+        self.tabBar.backgroundColor = .customLightGray
         // TabBar tint color
-        self.tabBar.tintColor = UIColor(red: 181/255, green: 101/255, blue: 101/255, alpha: 1)
+        self.tabBar.tintColor = .mainRed
         // Setups for each items in TabBar
         if let items = self.tabBar.items {
             for item in items {
                 // Text attributes for normal state
                 item.setTitleTextAttributes([
                     NSAttributedString.Key.font : UIFont.systemFont(ofSize: 10.5),
-                    NSAttributedString.Key.foregroundColor: UIColor(red: 142/255, green: 142/255, blue: 147/255, alpha: 1)
+                    NSAttributedString.Key.foregroundColor: UIColor.customDarkGray
                     ], for: .normal)
                 // Text attributes for selected state
                 item.setTitleTextAttributes([
                     NSAttributedString.Key.font : UIFont.systemFont(ofSize: 10.5),
-                    NSAttributedString.Key.foregroundColor: UIColor(red: 181/255, green: 101/255, blue: 101/255, alpha: 1)
+                    NSAttributedString.Key.foregroundColor: UIColor.mainRed
                     ], for: .selected)
             }
         }
@@ -85,6 +85,14 @@ extension HomeTabBarController {
         viewController.tabBarItem.title = title
         viewController.tabBarItem.image = UIImage(named: imageName)
         return viewController
+    }
+    
+    private func createDummyNavigationController(withTitle title: String, andImageName imageName: String, for viewController: UIViewController) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.tabBarItem.title = title
+        navigationController.tabBarItem.image = UIImage(named: imageName)
+        navigationController.navigationBar.tintColor = .mainRed
+        return navigationController
     }
     
 }

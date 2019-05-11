@@ -19,13 +19,54 @@ class UserViewController: UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
     
-    var userView: UserView { return self.view as! UserView }
+    // View
+    private var userView: UserView { return self.view as! UserView }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
     
     override func loadView() {
         self.view = UserView(frame: UIScreen.main.bounds)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.userView.setupUI()
+        self.setupActions()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupNavigationAttributs()
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Setup
+    
+    private func setupNavigationAttributs() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Actions
+    
+    private func setupActions() {
+        
+        userView.userSettingsContent.pushAboutAsVC = {
+            self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
+        }
+        
+        userView.userSettingsContent.openMailApp = {
+            let email = "mackn@agh.edu.pl"
+            // Doesn't work in simulator
+            if let url = URL(string: "mailto:\(email)") {
+                UIApplication.shared.open(url)
+            }
+        }
+        
+        userView.pushLoginPageVC = {
+            self.navigationController?.pushViewController(LoginPageViewController(), animated: true)
+        }
+        
     }
     
 }

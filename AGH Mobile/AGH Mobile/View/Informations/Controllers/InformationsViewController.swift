@@ -19,7 +19,8 @@ class InformationsViewController: UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
     
-    var infromationsView: InformationsView { return self.view as! InformationsView }
+    // View
+    private var infromationsView: InformationsView { return self.view as! InformationsView }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -27,4 +28,21 @@ class InformationsViewController: UIViewController {
     override func loadView() {
         self.view = InformationsView(frame: UIScreen.main.bounds)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.infromationsView.setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupNavigationAttributs()
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Setup
+    
+    private func setupNavigationAttributs() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
 }
