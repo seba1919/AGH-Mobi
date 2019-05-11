@@ -138,7 +138,6 @@ class LoginPageView: UIView {
         let image = UIImage(named: "MacKNIcon")
         let logo = UIImageView(image: image)
         logo.translatesAutoresizingMaskIntoConstraints = false
-        
         let tapOnMacKNLogo = UITapGestureRecognizer(target: self, action: #selector(self.onPressPushAboutAsVC))
         logo.addGestureRecognizer(tapOnMacKNLogo)
         logo.isUserInteractionEnabled = true

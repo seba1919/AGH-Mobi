@@ -71,7 +71,7 @@ class UserView: UIView {
     public private(set) lazy var userProfile: UserWDProfile = {
         let profile = UserWDProfile()
         profile.translatesAutoresizingMaskIntoConstraints = false
-        profile.setupImage(named: "testPersonPhoto")
+        profile.setupImage(named: "user_small_About")
         return profile
     }()
     

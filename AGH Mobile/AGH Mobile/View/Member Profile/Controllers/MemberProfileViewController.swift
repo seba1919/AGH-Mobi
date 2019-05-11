@@ -47,7 +47,7 @@ class MemberProfileViewController: UIViewController {
         memberProfileView.memberWebPages.dataSource = self
         memberProfileView.memberWebPages.register(MemberWebPagesCell.self, forCellReuseIdentifier: MemberWebPagesCell.identifier)
         memberProfileView.memberWebPages.allowsSelection = false
-        memberProfileView.setupImage(named: "testPersonPhoto")
+        memberProfileView.setupImage(named: "user_large_About")
     }
     
     private func setupNavigationAttributs() {

@@ -85,7 +85,7 @@ class MemberProfileView: UIView {
         image.clipsToBounds = true
         image.contentMode = ContentMode.scaleAspectFill
         image.layer.cornerRadius = memberPhotoImageHight / 2
-        image.backgroundColor = .red
+        image.backgroundColor = .clear
         return image
     }()
     

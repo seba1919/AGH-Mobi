@@ -31,23 +31,23 @@ class HomeTabBarController: UITabBarController {
     private func setupControllers() {
         viewControllers = [createDummyViewController(
                                                      withTitle: "Dla Ciebie",
-                                                     andImageName: "forYouTabBarIcon",
+                                                     andImageName: "for_you_active",
                                                      for: ForYouViewController()),
                            createDummyViewController(
                                                      withTitle: "Studia",
-                                                     andImageName: "studiesTabBarIcon",
+                                                     andImageName: "studies_active",
                                                      for: StudiesViewController()),
                            createDummyViewController(
                                                      withTitle: "Mapy",
-                                                     andImageName: "mapsTabBarIcon",
+                                                     andImageName: "maps_active",
                                                      for: MapsViewController()),
                            createDummyNavigationController(
                                                      withTitle: "Informacje",
-                                                     andImageName: "informationsTabBarIcon",
+                                                     andImageName: "info_active",
                                                      for: InformationsViewController()),
                            createDummyNavigationController(
                                                            withTitle: "Użytkownik",
-                                                           andImageName: "userTabBarIcon",
+                                                           andImageName: "me_active",
                                                            for: LoginPageViewController())]
     }
     

@@ -80,7 +80,7 @@ class UserWDProfile: UIView {
         image.contentMode = ContentMode.scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = CGFloat(viewHight / 2)
-        image.backgroundColor = .red
+        image.backgroundColor = .clear
         return image
     }()
     

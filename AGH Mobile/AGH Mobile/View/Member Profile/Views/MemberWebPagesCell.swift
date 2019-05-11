@@ -67,7 +67,7 @@ class MemberWebPagesCell: UITableViewCell {
     private lazy var webPageImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .red
+        imageView.backgroundColor = .mainRed
         return imageView
     }()
     

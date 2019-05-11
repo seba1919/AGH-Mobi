@@ -74,7 +74,7 @@ class TeamGalleryCell: UICollectionViewCell {
         image.contentMode = ContentMode.scaleAspectFill
         image.clipsToBounds = true
         image.layer.cornerRadius = memberPhotoImageHight / 2
-        image.backgroundColor = .red
+        image.backgroundColor = .clear
         return image
     }()
     

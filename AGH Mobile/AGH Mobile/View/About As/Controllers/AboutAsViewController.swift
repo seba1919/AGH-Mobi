@@ -151,7 +151,7 @@ extension AboutAsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = aboutAsView.teamGallery.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier, for: indexPath) as! TeamGalleryCell
-        cell.setupImage(named: "testPersonPhoto")
+        cell.setupImage(named: "user_large_About")
         cell.setupName(as: "Mateusz Bąk")
         return cell
     }
