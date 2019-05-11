@@ -25,7 +25,7 @@ final class RowView: UIView {
     private var bottomPadding: CGFloat = -12
     private var fontSize: CGFloat = 17
     
-    private let rightPadding: CGFloat = -2
+    private let rightPadding: CGFloat = -5
     private let leftMargin: CGFloat = 20
     private let rightMargin: CGFloat = -20
     
@@ -170,7 +170,7 @@ final class RowView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.text = "Title is not set" // Chow if not use setupTitle method
+        label.text = "Title is not set" // Show if not use setupTitle method
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: fontSize, weight: .regular)
         return label
@@ -179,10 +179,8 @@ final class RowView: UIView {
     // Right Accessory
     private lazy var rightAccessory: UIImageView = {
         let image = UIImageView()
+        image.image = UIImage(named: "arrow_right")
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.clipsToBounds = true
-        image.contentMode = .scaleAspectFill
-        image.backgroundColor = .mainRed
         return image
     }()
     
@@ -190,9 +188,6 @@ final class RowView: UIView {
     private lazy var leftAccessory: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.clipsToBounds = true
-        image.contentMode = .scaleAspectFill
-        image.backgroundColor = .mainRed
         return image
     }()
     
@@ -230,8 +225,6 @@ final class RowView: UIView {
         rightAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
             make.right.equalTo(self.snp.right).offset(rightMargin + rightPadding)
-            make.height.equalTo(20) //Temp
-            make.width.equalTo(5) //Temp
         }
     }
     
@@ -257,12 +250,12 @@ final class RowView: UIView {
         leftAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
             make.left.equalTo(self.snp.left).offset(leftMargin)
-            make.height.equalTo(20) //Temp
-            make.width.equalTo(20) //Temp
+            make.top.equalTo(self.snp.top).offset(10)
+            make.bottom.equalTo(self.snp.bottom).offset(-10)
         }
         // Title
         title.snp.makeConstraints { (make) in
-            make.left.equalTo(leftAccessory.snp.right).offset(8)
+            make.left.equalTo(leftAccessory.snp.right).offset(12)
             make.top.equalTo(self.snp.top).offset(topPadding)
             make.bottom.equalTo(self.snp.bottom).offset(bottomPadding)
         }
@@ -270,8 +263,6 @@ final class RowView: UIView {
         rightAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
             make.right.equalTo(self.snp.right).offset(rightMargin + rightPadding)
-            make.height.equalTo(20) //Temp
-            make.width.equalTo(5) //Temp
         }
     }
     

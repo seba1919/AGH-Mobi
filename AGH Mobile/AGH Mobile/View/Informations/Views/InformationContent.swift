@@ -62,6 +62,7 @@ class InformationContent: UIView {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
         view.setupTitle(as: "Syllabus")
+        view.setupLeftAccessory(named: "book_Info")
         return view
     }()
     
@@ -70,6 +71,7 @@ class InformationContent: UIView {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
         view.setupTitle(as: "Pracownicy Uczelni")
+        view.setupLeftAccessory(named: "human_Info")
         return view
     }()
     
@@ -78,6 +80,7 @@ class InformationContent: UIView {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
         view.setupTitle(as: "Regulamin Studiów")
+        view.setupLeftAccessory(named: "sheets_Info")
         return view
     }()
     
@@ -86,6 +89,7 @@ class InformationContent: UIView {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: "Rok Akademicki")
+        view.setupLeftAccessory(named: "calendar_Info")
         return view
     }()
     
