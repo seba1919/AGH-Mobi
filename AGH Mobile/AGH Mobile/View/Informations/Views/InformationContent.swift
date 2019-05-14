@@ -23,8 +23,6 @@ class InformationContent: UIView {
     // Private
     private lazy var screenHeight = UIScreen.main.bounds.size.height
     private lazy var screenWidth =  UIScreen.main.bounds.size.width
-    // Public
-    
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -48,10 +46,15 @@ class InformationContent: UIView {
     
     private func setupView() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(rowNo1)
-        self.addSubview(rowNo2)
-        self.addSubview(rowNo3)
-        self.addSubview(rowNo4)
+        setupStackView()
+    }
+    
+    private func setupStackView() {
+        stackView.addArrangedSubview(rowNo1)
+        stackView.addArrangedSubview(rowNo2)
+        stackView.addArrangedSubview(rowNo3)
+        stackView.addArrangedSubview(rowNo4)
+        self.addSubview(stackView)
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -93,38 +96,25 @@ class InformationContent: UIView {
         return view
     }()
     
+    // StackView
+    private lazy var stackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .equalSpacing
+        stack.spacing = 0.0
+        return stack
+    }()
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup Constraints
     
     private func setupConstraints() {
         
-        // Row no. 1, 2, 3, 4
-        rowNo1.snp.makeConstraints { (make) in
+        stackView.snp.makeConstraints { (make) in
             make.top.equalTo(self.snp.top)
-            make.width.equalToSuperview()
-        }
-        
-        rowNo2.snp.makeConstraints { (make) in
-            make.top.equalTo(rowNo1.snp.bottom)
-            make.width.equalToSuperview()
-        }
-        
-        rowNo3.snp.makeConstraints { (make) in
-            make.top.equalTo(rowNo2.snp.bottom)
-            make.width.equalToSuperview()
-        }
-        
-        rowNo4.snp.makeConstraints { (make) in
-            make.top.equalTo(rowNo3.snp.bottom)
-            make.width.equalToSuperview()
+            make.left.right.equalToSuperview()
             make.bottom.equalTo(self.snp.bottom)
         }
-        
     }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Actions
-    
-    
-    
 }
