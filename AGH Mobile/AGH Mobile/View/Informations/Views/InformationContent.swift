@@ -18,7 +18,7 @@ import SnapKit
 class InformationContent: UIView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
+    // MARK: - Properties
     
     // Private
     private lazy var screenHeight = UIScreen.main.bounds.size.height
@@ -60,7 +60,7 @@ class InformationContent: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
     
-    // Row no. 1
+    // Row no. 1 - "Sylabus"
     private lazy var rowNo1: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
@@ -69,7 +69,7 @@ class InformationContent: UIView {
         return view
     }()
     
-    // Row no. 2
+    // Row no. 2 - "Pracownicy Uczelni"
     private lazy var rowNo2: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
@@ -78,7 +78,7 @@ class InformationContent: UIView {
         return view
     }()
     
-    // Row no. 3
+    // Row no. 3 - "Regulamin Studiów"
     private lazy var rowNo3: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
@@ -87,7 +87,7 @@ class InformationContent: UIView {
         return view
     }()
     
-    // Row no. 4
+    // Row no. 4 - "Rok Akademicki"
     private lazy var rowNo4: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .topAndBottom)
@@ -111,10 +111,13 @@ class InformationContent: UIView {
     
     private func setupConstraints() {
         
+        // StackView
         stackView.snp.makeConstraints { (make) in
             make.top.equalTo(self.snp.top)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(self.snp.bottom)
         }
+        
     }
+    
 }

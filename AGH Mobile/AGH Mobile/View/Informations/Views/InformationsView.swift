@@ -18,7 +18,7 @@ import SnapKit
 class InformationsView: UIView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
+    // MARK: - Properties
     
     // Private
     private lazy var screenHeight = self.frame.height
@@ -117,4 +117,5 @@ class InformationsView: UIView {
         }
         
     }
+    
 }
