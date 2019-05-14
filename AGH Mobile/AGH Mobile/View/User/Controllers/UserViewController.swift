@@ -17,7 +17,7 @@ import UIKit
 class UserViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
+    // MARK: - Properties
     
     // View
     private var userView: UserView { return self.view as! UserView }

@@ -17,7 +17,7 @@ import UIKit
 class InformationsViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
+    // MARK: - Properties
     
     // View
     private var infromationsView: InformationsView { return self.view as! InformationsView }

@@ -18,8 +18,9 @@ import SnapKit
 class UserWDProfile: UIView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
+    // MARK: - Properties
     
+    // Private
     private let spaceBetweenLabelAndPhoto: CGFloat = 15
     private lazy var screenHeight = Double(UIScreen.main.bounds.size.height)
     private lazy var viewHight = screenHeight * UserView.userProfileHightMultipliValue
@@ -54,7 +55,7 @@ class UserWDProfile: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public Methods
     
-    public func setupImage(named Name: String) {
+    public func setupProfileImage(named Name: String) {
         userPhoto.image = UIImage(named: Name)
     }
     
@@ -148,5 +149,7 @@ class UserWDProfile: UIView {
             make.top.equalTo(self.snp.top)
             make.right.equalTo(self.snp.right)
         }
+        
     }
+    
 }

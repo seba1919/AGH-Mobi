@@ -18,7 +18,7 @@ import SnapKit
 class UserView: UIView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
+    // MARK: - Properties
     
     // Private
     private lazy var screenHeight = self.frame.height
@@ -71,7 +71,7 @@ class UserView: UIView {
     public private(set) lazy var userProfile: UserWDProfile = {
         let profile = UserWDProfile()
         profile.translatesAutoresizingMaskIntoConstraints = false
-        profile.setupImage(named: "user_small_About")
+        profile.setupProfileImage(named: "user_small_About")
         return profile
     }()
     
@@ -133,7 +133,7 @@ class UserView: UIView {
         
         // Logout Button
         logoutButton.snp.makeConstraints { (make) in
-            //make.top.equalTo(userSettingsContent.snp.bottom).offset(screenHeight * -0.01)
+            // Adaptation to the iPhone SE
             if (UIScreen.main.bounds.height < 569) {
                 make.bottom.equalToSuperview().offset(screenHeight * -0.11)
             } else {
@@ -143,6 +143,7 @@ class UserView: UIView {
             make.left.equalTo(self.snp.left).offset(screenWidth * 0.18)
             make.right.equalTo(self.snp.right).offset(screenWidth * -0.18)
         }
+        
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -151,4 +152,5 @@ class UserView: UIView {
     @objc private func onPressPushLoginPage() {
         pushLoginPageVC?()
     }
+    
 }

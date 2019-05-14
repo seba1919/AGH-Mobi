@@ -18,12 +18,12 @@ import SnapKit
 class UserSettingsContent: UIView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
+    // MARK: - Properties
     
     // Private
     private lazy var screenHeight = UIScreen.main.bounds.size.height
     private lazy var screenWidth =  UIScreen.main.bounds.size.width
-    private let rowFreeSpace: CGFloat = 3
+    private let topPadding: CGFloat = 3
     // Public
     public var pushAboutAsVC: (() -> Void)?
     public var openMailApp: (() -> Void)?
@@ -50,18 +50,26 @@ class UserSettingsContent: UIView {
     
     private func setupView() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(rowNo1)
-        self.addSubview(rowNo2)
-        self.addSubview(rowNo3)
         self.addSubview(rowNo4)
-        self.addSubview(rowNo5)
-        self.addSubview(rowNo6)
+        setupStackViews()
+    }
+    
+    private func setupStackViews() {
+        // First StackView
+        stackViewNo1.addArrangedSubview(rowNo1)
+        stackViewNo1.addArrangedSubview(rowNo2)
+        stackViewNo1.addArrangedSubview(rowNo3)
+        self.addSubview(stackViewNo1)
+        // Second StackView
+        stackViewNo2.addArrangedSubview(rowNo5)
+        stackViewNo2.addArrangedSubview(rowNo6)
+        self.addSubview(stackViewNo2)
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
     
-    // Row no. 1
+    // Row no. 1 - "Wirtualna Uczelnia"
     private lazy var rowNo1: RowView = {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .top)
@@ -69,7 +77,7 @@ class UserSettingsContent: UIView {
         return view
     }()
     
-    // Row no. 2
+    // Row no. 2 - "UPEL"
     private lazy var rowNo2: RowView = {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .top)
@@ -77,7 +85,7 @@ class UserSettingsContent: UIView {
         return view
     }()
     
-    // Row no. 3
+    // Row no. 3 - "Panel Usług Sieciowych"
     private lazy var rowNo3: RowView = {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .topAndBottom)
@@ -85,7 +93,7 @@ class UserSettingsContent: UIView {
         return view
     }()
     
-    // Row no. 4
+    // Row no. 4 - "Powiadomienia o ocenach"
     private lazy var rowNo4: RowView = {
         let view = RowView(style: .withSwitch,
                            separatorPosition: .topAndBottom)
@@ -93,7 +101,7 @@ class UserSettingsContent: UIView {
         return view
     }()
     
-    // Row no. 5
+    // Row no. 5 - "O nas"
     private lazy var rowNo5: RowView = {
         let view = RowView(style: .normal,
                            separatorPosition: .topAndBottom)
@@ -102,7 +110,7 @@ class UserSettingsContent: UIView {
         return view
     }()
     
-    // Row no. 6
+    // Row no. 6 - "Skontaktuj się z nami"
     private lazy var rowNo6: RowView = {
         let view = RowView(style: .empty,
                            separatorPosition: .bottom)
@@ -111,43 +119,50 @@ class UserSettingsContent: UIView {
         return view
     }()
     
+    // StackView for Row no. 1 - 3
+    private lazy var stackViewNo1: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .equalSpacing
+        stack.spacing = 0.0
+        return stack
+    }()
+    
+    // StackView for Row no. 5 - 6
+    private lazy var stackViewNo2: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .equalSpacing
+        stack.spacing = 0.0
+        return stack
+    }()
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup Constraints
     
     private func setupConstraints() {
         
-        // Row no. 1, 2, 3
-        rowNo1.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp.top).offset(rowFreeSpace)
-            make.width.equalToSuperview()
-        }
-        
-        rowNo2.snp.makeConstraints { (make) in
-            make.top.equalTo(rowNo1.snp.bottom)
-            make.width.equalToSuperview()
-        }
-        
-        rowNo3.snp.makeConstraints { (make) in
-            make.top.equalTo(rowNo2.snp.bottom)
-            make.width.equalToSuperview()
+        // StackView for Row no. 1 - 3
+        stackViewNo1.snp.makeConstraints { (make) in
+            make.top.equalTo(self.snp.top).offset(topPadding)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(rowNo4.snp.top).offset(screenHeight * -0.063)
         }
         
         // Row no. 4
         rowNo4.snp.makeConstraints { (make) in
-            make.top.equalTo(rowNo3.snp.bottom).offset(screenHeight * 0.063)
             make.width.equalToSuperview()
         }
         
-        // Row no. 5, 6
-        rowNo5.snp.makeConstraints { (make) in
+        // StackView for Row no. 5 - 6
+        stackViewNo2.snp.makeConstraints { (make) in
             make.top.equalTo(rowNo4.snp.bottom).offset(screenHeight * 0.063)
-            make.width.equalToSuperview()
+            make.left.right.equalToSuperview()
+            //make.bottom.equalTo(self.snp.bottom)
         }
-        
-        rowNo6.snp.makeConstraints { (make) in
-            make.top.equalTo(rowNo5.snp.bottom)
-            make.width.equalToSuperview()
-        }
+
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
