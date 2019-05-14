@@ -126,9 +126,11 @@ final class AboutAsView: UIView {
         // MacKN Logo
         MacKNLogo.snp.makeConstraints { (make) in
             make.bottom.equalTo(webPageButton.snp.top).offset(-freeSpaceBetweenComponents)
-            make.height.equalTo(self.frame.height * 0.123)
+            // Adaptation to the iPhone SE
             if (UIScreen.main.bounds.height < 569) {
                 make.height.equalTo(self.frame.height * 0.07)
+            } else {
+                make.height.equalTo(self.frame.height * 0.123)
             }
             make.width.equalTo(MacKNLogo.snp.height).multipliedBy(MacKNLogo.frame.width / MacKNLogo.frame.height)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)

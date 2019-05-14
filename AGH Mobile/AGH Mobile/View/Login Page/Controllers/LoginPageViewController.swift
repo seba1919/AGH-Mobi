@@ -66,6 +66,7 @@ class LoginPageViewController: UIViewController {
                 UIApplication.shared.open(url)
             }
         }
+        
     }
     
 }
@@ -84,6 +85,7 @@ extension LoginPageViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
 }
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

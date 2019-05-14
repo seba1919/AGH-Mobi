@@ -101,5 +101,7 @@ class MemberWebPagesCell: UITableViewCell {
             make.centerX.equalTo(self.snp.centerX)
             make.centerY.equalTo(self.snp.centerY)
         }
+        
     }
+    
 }

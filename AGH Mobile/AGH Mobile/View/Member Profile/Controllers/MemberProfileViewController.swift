@@ -33,7 +33,6 @@ class MemberProfileViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         self.memberProfileView.setupUI()
         self.setupTableView()
         self.setupNavigationAttributs()

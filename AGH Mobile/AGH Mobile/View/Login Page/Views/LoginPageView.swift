@@ -227,6 +227,7 @@ class LoginPageView: UIView {
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(screenHeight * -0.019)
         }
+        
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

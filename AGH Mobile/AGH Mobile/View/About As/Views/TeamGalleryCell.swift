@@ -125,5 +125,7 @@ class TeamGalleryCell: UICollectionViewCell {
             make.centerX.equalTo(self.snp.centerX)
             make.bottom.equalTo(self.snp.bottom).priority(.required)
         }
+        
     }
+    
 }

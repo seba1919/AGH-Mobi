@@ -37,7 +37,6 @@ final class AboutAsViewController : UIViewController {
     // MARK: - Lifecycle
     
     override func loadView() {
-        super.loadView()
         self.view = AboutAsView(frame: UIScreen.main.bounds)
     }
     
@@ -56,8 +55,7 @@ final class AboutAsViewController : UIViewController {
     private func setupCollectionView() {
         aboutAsView.teamGallery.delegate = self
         aboutAsView.teamGallery.dataSource = self
-        aboutAsView.teamGallery.register(TeamGalleryCell.self,
-                                         forCellWithReuseIdentifier: TeamGalleryCell.identifier)
+        aboutAsView.teamGallery.register(TeamGalleryCell.self, forCellWithReuseIdentifier: TeamGalleryCell.identifier)
     }
     
     private func setupNavigationAttributs() {
@@ -126,11 +124,13 @@ final class AboutAsViewController : UIViewController {
     // MARK: - Actions
     
     private func setupActions() {
+       
         aboutAsView.openWebPage = {
             if let url = URL(string: self.webPageAddress) {
                 UIApplication.shared.open(url)
             }
         }
+        
     }
     
 }
