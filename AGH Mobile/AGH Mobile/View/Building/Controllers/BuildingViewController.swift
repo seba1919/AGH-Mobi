@@ -19,12 +19,19 @@ class BuildingViewController: UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
     
-    
+    private var buildingView: BuildingView { return self.view as! BuildingView }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
     
+    override func loadView() {
+        self.view = BuildingView(frame: UIScreen.main.bounds)
+    }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup
