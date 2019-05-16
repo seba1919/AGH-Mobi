@@ -23,7 +23,8 @@ final class RowView: UIView {
     // View
     private var topPadding: CGFloat = 12
     private var bottomPadding: CGFloat = -12
-    private var fontSize: CGFloat = 17
+    private var mainFontSize: CGFloat = 17
+    private var secondFontSize: CGFloat = 15.5
     
     private let rightPadding: CGFloat = -5
     private let leftMargin: CGFloat = 20
@@ -43,6 +44,7 @@ final class RowView: UIView {
     public enum Style {
         case normal
         case normalWithIndentation
+        case withTwoTitles
         case withSwitch
         case withLeftAccessory
         case empty
@@ -53,6 +55,7 @@ final class RowView: UIView {
         case top
         case bottom
         case topAndBottom
+        case empty
     }
     
     // Touch Detect
@@ -76,6 +79,7 @@ final class RowView: UIView {
         switch style {
         case .normal: setupNormalStyle()
         case .normalWithIndentation: setupNormalWithIndentationStyle()
+        case .withTwoTitles: setupWithTwoTitlesStyle()
         case .withSwitch: setupWithSwitchStyle()
                           touchDetectStatus = .off
         case .withLeftAccessory: setupWithLeftAccessoryStyle()
@@ -87,6 +91,7 @@ final class RowView: UIView {
         case .top: setupTopSeparator()
         case .bottom: setupBottomSeparator()
         case .topAndBottom: setupTopAndBottomSeparators()
+        case .empty: setupEmptySeparators()
         }
         
         // Touch Detect
@@ -114,6 +119,15 @@ final class RowView: UIView {
     private func setupNormalWithIndentationStyle() {
         self.setupNormalStyle()
         self.updateNormalStyleConstraintsToNormalWithIndentation()
+    }
+    
+    private func setupWithTwoTitlesStyle() {
+        self.addSubview(leftAccessory)
+        self.titlesStackView.addArrangedSubview(topTitle)
+        self.titlesStackView.addArrangedSubview(bottomTitle)
+        self.addSubview(titlesStackView)
+        self.addSubview(rightAccessory)
+        self.setupWithTwoTitlesStyleConstraints()
     }
     
     private func setupWithSwitchStyle() {
@@ -151,6 +165,10 @@ final class RowView: UIView {
         self.setupBottomSeparator()
     }
     
+    private func setupEmptySeparators() {
+        
+    }
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public Methods
     
@@ -160,6 +178,14 @@ final class RowView: UIView {
     
     public func setupLeftAccessory(named name: String) {
         leftAccessory.image = UIImage(named: name)
+    }
+    
+    public func setupTopTitle(as name: String) {
+        topTitle.text = name
+    }
+    
+    public func setupBottomTitle(as name: String) {
+        bottomTitle.text = name
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -172,8 +198,39 @@ final class RowView: UIView {
         label.textAlignment = .left
         label.text = "Title is not set" // Show if not use setupTitle method
         label.textColor = .black
-        label.font = UIFont.systemFont(ofSize: fontSize, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: mainFontSize, weight: .regular)
         return label
+    }()
+    
+    // Top Title
+    private lazy var topTitle: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.text = "Title is not set" // Show if not use setupTitle method
+        label.textColor = .purplishGrey
+        label.font = UIFont.systemFont(ofSize: secondFontSize, weight: .regular)
+        return label
+    }()
+    
+    // Bottom Title
+    private lazy var bottomTitle: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.textColor = .purplishGrey
+        label.font = UIFont.systemFont(ofSize: secondFontSize, weight: .regular)
+        return label
+    }()
+    
+    // StackView for Titles
+    private lazy var titlesStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .equalSpacing
+        stack.spacing = 0.0
+        return stack
     }()
     
     // Right Accessory
@@ -212,7 +269,6 @@ final class RowView: UIView {
         return view
     }()
     
-    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Constraints
     
@@ -232,6 +288,26 @@ final class RowView: UIView {
         // Title
         title.snp.updateConstraints { (update) in
             update.left.equalTo(self.snp.left).offset(leftMargin + 16)
+        }
+    }
+    
+    private func setupWithTwoTitlesStyleConstraints() {
+        // Left Accessory
+        leftAccessory.snp.makeConstraints { (make) in
+            make.centerY.equalTo(self.snp.centerY)
+            make.left.equalTo(self.snp.left).offset(leftMargin)
+        }
+        // StackView for Titles
+        titlesStackView.snp.makeConstraints { (make) in
+            make.top.equalTo(self.snp.top).offset(5)
+            make.left.equalTo(leftAccessory.snp.right).offset(12)
+            make.centerY.equalTo(self.snp.centerY)
+            make.bottom.equalTo(self.snp.bottom).offset(-5)
+        }
+        // Right Accessory
+        rightAccessory.snp.makeConstraints { (make) in
+            make.centerY.equalTo(self.snp.centerY)
+            make.right.equalTo(self.snp.right).offset(rightMargin + rightPadding)
         }
     }
     
@@ -354,33 +430,39 @@ private extension RowView {
         if (screenHeight < 569) {
             self.setupVariables(topPadding: 10,
                                 bottomPadding: -10,
-                                fontSize: 13)
+                                fontSize: 13,
+                                secondFontSize: 13)
         // Iphones 6, 6s, 7, 8
         } else if (screenHeight > 569 && screenHeight < 668) {
             self.setupVariables(topPadding: 11,
                                 bottomPadding: -11,
-                                fontSize: 15)
+                                fontSize: 15,
+                                secondFontSize: 14)
         // Iphones 6+, 6s+, 7+, 8+
         } else if (screenHeight > 668 && screenHeight < 737) {
             self.setupVariables(topPadding: 12,
                                 bottomPadding: -12,
-                                fontSize: 16.5)
+                                fontSize: 16.5,
+                                secondFontSize: 15)
         // and bigger Iphones
         } else if screenHeight > 737 {
             self.setupVariables(topPadding: 12,
                                 bottomPadding: -12,
-                                fontSize: 17)
+                                fontSize: 17,
+                                secondFontSize: 15.5)
         }
     }
     
     private func setupVariables(
         topPadding: CGFloat,
         bottomPadding: CGFloat,
-        fontSize: CGFloat){
+        fontSize: CGFloat,
+        secondFontSize: CGFloat){
         
         self.topPadding = topPadding
         self.bottomPadding = bottomPadding
-        self.fontSize = fontSize
+        self.mainFontSize = fontSize
+        self.secondFontSize = secondFontSize
     }
     
 }
