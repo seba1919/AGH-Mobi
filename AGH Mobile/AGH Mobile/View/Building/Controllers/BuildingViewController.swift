@@ -30,7 +30,7 @@ class BuildingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.buildingView.setupUI()
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

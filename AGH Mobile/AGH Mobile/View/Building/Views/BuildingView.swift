@@ -44,7 +44,11 @@ class BuildingView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
     
-    //
+    private lazy var buildingImage: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Constraints
