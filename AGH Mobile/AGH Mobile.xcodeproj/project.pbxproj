@@ -11,7 +11,6 @@
 		0711EF0822915B3900F49858 /* FacultyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EF0722915B3900F49858 /* FacultyDetailViewController.swift */; };
 		0711EF0A22915E2200F49858 /* StudyProgramViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EF0922915E2200F49858 /* StudyProgramViewController.swift */; };
 		0711EF0C22915E3900F49858 /* CourseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EF0B22915E3900F49858 /* CourseDetailViewController.swift */; };
-		0711EF0E2291608100F49858 /* FacultiesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EF0D2291608100F49858 /* FacultiesTableView.swift */; };
 		0711EF112291618200F49858 /* FacultiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EF102291618200F49858 /* FacultiesTableViewCell.swift */; };
 		4B6B0147225C9960001BF0F1 /* ModelWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0146225C9960001BF0F1 /* ModelWD.swift */; };
 		4B6B0149225C9B70001BF0F1 /* WDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0148225C9B70001BF0F1 /* WDViewModel.swift */; };
@@ -93,7 +92,6 @@
 		0711EF0722915B3900F49858 /* FacultyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyDetailViewController.swift; sourceTree = "<group>"; };
 		0711EF0922915E2200F49858 /* StudyProgramViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyProgramViewController.swift; sourceTree = "<group>"; };
 		0711EF0B22915E3900F49858 /* CourseDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewController.swift; sourceTree = "<group>"; };
-		0711EF0D2291608100F49858 /* FacultiesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesTableView.swift; sourceTree = "<group>"; };
 		0711EF102291618200F49858 /* FacultiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesTableViewCell.swift; sourceTree = "<group>"; };
 		3A8133F53DCB3FBF2ECD7701 /* Pods-AGH Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		4B6B0146225C9960001BF0F1 /* ModelWD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWD.swift; sourceTree = "<group>"; };
@@ -224,7 +222,6 @@
 		0711EF0422915A5B00F49858 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0711EF0D2291608100F49858 /* FacultiesTableView.swift */,
 				0711EF102291618200F49858 /* FacultiesTableViewCell.swift */,
 			);
 			path = Views;
@@ -943,7 +940,6 @@
 				6198C8F6227C25CA008D664F /* UserWDProfile.swift in Sources */,
 				4B6B0152225CCD7C001BF0F1 /* Grades.swift in Sources */,
 				4B87CCD72264E9170028930A /* Employee.swift in Sources */,
-				0711EF0E2291608100F49858 /* FacultiesTableView.swift in Sources */,
 				611F4B1D2250E0480056416E /* ForYouViewController.swift in Sources */,
 				4B87CCCD2264E0430028930A /* SkosViewModel.swift in Sources */,
 				0711EF0822915B3900F49858 /* FacultyDetailViewController.swift in Sources */,
