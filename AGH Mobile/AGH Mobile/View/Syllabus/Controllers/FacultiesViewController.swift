@@ -21,6 +21,7 @@ class FacultiesViewController: UIViewController {
     
     var tableView: UITableView!
     
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance properties
     
@@ -43,6 +44,7 @@ class FacultiesViewController: UIViewController {
         super.viewDidLoad()
         
         setUpView()
+        setUpNavController()
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -56,7 +58,30 @@ class FacultiesViewController: UIViewController {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
         }
+    }
+    
+    private func setUpNavController() {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.title = "Syllabus"
+        navigationItem.backBarButtonItem?.title = "Wróć"
+//        navigationItem.backBarButtonItem?.title = "Wróć"
+//        let backItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: nil)
+//        navigationItem.setLeftBarButton(backItem, animated: false)
+        
+        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(rightBarButtonItemTapped))
+        rightBarButton.title = "2018/19"
+        navigationController?.navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Actions
+    
+    @objc private func rightBarButtonItemTapped() {
+        print("wassup")
     }
     
 }
