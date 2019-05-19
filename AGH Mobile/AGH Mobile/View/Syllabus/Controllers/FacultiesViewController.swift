@@ -51,12 +51,6 @@ class FacultiesViewController: UIViewController {
         if let selectedRowIndexPath = tableView.indexPathForSelectedRow {
             tableView.deselectRow(at: selectedRowIndexPath, animated: false)
         }
-        toggleTitle()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        toggleTitle()
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -77,6 +71,11 @@ class FacultiesViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.title = "Syllabus"
         
+        // Back button
+        let backItem = UIBarButtonItem()
+        backItem.title = "Wydziały"
+        navigationItem.backBarButtonItem = backItem
+        
         // Right bar button
         let rightBarButton = UIBarButtonItem()
         rightBarButton.target = self
@@ -90,13 +89,6 @@ class FacultiesViewController: UIViewController {
     
     @objc private func rightBarButtonItemTapped() {
         #warning("Implement picker view")
-    }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Helpers
-    
-    private func toggleTitle() {
-        title = self.title == "Syllabus" ? "Wydziały" : "Syllabus"
     }
 }
 

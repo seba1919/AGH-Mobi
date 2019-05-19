@@ -34,12 +34,14 @@ class InformationsViewController: UIViewController {
         infromationsView.setupUI()
         setupActions()
         self.navigationItem.backBarButtonItem?.setTitleTextAttributes([NSAttributedString.Key.backgroundColor : UIColor.mainRed], for: .normal)
+        let backItem = UIBarButtonItem()
+        backItem.title = "Wróć"
+        navigationItem.backBarButtonItem = backItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupNavigationAttributs()
-        self.title = "Informacje"
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -55,7 +57,6 @@ class InformationsViewController: UIViewController {
     private func setupActions() {
         
         infromationsView.informationContent.pushSylabusVC = {
-            self.title = "Wróć"
             self.navigationController?.pushViewController(FacultiesViewController(), animated: true)
         }
         
