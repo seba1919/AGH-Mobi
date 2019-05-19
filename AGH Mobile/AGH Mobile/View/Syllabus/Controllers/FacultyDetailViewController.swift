@@ -10,6 +10,7 @@
 // MARK: - Import
 
 import UIKit
+import SnapKit
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
@@ -19,7 +20,7 @@ class FacultyDetailViewController: UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - UI components
     
-    
+    var tableView: UITableView!
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance properties
@@ -32,7 +33,8 @@ class FacultyDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        setUpView()
+        setUpNavController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,7 +49,15 @@ class FacultyDetailViewController: UIViewController {
     // MARK: - View setup
     
     private func setUpView() {
-        
+        tableView = UITableView()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(FacultyDetailTableViewCell.self, forCellReuseIdentifier: FacultyDetailTableViewCell.reuseIdentifier)
+        tableView.register(FacultyDetailTableViewHeader.self, forHeaderFooterViewReuseIdentifier: FacultyDetailTableViewHeader.reuseIdentifier)
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
     }
     
     private func setUpNavController() {
@@ -72,8 +82,17 @@ class FacultyDetailViewController: UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Helpers
     
-    private func toggleTitle() {
-        title = self.title == "Syllabus" ? "Wydziały" : "Syllabus"
+
+}
+
+extension FacultyDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
     
 }
