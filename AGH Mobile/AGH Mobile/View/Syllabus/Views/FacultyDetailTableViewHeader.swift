@@ -12,10 +12,10 @@ import SnapKit
 class FacultyDetailTableViewHeader: UITableViewHeaderFooterView {
     
     private struct Constants {
-        static let horizontalPadding: CGFloat = 48
+        static let horizontalPadding: CGFloat = 36
         static let horizontalSpacing: CGFloat = 10
-        static let verticalPadding: CGFloat = 16
-        static let verticalSpacing: CGFloat = 2
+        static let verticalPadding: CGFloat = 24
+        static let verticalSpacing: CGFloat = 40
         
         // Font sizes
         static let titleFontSize: CGFloat = 30
@@ -48,8 +48,10 @@ class FacultyDetailTableViewHeader: UITableViewHeaderFooterView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
+        backgroundColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,7 +62,12 @@ class FacultyDetailTableViewHeader: UITableViewHeaderFooterView {
     // MARK: - View setup
     
     private func setUpView(forFirstSection: Bool) {
-        
+        // This custom header is used for all sections
+        // All exising subviews should be removed when dequeueReusableHeader method is called
+        self.subviews.forEach {
+            $0.removeFromSuperview()
+        }
+
         // Subtitle label
         subtitleLbl = UILabel()
         subtitleLbl.textColor = .customGrayText
@@ -84,14 +91,14 @@ class FacultyDetailTableViewHeader: UITableViewHeaderFooterView {
             }
             
             subtitleLbl.snp.makeConstraints { (make) in
-                make.top.equalTo(titleLbl.snp.bottom).offset(Constants.verticalSpacing)
+                make.top.equalTo(titleLbl.snp.bottom).offset(Constants.verticalSpacing).priority(.medium)
                 make.bottom.equalToSuperview().offset(-Constants.verticalPadding)
                 make.right.equalToSuperview().offset(-Constants.horizontalPadding)
                 make.left.equalToSuperview().offset(Constants.horizontalPadding)
             }
         } else {
             subtitleLbl.snp.makeConstraints { (make) in
-                make.top.equalToSuperview().offset(Constants.verticalSpacing)
+                make.top.equalToSuperview().offset(Constants.verticalSpacing).priority(.medium)
                 make.bottom.equalToSuperview().offset(-Constants.verticalPadding)
                 make.right.equalToSuperview().offset(-Constants.horizontalPadding)
                 make.left.equalToSuperview().offset(Constants.horizontalPadding)

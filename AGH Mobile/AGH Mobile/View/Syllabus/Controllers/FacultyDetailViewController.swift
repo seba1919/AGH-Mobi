@@ -71,7 +71,8 @@ class FacultyDetailViewController: UIViewController {
     // MARK: - View setup
     
     private func setUpView() {
-        tableView = UITableView()
+        tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(FacultyDetailTableViewCell.self, forCellReuseIdentifier: FacultyDetailTableViewCell.reuseIdentifier)
@@ -137,5 +138,7 @@ extension FacultyDetailViewController: UITableViewDelegate, UITableViewDataSourc
         headerView.subtitleLbl.text = dummySectionTitles[section]
         return headerView
     }
+    
+    
     
 }

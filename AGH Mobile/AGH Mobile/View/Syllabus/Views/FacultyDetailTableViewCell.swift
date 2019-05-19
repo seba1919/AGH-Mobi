@@ -17,12 +17,11 @@ import UIKit
 class FacultyDetailTableViewCell: UITableViewCell {
     
     private struct Constants {
-        static let horizontalPadding: CGFloat = 48
+        static let horizontalPadding: CGFloat = 42
         static let horizontalSpacing: CGFloat = 10
         static let verticalPadding: CGFloat = 16
         static let verticalSpacing: CGFloat = 2
         
-        // Font sizes
         static let titleFontSize: CGFloat = 18
     }
     
@@ -80,7 +79,7 @@ class FacultyDetailTableViewCell: UITableViewCell {
         
         // Title label
         titleLbl = UILabel()
-        titleLbl.textColor = .customGrayText
+        titleLbl.textColor = .black
         titleLbl.numberOfLines = 0
         titleLbl.font = UIFont.systemFont(ofSize: Constants.titleFontSize, weight: .regular)
         addSubview(titleLbl)
