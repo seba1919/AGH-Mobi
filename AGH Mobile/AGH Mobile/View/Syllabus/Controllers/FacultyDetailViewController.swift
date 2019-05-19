@@ -61,6 +61,10 @@ class FacultyDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if let selectedRowIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedRowIndexPath, animated: false)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -86,6 +90,11 @@ class FacultyDetailViewController: UIViewController {
     private func setUpNavController() {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.title = "Syllabus"
+        
+        // Back button
+        let backItem = UIBarButtonItem()
+        backItem.title = "Kierunki"
+        navigationItem.backBarButtonItem = backItem
         
         // Right bar button
         let rightBarButton = UIBarButtonItem()
@@ -139,6 +148,8 @@ extension FacultyDetailViewController: UITableViewDelegate, UITableViewDataSourc
         return headerView
     }
     
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = StudyProgramViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
