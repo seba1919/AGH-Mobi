@@ -31,7 +31,9 @@ class InformationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.infromationsView.setupUI()
+        infromationsView.setupUI()
+        setupActions()
+    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,8 +53,7 @@ class InformationsViewController: UIViewController {
     private func setupActions() {
         
         infromationsView.informationContent.pushSylabusVC = {
-            print("No ja to tak zrobiłem... nie wiem czy to dobra praktyka ale kiedyś pytałem na help to tak zaprobowali :D    tutaj po prostu daję: ")
-            //self.navigationController?.pushViewController(SylabusViewController(), animated: true)
+            self.navigationController?.pushViewController(FacultiesViewController(), animated: true)
         }
         
     }
