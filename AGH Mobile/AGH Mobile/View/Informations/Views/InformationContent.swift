@@ -23,6 +23,8 @@ class InformationContent: UIView {
     // Private
     private lazy var screenHeight = UIScreen.main.bounds.size.height
     private lazy var screenWidth =  UIScreen.main.bounds.size.width
+    // Public
+    public var pushSylabusVC: (() -> Void)?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -66,6 +68,7 @@ class InformationContent: UIView {
                            separatorPosition: .top)
         view.setupTitle(as: "Syllabus")
         view.setupLeftAccessory(named: "book_Info")
+        view.setAction = { self.onPressPushSylabusVC() }
         return view
     }()
     
@@ -118,6 +121,13 @@ class InformationContent: UIView {
             make.bottom.equalTo(self.snp.bottom)
         }
         
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Actions
+    
+    private func onPressPushSylabusVC() {
+        pushSylabusVC?()
     }
     
 }

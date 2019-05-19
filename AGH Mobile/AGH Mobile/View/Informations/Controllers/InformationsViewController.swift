@@ -15,7 +15,7 @@ import UIKit
 // MARK: - Implementation
 
 class InformationsViewController: UIViewController {
-
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
     
@@ -43,6 +43,18 @@ class InformationsViewController: UIViewController {
     
     private func setupNavigationAttributs() {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Actions
+    
+    private func setupActions() {
+        
+        infromationsView.informationContent.pushSylabusVC = {
+            print("No ja to tak zrobiłem... nie wiem czy to dobra praktyka ale kiedyś pytałem na help to tak zaprobowali :D    tutaj po prostu daję: ")
+            //self.navigationController?.pushViewController(SylabusViewController(), animated: true)
+        }
+        
     }
     
 }
