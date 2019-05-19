@@ -25,7 +25,29 @@ class FacultyDetailViewController: UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance properties
     
-    
+    var dummyTableViewData = [
+        [
+            FacultyDetailTableViewCellDummyViewModel(title: "Automatyka i robotyka"),
+            FacultyDetailTableViewCellDummyViewModel(title: "robotyka i robotyka"),
+            FacultyDetailTableViewCellDummyViewModel(title: "Automatyka i robotyka"),
+            FacultyDetailTableViewCellDummyViewModel(title: "robotyka i robotyka"),
+            FacultyDetailTableViewCellDummyViewModel(title: "Automatyka i robotyka"),
+            FacultyDetailTableViewCellDummyViewModel(title: "robotyka i robotyka")
+        ],
+        [
+            FacultyDetailTableViewCellDummyViewModel(title: "Automatyka i robotyka"),
+            FacultyDetailTableViewCellDummyViewModel(title: "robotyka i robotyka"),
+            FacultyDetailTableViewCellDummyViewModel(title: "Automatyka i robotyka"),
+            FacultyDetailTableViewCellDummyViewModel(title: "robotyka i robotyka"),
+            FacultyDetailTableViewCellDummyViewModel(title: "Automatyka i robotyka"),
+            FacultyDetailTableViewCellDummyViewModel(title: "robotyka i robotyka")
+        ]
+    ]
+    var dummyFacultyTitle = "EAIiIB"
+    var dummySectionTitles = [
+        "STACJONARNE STUDIA I STOPNIA",
+        "STACJONARNE STUDIA II STOPNIA"
+    ]
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -82,17 +104,38 @@ class FacultyDetailViewController: UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Helpers
     
-
+    
 }
 
 extension FacultyDetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dummyTableViewData.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return dummyTableViewData[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: FacultyDetailTableViewCell.reuseIdentifier) as? FacultyDetailTableViewCell else {
+            return UITableViewCell()
+        }
+        let vm = dummyTableViewData[indexPath.section][indexPath.row]
+        cell.viewModel = vm
+        return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: FacultyDetailTableViewHeader.reuseIdentifier) as? FacultyDetailTableViewHeader else {
+            return UITableViewHeaderFooterView()
+        }
+        
+        headerView.isFirstSectionHeader = section == 0 ? true : false
+        if headerView.isFirstSectionHeader {
+            headerView.titleLbl.text = dummyFacultyTitle
+        }
+        headerView.subtitleLbl.text = dummySectionTitles[section]
+        return headerView
+    }
     
 }

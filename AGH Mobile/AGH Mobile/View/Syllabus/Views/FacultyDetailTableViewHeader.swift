@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class FacultyDetailTableViewHeader: UITableViewHeaderFooterView {
-
+    
     private struct Constants {
         static let horizontalPadding: CGFloat = 48
         static let horizontalSpacing: CGFloat = 10
@@ -18,7 +18,8 @@ class FacultyDetailTableViewHeader: UITableViewHeaderFooterView {
         static let verticalSpacing: CGFloat = 2
         
         // Font sizes
-        static let titleFontSize: CGFloat = 18
+        static let titleFontSize: CGFloat = 30
+        static let subtitleFontSize: CGFloat = 14
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -29,15 +30,26 @@ class FacultyDetailTableViewHeader: UITableViewHeaderFooterView {
     }()
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Instance properties
+    
+    
+    // Only first seciton has faculty name label
+    var isFirstSectionHeader = false {
+        didSet {
+            setUpView(forFirstSection: isFirstSectionHeader)
+        }
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - UI components
     
     var titleLbl: UILabel!
+    var subtitleLbl: UILabel!
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
-        setUpView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,17 +59,43 @@ class FacultyDetailTableViewHeader: UITableViewHeaderFooterView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - View setup
     
-    private func setUpView() {
-        titleLbl = UILabel()
-        titleLbl.textColor = .mainRed
-        titleLbl.numberOfLines = 0
-        titleLbl.font = UIFont.systemFont(ofSize: Constants.titleFontSize, weight: .bold)
-        addSubview(titleLbl)
-        titleLbl.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(Constants.horizontalPadding)
-            make.right.equalToSuperview().offset(-Constants.horizontalPadding)
-            make.top.equalToSuperview().offset(Constants.verticalPadding)
-            make.bottom.equalToSuperview().offset(-Constants.verticalPadding)
+    private func setUpView(forFirstSection: Bool) {
+        
+        // Subtitle label
+        subtitleLbl = UILabel()
+        subtitleLbl.textColor = .customGrayText
+        subtitleLbl.font = UIFont.systemFont(ofSize: Constants.subtitleFontSize, weight: .regular)
+        subtitleLbl.numberOfLines = 0
+        addSubview(subtitleLbl)
+        
+        // Only the first section has a titleLbl
+        if forFirstSection {
+            
+            // Title label
+            titleLbl = UILabel()
+            titleLbl.textColor = .mainRed
+            titleLbl.numberOfLines = 0
+            titleLbl.font = UIFont.systemFont(ofSize: Constants.titleFontSize, weight: .bold)
+            addSubview(titleLbl)
+            titleLbl.snp.makeConstraints { (make) in
+                make.left.equalToSuperview().offset(Constants.horizontalPadding)
+                make.right.equalToSuperview().offset(-Constants.horizontalPadding)
+                make.top.equalToSuperview().offset(Constants.verticalPadding)
+            }
+            
+            subtitleLbl.snp.makeConstraints { (make) in
+                make.top.equalTo(titleLbl.snp.bottom).offset(Constants.verticalSpacing)
+                make.bottom.equalToSuperview().offset(-Constants.verticalPadding)
+                make.right.equalToSuperview().offset(-Constants.horizontalPadding)
+                make.left.equalToSuperview().offset(Constants.horizontalPadding)
+            }
+        } else {
+            subtitleLbl.snp.makeConstraints { (make) in
+                make.top.equalToSuperview().offset(Constants.verticalSpacing)
+                make.bottom.equalToSuperview().offset(-Constants.verticalPadding)
+                make.right.equalToSuperview().offset(-Constants.horizontalPadding)
+                make.left.equalToSuperview().offset(Constants.horizontalPadding)
+            }
         }
     }
 }

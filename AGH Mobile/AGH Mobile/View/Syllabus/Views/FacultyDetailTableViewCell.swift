@@ -27,7 +27,7 @@ class FacultyDetailTableViewCell: UITableViewCell {
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Static Variables
+    // MARK: - Static Properties
     
     static let reuseIdentifier: String = {
         return String.init(describing: self)
@@ -42,7 +42,7 @@ class FacultyDetailTableViewCell: UITableViewCell {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance porperties
     
-    var viewModel: FacultiesTableViewCellDummyViewModel! {
+    var viewModel: FacultyDetailTableViewCellDummyViewModel! {
         didSet {
             titleLbl.text = viewModel.title
             titleLbl.sizeToFit()
