@@ -47,6 +47,18 @@ class FacultiesViewController: UIViewController {
         setUpNavController()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let selectedRowIndexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: selectedRowIndexPath, animated: false)
+        }
+        toggleTitle()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        toggleTitle()
+    }
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - View setup
     
@@ -80,6 +92,12 @@ class FacultiesViewController: UIViewController {
         #warning("Implement picker view")
     }
     
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Helpers
+    
+    private func toggleTitle() {
+        title = self.title == "Syllabus" ? "Wydziały" : "Syllabus"
+    }
 }
 
 extension FacultiesViewController: UITableViewDelegate, UITableViewDataSource {
@@ -95,5 +113,12 @@ extension FacultiesViewController: UITableViewDelegate, UITableViewDataSource {
         let cellData = tableViewDataSource[indexPath.row]
         cell.viewModel = cellData
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = FacultyDetailViewController()
+        // Pass data to the next VC
+
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
