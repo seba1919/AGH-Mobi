@@ -31,6 +31,7 @@ class BuildingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.buildingView.setupUI()
+        self.setupData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +44,13 @@ class BuildingViewController: UIViewController {
     private func setupNavigationAttributs() {
         self.navigationItem.title = "Budynki"
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    private func setupData() {
+        buildingView.setupBuildingName(as: "Budynek C2")
+        buildingView.setupDepartmentName(as: "Wydział Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej")
+        buildingView.setupOpeningHours(on: "codziennie \n7.00 - 21.00")
+        buildingView.setupAddress(as: "Czarnowiejska 41/43")
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

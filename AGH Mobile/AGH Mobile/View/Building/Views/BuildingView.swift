@@ -55,7 +55,7 @@ class BuildingView: UIView {
         buildingImageView.addSubview(buildingDefaultImage)
         buildingImageView.addSubview(buildingImage)
         self.addSubview(buildingName)
-        self.addSubview(departamentName)
+        self.addSubview(departmentName)
         self.addSubview(separatorNo1)
         self.addSubview(openingHoursLabel)
         self.addSubview(openingHours)
@@ -65,6 +65,33 @@ class BuildingView: UIView {
         self.addSubview(separatorNo3)
         self.addSubview(mapView)
         self.addSubview(showRouteButton)
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Public Methods
+    
+    public func setupBuildingImage(named Name: String) {
+        buildingImage.image = UIImage(named: Name)
+    }
+    
+    public func setupBuildingName(as Name: String) {
+        buildingName.text = Name
+    }
+    
+    public func setupDepartmentName(as Name: String) {
+        departmentName.text = Name
+    }
+    
+    public func setupOpeningHours(on Text: String) {
+        openingHours.text = Text
+    }
+    
+    public func setupAddress(as Address: String) {
+        address.text = Address
+    }
+    
+    public func setupLocationOnAddress() {
+        
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -103,19 +130,19 @@ class BuildingView: UIView {
         label.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         label.textColor = .black
         label.textAlignment = .left
-        label.text = "Budynek C2"
+        label.text = "Budynek"
         return label
     }()
     
-    // Departament Name
-    private lazy var departamentName: UILabel = {
+    // Department Name
+    private lazy var departmentName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0 // Infinity lines
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = .black
         label.textAlignment = .left
-        label.text = "Wydział Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej"
+        label.text = "Wydział"
         return label
     }()
     
@@ -144,7 +171,7 @@ class BuildingView: UIView {
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textColor = .customGrayText
         label.textAlignment = .right
-        label.text = "codziennie \n7.00 - 21.00"
+        label.text = "Codziennie \n24h/7"
         return label
     }()
     
@@ -172,7 +199,7 @@ class BuildingView: UIView {
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textColor = .mainRed
         label.textAlignment = .right
-        label.text = "Czarnowiejska 41/43"
+        label.text = "Czarnowiejska"
         return label
     }()
     
@@ -228,8 +255,8 @@ class BuildingView: UIView {
             make.left.equalToSuperview().offset(leftMargin)
         }
         
-        // Departament Name
-        departamentName.snp.makeConstraints { (make) in
+        // Department Name
+        departmentName.snp.makeConstraints { (make) in
             make.top.equalTo(buildingName.snp.bottom).offset(4)
             make.left.equalToSuperview().offset(leftMargin)
             make.right.equalToSuperview().offset(rightMargin)
@@ -237,7 +264,7 @@ class BuildingView: UIView {
         
         // Separator No. 1
         separatorNo1.snp.makeConstraints { (make) in
-            make.top.equalTo(departamentName.snp.bottom).offset(spacing)
+            make.top.equalTo(departmentName.snp.bottom).offset(spacing)
             make.width.equalToSuperview()
         }
         
