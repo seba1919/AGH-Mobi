@@ -92,6 +92,7 @@ extension HomeTabBarController {
         navigationController.tabBarItem.title = title
         navigationController.tabBarItem.image = UIImage(named: imageName)
         navigationController.navigationBar.tintColor = .mainRed
+        navigationController.navigationBar.barTintColor = .white
         return navigationController
     }
     

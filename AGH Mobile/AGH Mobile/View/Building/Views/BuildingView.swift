@@ -243,7 +243,7 @@ class BuildingView: UIView {
         
         // Opening Hours Label
         openingHoursLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(separatorNo1.snp.bottom).offset(spacingInRows)
+            make.centerY.equalTo(openingHours)
             make.left.equalToSuperview().offset(leftMargin)
         }
         
