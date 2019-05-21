@@ -33,11 +33,16 @@ class BuildingViewController: UIViewController {
         self.buildingView.setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupNavigationAttributs()
+    }
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup
     
     private func setupNavigationAttributs() {
-
+        self.navigationItem.title = "Budynki"
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

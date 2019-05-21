@@ -30,4 +30,7 @@ extension UIColor {
     public static let customLightGray = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.82)
     public static let customDarkGray = UIColor(red: 142/255, green: 142/255, blue: 147/255, alpha: 1)
     
+    // Others
+    public static let lightPeach = UIColor(red: 239/255, green: 213/255, blue: 213/255, alpha: 1)
+    
 }
