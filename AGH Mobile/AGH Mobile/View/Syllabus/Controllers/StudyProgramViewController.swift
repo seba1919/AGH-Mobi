@@ -29,39 +29,30 @@ class StudyProgramViewController: UIViewController {
     
     let dummyTableViewDataSouce = [
         [
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false)
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true)
         ],
         [
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false)
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true)
         ],
         [
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false)
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true)
         ],
         [
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Ocena oddzialywaniu na srodowisko", courseType: "Wyklad", totalHours: 30, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Zanieczyszczenia atmosfery wod i gleby", courseType: "Cwicznia laboratoryjne", totalHours: 30, hasExam: false)
-        ],
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 30, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true)
+        ]
     ]
-    
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - UI components
@@ -100,7 +91,8 @@ class StudyProgramViewController: UIViewController {
         }
         
         // Table view
-        tableView = UITableView()
+        tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.backgroundColor = .white
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(StudyProgramTableViewCell.self, forCellReuseIdentifier: StudyProgramTableViewCell.reuseIdentifier)
@@ -139,9 +131,15 @@ extension StudyProgramViewController: UITableViewDelegate, UITableViewDataSource
         guard let cell = tableView.dequeueReusableCell(withIdentifier: StudyProgramTableViewCell.reuseIdentifier) as? StudyProgramTableViewCell else {
             return UITableViewCell()
         }
-        
-        return cell 
+        cell.viewModel = dummyTableViewDataSouce[indexPath.section][indexPath.row]
+        return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: StudyProgramTableViewHeader.reuseIdentifier) as? StudyProgramTableViewHeader else {
+            return UIView()
+        }
+        header.sectionTitle = dummySectionTitles[section]
+        return header 
+    }
 }
