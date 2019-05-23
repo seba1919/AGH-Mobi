@@ -24,8 +24,8 @@ class FacultiesTableViewCell: UITableViewCell {
         static let verticalSpacing: CGFloat = 2
         
         // Font sizes
-        static let titleFontSize: CGFloat = 30
-        static let subtitleFontSize: CGFloat = 14
+        static let titleFontSize: CGFloat = 26
+        static let subtitleFontSize: CGFloat = 13
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -103,9 +103,20 @@ class FacultiesTableViewCell: UITableViewCell {
         addSubview(subtitleLbl)
         subtitleLbl.snp.makeConstraints { (make) in
             make.top.equalTo(titleLbl.snp.bottom).offset(Constants.verticalSpacing)
-            make.bottom.lessThanOrEqualToSuperview().offset(-Constants.verticalPadding)
             make.leading.equalTo(titleLbl.snp.leading)
             make.right.lessThanOrEqualTo(arrowImageView.snp.left).offset(-Constants.horizontalSpacing)
+        }
+        
+        // Separator view
+        let separatorView = UIView()
+        separatorView.backgroundColor = #colorLiteral(red: 0.9293302894, green: 0.929463923, blue: 0.9293010831, alpha: 1)
+        addSubview(separatorView)
+        separatorView.snp.makeConstraints { (make) in
+            make.height.equalTo(1)
+            make.left.equalToSuperview().offset(Constants.horizontalPadding / 2)
+            make.right.equalToSuperview().offset(-Constants.horizontalPadding / 2)
+            make.top.equalTo(subtitleLbl.snp.bottom).offset(Constants.verticalPadding)
+            make.bottom.equalToSuperview()
         }
     }
 }

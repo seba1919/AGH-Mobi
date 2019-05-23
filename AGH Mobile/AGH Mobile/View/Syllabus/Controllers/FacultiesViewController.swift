@@ -60,6 +60,7 @@ class FacultiesViewController: UIViewController {
         tableView = UITableView()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(FacultiesTableViewCell.self, forCellReuseIdentifier: FacultiesTableViewCell.reuseIdentifier)
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
