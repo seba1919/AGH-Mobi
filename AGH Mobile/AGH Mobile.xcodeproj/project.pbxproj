@@ -18,6 +18,7 @@
 		0711EF112291618200F49858 /* FacultiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EF102291618200F49858 /* FacultiesTableViewCell.swift */; };
 		0711EF162291C15200F49858 /* FacultyDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EF152291C15200F49858 /* FacultyDetailTableViewCell.swift */; };
 		0711EF182291C1B400F49858 /* FacultyDetailTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EF172291C1B400F49858 /* FacultyDetailTableViewHeader.swift */; };
+		07160CE7229716C700623284 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07160CE6229716C700623284 /* ToolbarPickerView.swift */; };
 		4B6B0147225C9960001BF0F1 /* ModelWD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0146225C9960001BF0F1 /* ModelWD.swift */; };
 		4B6B0149225C9B70001BF0F1 /* WDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B0148225C9B70001BF0F1 /* WDViewModel.swift */; };
 		4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B6B014D225CC9A1001BF0F1 /* Course.swift */; };
@@ -105,6 +106,7 @@
 		0711EF102291618200F49858 /* FacultiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultiesTableViewCell.swift; sourceTree = "<group>"; };
 		0711EF152291C15200F49858 /* FacultyDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyDetailTableViewCell.swift; sourceTree = "<group>"; };
 		0711EF172291C1B400F49858 /* FacultyDetailTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacultyDetailTableViewHeader.swift; sourceTree = "<group>"; };
+		07160CE6229716C700623284 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 		3A8133F53DCB3FBF2ECD7701 /* Pods-AGH Mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH Mobile.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile.release.xcconfig"; sourceTree = "<group>"; };
 		4B6B0146225C9960001BF0F1 /* ModelWD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelWD.swift; sourceTree = "<group>"; };
 		4B6B0148225C9B70001BF0F1 /* WDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDViewModel.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				0711EF122291C10900F49858 /* FacultiesViewController */,
 				071074F12292F1C7003B9279 /* FacultyDetailViewController */,
 				07160CE32297018100623284 /* StudyProgramViewController */,
+				07160CE6229716C700623284 /* ToolbarPickerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -970,6 +973,7 @@
 				0711EF182291C1B400F49858 /* FacultyDetailTableViewHeader.swift in Sources */,
 				6198C9052280E6AB008D664F /* LoginPageViewController.swift in Sources */,
 				6198C8F8227C3BD7008D664F /* UserSettingsContent.swift in Sources */,
+				07160CE7229716C700623284 /* ToolbarPickerView.swift in Sources */,
 				4B6B0157225CD289001BF0F1 /* TestWDImpl.swift in Sources */,
 				0711EF0622915B1600F49858 /* FacultiesViewController.swift in Sources */,
 				61241323225267E3007D04C0 /* InformationsView.swift in Sources */,

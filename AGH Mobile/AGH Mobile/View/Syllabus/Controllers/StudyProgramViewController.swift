@@ -115,7 +115,7 @@ class StudyProgramViewController: UIViewController {
     }
     
     @objc private func rightSwitcherBtnTapped() {
-        print("Left btn pressend")
+        print("Right btn pressend")
     }
 }
 

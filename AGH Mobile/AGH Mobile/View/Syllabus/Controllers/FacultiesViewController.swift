@@ -20,10 +20,16 @@ class FacultiesViewController: UIViewController {
     // MARK: - UI components
     
     var tableView: UITableView!
+    var pickerView: ToolbarPickerView!
+    var rightBarButton: UIBarButtonItem!
     
+    // Text field used only to act as an input view the picker view
+    var dummyTxtField: UITextField!
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance properties
+    
+    let pickerViewData = ["2017/18", "2018/19", "2019/20"]
     
     var tableViewDataSource: [FacultiesTableViewCellDummyViewModel] = [
         FacultiesTableViewCellDummyViewModel(title: "EAiIB", subtitle: "Elektrotechniki, Automatyki i Inżynierii Biomedycznej"),
@@ -45,6 +51,7 @@ class FacultiesViewController: UIViewController {
         
         setUpView()
         setUpNavController()
+        setUpPickerView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +75,13 @@ class FacultiesViewController: UIViewController {
         }
     }
     
+    private func setUpPickerView() {
+        pickerView = ToolbarPickerView()
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        pickerView.toolbarDelegate = self
+    }
+    
     private func setUpNavController() {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.title = "Syllabus"
@@ -78,7 +92,7 @@ class FacultiesViewController: UIViewController {
         navigationItem.backBarButtonItem = backItem
         
         // Right bar button
-        let rightBarButton = UIBarButtonItem()
+        rightBarButton = UIBarButtonItem()
         rightBarButton.target = self
         rightBarButton.action = #selector(rightBarButtonItemTapped)
         rightBarButton.title = "2018/19"
@@ -88,8 +102,14 @@ class FacultiesViewController: UIViewController {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
     
-    @objc private func rightBarButtonItemTapped() {
-        #warning("Implement picker view")
+    @objc private func rightBarButtonItemTapped()  {
+        // Using a dummy text field is the easiest way to present a picker view with a toolbar
+        dummyTxtField = UITextField(frame: .zero)
+        view.addSubview(dummyTxtField)
+        
+        dummyTxtField.inputView = pickerView
+        dummyTxtField.inputAccessoryView = pickerView.toolbar
+        dummyTxtField.becomeFirstResponder()
     }
 }
 
@@ -113,5 +133,37 @@ extension FacultiesViewController: UITableViewDelegate, UITableViewDataSource {
         // Pass data to the next VC
 
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension FacultiesViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return self.pickerViewData.count
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return self.pickerViewData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        rightBarButton.title = self.pickerViewData[row]
+    }
+}
+
+extension FacultiesViewController: ToolbarPickerViewDelegate {
+    func didTapDone() {
+        let row = self.pickerView.selectedRow(inComponent: 0)
+        self.pickerView.selectRow(row, inComponent: 0, animated: false)
+        rightBarButton.title = self.pickerViewData[row]
+        dummyTxtField.resignFirstResponder()
+    }
+    
+    func didTapCancel() {
+        dummyTxtField.resignFirstResponder()
     }
 }
