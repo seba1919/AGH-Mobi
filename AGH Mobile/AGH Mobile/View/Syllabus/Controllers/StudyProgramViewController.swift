@@ -30,12 +30,12 @@ class StudyProgramViewController: UIViewController {
     let dummyTableViewDataSouce = [
         [
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Przedmiot w jezyku obcym", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Przedmiot w jezyku obcym", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: false),
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Innowacyjnosc w odlewnictwie i gornictwie", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true)
+            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: false)
         ],
         [
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Symulacja systemow dynamicznych i orania gleby", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true)
@@ -95,13 +95,14 @@ class StudyProgramViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.separatorStyle = .none
         tableView.register(StudyProgramTableViewCell.self, forCellReuseIdentifier: StudyProgramTableViewCell.reuseIdentifier)
         tableView.register(StudyProgramTableViewHeader.self, forHeaderFooterViewReuseIdentifier: StudyProgramTableViewHeader.reuseIdentifier)
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
             make.right.equalToSuperview()
-            make.top.equalTo(semesterSwitcher.snp.bottom).offset(20)
+            make.top.equalTo(semesterSwitcher.snp.bottom).offset(10)
             make.bottom.equalToSuperview()
         }
     }
@@ -132,6 +133,11 @@ extension StudyProgramViewController: UITableViewDelegate, UITableViewDataSource
             return UITableViewCell()
         }
         cell.viewModel = dummyTableViewDataSouce[indexPath.section][indexPath.row]
+        
+        // Remove separator if it's last cell in the section
+        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            cell.separatorView.isHidden = true
+        }
         return cell
     }
     
