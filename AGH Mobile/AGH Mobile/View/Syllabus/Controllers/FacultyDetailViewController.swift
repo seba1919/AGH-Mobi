@@ -79,6 +79,7 @@ class FacultyDetailViewController: UIViewController {
         tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
         tableView.register(FacultyDetailTableViewCell.self, forCellReuseIdentifier: FacultyDetailTableViewCell.reuseIdentifier)
         tableView.register(FacultyDetailTableViewHeader.self, forHeaderFooterViewReuseIdentifier: FacultyDetailTableViewHeader.reuseIdentifier)
         view.addSubview(tableView)
@@ -132,6 +133,9 @@ extension FacultyDetailViewController: UITableViewDelegate, UITableViewDataSourc
         }
         let vm = dummyTableViewData[indexPath.section][indexPath.row]
         cell.viewModel = vm
+        if indexPath.row == tableView.numberOfRows(inSection: indexPath.section) - 1 {
+            cell.separatorView.isHidden = true 
+        }
         return cell
     }
     

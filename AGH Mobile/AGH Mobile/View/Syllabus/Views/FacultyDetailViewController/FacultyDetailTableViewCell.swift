@@ -35,14 +35,16 @@ class FacultyDetailTableViewCell: UITableViewCell {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - UI components
     
-    var titleLbl: UILabel!
+    private var titleLbl: UILabel!
     private var arrowImageView: UIImageView!
+    var separatorView: UIView! 
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance porperties
     
     var viewModel: FacultyDetailTableViewCellDummyViewModel! {
         didSet {
+            separatorView.isHidden = false 
             titleLbl.text = viewModel.title
             titleLbl.sizeToFit()
         }
@@ -87,7 +89,19 @@ class FacultyDetailTableViewCell: UITableViewCell {
             make.left.equalToSuperview().offset(Constants.horizontalPadding)
             make.right.lessThanOrEqualTo(arrowImageView.snp.left).offset(-Constants.horizontalPadding)
             make.top.equalToSuperview().offset(Constants.verticalPadding)
-            make.bottom.equalToSuperview().offset(-Constants.verticalPadding)
+            //make.bottom.equalToSuperview().offset(-Constants.verticalPadding)
+        }
+        
+        // Separator view
+        separatorView = UIView()
+        separatorView.backgroundColor = #colorLiteral(red: 0.9293302894, green: 0.929463923, blue: 0.9293010831, alpha: 1)
+        addSubview(separatorView)
+        separatorView.snp.makeConstraints { (make) in
+            make.height.equalTo(1)
+            make.left.equalToSuperview().offset(Constants.horizontalPadding / 2)
+            make.right.equalToSuperview().offset(-Constants.horizontalPadding / 2)
+            make.top.equalTo(titleLbl.snp.bottom).offset(Constants.verticalPadding)
+            make.bottom.equalToSuperview()
         }
     }
 }
