@@ -29,7 +29,7 @@ class StudyProgramViewController: UIViewController {
     
     let dummyTableViewDataSouce = [
         [
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: 20, labsTotalHours: 10, seminaryTotalHour: 10, hasExam: true),
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Przedmiot w jezyku obcym", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: false),
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Innowacyjnosc w odlewnictwie i gornictwie", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: false)

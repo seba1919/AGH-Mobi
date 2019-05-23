@@ -9,7 +9,7 @@
 import UIKit
 
 class StudyProgramTableViewCell: UITableViewCell {
-
+    
     private struct Constants {
         static let horizontalPadding: CGFloat = 24
         static let horizontalSpacing: CGFloat = 14
@@ -36,28 +36,42 @@ class StudyProgramTableViewCell: UITableViewCell {
         didSet {
             guard let viewModel = viewModel else { return }
             courseTitleLbl.text = viewModel.courseName
-
+            
             numberOfEctsLbl.text = "\(viewModel.ects)"
             
             if let lecturesTotalHours = viewModel.lecturesTotalHours {
-            lecturesTotalHoursLbl.text = "\(lecturesTotalHours) godz."
-                lecturesTotalHoursLbl.sizeToFit()
+                addWidthConstrainstraint(to: lecturesLbl)
+                lecturesHorizontalStackView.isHidden = false
+                lecturesTotalHoursLbl.text = "\(lecturesTotalHours) godz."
+            } else {
+                lecturesHorizontalStackView.isHidden = true
             }
             
             if let auditoriumTotalHours = viewModel.auditoriumTotalHours {
+                addWidthConstrainstraint(to: auditoriumExLbl)
+                auditoriumHorizontalStackView.isHidden = false
                 auditoriumExercisesTotalHoursLbl.text = "\(auditoriumTotalHours) godz."
+                auditoriumExercisesTotalHoursLbl.sizeToFit()
+            } else {
+                auditoriumHorizontalStackView.isHidden = true
             }
             
             if let labsTotalHours = viewModel.labsTotalHours {
+                addWidthConstrainstraint(to: laboratoryExLbl)
+                laboratoryHorizontalStackView.isHidden = false
                 laboratoryExercisesTotalHoursLbl.text = "\(labsTotalHours) godz."
-            }
-            
-            if let auditoriumTotalHours = viewModel.auditoriumTotalHours {
-                auditoriumExercisesTotalHoursLbl.text = "\(auditoriumTotalHours) godz."
+                laboratoryExercisesTotalHoursLbl.sizeToFit()
+            } else {
+                laboratoryHorizontalStackView.isHidden = true
             }
             
             if let seminaryTotalHours = viewModel.seminaryTotalHour {
+                addWidthConstrainstraint(to: seminarClassesLbl)
+                seminarHorizontalStackView.isHidden = false
                 seminarClassesTotalHoursLbl.text = "\(seminaryTotalHours) godz."
+                seminarClassesTotalHoursLbl.sizeToFit()
+            } else {
+                seminarHorizontalStackView.isHidden = true 
             }
             
             examContrainerView.isHidden = !viewModel.hasExam
@@ -66,7 +80,7 @@ class StudyProgramTableViewCell: UITableViewCell {
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - UI components
+    // MARK: - View components
     
     private var numberOfEctsLbl: UILabel!
     
@@ -74,18 +88,22 @@ class StudyProgramTableViewCell: UITableViewCell {
     private var mainVerticalStackView: UIStackView!
     private var mainHorizontalStackView: UIStackView!
     
+    private var lecturesLbl: UILabel!
     private var lecturesTotalHoursLbl: UILabel!
     private var lecturesHorizontalStackView: UIStackView!
     
+    private var auditoriumExLbl: UILabel!
     private var auditoriumExercisesTotalHoursLbl: UILabel!
     private var auditoriumHorizontalStackView: UIStackView!
- 
+    
+    private var laboratoryExLbl: UILabel!
     private var laboratoryExercisesTotalHoursLbl: UILabel!
     private var laboratoryHorizontalStackView: UIStackView!
-
+    
+    private var seminarClassesLbl: UILabel!
     private var seminarClassesTotalHoursLbl: UILabel!
     private var seminarHorizontalStackView: UIStackView!
-
+    
     private var examLbl: UILabel!
     private var examContrainerView: UIView!
     
@@ -107,9 +125,9 @@ class StudyProgramTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
-
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - View setup
     
@@ -183,35 +201,48 @@ class StudyProgramTableViewCell: UITableViewCell {
             make.height.greaterThanOrEqualTo(21.5).priority(.medium)
         }
         
-        // Lectures labels
-        let lecturesLbl = UILabel()
-        lecturesLbl.text = "Wykład"
-        lecturesLbl.textColor = .customGrayText
-        lecturesLbl.font = UIFont.systemFont(ofSize: Constants.subtitileFontSize, weight: .regular)
-        lecturesLbl.sizeToFit()
-        lecturesLbl.snp.makeConstraints { (make) in
-            make.width.equalTo(lecturesLbl.frame.width)
-        }
-        
+        // Lectures stack view
+        lecturesLbl = subtitleLbl(withColor: .customGrayText, andText: "Wykład")
         lecturesTotalHoursLbl = UILabel()
         lecturesTotalHoursLbl.font = UIFont.systemFont(ofSize: Constants.subtitileFontSize, weight: .regular)
         lecturesTotalHoursLbl.textColor = .mainRed
         lecturesTotalHoursLbl.snp.makeConstraints { (make) in
             make.height.equalTo(17).priority(.medium)
         }
+        lecturesHorizontalStackView = subtitleLblStackView(for: [lecturesLbl, lecturesTotalHoursLbl])
         
-        lecturesHorizontalStackView = UIStackView(arrangedSubviews: [lecturesLbl, lecturesTotalHoursLbl])
-        lecturesHorizontalStackView.axis = .horizontal
-        lecturesHorizontalStackView.spacing = Constants.stackViewSpacing
-        lecturesHorizontalStackView.distribution = .fillProportionally
-        lecturesHorizontalStackView.snp.makeConstraints { (make) in
-            make.height.equalTo(lecturesLbl.frame.height).priority(.medium)
+        // Auditorium exercises stack view
+        auditoriumExLbl = subtitleLbl(withColor: .customGrayText, andText: "Ćwiczenia audytoryjne")
+        auditoriumExercisesTotalHoursLbl = UILabel()
+        auditoriumExercisesTotalHoursLbl.font = UIFont.systemFont(ofSize: Constants.subtitileFontSize, weight: .regular)
+        auditoriumExercisesTotalHoursLbl.textColor = .mainRed
+        auditoriumExercisesTotalHoursLbl.snp.makeConstraints { (make) in
+            make.height.equalTo(17).priority(.medium)
         }
+        auditoriumHorizontalStackView = subtitleLblStackView(for: [auditoriumExLbl, auditoriumExercisesTotalHoursLbl])
         
-        #warning("Implment other stack views")
+        // Laboratory exercises stack view
+        laboratoryExLbl = subtitleLbl(withColor: .customGrayText, andText: "Ćwiczenia laboratoryjne")
+        laboratoryExercisesTotalHoursLbl = UILabel()
+        laboratoryExercisesTotalHoursLbl.font = UIFont.systemFont(ofSize: Constants.subtitileFontSize, weight: .regular)
+        laboratoryExercisesTotalHoursLbl.textColor = .mainRed
+        laboratoryExercisesTotalHoursLbl.snp.makeConstraints { (make) in
+            make.height.equalTo(17).priority(.medium)
+        }
+        laboratoryHorizontalStackView = subtitleLblStackView(for: [laboratoryExLbl, laboratoryExercisesTotalHoursLbl])
+        
+        // Seminar classes stack view
+        seminarClassesLbl = subtitleLbl(withColor: .customGrayText, andText: "Zajęcia seminaryjne")
+        seminarClassesTotalHoursLbl = UILabel()
+        seminarClassesTotalHoursLbl.font = UIFont.systemFont(ofSize: Constants.subtitileFontSize, weight: .regular)
+        seminarClassesTotalHoursLbl.textColor = .mainRed
+        seminarClassesTotalHoursLbl.snp.makeConstraints { (make) in
+            make.height.equalTo(17).priority(.medium)
+        }
+        seminarHorizontalStackView = subtitleLblStackView(for: [seminarClassesLbl, seminarClassesTotalHoursLbl])
         
         // Main vertival stack view
-        mainVerticalStackView = UIStackView(arrangedSubviews: [courseTitleLbl, lecturesHorizontalStackView])
+        mainVerticalStackView = UIStackView(arrangedSubviews: [courseTitleLbl, lecturesHorizontalStackView, auditoriumHorizontalStackView, laboratoryHorizontalStackView, seminarHorizontalStackView])
         mainVerticalStackView.axis = .vertical
         mainVerticalStackView.spacing = Constants.stackViewSpacing
         
@@ -237,6 +268,37 @@ class StudyProgramTableViewCell: UITableViewCell {
             make.right.equalToSuperview().offset(-Constants.horizontalPadding)
             make.top.equalTo(mainHorizontalStackView.snp.bottom).offset(Constants.verticalPadding)
             make.bottom.equalToSuperview()
+        }
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Helpers
+    
+    private func subtitleLbl(withColor color: UIColor, andText text: String) -> UILabel {
+        let lbl = UILabel()
+        lbl.text = text
+        lbl.textColor = color
+        lbl.font = UIFont.systemFont(ofSize: Constants.subtitileFontSize, weight: .regular)
+        lbl.sizeToFit()
+        return lbl
+    }
+    
+    private func subtitleLblStackView(for labels: [UILabel]) -> UIStackView {
+        let sv = UIStackView(arrangedSubviews: labels)
+        sv.axis = .horizontal
+        sv.spacing = Constants.stackViewSpacing
+        sv.distribution = .fillProportionally
+        sv.snp.makeConstraints { (make) in
+            make.height.equalTo(labels.first!.frame.height).priority(.medium)
+        }
+        return sv
+    }
+    
+    private func addWidthConstrainstraint(to lbl: UILabel) {
+        lbl.sizeToFit()
+        lbl.snp.removeConstraints()
+        lbl.snp.makeConstraints { (make) in
+            make.width.equalTo(lbl.frame.width)
         }
     }
 }
