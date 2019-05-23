@@ -24,6 +24,7 @@ class StudiesView: UIView {
     private lazy var screenWidth = self.frame.width
     private lazy var spacing = screenHeight * 0.01
     private lazy var topPadding = self.frame.height * 0.0225
+    private lazy var bottomPadding = topPadding
     private let leftMargin: CGFloat = 30.0
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -48,13 +49,18 @@ class StudiesView: UIView {
     
     private func setupViews() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        // Scroll View
         self.addSubview(scrollView)
-        scrollView.addSubview(tabBatTitle)
-        scrollView.addSubview(titleImage)
-        scrollView.addSubview(mainTitle)
-        scrollView.addSubview(separatorNo1)
-        scrollView.addSubview(sectionTitle)
-        scrollView.addSubview(classesTabelView)
+        // Content View
+        scrollView.addSubview(contentView)
+        // Components
+        contentView.addSubview(tabBatTitle)
+        contentView.addSubview(titleImage)
+        contentView.addSubview(mainTitle)
+        contentView.addSubview(separatorNo1)
+        contentView.addSubview(sectionTitle)
+        contentView.addSubview(classesTabelView)
+        // Stack View of Rows
         setupStackView()
     }
     
@@ -64,7 +70,7 @@ class StudiesView: UIView {
         stackViewContent.addArrangedSubview(rowNo3)
         stackViewContent.addArrangedSubview(rowNo4)
         stackViewContent.addArrangedSubview(rowNo5)
-        scrollView.addSubview(stackViewContent)
+        contentView.addSubview(stackViewContent)
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -74,9 +80,15 @@ class StudiesView: UIView {
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView(frame: UIScreen.main.bounds)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        view.backgroundColor = .clear
         view.isScrollEnabled = true
-        view.contentSize = CGSize(width: screenWidth, height: screenHeight)
+        return view
+    }()
+    
+    // Content View
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -126,7 +138,7 @@ class StudiesView: UIView {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        tableView.isScrollEnabled = true
+        tableView.isScrollEnabled = false
         tableView.separatorColor = .clear
         return tableView
     }()
@@ -202,15 +214,25 @@ class StudiesView: UIView {
         
         // ScrollView
         scrollView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide)
+            make.bottom.equalTo(safeAreaLayoutGuide)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
         
+        // Content View
+        contentView.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.height.equalTo(self.snp.height)
+            make.width.equalTo(self.snp.width)
+        }
+        
         // TabBar Title
         tabBatTitle.snp.makeConstraints { (make) in
-            make.top.equalTo(safeAreaLayoutGuide).offset(topPadding)
+            make.top.equalTo(contentView).offset(topPadding)
             make.centerX.equalTo(safeAreaLayoutGuide)
         }
         
@@ -242,13 +264,14 @@ class StudiesView: UIView {
         classesTabelView.snp.makeConstraints { (make) in
             make.top.equalTo(sectionTitle.snp.bottom).offset(spacing)
             make.width.equalToSuperview()
-            make.height.lessThanOrEqualTo(StudiesViewController.cellNumber * ClassesCell.cellHeight)
+            make.height.equalTo(StudiesViewController.cellNumber * ClassesCell.cellHeight)
         }
         
         // StackView Content
         stackViewContent.snp.makeConstraints { (make) in
             make.top.equalTo(classesTabelView.snp.bottom).offset(spacing)
             make.width.equalToSuperview()
+            make.bottom.equalTo(contentView.snp.bottom).offset(-100).priority(.required)
         }
         
     }
@@ -259,7 +282,7 @@ extension StudiesView {
     
     func setupMoreButton() {
         
-        self.addSubview(moreButton)
+        contentView.addSubview(moreButton)
         
         moreButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide)

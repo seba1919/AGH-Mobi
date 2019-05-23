@@ -22,7 +22,7 @@ class StudiesViewController: UIViewController {
     // View
     private var studiesView: StudiesView { return self.view as! StudiesView }
     // Table View
-    public static let cellNumber = 3 //CHANGE!
+    public static let cellNumber = 15 //CHANGE!
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -60,10 +60,6 @@ class StudiesViewController: UIViewController {
 
 // Data Source
 extension StudiesViewController: UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return StudiesViewController.cellNumber
