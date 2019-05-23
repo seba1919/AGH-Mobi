@@ -41,6 +41,7 @@
 		6157791F2265F77E00C1BCDC /* AboutAsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157791E2265F77E00C1BCDC /* AboutAsViewController.swift */; };
 		615779212265F7D400C1BCDC /* AboutAsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779202265F7D400C1BCDC /* AboutAsView.swift */; };
 		615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779282267089100C1BCDC /* DescriptionTextView.swift */; };
+		618331FA2293DB8000DEB163 /* ClassesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 618331F92293DB8000DEB163 /* ClassesCell.swift */; };
 		6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E0227898B6008D664F /* TeamGalleryCell.swift */; };
 		6198C8E62279E8F2008D664F /* MemberProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */; };
 		6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E92279E947008D664F /* MemberProfileView.swift */; };
@@ -120,6 +121,7 @@
 		6157791E2265F77E00C1BCDC /* AboutAsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAsViewController.swift; sourceTree = "<group>"; };
 		615779202265F7D400C1BCDC /* AboutAsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAsView.swift; sourceTree = "<group>"; };
 		615779282267089100C1BCDC /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
+		618331F92293DB8000DEB163 /* ClassesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesCell.swift; sourceTree = "<group>"; };
 		6198C8E0227898B6008D664F /* TeamGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGalleryCell.swift; sourceTree = "<group>"; };
 		6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileViewController.swift; sourceTree = "<group>"; };
 		6198C8E92279E947008D664F /* MemberProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileView.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				6124131E22526752007D04C0 /* StudiesView.swift */,
+				618331F92293DB8000DEB163 /* ClassesCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				TargetAttributes = {
 					61AD7C70224BDCF7008340B3 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 					61AD7C84224BDCF8008340B3 = {
 						CreatedOnToolsVersion = 10.2;
@@ -883,6 +887,7 @@
 				4BC1567B22661D4B00ED633C /* DayTimetable.swift in Sources */,
 				4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */,
 				4B6B0147225C9960001BF0F1 /* ModelWD.swift in Sources */,
+				618331FA2293DB8000DEB163 /* ClassesCell.swift in Sources */,
 				6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */,
 				6198C9052280E6AB008D664F /* LoginPageViewController.swift in Sources */,
 				6198C8F8227C3BD7008D664F /* UserSettingsContent.swift in Sources */,
@@ -1085,6 +1090,7 @@
 			baseConfigurationReference = 03112BCDD937195F7F665054 /* Pods-AGH Mobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RSVCT9A9H;
 				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Supporting Files/Info.plist";
@@ -1095,6 +1101,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = pl.edu.agh.mackn.AGHMobi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1105,6 +1112,7 @@
 			baseConfigurationReference = 3A8133F53DCB3FBF2ECD7701 /* Pods-AGH Mobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RSVCT9A9H;
 				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Supporting Files/Info.plist";

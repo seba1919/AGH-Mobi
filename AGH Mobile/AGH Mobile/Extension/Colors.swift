@@ -29,4 +29,9 @@ extension UIColor {
     public static let customLightGray = UIColor(red: 248/255, green: 248/255, blue: 248/255, alpha: 0.82)
     public static let customDarkGray = UIColor(red: 142/255, green: 142/255, blue: 147/255, alpha: 1)
     
+    
+    //Others
+    
+    public static let shortcutDarkGray = UIColor(red: 105/255, green: 102/255, blue: 104/255, alpha: 1)
+
 }
