@@ -48,7 +48,7 @@ class StudyProgramViewController: UIViewController {
         ],
         [
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
-            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
+            StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Matematyka dyskretna i rownianai rozniczkowe z elementami wychowania fizycznego", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true),
             StudyProgramTableViewCellDummyViewModel(ects: 3, courseName: "Rownania Rozniczkowe", lecturesTotalHours: 30, auditoriumTotalHours: nil, labsTotalHours: nil, seminaryTotalHour: nil, hasExam: true)
         ],
