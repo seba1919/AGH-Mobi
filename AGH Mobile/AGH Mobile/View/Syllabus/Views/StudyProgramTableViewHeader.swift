@@ -11,13 +11,10 @@ import UIKit
 class StudyProgramTableViewHeader: UITableViewHeaderFooterView {
     
     private struct Constants {
-        static let horizontalPadding: CGFloat = 36
-        static let horizontalSpacing: CGFloat = 10
-        static let verticalPadding: CGFloat = 24
-        static let verticalSpacing: CGFloat = 40
+        static let horizontalPadding: CGFloat = 24
+        static let verticalPadding: CGFloat = 12
         
         // Font sizes
-        static let titleFontSize: CGFloat = 30
         static let subtitleFontSize: CGFloat = 14
     }
     
@@ -30,7 +27,6 @@ class StudyProgramTableViewHeader: UITableViewHeaderFooterView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance properties
-    
     
     var sectionTitle: String? {
         didSet {
@@ -50,6 +46,7 @@ class StudyProgramTableViewHeader: UITableViewHeaderFooterView {
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         backgroundColor = .white
+        setUpView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -60,7 +57,6 @@ class StudyProgramTableViewHeader: UITableViewHeaderFooterView {
     // MARK: - View setup
     
     private func setUpView() {
-        
         // Subtitle label
         subtitleLbl = UILabel()
         subtitleLbl.textColor = .customGrayText
@@ -70,11 +66,10 @@ class StudyProgramTableViewHeader: UITableViewHeaderFooterView {
         
         // Only the first section has a titleLbl
         subtitleLbl.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(Constants.verticalSpacing)//.priority(.medium)
-            make.bottom.equalToSuperview().offset(-Constants.verticalSpacing)
+            make.top.equalToSuperview().offset(Constants.verticalPadding)
+            make.bottom.equalToSuperview().offset(-Constants.verticalPadding).priority(.medium)
             make.right.equalToSuperview().offset(-Constants.horizontalPadding)
             make.left.equalToSuperview().offset(Constants.horizontalPadding)
-            
         }
     }
 }
