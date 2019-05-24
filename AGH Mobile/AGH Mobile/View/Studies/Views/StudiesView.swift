@@ -24,7 +24,7 @@ class StudiesView: UIView {
     private lazy var screenWidth = self.frame.width
     private lazy var spacing = screenHeight * 0.01
     private lazy var topPadding = self.frame.height * 0.0225
-    private lazy var bottomPadding = topPadding
+    private lazy var bottomPadding = -topPadding
     private let leftMargin: CGFloat = 30.0
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -54,7 +54,7 @@ class StudiesView: UIView {
         // Content View
         scrollView.addSubview(contentView)
         // Components
-        contentView.addSubview(tabBatTitle)
+        self.addSubview(tabBatTitle)
         contentView.addSubview(titleImage)
         contentView.addSubview(mainTitle)
         contentView.addSubview(separatorNo1)
@@ -89,6 +89,7 @@ class StudiesView: UIView {
     private lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -185,7 +186,7 @@ class StudiesView: UIView {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
         view.setupTitle(as: "Syllabus")
-        view.setupLeftAccessory(named: "book_Studies")
+        view.setupLeftAccessory(named: "sheets_Info")
         return view
     }()
     
@@ -214,7 +215,7 @@ class StudiesView: UIView {
         
         // ScrollView
         scrollView.snp.makeConstraints { (make) in
-            make.top.equalTo(safeAreaLayoutGuide)
+            make.top.equalTo(tabBatTitle.snp.bottom).offset(10)
             make.bottom.equalTo(safeAreaLayoutGuide)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
@@ -222,23 +223,22 @@ class StudiesView: UIView {
         
         // Content View
         contentView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-            make.height.equalTo(self.snp.height)
+            make.top.equalTo(scrollView)
+            make.bottom.equalTo(scrollView)
+            make.left.equalTo(scrollView)
+            make.right.equalTo(scrollView)
             make.width.equalTo(self.snp.width)
         }
         
         // TabBar Title
         tabBatTitle.snp.makeConstraints { (make) in
-            make.top.equalTo(contentView).offset(topPadding)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(topPadding)
             make.centerX.equalTo(safeAreaLayoutGuide)
         }
         
         // Title Image
         titleImage.snp.makeConstraints { (make) in
-            make.top.equalTo(tabBatTitle).offset(screenHeight * 0.06)
+            make.top.equalTo(scrollView.snp.top).offset(screenHeight * 0.02)
             make.left.equalToSuperview().offset(leftMargin)
         }
         
@@ -271,7 +271,7 @@ class StudiesView: UIView {
         stackViewContent.snp.makeConstraints { (make) in
             make.top.equalTo(classesTabelView.snp.bottom).offset(spacing)
             make.width.equalToSuperview()
-            make.bottom.equalTo(contentView.snp.bottom).offset(-100).priority(.required)
+            make.bottom.equalTo(contentView.snp.bottom).offset(bottomPadding)
         }
         
     }
@@ -287,11 +287,14 @@ extension StudiesView {
         moreButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide)
             make.top.equalTo(classesTabelView.snp.bottom)
+            make.width.equalTo(50)
+            make.height.equalTo(20)
         }
         
         stackViewContent.snp.remakeConstraints { (remake) in
             remake.top.equalTo(moreButton.snp.bottom).offset(spacing * 2/5)
             remake.width.equalToSuperview()
+            remake.bottom.equalTo(contentView.snp.bottom).offset(bottomPadding)
         }
         
     }

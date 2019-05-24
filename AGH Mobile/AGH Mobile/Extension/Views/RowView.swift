@@ -250,8 +250,6 @@ final class RowView: UIView {
         leftAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
             make.left.equalTo(self.snp.left).offset(leftMargin)
-            make.top.equalTo(self.snp.top).offset(10)
-            make.bottom.equalTo(self.snp.bottom).offset(-10)
         }
         // Title
         title.snp.makeConstraints { (make) in

@@ -22,7 +22,7 @@ class StudiesViewController: UIViewController {
     // View
     private var studiesView: StudiesView { return self.view as! StudiesView }
     // Table View
-    public static let cellNumber = 15 //CHANGE!
+    public static let cellNumber = 9 //CHANGE!
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle

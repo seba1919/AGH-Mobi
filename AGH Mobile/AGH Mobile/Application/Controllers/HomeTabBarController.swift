@@ -32,7 +32,7 @@ class HomeTabBarController: UITabBarController {
         viewControllers = [createDummyViewController(
                                                      withTitle: "Dla Ciebie",
                                                      andImageName: "for_you_active",
-                                                     for: StudiesViewController()),
+                                                     for: ForYouViewController()),
                            createDummyViewController(
                                                      withTitle: "Studia",
                                                      andImageName: "studies_active",
