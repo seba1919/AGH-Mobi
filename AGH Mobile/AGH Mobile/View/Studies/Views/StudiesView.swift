@@ -305,7 +305,7 @@ class StudiesView: UIView {
             }
         }
         self.setNeedsLayout()
-        UIView.animate(withDuration: 0.5, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             self.layoutIfNeeded()
         })
         
