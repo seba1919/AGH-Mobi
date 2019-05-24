@@ -33,7 +33,6 @@ final class RowView: UIView {
     private lazy var touchGesture: UILongPressGestureRecognizer = {
         let gesture = UILongPressGestureRecognizer(target: self, action: #selector(onTouchAnimateRowAndDoAction(_:)))
         gesture.minimumPressDuration = 0.0
-        gesture.cancelsTouchesInView = false
         gesture.delegate = self
         return gesture
     }()
@@ -214,7 +213,6 @@ final class RowView: UIView {
         return view
     }()
     
-    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Constraints
     
@@ -391,6 +389,14 @@ private extension RowView {
 extension RowView: UIGestureRecognizerDelegate {
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        // When otherGestureRecognizer is GR of ScrollView
+        // and user start scroling while RowView is pressed
+        // cancell press
+        if ( otherGestureRecognizer.state == .began ) {
+            gestureRecognizer.state = .cancelled
+        }
+        
         return true
     }
     
