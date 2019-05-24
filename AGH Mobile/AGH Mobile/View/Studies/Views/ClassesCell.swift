@@ -91,7 +91,8 @@ class ClassesCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .shortcutDarkGray
-        label.text = "Er"
+        label.text = "Err"
+        label.textAlignment = .center
         return label
     }()
     
@@ -101,7 +102,7 @@ class ClassesCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textColor = .black
-        label.text = "Er"
+        label.text = "Err"
         return label
     }()
     
@@ -111,7 +112,7 @@ class ClassesCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = .customGrayText
-        label.text = "Er"
+        label.text = "Err"
         return label
     }()
     
@@ -122,7 +123,7 @@ class ClassesCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textColor = .customGrayText
         label.textAlignment = .right
-        label.text = "C-2 208"
+        label.text = "Err"
         return label
     }()
     
@@ -133,7 +134,7 @@ class ClassesCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         label.textColor = .customGrayText
         label.textAlignment = .right
-        label.text = "Er"
+        label.text = "Err"
         return label
     }()
     
@@ -155,6 +156,7 @@ class ClassesCell: UITableViewCell {
         // Shortcut Type of Classes
         shortcutNameOfType.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(leftMargin)
+            make.width.equalTo(38)
             make.centerY.equalTo(self)
         }
         
@@ -166,7 +168,6 @@ class ClassesCell: UITableViewCell {
         
         // Time Of Activities
         timeOfActivities.snp.makeConstraints { (make) in
-            //make.top.equalTo(nameOfActivities.snp.bottom).offset(2)
             make.left.equalTo(shortcutNameOfType.snp.right).offset(15)
             make.bottom.equalTo(self).offset(bottomPadding)
         }
@@ -175,12 +176,14 @@ class ClassesCell: UITableViewCell {
         placeOfActivities.snp.makeConstraints { (make) in
             make.centerY.equalTo(nameOfActivities)
             make.right.equalTo(self).offset(rightMargin)
+            make.left.greaterThanOrEqualTo(nameOfActivities.snp.right).offset(12)
         }
         
         // CountingDown Of Activities
         countingDownOfActivities.snp.makeConstraints { (make) in
             make.centerY.equalTo(timeOfActivities)
             make.right.equalTo(self).offset(rightMargin)
+            make.left.greaterThanOrEqualTo(timeOfActivities.snp.right).offset(12)
         }
         
         // Right Accessory
