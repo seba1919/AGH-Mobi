@@ -33,6 +33,7 @@ final class RowView: UIView {
     private lazy var touchGesture: UILongPressGestureRecognizer = {
         let gesture = UILongPressGestureRecognizer(target: self, action: #selector(onTouchAnimateRowAndDoAction(_:)))
         gesture.minimumPressDuration = 0.0
+        gesture.cancelsTouchesInView = false
         return gesture
     }()
     

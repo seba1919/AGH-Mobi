@@ -26,6 +26,7 @@ class StudiesView: UIView {
     private lazy var topPadding = self.frame.height * 0.0225
     private lazy var bottomPadding = -topPadding
     private let leftMargin: CGFloat = 30.0
+    private var isClassesTableViewExpand = false
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -44,7 +45,7 @@ class StudiesView: UIView {
     public func setupUI() {
         setupViews()
         setupConstraints()
-        setupMoreButton()
+        setMoreButton()
     }
     
     private func setupViews() {
@@ -150,6 +151,7 @@ class StudiesView: UIView {
         button.setTitle("● ● ●", for: .normal)
         button.setTitleColor(.shortcutDarkGray, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 8)
+        button.addTarget(self, action: #selector(onPressExpandClassesTV), for: .touchUpInside)
         return button
     }()
     
@@ -264,7 +266,6 @@ class StudiesView: UIView {
         classesTabelView.snp.makeConstraints { (make) in
             make.top.equalTo(sectionTitle.snp.bottom).offset(spacing)
             make.width.equalToSuperview()
-            make.height.equalTo(StudiesViewController.cellNumber * ClassesCell.cellHeight)
         }
         
         // StackView Content
@@ -276,27 +277,63 @@ class StudiesView: UIView {
         
     }
     
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Selectors
+    
+    @objc private func onPressExpandClassesTV() {
+        
+        classesTabelView.snp.updateConstraints { (update) in
+            if isClassesTableViewExpand == false {
+                update.height.equalTo(StudiesViewController.cellNumber * ClassesCell.cellHeight)
+                isClassesTableViewExpand = true
+            } else {
+                update.height.equalTo(3 * ClassesCell.cellHeight)
+                isClassesTableViewExpand = false
+            }
+        }
+        self.setNeedsLayout()
+        UIView.animate(withDuration: 0.5, animations: {
+            self.layoutIfNeeded()
+        })
+        
+    }
+    
 }
 
 extension StudiesView {
     
-    func setupMoreButton() {
+    func setMoreButton() {
         
-        contentView.addSubview(moreButton)
-        
-        moreButton.snp.makeConstraints { (make) in
-            make.centerX.equalTo(safeAreaLayoutGuide)
-            make.top.equalTo(classesTabelView.snp.bottom)
-            make.width.equalTo(50)
-            make.height.equalTo(20)
+        if (StudiesViewController.cellNumber > 3) {
+            
+            contentView.addSubview(moreButton)
+            isClassesTableViewExpand = false
+            
+            moreButton.snp.makeConstraints { (make) in
+                make.centerX.equalTo(safeAreaLayoutGuide)
+                make.top.equalTo(classesTabelView.snp.bottom)
+                make.width.equalTo(50)
+                make.height.equalTo(20)
+            }
+            
+            stackViewContent.snp.remakeConstraints { (remake) in
+                remake.top.equalTo(moreButton.snp.bottom).offset(spacing * 2/5)
+                remake.width.equalToSuperview()
+                remake.bottom.equalTo(contentView.snp.bottom).offset(bottomPadding)
+            }
+            
+            classesTabelView.snp.makeConstraints { (make) in
+                make.height.equalTo(3 * ClassesCell.cellHeight)
+            }
+            
+        } else {
+            
+            classesTabelView.snp.makeConstraints { (make) in
+                make.height.equalTo(StudiesViewController.cellNumber * ClassesCell.cellHeight)
+            }
+            
         }
-        
-        stackViewContent.snp.remakeConstraints { (remake) in
-            remake.top.equalTo(moreButton.snp.bottom).offset(spacing * 2/5)
-            remake.width.equalToSuperview()
-            remake.bottom.equalTo(contentView.snp.bottom).offset(bottomPadding)
-        }
-        
+
     }
     
 }
