@@ -29,6 +29,8 @@ class BuildingView: UIView {
     private let leftMargin: CGFloat = 20
     private let rightMargin: CGFloat = -20
     private let cornerRadius: CGFloat = 15.0
+    // Public
+    public var openNavigation: (() -> Void)?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -70,23 +72,23 @@ class BuildingView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public Methods
     
-    public func setupBuildingImage(named Name: String) {
+    public func setBuildingImage(named Name: String) {
         buildingImage.image = UIImage(named: Name)
     }
     
-    public func setupBuildingName(as Name: String) {
+    public func setBuildingName(to Name: String) {
         buildingName.text = Name
     }
     
-    public func setupDepartmentName(as Name: String) {
+    public func setDepartmentName(to Name: String) {
         departmentName.text = Name
     }
     
-    public func setupOpeningHours(on Text: String) {
+    public func setOpeningHours(to Text: String) {
         openingHours.text = Text
     }
     
-    public func setupAddress(as Address: String) {
+    public func setAddress(to Address: String) {
         address.text = Address
     }
     
@@ -222,6 +224,7 @@ class BuildingView: UIView {
         let button = AGHButton(title: "pokaż trasę",
                                style: .withLeftAccessory,
                                leftAccesoryName: "star").build()
+        button.addTarget(self, action: #selector(onPressOpenNavigation), for: .touchUpInside)
         return button
     }()
     
@@ -322,14 +325,21 @@ class BuildingView: UIView {
         
     }
     
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Selectors
+    
+    @objc private func onPressOpenNavigation() {
+        openNavigation?()
+    }
+    
 }
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Extension of center map on AGH
 
-extension BuildingView {
+private extension BuildingView {
     
-    func centerMapOnAGH(for map: MKMapView) {
+    private func centerMapOnAGH(for map: MKMapView) {
         let initialLocation = CLLocation(latitude: 50.064552, longitude: 19.923064)
         let regionRadius: CLLocationDistance = 200
         let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)

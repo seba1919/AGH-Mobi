@@ -10,6 +10,7 @@
 // MARK: - Import
 
 import UIKit
+import MapKit
 
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
@@ -20,6 +21,8 @@ class BuildingViewController: UIViewController {
     // MARK: - Properties
     
     private var buildingView: BuildingView { return self.view as! BuildingView }
+    private var address: String = ""
+    private var buildingName: String = ""
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
@@ -32,6 +35,7 @@ class BuildingViewController: UIViewController {
         super.viewDidLoad()
         self.buildingView.setupUI()
         self.setupData()
+        self.setupActions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,16 +51,46 @@ class BuildingViewController: UIViewController {
     }
     
     private func setupData() {
-        buildingView.setupBuildingName(as: "Budynek C2")
-        buildingView.setupDepartmentName(as: "Wydział Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej")
-        buildingView.setupOpeningHours(on: "codziennie \n7.00 - 21.00")
-        buildingView.setupAddress(as: "Czarnowiejska 41/43")
+        self.buildingName = "Budynek C1"
+        buildingView.setBuildingName(to: buildingName)
+        buildingView.setDepartmentName(to: "Wydział Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej")
+        buildingView.setOpeningHours(to: "codziennie \n7.00 - 21.00")
+        self.address = "Czarnowiejska 41"
+        buildingView.setAddress(to: address)
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
     
     private func setupActions() {
+        buildingView.openNavigation = {
+            self.openMapForPlace(for: 50.064552, and: 19.923064)
+        }
+    }
+    
+}
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// MARK: - Extension of open map
+
+extension BuildingViewController {
+    
+    func openMapForPlace(for latitude: CLLocationDegrees,and longitude: CLLocationDegrees) {
+        
+        let latitude = latitude
+        let longitude = longitude
+        
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = buildingName
+        mapItem.openInMaps(launchOptions: options)
         
     }
     
