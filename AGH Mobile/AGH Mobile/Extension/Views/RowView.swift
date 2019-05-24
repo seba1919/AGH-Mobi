@@ -34,6 +34,7 @@ final class RowView: UIView {
         let gesture = UILongPressGestureRecognizer(target: self, action: #selector(onTouchAnimateRowAndDoAction(_:)))
         gesture.minimumPressDuration = 0.0
         gesture.cancelsTouchesInView = false
+        gesture.delegate = self
         return gesture
     }()
     
@@ -380,6 +381,17 @@ private extension RowView {
         self.topPadding = topPadding
         self.bottomPadding = bottomPadding
         self.fontSize = fontSize
+    }
+    
+}
+
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// MARK: - Extension of Should Recognize With
+
+extension RowView: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
     
 }

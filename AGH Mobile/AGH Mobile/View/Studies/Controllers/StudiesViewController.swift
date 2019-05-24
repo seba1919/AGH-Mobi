@@ -46,7 +46,6 @@ class StudiesViewController: UIViewController {
         studiesView.classesTabelView.delegate = self
         studiesView.classesTabelView.dataSource = self
         studiesView.classesTabelView.register(ClassesCell.self, forCellReuseIdentifier: ClassesCell.identifier)
-        studiesView.classesTabelView.allowsSelection = false
     }
     
     private func setupNavigationAttributs() {

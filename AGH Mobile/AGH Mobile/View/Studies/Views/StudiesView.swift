@@ -142,6 +142,7 @@ class StudiesView: UIView {
         tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tableView.isScrollEnabled = false
         tableView.separatorColor = .clear
+        tableView.allowsSelection = false
         return tableView
     }()
     
@@ -334,6 +335,14 @@ extension StudiesView {
             
         }
 
+    }
+    
+}
+
+extension StudiesView: UIScrollViewDelegate {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("scrolled")
     }
     
 }
