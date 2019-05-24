@@ -33,10 +33,10 @@ class StudiesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationAttributs()
         self.studiesView.setupUI()
         self.setupTableView()
-        self.setupNavigationAttributs()
-        
+        self.setupActions()
     }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -50,6 +50,17 @@ class StudiesViewController: UIViewController {
     
     private func setupNavigationAttributs() {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Actions
+    
+    private func setupActions() {
+        studiesView.pushScheduleVC = {  }
+        studiesView.pushAssessmentVC = {  }
+        studiesView.pushSyllabusVC = {  }
+        studiesView.pushLecturersVC = {  }
+        studiesView.pushMyFieldsOfStudiesVC = {  }
     }
     
 }

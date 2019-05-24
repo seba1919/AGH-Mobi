@@ -168,7 +168,7 @@ class UserSettingsContent: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
     
-     private func onPressPushAboutAsVC() {
+    private func onPressPushAboutAsVC() {
         pushAboutAsVC?()
     }
     

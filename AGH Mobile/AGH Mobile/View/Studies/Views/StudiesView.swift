@@ -20,6 +20,7 @@ class StudiesView: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
     
+    // Private
     private lazy var screenHeight = self.frame.height
     private lazy var screenWidth = self.frame.width
     private lazy var spacing = screenHeight * 0.01
@@ -27,6 +28,12 @@ class StudiesView: UIView {
     private lazy var bottomPadding = -topPadding
     private let leftMargin: CGFloat = 30.0
     private var isClassesTableViewExpand = false
+    // Public
+    public var pushScheduleVC: (() -> Void)?
+    public var pushAssessmentVC: (() -> Void)?
+    public var pushSyllabusVC: (() -> Void)?
+    public var pushLecturersVC: (() -> Void)?
+    public var pushMyFieldsOfStudiesVC: (() -> Void)?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -172,6 +179,7 @@ class StudiesView: UIView {
                            separatorPosition: .top)
         view.setupTitle(as: "Plan zajęć")
         view.setupLeftAccessory(named: "calendar_Studies")
+        view.setAction = { self.onPressPushScheduleVC() }
         return view
     }()
     
@@ -181,6 +189,7 @@ class StudiesView: UIView {
                            separatorPosition: .top)
         view.setupTitle(as: "Oceny")
         view.setupLeftAccessory(named: "grades_Studies")
+        view.setAction = { self.onPressPushAssessmentVC() }
         return view
     }()
     
@@ -190,6 +199,7 @@ class StudiesView: UIView {
                            separatorPosition: .top)
         view.setupTitle(as: "Syllabus")
         view.setupLeftAccessory(named: "sheets_Info")
+        view.setAction = { self.onPressPushSyllabusVC() }
         return view
     }()
     
@@ -199,6 +209,7 @@ class StudiesView: UIView {
                            separatorPosition: .top)
         view.setupTitle(as: "Prowadzący")
         view.setupLeftAccessory(named: "human_Studies")
+        view.setAction = { self.onPressPushLecturersVC() }
         return view
     }()
     
@@ -208,6 +219,7 @@ class StudiesView: UIView {
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: "Moje kierunki")
         view.setupLeftAccessory(named: "studies_Studies")
+        view.setAction = { self.onPressPushMyFieldsOfStudiesVC() }
         return view
     }()
     
@@ -297,6 +309,29 @@ class StudiesView: UIView {
             self.layoutIfNeeded()
         })
         
+    }
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Actions
+    
+    private func onPressPushScheduleVC() {
+        pushScheduleVC?()
+    }
+    
+    private func onPressPushAssessmentVC() {
+        pushAssessmentVC?()
+    }
+    
+    private func onPressPushSyllabusVC() {
+        pushSyllabusVC?()
+    }
+    
+    private func onPressPushLecturersVC() {
+        pushLecturersVC?()
+    }
+    
+    private func onPressPushMyFieldsOfStudiesVC() {
+        pushMyFieldsOfStudiesVC?()
     }
     
 }
