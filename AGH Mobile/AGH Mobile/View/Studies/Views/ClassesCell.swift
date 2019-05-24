@@ -62,7 +62,25 @@ class ClassesCell: UITableViewCell {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public Methods
     
+    public func setShortcutNameOfType(to text: String) {
+        shortcutNameOfType.text = text
+    }
     
+    public func setNameOfActivities(to text: String) {
+        nameOfActivities.text = text
+    }
+    
+    public func setTimeOfActivities(to text: String) {
+        timeOfActivities.text = text
+    }
+    
+    public func setPlaceOfActivities(to text: String) {
+        placeOfActivities.text = text
+    }
+    
+    public func setCountingDownOfActivities(to text: String) {
+        countingDownOfActivities.text = text
+    }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
@@ -73,7 +91,7 @@ class ClassesCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .shortcutDarkGray
-        label.text = "ĆL"
+        label.text = "Er"
         return label
     }()
     
@@ -83,7 +101,7 @@ class ClassesCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         label.textColor = .black
-        label.text = "Bazy danych"
+        label.text = "Er"
         return label
     }()
     
@@ -93,7 +111,7 @@ class ClassesCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         label.textColor = .customGrayText
-        label.text = "8:00 - 9:30"
+        label.text = "Er"
         return label
     }()
     
@@ -115,7 +133,7 @@ class ClassesCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         label.textColor = .customGrayText
         label.textAlignment = .right
-        label.text = "Za 4 godziny"
+        label.text = "Er"
         return label
     }()
     
