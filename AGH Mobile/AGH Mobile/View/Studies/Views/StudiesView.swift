@@ -336,6 +336,9 @@ class StudiesView: UIView {
     
 }
 
+// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+// MARK: - Extension of More Button
+
 extension StudiesView {
     
     func setMoreButton() {
@@ -370,14 +373,6 @@ extension StudiesView {
             
         }
 
-    }
-    
-}
-
-extension StudiesView: UIScrollViewDelegate {
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("scrolled")
     }
     
 }
