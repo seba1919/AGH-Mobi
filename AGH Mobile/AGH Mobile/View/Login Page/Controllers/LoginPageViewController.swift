@@ -58,7 +58,7 @@ class LoginPageViewController: UIViewController {
         }
         
         loginPageView.pushUserVC = {
-            self.navigationController?.pushViewController(UserViewController(), animated: true)
+            self.navigationController?.pushViewController(BuildingViewController(), animated: true)
         }
         
         loginPageView.openRemindPasswordWeb = {

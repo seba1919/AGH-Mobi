@@ -73,9 +73,9 @@ class BuildingViewController: UIViewController {
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Extension of open map
 
-extension BuildingViewController {
+private extension BuildingViewController {
     
-    func openMapForPlace(for latitude: CLLocationDegrees,and longitude: CLLocationDegrees) {
+    private func openMapForPlace(for latitude: CLLocationDegrees,and longitude: CLLocationDegrees) {
         
         let latitude = latitude
         let longitude = longitude
