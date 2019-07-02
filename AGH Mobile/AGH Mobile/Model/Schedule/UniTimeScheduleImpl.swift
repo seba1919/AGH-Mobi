@@ -1,5 +1,5 @@
 //
-//  ScheduleProvider.swift
+//  UniTimeScheduleImpl.swift
 //  AGH Mobile
 //
 //  Created by Sebastian Wiatrzyk on 02/07/2019.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol ScheduleProvider {
-    func getScheduleForDays(amount: Int) -> [DaySchedule]
+class UniTimeScheduleImpl : ScheduleProvider {
+    func getScheduleForDays(amount: Int) -> [DaySchedule] {
+        return []
+    }
 }
