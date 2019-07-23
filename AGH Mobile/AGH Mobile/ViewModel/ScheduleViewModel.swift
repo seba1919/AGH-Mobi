@@ -13,7 +13,7 @@ final class ScheduleViewModel {
     
     internal static func setFaculty(faculty: Faculty) {
         if (scheduleProvider != nil) {
-            fatalError("Podwojne wywolanie setFaculty()")
+            fatalError("Double call setFaculty()")
         }
         
         switch faculty {
