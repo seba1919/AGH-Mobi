@@ -1,19 +1,28 @@
 # README #
 
-Parę informacji dla porządku:  
--Swift v. 4.  
--xCode v. 9.  
--każdy powinien mieć prawo read/write do tego repozytorium.  
--zapytania www muszą być https.  
--Docelowo w strukturze projektu powinien istnieć podział na grupy (right-click + create new folder/group from selected),
-najlepiej by było gdyby jedna logiczna część zajmowałą jednen folder.  
--Modyfikacje czyjegoś kodu byłoby miło najpierw skonsulotwać z jego autorem.  
--***Dla osób nie pracujących wcześniej z CocoaPods, należy otwierać projekt przy pomocy pliku .xcworkspace a nie .xcproject 
-od momentu w którym ten plik się pojawi (czyli gdy ktoś dołączy jakąś zewnętrzną bibliotekę), 
-otwieranie .xcproject spowoduje wtedy błąd kompilacji***  
--[Jak pisać commit message](https://chris.beams.io/posts/git-commit/)
+## Konfifuracja projektu ##
+1. Instalacja managera bibliotek Cocoapods ze strony https://cocoapods.org. Bez tego nie będzie możliwości skompilwoania projektu, gdyż korzystamy z zewętrznych bibliotek.
+Wystarczy odpalić terminal i przekleić ze strony: sudo gem install cocoapods
+-***Projekt należy otwierać przy pomocy pliku .xcworkspace (biała ikonka), a nie .xcproject (niebieska ikonka).
+Otwieranie .xcproject spowoduje wtedy błąd kompilacji. 
+BIAŁE = HERE WE GO BBY
+NIEBIEAKIE = FUJ***  
 
-- Należy ustawić kompilację projektu na Swift 4.0 oraz w bibliotece SwiftSpinner na Swift 4.2 
+2. Pobranie repozytorium
+- utworzyć klucz SSH
+- wprowadzić utworzony klucz do konta na GitLabie*
+- pobrać (sklonować) repozytorium. Link repo dla SSH znajduje się po kliknieciu w przycisk ,,Clone” [na głównej stronie](https://gitlab.com/FilipKaminski/AGH_Mobile ). 
+Aby pobrać repo, odpalamy terminal i wpisujemy komendę ’git clone TUTAJ_WKLEIĆ_LINK_SSH_DO_REPO’.
+
+3. Zanim zacznę kodzić
+- każdy task posiada u nas swojego oddzielnefo brancha, który, po zakończwniu pracy, merge’owany jest z master’em
+- zanim zaczniesz pracę, utwórz proszę brancha z (ważne!) gałęzi master. W nazwie powinno się znaleźć ID taska z backlogu GitLaba np. AM-003 (tak, bez kwadratowych nawiasów 😃)
+- pamiętaj, by statać się utworzyć commit po zakończeniu danej funkcjonalności (dobrą prakryką jesr trzymanie się SOLID’u również przy kontroli wersji)
+- [jak pisać commit message](https://chris.beams.io/posts/git-commit/). Im więcej commitów, tym lepiej. Bardzo problematyczne poprawianie historii commitów (robienie dziesięć bardziej szczegółowych commitów z jednego pierwotnego), więc dobrze już od samego początku wyrabiać ten nawyk.
+- [mogę już przejść wreszcie do kodzenia???](https://github.com/raywenderlich/swift-style-guide?fbclid=iwar1taxqg-pzhty9d6mdowln0glvwkcduz799nnh6j33ktlr7lpyqkxmprfs) No nie tak szybko. Projekt ma być utrzymywlny, więc stosujemy się do uznanych konwencji, zapoznaj się proszę dokladnie z tym artykułem :)
+
+4. Zaraz zaraz, a macie jakieś makiety, mock-up’y, jak zwał tak zwał?
+- tak, mamy i mamy nawet oddzielne repozytorium na nie - [tutaj szczegółowe info :)](https://www.mackn.agh.edu.pl/2019/04/10/zeplin-cos-ala-git-ale-do-makiet/)
 
 
 ## Stara Informacja o tym jaki kiedyś był projekt ##
