@@ -9,23 +9,27 @@ BIAŁE = HERE WE GO BBY
 NIEBIEAKIE = FUJ***  
 
 2. Pobranie repozytorium
-- utworzyć klucz SSH
-- wprowadzić utworzony klucz do konta na GitLabie*
+- [utworzyć klucz SSH](How to generate SSH key for GitHub authorization) - w linku sekcja how to generate SSH key for GitHub authorization
+- wprowadzić utworzony klucz do konta na GitLabie - w prawym górnym rogu awatar -> Settings -> SSH Keys 
+W celu skopiowiania klucza, odpalamy terminal, `pbcopy < ~/.ssh/id_rsa.pub` i można juź wkleić i dodać na stronie GitLaba.
 - pobrać (sklonować) repozytorium. Link repo dla SSH znajduje się po kliknieciu w przycisk ,,Clone” [na głównej stronie](https://gitlab.com/FilipKaminski/AGH_Mobile ). 
-Aby pobrać repo, odpalamy terminal i wpisujemy komendę ’git clone TUTAJ_WKLEIĆ_LINK_SSH_DO_REPO’.
+Aby pobrać repo, odpalamy terminal i wpisujemy komendę ’git clone TUTAJ_WKLEIĆ_LINK_SSH_DO_REPO’. Klonowanie repozytorium można realizować na inne sposoby, natomiast ten jest najbardziej niezawodny.
 
 3. Zanim zacznę kodzić
 - każdy task posiada u nas swojego oddzielnefo brancha, który, po zakończwniu pracy, merge’owany jest z master’em
 - zanim zaczniesz pracę, utwórz proszę brancha z (ważne!) gałęzi master. W nazwie powinno się znaleźć ID taska z backlogu GitLaba np. AM-003 (tak, bez kwadratowych nawiasów 😃)
 - pamiętaj, by statać się utworzyć commit po zakończeniu danej funkcjonalności (dobrą prakryką jesr trzymanie się SOLID’u również przy kontroli wersji)
 - [jak pisać commit message](https://chris.beams.io/posts/git-commit/). Im więcej commitów, tym lepiej. Bardzo problematyczne poprawianie historii commitów (robienie dziesięć bardziej szczegółowych commitów z jednego pierwotnego), więc dobrze już od samego początku wyrabiać ten nawyk.
-- [mogę już przejść wreszcie do kodzenia???](https://github.com/raywenderlich/swift-style-guide?fbclid=iwar1taxqg-pzhty9d6mdowln0glvwkcduz799nnh6j33ktlr7lpyqkxmprfs) No nie tak szybko. Projekt ma być utrzymywlny, więc stosujemy się do uznanych konwencji, zapoznaj się proszę dokladnie z tym artykułem :)
+- mogę już przejść wreszcie do kodzenia?? Nie tak szybko. Projekt ma być utrzymywlny, więc stosujemy się do uznanych konwencji, zapoznaj się proszę dokladnie z [tym artykułem](https://github.com/raywenderlich/swift-style-guide?fbclid=iwar1taxqg-pzhty9d6mdowln0glvwkcduz799nnh6j33ktlr7lpyqkxmprfs) :)
 
-4. Zaraz zaraz, a macie jakieś makiety, mock-up’y, jak zwał tak zwał?
+4.  A macie jakieś makiety, mock-up’y, jak zwał tak zwał?
 - tak, mamy i mamy nawet oddzielne repozytorium na nie - [tutaj szczegółowe info :)](https://www.mackn.agh.edu.pl/2019/04/10/zeplin-cos-ala-git-ale-do-makiet/)
+- jest możliwowość uruchomienia makiet dla testu w trybie prototypu. W katalogu projektu w folderze Assets znajduje się plik AGH.xd - otworzyć go można za pomocą programu Adobe XD (można go pobrać za free) i w nim odpalić prototyp. UWAGA - za free nie działa wyświetlanie na rzutniki
 
+5. Folder Old w katalogu projektu zawiera stary i nieaktualny projekt 
+ - projekt zawiera implementację map oraz syllabusu
 
-## Stara Informacja o tym jaki kiedyś był projekt ##
+## Stara Informacja o tym jaki kiedyś był proje
 
 Aplikacja „AGH Mobile” gromadzi w jednym miejscu, wszystkie najważniejsze informację dotyczące naszej uczelni.  
 Użytkownik przy pomocy jednego dotknięcia ma dostęp do:  
@@ -44,6 +48,6 @@ W przyszłości planowane jest także przygotowanie wersji dla tabletów iPad or
 ## Lista Zewnętrznych Bibliotek ##
 -Alamofire,  
 -SwiftyJSON,  
--Fuzi,  
+-SwiftSoup
 -AlamofireObjectMapper,  
 -Charts,  
