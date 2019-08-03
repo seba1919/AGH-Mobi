@@ -8,12 +8,14 @@
 
 import Foundation
 
-protocol ModelWD {
+protocol ModelWD : ScheduleProvider {
     func getGrades() -> Grades
     
     func getPersonalInfo() -> PersonalInfo
     
-    func getScheduleForDays(daysCount : Int) -> [DaySchedule]
+    func getStudyProgress() -> [StudyProgress]
+    
+    func getScholarshipInfo() -> ScholarshipInfo
     
     //func getPicture() ->
 }

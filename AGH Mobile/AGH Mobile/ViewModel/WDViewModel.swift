@@ -9,9 +9,21 @@
 import Foundation
 
 final class WDViewModel {
-    private static var model = TestWDImpl()
+    internal static var model: ModelWD = TestWDImpl()
     
     public static func getGrades() -> Grades {
         return model.getGrades()
+    }
+    
+    public static func getPersonalInfo() -> PersonalInfo {
+        return model.getPersonalInfo()
+    }
+    
+    public static func getScholarshipInfo() -> ScholarshipInfo {
+        return model.getScholarshipInfo()
+    }
+    
+    public static func getStudyProgress() -> [StudyProgress] {
+        return model.getStudyProgress()
     }
 }

@@ -9,12 +9,22 @@
 import Foundation
 
 final class TestWDImpl : ModelWD {
+    func getStudyProgress() -> [StudyProgress] {
+        let sp1 = StudyProgress(academicYear: "2016/2017", studiesYear: "I", term: "1", type: "Z", decisionDate: "01.10.2016", fromDate: "01.10.2016", untilDate: "", studentStatus: "wpis normalny", reason: "")
+        
+        return [sp1]
+    }
+    
+    func getScholarshipInfo() -> ScholarshipInfo {
+        return ScholarshipInfo()
+    }
+    
     func getPersonalInfo() -> PersonalInfo {
         return PersonalInfo(albumNr: 293268, fullName: "Sebastian Wiatrzyk", faculty: "Inżynierii Metali i Informatyki Przemysłowej", fieldOfStudy: "Informatyka Stosowana", specialty: "", formOfStudies: "stacjonarne", studyDegree: "pierwszego stopnia", educationProfile: "ogólnoakademicki", fieldOfStudyStatus: "", fieldOfStudyInfo: "Niepłatny", studiesStartDate: "01.10.2016", studiesStartDateAGH: "01.10.2016")
         
     }
     
-    func getScheduleForDays(daysCount: Int) -> [DaySchedule] {
+    func getScheduleForDays(amount: Int) -> [DaySchedule] {
         let day1 = DaySchedule(date: "15.04.2019", entries: [
             TimetableEntry(from: "11:30", until: "13:00", course: "Marketing internetowy", lecturer: "dr inż. Tomasz Kargul", classroom: "B-5 - s. 702", formOfClasses: "ĆL"),
             TimetableEntry(from: "15:00",

@@ -10,6 +10,6 @@ import Foundation
 
 
 struct DaySchedule {
-    var date : String
-    var entries : [TimetableEntry]
+    var date: String
+    var entries: [TimetableEntry]
 }
