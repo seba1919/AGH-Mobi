@@ -4,9 +4,11 @@
 1. Instalacja managera bibliotek Cocoapods ze strony https://cocoapods.org. Bez tego nie będzie możliwości skompilwoania projektu, gdyż korzystamy z zewętrznych bibliotek.
 Wystarczy odpalić terminal i przekleić ze strony: sudo gem install cocoapods
 -***Projekt należy otwierać przy pomocy pliku .xcworkspace (biała ikonka), a nie .xcproject (niebieska ikonka).
-Otwieranie .xcproject spowoduje wtedy błąd kompilacji. 
-BIAŁE = HERE WE GO BBY
-NIEBIEAKIE = FUJ***  
+Otwieranie .xcproject spowoduje wtedy błąd kompilacji.***
+
+***BIAŁE = HERE WE GO BBY***
+
+***NIEBIESKIE = FUJ***  
 
 2. Pobieranie repozytorium
 - [utworzyć klucz SSH](How to generate SSH key for GitHub authorization) - w linku sekcja how to generate SSH key for GitHub authorization
@@ -29,7 +31,13 @@ Aby pobrać repo, odpalamy terminal i wpisujemy komendę `git clone TUTAJ_WKLEI�
 5. Folder Old w katalogu projektu zawiera stary i nieaktualny projekt 
  - projekt zawiera implementację map oraz syllabusu
 
-## Stara Informacja o tym jaki kiedyś był proje
+6. Tworzenie tekstów
+- w projekcie wprowadzona została wielojęzykowość, dlatego wszystkie string'i, które znajdują się w labelkach, textView, textField'ach itp, znajdują się w pliku **Localizable.strings**.
+1.  W **Localizable.strings** tworzymy nagłówek w komentarzu, jeśli jeszcze nie istnieje, w postaci nazwy modułu, w którym bedzie używany nasz string, np. `/* TabBar */`
+2.  Aby stworzyć stringa, w **Localizable.strings** wstawiamy `"NazwaModułu_KrótkiOpisCamelCasem" = "jakaś treść";` np. `"TabBar_ForYou" = "Dla Ciebie";`
+3.  Gotowe. Teraz można się odnieść do utworzonego stringa po kluczu w następujący sposób: 
+`cośtam.text = NSLocalizedString("Klucz_Wybranego_Stringa_Z_Localizable", comment: "") // comment zawsze puste. `
+## Stara Informacja o tym jaki kiedyś był projekt
 
 Aplikacja „AGH Mobile” gromadzi w jednym miejscu, wszystkie najważniejsze informację dotyczące naszej uczelni.  
 Użytkownik przy pomocy jednego dotknięcia ma dostęp do:  
