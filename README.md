@@ -31,11 +31,11 @@ Aby pobrać repo, odpalamy terminal i wpisujemy komendę `git clone TUTAJ_WKLEI�
 5. Folder Old w katalogu projektu zawiera stary i nieaktualny projekt 
  - projekt zawiera implementację map oraz syllabusu
 
-6. Tworzenie tekstów
-- w projekcie wprowadzona została wielojęzykowość, dlatego wszystkie string'i, które znajdują się w labelkach, textView, textField'ach itp, znajdują się w pliku **Localizable.strings**.
-1.  W **Localizable.strings** tworzymy nagłówek w komentarzu, jeśli jeszcze nie istnieje, w postaci nazwy modułu, w którym bedzie używany nasz string, np. `/* TabBar */`
-2.  Aby stworzyć stringa, w **Localizable.strings** wstawiamy `"NazwaModułu_KrótkiOpisCamelCasem" = "jakaś treść";` np. `"TabBar_ForYou" = "Dla Ciebie";`
-3.  Gotowe. Teraz można się odnieść do utworzonego stringa po kluczu w następujący sposób: 
+6. Tworzenie tekstów.
+W projekcie wprowadzona została wielojęzykowość, dlatego wszystkie string'i, które znajdują się w labelkach, textView, textField'ach itp, znajdują się w pliku **Localizable.strings**.
+-  W **Localizable.strings** tworzymy nagłówek w komentarzu, jeśli jeszcze nie istnieje, w postaci nazwy modułu, w którym bedzie używany nasz string, np. `/* TabBar */`
+-  Aby stworzyć stringa, w **Localizable.strings** wstawiamy `"NazwaModułu_KrótkiOpisCamelCasem" = "jakaś treść";` np. `"TabBar_ForYou" = "Dla Ciebie";`
+-  Gotowe. Teraz można się odnieść do utworzonego stringa po kluczu w następujący sposób: 
 `cośtam.text = NSLocalizedString("Klucz_Wybranego_Stringa_Z_Localizable", comment: "") // comment zawsze puste. `
 ## Stara Informacja o tym jaki kiedyś był projekt
 
