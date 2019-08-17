@@ -1,5 +1,5 @@
 //
-//  UserView.swift
+//  SettingsView.swift
 //  AGH Mobile
 //
 //  Created by Mateusz Bąk on 01/04/2019.
@@ -15,7 +15,7 @@ import SnapKit
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
 
-class UserView: UIView {
+class SettingsView: UIView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
@@ -52,7 +52,7 @@ class UserView: UIView {
         self.addSubview(tabBarTitle)
         self.addSubview(userProfile)
         self.addSubview(sectionTitle)
-        self.addSubview(userSettingsContent)
+        self.addSubview(settingsContent)
         self.addSubview(logoutButton)
     }
     
@@ -62,7 +62,7 @@ class UserView: UIView {
     // TabBar Title
     private lazy var tabBarTitle: UILabel = {
         let tabBarPageTitle = TabBarPageTitleLabel(
-            title: "Ustawienia Użytkownika")
+            title: NSLocalizedString("SettingsView_UserSETTINGS", comment: ""))
             .build()
         return tabBarPageTitle
     }()
@@ -78,14 +78,14 @@ class UserView: UIView {
     // Section Title
     private lazy var sectionTitle : UILabel = {
         let label = SectionTitle(
-            title: "INTEGRACJA KONT")
+            title: NSLocalizedString("SettingsView_AccountIntegration", comment: ""))
             .build()
         return label
     }()
     
-    // User Settings
-    public private(set) lazy var userSettingsContent: UserSettingsContent = {
-        let view = UserSettingsContent()
+    // Settings
+    public private(set) lazy var settingsContent: SettingsContent = {
+        let view = SettingsContent()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -93,7 +93,7 @@ class UserView: UIView {
     // Logout Button
     private lazy var logoutButton: UIButton = {
         let button = AGHButton(
-            title: "Wyloguj się")
+            title: NSLocalizedString("SettingsView_SignOut", comment: ""))
             .build()
         button.addTarget(self, action: #selector(onPressPushLoginPage), for: .touchUpInside)
         return button
@@ -115,7 +115,7 @@ class UserView: UIView {
             make.top.equalTo(tabBarTitle.snp.bottom).offset(screenHeight * 0.04)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
-            make.height.equalTo(Double(screenHeight) * UserView.userProfileHightMultipliValue)
+            make.height.equalTo(Double(screenHeight) * SettingsView.userProfileHightMultipliValue)
         }
         
         // Section Title
@@ -124,8 +124,8 @@ class UserView: UIView {
             make.left.equalToSuperview().offset(20)
         }
         
-        // User Settings
-        userSettingsContent.snp.makeConstraints { (make) in
+        // Settings
+        settingsContent.snp.makeConstraints { (make) in
             make.top.equalTo(sectionTitle.snp.bottom)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(logoutButton.snp.top).offset(screenHeight * -0.052)

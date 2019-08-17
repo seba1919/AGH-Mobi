@@ -73,11 +73,7 @@ final class AboutAsView: UIView {
     // About as Description
     private lazy var aboutAsDescription: UITextView = {
         let descriptionTextView = DescriptionTextView(
-            text: """
-            Aplikacja powstała w ramach działania koła naukowego MacKN i nie jest oficjalną aplikacją Akademii Górniczo-Hutniczej w Krakowie.
-
-            Koło Naukowe MacKN zrzesza pasjonatów programowania na iOS i macOS oraz pasjonatów fotografii. Działamy przy Katedrze Informatyki Stosowanej Wydziału Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie.
-            """)
+            text: NSLocalizedString("AboutUsView_AboutUsDescription", comment: ""))
             .build()
         descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
         return descriptionTextView
@@ -94,7 +90,7 @@ final class AboutAsView: UIView {
     // Web Page Button
     private lazy var webPageButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("strona internetowa koła", for: .normal)
+        button.setTitle(NSLocalizedString("AboutUsView_StudentScienceCircleWebPage", comment: ""), for: .normal)
         button.setTitleColor(UIColor.mainRed, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(onPressOpenWeb), for: .touchUpInside)

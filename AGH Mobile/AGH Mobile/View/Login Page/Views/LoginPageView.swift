@@ -29,7 +29,7 @@ class LoginPageView: UIView {
     
     // Public
     public var pushAboutAsVC: (() -> Void)?
-    public var pushUserVC: (() -> Void)?
+    public var pushSettingsVC: (() -> Void)?
     public var openRemindPasswordWeb: (() -> Void)?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -70,7 +70,7 @@ class LoginPageView: UIView {
     // TabBar title
     private lazy var tabBarTitle: UILabel = {
         let tabBarPageTitle = TabBarPageTitleLabel(
-            title: "Ustawienia Użytkownika")
+            title: NSLocalizedString("LoginPageView_UserSettings", comment: ""))
             .build()
         tabBarPageTitle.translatesAutoresizingMaskIntoConstraints = false
         return tabBarPageTitle
@@ -93,32 +93,29 @@ class LoginPageView: UIView {
         label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         label.textColor = .black
         label.textAlignment = .center
-        label.text = """
-        Aby przejść dalej, musisz zalogować
-        się do Wirtualnej Uczelni
-        """
+        label.text = NSLocalizedString("LoginPageView_YouHaveToSignInDescription", comment: "")
         return label
     }()
     
     // ID TextField
     private lazy var IDTextField: AGHTextField = {
-        let textField = AGHTextField(placeholder: "Identyfikator")
+        let textField = AGHTextField(placeholder: NSLocalizedString("LoginPageView_Identificator", comment: ""))
         textField.keyboardType = UIKeyboardType.numberPad
         return textField
     }()
     
     // Password TextField
     private lazy var passwordTextField: AGHTextField = {
-        let textField = AGHTextField(placeholder: "Hasło")
+        let textField = AGHTextField(placeholder: NSLocalizedString("LoginPageView_Password", comment: ""))
         return textField
     }()
     
     // Login Button
     private lazy var loginButton: UIButton = {
         let button = AGHButton(
-            title: "Zaloguj się")
+            title: NSLocalizedString("LoginPageView_SignIn", comment: ""))
             .build()
-        button.addTarget(self, action: #selector(onPressPushUserVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(onPressPushSettingsVC), for: .touchUpInside)
         return button
     }()
     
@@ -126,7 +123,7 @@ class LoginPageView: UIView {
     private lazy var remindPasswordButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Zapomniałeś hasła?", for: .normal)
+        button.setTitle(NSLocalizedString("LoginPageView_ForgotPassword", comment: ""), for: .normal)
         button.setTitleColor(UIColor.mainRed, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         button.titleLabel?.textAlignment = .center
@@ -149,7 +146,7 @@ class LoginPageView: UIView {
     private lazy var aboutAsButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("O nas", for: .normal)
+        button.setTitle(NSLocalizedString("SettingsContent_AboutUs", comment: ""), for: .normal)
         button.setTitleColor(UIColor.mainRed, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         button.titleLabel?.textAlignment = .center
@@ -237,8 +234,8 @@ class LoginPageView: UIView {
         pushAboutAsVC?()
     }
     
-    @objc private func onPressPushUserVC() {
-        pushUserVC?()
+    @objc private func onPressPushSettingsVC() {
+        pushSettingsVC?()
     }
     
     @objc private func onPressOpenRemindPasswordWeb() {

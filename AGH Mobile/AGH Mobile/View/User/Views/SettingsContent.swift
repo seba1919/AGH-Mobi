@@ -1,5 +1,5 @@
 //
-//  UserSettingsContent.swift
+//  SettingsContent.swift
 //  AGH Mobile
 //
 //  Created by Mateusz Bąk on 03/05/2019.
@@ -15,7 +15,7 @@ import SnapKit
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
 
-class UserSettingsContent: UIView {
+class SettingsContent: UIView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
@@ -73,7 +73,7 @@ class UserSettingsContent: UIView {
     private lazy var rowNo1: RowView = {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .top)
-        view.setupTitle(as: "Wirtualna Uczelnia")
+        view.setupTitle(as: NSLocalizedString("SettingsContent_WU", comment: ""))
         return view
     }()
     
@@ -81,7 +81,7 @@ class UserSettingsContent: UIView {
     private lazy var rowNo2: RowView = {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .top)
-        view.setupTitle(as: "UPEL")
+        view.setupTitle(as: NSLocalizedString("SettingsContent_UPEL", comment: ""))
         return view
     }()
     
@@ -89,7 +89,7 @@ class UserSettingsContent: UIView {
     private lazy var rowNo3: RowView = {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .topAndBottom)
-        view.setupTitle(as: "Panel Usług Sieciowych")
+        view.setupTitle(as: NSLocalizedString("SettingsContent_NetworkServicesPanel", comment: ""))
         return view
     }()
     
@@ -97,7 +97,7 @@ class UserSettingsContent: UIView {
     private lazy var rowNo4: RowView = {
         let view = RowView(style: .withSwitch,
                            separatorPosition: .topAndBottom)
-        view.setupTitle(as: "Powiadomienia o ocenach")
+        view.setupTitle(as: NSLocalizedString("SettingsContent_NotificationsAboutMarks", comment: ""))
         return view
     }()
     
@@ -105,7 +105,7 @@ class UserSettingsContent: UIView {
     private lazy var rowNo5: RowView = {
         let view = RowView(style: .normal,
                            separatorPosition: .topAndBottom)
-        view.setupTitle(as: "O nas")
+        view.setupTitle(as: NSLocalizedString("SettingsContent_AboutUs", comment: ""))
         view.setAction = { self.onPressPushAboutAsVC() }
         return view
     }()
@@ -114,7 +114,7 @@ class UserSettingsContent: UIView {
     private lazy var rowNo6: RowView = {
         let view = RowView(style: .empty,
                            separatorPosition: .bottom)
-        view.setupTitle(as: "Skontaktuj się z nami")
+        view.setupTitle(as: NSLocalizedString("SettingsContent_ContactUs", comment: ""))
         view.setAction = { self.onPressOpenMailApp() }
         return view
     }()
