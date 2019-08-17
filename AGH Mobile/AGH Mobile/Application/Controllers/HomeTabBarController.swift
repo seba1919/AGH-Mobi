@@ -30,23 +30,23 @@ class HomeTabBarController: UITabBarController {
     
     private func setupControllers() {
         viewControllers = [createDummyViewController(
-                                                     withTitle: "Dla Ciebie",
+                                                     withTitle: NSLocalizedString("TabBar_ForYou", comment: ""),
                                                      andImageName: "for_you_active",
                                                      for: ForYouViewController()),
                            createDummyViewController(
-                                                     withTitle: "Studia",
+                                                     withTitle: NSLocalizedString("TabBar_Studies", comment: ""),
                                                      andImageName: "studies_active",
                                                      for: StudiesViewController()),
                            createDummyViewController(
-                                                     withTitle: "Mapy",
+                                                     withTitle: NSLocalizedString("TabBar_Maps", comment: ""),
                                                      andImageName: "maps_active",
                                                      for: MapsViewController()),
                            createDummyNavigationController(
-                                                     withTitle: "Informacje",
+                                                     withTitle: NSLocalizedString("TabBar_Informations", comment: ""),
                                                      andImageName: "info_active",
                                                      for: InformationsViewController()),
                            createDummyNavigationController(
-                                                           withTitle: "Użytkownik",
+                                                           withTitle: NSLocalizedString("TabBar_Settings", comment: ""),
                                                            andImageName: "me_active",
                                                            for: LoginPageViewController())]
     }

@@ -58,7 +58,7 @@ class InformationsView: UIView {
     // TabBar Title
     private lazy var tabBatTitle: UILabel = {
         let label = TabBarPageTitleLabel(
-            title: "Informacje")
+            title: NSLocalizedString("InformationsView_Information", comment: ""))
             .build()
         return label
     }()
@@ -74,7 +74,7 @@ class InformationsView: UIView {
     // Section Title
     private lazy var sectionTitle : UILabel = {
         let label = SectionTitle(
-            title: "INFORMACJE UCZELNIANE")
+            title: NSLocalizedString("InformationsView_StudiesInformation", comment: ""))
             .build()
         return label
     }()

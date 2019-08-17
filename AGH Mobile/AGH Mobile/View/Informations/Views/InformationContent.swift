@@ -64,7 +64,7 @@ class InformationContent: UIView {
     private lazy var rowNo1: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
-        view.setupTitle(as: "Syllabus")
+        view.setupTitle(as: NSLocalizedString("InformationsContent_Syllabus", comment: ""))
         view.setupLeftAccessory(named: "book_Info")
         return view
     }()
@@ -73,7 +73,7 @@ class InformationContent: UIView {
     private lazy var rowNo2: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
-        view.setupTitle(as: "Pracownicy Uczelni")
+        view.setupTitle(as: NSLocalizedString("InformationsContent_UniversityEmployees", comment: ""))
         view.setupLeftAccessory(named: "human_Info")
         return view
     }()
@@ -82,7 +82,7 @@ class InformationContent: UIView {
     private lazy var rowNo3: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
-        view.setupTitle(as: "Regulamin Studiów")
+        view.setupTitle(as: NSLocalizedString("InformationsContent_UniversityStatute", comment: ""))
         view.setupLeftAccessory(named: "sheets_Info")
         return view
     }()
@@ -91,7 +91,7 @@ class InformationContent: UIView {
     private lazy var rowNo4: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .topAndBottom)
-        view.setupTitle(as: "Rok Akademicki")
+        view.setupTitle(as: NSLocalizedString("InformationsContent_AcademicYear", comment: ""))
         view.setupLeftAccessory(named: "calendar_Info")
         return view
     }()

@@ -1,5 +1,5 @@
 //
-//  UserViewController.swift
+//  SettingsViewController.swift
 //  AGH Mobile
 //
 //  Created by Mateusz Bąk on 28/03/2019.
@@ -14,24 +14,24 @@ import UIKit
 // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Implementation
 
-class UserViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
     
     // View
-    private var userView: UserView { return self.view as! UserView }
+    private var settingsView: SettingsView { return self.view as! SettingsView }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
     
     override func loadView() {
-        self.view = UserView(frame: UIScreen.main.bounds)
+        self.view = SettingsView(frame: UIScreen.main.bounds)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.userView.setupUI()
+        self.settingsView.setupUI()
         self.setupActions()
     }
     
@@ -51,11 +51,11 @@ class UserViewController: UIViewController {
     
     private func setupActions() {
         
-        userView.userSettingsContent.pushAboutAsVC = {
+        settingsView.settingsContent.pushAboutAsVC = {
             self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
         }
         
-        userView.userSettingsContent.openMailApp = {
+        settingsView.settingsContent.openMailApp = {
             let email = "mackn@agh.edu.pl"
             // Doesn't work in simulator
             if let url = URL(string: "mailto:\(email)") {
@@ -63,7 +63,7 @@ class UserViewController: UIViewController {
             }
         }
         
-        userView.pushLoginPageVC = {
+        settingsView.pushLoginPageVC = {
             self.navigationController?.pushViewController(LoginPageViewController(), animated: true)
         }
         

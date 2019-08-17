@@ -23,7 +23,7 @@ class UserWDProfile: UIView {
     // Private
     private let spaceBetweenLabelAndPhoto: CGFloat = 15
     private lazy var screenHeight = Double(UIScreen.main.bounds.size.height)
-    private lazy var viewHight = screenHeight * UserView.userProfileHightMultipliValue
+    private lazy var viewHight = screenHeight * SettingsView.userProfileHightMultipliValue
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -91,7 +91,7 @@ class UserWDProfile: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.textColor = .customGrayText
-        label.text = "UŻYTKOWNIK".uppercased()
+        label.text = NSLocalizedString("UserWDProfile_User", comment: "").uppercased()
         label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         return label
     }()

@@ -59,7 +59,7 @@ final class AboutAsViewController : UIViewController {
     }
     
     private func setupNavigationAttributs() {
-        self.navigationItem.title = "O nas"
+        self.navigationItem.title = NSLocalizedString("SettingsContent_AboutUs", comment: "")
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
