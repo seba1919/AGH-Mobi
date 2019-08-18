@@ -59,6 +59,7 @@
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
 		61AD7C95224BDCF8008340B3 /* AGH_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C94224BDCF8008340B3 /* AGH_MobileUITests.swift */; };
 		61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */; };
+		6574806A23089E19007DC4AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6574806C23089E19007DC4AF /* Localizable.strings */; };
 		65A9923D22CBBCBB0034DBE7 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9923C22CBBCBB0034DBE7 /* ScheduleViewModel.swift */; };
 		65A9923F22CBBCFF0034DBE7 /* ScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9923E22CBBCFF0034DBE7 /* ScheduleProvider.swift */; };
 		65A9924122CBBDED0034DBE7 /* EAIIBSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9924022CBBDED0034DBE7 /* EAIIBSchedule.swift */; };
@@ -69,7 +70,6 @@
 		65A9924D22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9924C22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift */; };
 		65A9924F22CBC7250034DBE7 /* UniTimeScheduleImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9924E22CBC7250034DBE7 /* UniTimeScheduleImpl.swift */; };
 		65A9925222CBCF7F0034DBE7 /* ScholarshipInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9925122CBCF7F0034DBE7 /* ScholarshipInfo.swift */; };
-		6574806A23089E19007DC4AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6574806C23089E19007DC4AF /* Localizable.strings */; };
 		76ED7A09ADF48FAF996EEFD2 /* Pods_AGH_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */; };
 		8F3A8D473740ED8EC2AF437E /* Pods_AGH_MobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */; };
 		AA7425C01AFAEC2A6CE94699 /* Pods_AGH_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9454BF74EFD6E6A8CE744B70 /* Pods_AGH_Mobile.framework */; };
@@ -893,13 +893,11 @@
 				"${PODS_ROOT}/Target Support Files/Pods-AGH Mobile/Pods-AGH Mobile-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -945,7 +943,7 @@
 				6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */,
 				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				65A9924522CBBEC70034DBE7 /* UniTimeSchedule.swift in Sources */,
-				611F4B1A2250E0480056416E /* UserViewController.swift in Sources */,
+				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				613324B8228486DD00C7C474 /* InformationContent.swift in Sources */,
 				615779212265F7D400C1BCDC /* AboutAsView.swift in Sources */,
 				65A9923D22CBBCBB0034DBE7 /* ScheduleViewModel.swift in Sources */,
