@@ -37,6 +37,15 @@ W projekcie wprowadzona została wielojęzykowość, dlatego wszystkie string'i,
 -  Aby stworzyć stringa, w **Localizable.strings** wstawiamy `"NazwaModułu_KrótkiOpisCamelCasem" = "jakaś treść";` np. `"TabBar_ForYou" = "Dla Ciebie";`
 -  Gotowe. Teraz można się odnieść do utworzonego stringa po kluczu w następujący sposób: 
 `cośtam.text = NSLocalizedString("Klucz_Wybranego_Stringa_Z_Localizable", comment: "") // comment zawsze puste. `
+
+## Lista Zewnętrznych Bibliotek ##
+- Alamofire (networking, requesty itp)
+- SnapKit (optymalizacja czasu implementacji AutoLayout'u)
+
+
+
+
+
 ## Stara Informacja o tym jaki kiedyś był projekt
 
 Aplikacja „AGH Mobile” gromadzi w jednym miejscu, wszystkie najważniejsze informację dotyczące naszej uczelni.  
@@ -53,9 +62,4 @@ W przyszłości planowane jest także przygotowanie wersji dla tabletów iPad or
 
 
 
-## Lista Zewnętrznych Bibliotek ##
--Alamofire,  
--SwiftyJSON,  
--SwiftSoup
--AlamofireObjectMapper,  
--Charts,  
+
