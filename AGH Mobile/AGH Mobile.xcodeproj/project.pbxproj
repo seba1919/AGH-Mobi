@@ -235,7 +235,7 @@
 				6198C9012280E652008D664F /* Login Page */,
 				6198C8E42279E8C6008D664F /* Member Profile */,
 				6157791B2265F75200C1BCDC /* About As */,
-				611F4B012250E0480056416E /* User */,
+				611F4B012250E0480056416E /* Settings */,
 				611F4AFB2250E0480056416E /* Informations */,
 				611F4B072250E0480056416E /* Maps */,
 				611F4B0D2250E0480056416E /* Studies */,
@@ -429,13 +429,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		611F4B012250E0480056416E /* User */ = {
+		611F4B012250E0480056416E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				611F4B042250E0480056416E /* Controllers */,
 				611F4B062250E0480056416E /* Views */,
 			);
-			path = User;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		611F4B042250E0480056416E /* Controllers */ = {
