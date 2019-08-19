@@ -15,7 +15,11 @@ import UIKit
 // MARK: - Implementation
 
 class MemberProfileViewController: UIViewController {
-
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Coordinator
+    weak var coordinator:  MemberProfileViewCoordinator?
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
 

@@ -20,7 +20,7 @@ class TabBarCoordinator: Coordinator {
         self.navigationController = navigationController
         tabBarController = HomeTabBarController()
         tabBarController.coordinator = self
-        navigationController.setViewControllers([tabBarController], animated: true)
+        navigationController.pushViewController(tabBarController, animated: false)
     }
     
     func start() {

@@ -1,19 +1,21 @@
 //
-//  ForYouCoordinator.swift
+//  MemberProfileCoordinator.swift
 //  AGH Mobile
 //
-//  Created by Sebastian Wiatrzyk on 18/08/2019.
+//  Created by Sebastian Wiatrzyk on 19/08/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
 import UIKit
 
-class ForYouCoordinator: Coordinator {
+class MemberProfileViewCoordinator: Coordinator {
+    weak var parentCoordinator: AboutUsCoordinator?
+    
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
     
-    public var rootViewController: ForYouViewController?
+    var rootViewController: MemberProfileViewController?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -21,12 +23,13 @@ class ForYouCoordinator: Coordinator {
     
     // Initializing rootViewController method
     func start() {
-        let vc = ForYouViewController()
+        let vc = MemberProfileViewController()
         rootViewController = vc
         vc.coordinator = self
-        
-        vc.tabBarItem.title = NSLocalizedString("TabBar_ForYou", comment: "")
-        vc.tabBarItem.image = UIImage(named: "for_you_inactive")
-        vc.tabBarItem.selectedImage = UIImage(named: "for_you_active")
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func didFinishStalkingMember() {
+        parentCoordinator?.childDidFinish(self)
     }
 }

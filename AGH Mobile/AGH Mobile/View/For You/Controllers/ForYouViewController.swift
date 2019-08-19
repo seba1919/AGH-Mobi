@@ -17,7 +17,7 @@ import UIKit
 class ForYouViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Coordinators
+    // MARK: - Coordinator
         weak var coordinator:  ForYouCoordinator?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

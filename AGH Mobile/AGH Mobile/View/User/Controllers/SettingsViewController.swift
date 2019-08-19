@@ -56,7 +56,7 @@ class SettingsViewController: UIViewController {
     private func setupActions() {
         
         settingsView.settingsContent.pushAboutAsVC = {
-            self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
+            self.coordinator?.showTeamMembers()
         }
         
         settingsView.settingsContent.openMailApp = {

@@ -17,7 +17,7 @@ import UIKit
 class MapsViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Coordinators
+    // MARK: - Coordinator
     weak var coordinator:  MapsCoordinator?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

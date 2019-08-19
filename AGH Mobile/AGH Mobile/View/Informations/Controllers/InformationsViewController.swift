@@ -17,7 +17,7 @@ import UIKit
 class InformationsViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Coordinators
+    // MARK: - Coordinator
     weak var coordinator:  InformationsCoordinator?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----

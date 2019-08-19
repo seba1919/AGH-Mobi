@@ -24,6 +24,7 @@ class MapsCoordinator: Coordinator {
         let vc = MapsViewController()
         rootViewController = vc
         vc.coordinator = self
+        
         vc.tabBarItem.title = NSLocalizedString("TabBar_Maps", comment: "")
         vc.tabBarItem.image = UIImage(named: "maps_inactive")
         vc.tabBarItem.selectedImage = UIImage(named: "maps_active")

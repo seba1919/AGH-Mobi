@@ -24,8 +24,20 @@ class SettingsCoordinator: Coordinator {
         let vc = SettingsViewController()
         rootViewController = vc
         vc.coordinator = self
+        
         vc.tabBarItem.title = NSLocalizedString("TabBar_Settings", comment: "")
         vc.tabBarItem.image = UIImage(named: "settings_inactive")
         vc.tabBarItem.selectedImage = UIImage(named: "settings_active")
+    }
+    
+    func showTeamMembers(){
+        let child = AboutUsCoordinator(navigationController: self.navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
+    }
+    
+    func signOut() {
+        
     }
 }

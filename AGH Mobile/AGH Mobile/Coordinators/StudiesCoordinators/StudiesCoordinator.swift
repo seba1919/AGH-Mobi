@@ -24,6 +24,7 @@ class StudiesCoordinator: Coordinator {
         let vc = StudiesViewController()
         rootViewController = vc
         vc.coordinator = self
+        
         vc.tabBarItem.title = NSLocalizedString("TabBar_Studies", comment: "")
         vc.tabBarItem.image = UIImage(named: "studies_inactive")
         vc.tabBarItem.selectedImage = UIImage(named: "studies_active")

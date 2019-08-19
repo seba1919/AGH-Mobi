@@ -24,6 +24,7 @@ class InformationsCoordinator: Coordinator {
         let vc = InformationsViewController()
         rootViewController = vc
         vc.coordinator = self
+        
         vc.tabBarItem.title = NSLocalizedString("TabBar_Informations", comment: "")
         vc.tabBarItem.image = UIImage(named: "info_inactive")
         vc.tabBarItem.selectedImage = UIImage(named: "info_active")

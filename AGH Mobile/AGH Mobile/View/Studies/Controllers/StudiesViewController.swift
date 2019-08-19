@@ -17,7 +17,7 @@ import UIKit
 class StudiesViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Coordinators
+    // MARK: - Coordinator
     weak var coordinator:  StudiesCoordinator?
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
