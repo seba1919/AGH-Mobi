@@ -17,7 +17,12 @@ import UIKit
 class ForYouViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Coordinators
+        weak var coordinator:  ForYouCoordinator?
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
+
     
     var forYouView: ForYouView { return self.view as! ForYouView }
     

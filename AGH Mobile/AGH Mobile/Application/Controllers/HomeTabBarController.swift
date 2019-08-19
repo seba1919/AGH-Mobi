@@ -17,11 +17,15 @@ import UIKit
 class HomeTabBarController: UITabBarController {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Coordinators
+    weak var coordinator:  TabBarCoordinator?
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupControllers()
+//        self.setupControllers()
         self.setupUI()
     }
     

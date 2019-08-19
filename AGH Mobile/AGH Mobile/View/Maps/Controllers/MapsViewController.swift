@@ -17,6 +17,10 @@ import UIKit
 class MapsViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Coordinators
+    weak var coordinator:  MapsCoordinator?
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
     
     var mapsView: MapsView { return self.view as! MapsView }

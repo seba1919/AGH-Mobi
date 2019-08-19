@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
-    
+    var coordinator: TabBarCoordinator?
     var window: UIWindow?
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
@@ -27,11 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        // Setup window and root View Controller
         window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = UINavigationController()
+        
+        coordinator = TabBarCoordinator(navigationController: window?.rootViewController as! UINavigationController)
+        coordinator?.start()
+        
         window?.makeKeyAndVisible()
-        window?.rootViewController = HomeTabBarController()
-        // Override point for customization after application launch.
         return true
     }
 

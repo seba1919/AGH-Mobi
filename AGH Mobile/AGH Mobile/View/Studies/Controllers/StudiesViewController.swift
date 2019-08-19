@@ -17,6 +17,10 @@ import UIKit
 class StudiesViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Coordinators
+    weak var coordinator:  StudiesCoordinator?
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Instance Variables
     
     var studiesView: StudiesView { return self.view as! StudiesView }

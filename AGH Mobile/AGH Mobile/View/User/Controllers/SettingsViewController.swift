@@ -17,6 +17,10 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Coordinators
+    weak var coordinator:  SettingsCoordinator?
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
     
     // View

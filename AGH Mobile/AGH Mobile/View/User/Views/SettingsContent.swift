@@ -18,6 +18,10 @@ import SnapKit
 class SettingsContent: UIView {
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Coordinators
+    weak var coordinator:  SettingsCoordinator?
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Properties
     
     // Private
