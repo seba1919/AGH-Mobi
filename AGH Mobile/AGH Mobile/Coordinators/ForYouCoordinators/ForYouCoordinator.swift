@@ -8,7 +8,10 @@
 
 import UIKit
 
+
 class ForYouCoordinator: Coordinator {
+    weak var tabBarCoordinator: TabBarCoordinator?
+
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
@@ -23,6 +26,7 @@ class ForYouCoordinator: Coordinator {
     func start() {
         let vc = ForYouViewController()
         rootViewController = vc
+        self.navigationController = UINavigationController(rootViewController: rootViewController!)
         vc.coordinator = self
         
         vc.tabBarItem.title = NSLocalizedString("TabBar_ForYou", comment: "")
@@ -30,3 +34,5 @@ class ForYouCoordinator: Coordinator {
         vc.tabBarItem.selectedImage = UIImage(named: "for_you_active")
     }
 }
+
+

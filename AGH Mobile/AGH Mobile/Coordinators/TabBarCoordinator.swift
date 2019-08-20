@@ -13,6 +13,7 @@ class TabBarCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
+    var controllers: [UINavigationController]? = nil
     
     var tabBarController: HomeTabBarController
     
@@ -46,13 +47,21 @@ class TabBarCoordinator: Coordinator {
         childCoordinators.append(informationsCoordinator)
         
         let settingsCoordinator = SettingsCoordinator(navigationController: self.navigationController)
+        settingsCoordinator.tabBarCoordinator = self
         settingsCoordinator.start()
         childCoordinators.append(settingsCoordinator)
+        controllers = [forYouCoordinator.navigationController,
+                                       studiesCoordinator.navigationController,
+                                       mapsCoordinator.navigationController,
+                                       informationsCoordinator.navigationController,
+                                       settingsCoordinator.navigationController]
         
-        tabBarController.viewControllers = [forYouCoordinator.rootViewController!,
-                                            studiesCoordinator.rootViewController!,
-                                            mapsCoordinator.rootViewController!,
-                                            informationsCoordinator.rootViewController!,
-                                            settingsCoordinator.rootViewController!]
+        tabBarController.hidesBottomBarWhenPushed = false
+        tabBarController.viewControllers = controllers
+        
+    }
+    
+    func popToRootViewController(vcNumber number: Int) {
+        controllers?[number].popToRootViewController(animated: false)
     }
 }

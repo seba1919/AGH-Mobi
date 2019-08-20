@@ -14,7 +14,7 @@ class AboutUsCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
-    
+
     var rootViewController: AboutAsViewController?
     
     init(navigationController: UINavigationController) {
@@ -26,7 +26,8 @@ class AboutUsCoordinator: Coordinator {
         let vc = AboutAsViewController()
         rootViewController = vc
         vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        
+        parentCoordinator?.navigationController.pushViewController(vc, animated: true)
     }
     
     func showMember() {
@@ -36,6 +37,7 @@ class AboutUsCoordinator: Coordinator {
     }
     
     func didFinishWatchingTeamMembersGallery() {
+//        navigationController.popToRootViewController(animated: true)
         parentCoordinator?.childDidFinish(self)
     }
 }

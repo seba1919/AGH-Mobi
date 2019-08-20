@@ -14,7 +14,7 @@ class MemberProfileViewCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
-    
+
     var rootViewController: MemberProfileViewController?
     
     init(navigationController: UINavigationController) {

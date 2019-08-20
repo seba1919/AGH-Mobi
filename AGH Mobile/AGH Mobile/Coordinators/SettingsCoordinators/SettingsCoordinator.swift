@@ -9,10 +9,12 @@
 import UIKit
 
 class SettingsCoordinator: Coordinator {
+    weak var tabBarCoordinator: TabBarCoordinator?
+
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
-    
+
     var rootViewController: SettingsViewController?
     
     init(navigationController: UINavigationController) {
@@ -23,8 +25,9 @@ class SettingsCoordinator: Coordinator {
     func start() {
         let vc = SettingsViewController()
         rootViewController = vc
+        self.navigationController = UINavigationController(rootViewController: rootViewController!)
         vc.coordinator = self
-        
+
         vc.tabBarItem.title = NSLocalizedString("TabBar_Settings", comment: "")
         vc.tabBarItem.image = UIImage(named: "settings_inactive")
         vc.tabBarItem.selectedImage = UIImage(named: "settings_active")

@@ -26,6 +26,7 @@ class HomeTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.setupControllers()
+        self.delegate = self
         self.setupUI()
     }
     
@@ -99,4 +100,11 @@ extension HomeTabBarController {
         return navigationController
     }
     
+}
+
+extension HomeTabBarController: UITabBarControllerDelegate {
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        coordinator?.popToRootViewController(vcNumber: self.selectedIndex)
+    }
 }

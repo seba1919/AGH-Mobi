@@ -53,6 +53,14 @@ final class AboutAsViewController : UIViewController {
         self.startAutoScrolling()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        coordinator?.didFinishWatchingTeamMembersGallery()
+    }
+    deinit {
+        print("dealocated \(self)")
+    }
+    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup
     

@@ -42,6 +42,11 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.setupNavigationAttributs()
     }
+
+    
+    deinit {
+        print("deallocated: \(self)")
+    }
     
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup

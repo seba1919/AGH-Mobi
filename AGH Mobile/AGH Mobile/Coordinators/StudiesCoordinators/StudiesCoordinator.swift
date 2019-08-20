@@ -9,6 +9,8 @@
 import UIKit
 
 class StudiesCoordinator: Coordinator {
+    weak var tabBarCoordinator: TabBarCoordinator?
+
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
@@ -23,6 +25,7 @@ class StudiesCoordinator: Coordinator {
     func start() {
         let vc = StudiesViewController()
         rootViewController = vc
+        self.navigationController = UINavigationController(rootViewController: rootViewController!)
         vc.coordinator = self
         
         vc.tabBarItem.title = NSLocalizedString("TabBar_Studies", comment: "")
