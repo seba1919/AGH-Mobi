@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -131,6 +131,7 @@
 		6157791E2265F77E00C1BCDC /* AboutAsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAsViewController.swift; sourceTree = "<group>"; };
 		615779202265F7D400C1BCDC /* AboutAsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAsView.swift; sourceTree = "<group>"; };
 		615779282267089100C1BCDC /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
+		6198265F23199EC600141CFC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6198C8E0227898B6008D664F /* TeamGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGalleryCell.swift; sourceTree = "<group>"; };
 		6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileViewController.swift; sourceTree = "<group>"; };
 		6198C8E92279E947008D664F /* MemberProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileView.swift; sourceTree = "<group>"; };
@@ -616,6 +617,7 @@
 		61AD7C68224BDCF7008340B3 = {
 			isa = PBXGroup;
 			children = (
+				6198265F23199EC600141CFC /* .swiftlint.yml */,
 				61AD7C73224BDCF7008340B3 /* AGH Mobile */,
 				61AD7C88224BDCF8008340B3 /* AGH MobileTests */,
 				61AD7C93224BDCF8008340B3 /* AGH MobileUITests */,
@@ -729,6 +731,7 @@
 				61AD7C6E224BDCF7008340B3 /* Frameworks */,
 				61AD7C6F224BDCF7008340B3 /* Resources */,
 				AC28DA5F9FF3139AB327955D /* [CP] Embed Pods Frameworks */,
+				6198265A2319985D00141CFC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -848,6 +851,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6198265A2319985D00141CFC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		67D65DF53C0A8938739E86E9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
