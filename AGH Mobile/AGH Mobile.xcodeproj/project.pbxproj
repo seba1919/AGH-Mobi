@@ -30,8 +30,6 @@
 		611F4B1D2250E0480056416E /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B172250E0480056416E /* ForYouViewController.swift */; };
 		611F4B1F225104240056416E /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B1E225104240056416E /* ForYouView.swift */; };
 		611F4B62225115DF0056416E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611F4B61225115DF0056416E /* Assets.xcassets */; };
-		611F4B6422511F3C0056416E /* HomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B6322511F3C0056416E /* HomeTabBar.swift */; };
-		611F4B68225127F80056416E /* HomeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B67225127F80056416E /* HomeTabBarItem.swift */; };
 		6124131F22526752007D04C0 /* StudiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124131E22526752007D04C0 /* StudiesView.swift */; };
 		61241321225267A9007D04C0 /* MapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61241320225267A9007D04C0 /* MapsView.swift */; };
 		61241323225267E3007D04C0 /* InformationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61241322225267E3007D04C0 /* InformationsView.swift */; };
@@ -120,8 +118,6 @@
 		611F4B172250E0480056416E /* ForYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		611F4B1E225104240056416E /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
 		611F4B61225115DF0056416E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		611F4B6322511F3C0056416E /* HomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBar.swift; sourceTree = "<group>"; };
-		611F4B67225127F80056416E /* HomeTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarItem.swift; sourceTree = "<group>"; };
 		6124131E22526752007D04C0 /* StudiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudiesView.swift; sourceTree = "<group>"; };
 		61241320225267A9007D04C0 /* MapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsView.swift; sourceTree = "<group>"; };
 		61241322225267E3007D04C0 /* InformationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsView.swift; sourceTree = "<group>"; };
@@ -356,7 +352,6 @@
 			children = (
 				61ECE897224D1F2300A9A806 /* AppDelegate */,
 				611F4AE72250D9CD0056416E /* Controllers */,
-				611F4AEB2250DA5E0056416E /* Views */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -375,15 +370,6 @@
 				61AD7C80224BDCF7008340B3 /* Info.plist */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		611F4AEB2250DA5E0056416E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				611F4B6322511F3C0056416E /* HomeTabBar.swift */,
-				611F4B67225127F80056416E /* HomeTabBarItem.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		611F4AFB2250E0480056416E /* Informations */ = {
@@ -859,6 +845,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"",
 			);
 			outputFileListPaths = (
 			);
@@ -996,9 +983,7 @@
 				61A42D8022869DE000761A0E /* TabBarPageTitleLabel.swift in Sources */,
 				4BC1567422660AC600ED633C /* PersonalInfo.swift in Sources */,
 				61241321225267A9007D04C0 /* MapsView.swift in Sources */,
-				611F4B6422511F3C0056416E /* HomeTabBar.swift in Sources */,
 				61A743ED227743BB00DFCB35 /* Colors.swift in Sources */,
-				611F4B68225127F80056416E /* HomeTabBarItem.swift in Sources */,
 				6198C8EC227A0C65008D664F /* MemberWebPagesCell.swift in Sources */,
 				4B6B0149225C9B70001BF0F1 /* WDViewModel.swift in Sources */,
 				4B6B0150225CCBC5001BF0F1 /* Grade.swift in Sources */,
@@ -1176,14 +1161,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 46FR58MBB3;
+				DEVELOPMENT_TEAM = 9RSVCT9A9H;
 				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.edu.agh.mackn.AGHMobi;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.bak.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1196,14 +1181,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 46FR58MBB3;
+				DEVELOPMENT_TEAM = 9RSVCT9A9H;
 				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.edu.agh.mackn.AGHMobi;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.bak.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

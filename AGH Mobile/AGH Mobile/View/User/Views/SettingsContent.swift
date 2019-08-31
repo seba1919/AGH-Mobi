@@ -1,74 +1,19 @@
-//
-//  SettingsContent.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 03/05/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 import SnapKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 class SettingsContent: UIView {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
-    // Private
+    // MARK: - Public Properties
+    public var pushAboutAsVC: (() -> Void)?
+    public var openMailApp: (() -> Void)?
+    // MARK: - Private Properties
     private lazy var screenHeight = UIScreen.main.bounds.size.height
     private lazy var screenWidth =  UIScreen.main.bounds.size.width
     private let topPadding: CGFloat = 3
-    // Public
-    public var pushAboutAsVC: (() -> Void)?
-    public var openMailApp: (() -> Void)?
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Init
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupUI()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup view methods
-    
-    private func setupUI() {
-        setupView()
-        setupConstraints()
-    }
-    
-    private func setupView() {
-        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(rowNo4)
-        setupStackViews()
-    }
-    
-    private func setupStackViews() {
-        // First StackView
-        stackViewNo1.addArrangedSubview(rowNo1)
-        stackViewNo1.addArrangedSubview(rowNo2)
-        stackViewNo1.addArrangedSubview(rowNo3)
-        self.addSubview(stackViewNo1)
-        // Second StackView
-        stackViewNo2.addArrangedSubview(rowNo5)
-        stackViewNo2.addArrangedSubview(rowNo6)
-        self.addSubview(stackViewNo2)
-    }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
-    
     // Row no. 1 - "Wirtualna Uczelnia"
     private lazy var rowNo1: RowView = {
         let view = RowView(style: .normalWithIndentation,
@@ -138,10 +83,45 @@ class SettingsContent: UIView {
         stack.spacing = 0.0
         return stack
     }()
+
+    // MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension SettingsContent {
+    
+    // MARK: - Setup view methods
+    private func setupUI() {
+        setupView()
+        setupConstraints()
+    }
+    
+    private func setupView() {
+        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.addSubview(rowNo4)
+        setupStackViews()
+    }
+    
+    private func setupStackViews() {
+        // First StackView
+        stackViewNo1.addArrangedSubview(rowNo1)
+        stackViewNo1.addArrangedSubview(rowNo2)
+        stackViewNo1.addArrangedSubview(rowNo3)
+        self.addSubview(stackViewNo1)
+        // Second StackView
+        stackViewNo2.addArrangedSubview(rowNo5)
+        stackViewNo2.addArrangedSubview(rowNo6)
+        self.addSubview(stackViewNo2)
+    }
+    
     // MARK: - Setup Constraints
-    
     private func setupConstraints() {
         
         // StackView for Row no. 1 - 3
@@ -162,12 +142,9 @@ class SettingsContent: UIView {
             make.left.right.equalToSuperview()
             //make.bottom.equalTo(self.snp.bottom)
         }
-
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
-    
      private func onPressPushAboutAsVC() {
         pushAboutAsVC?()
     }
@@ -175,7 +152,4 @@ class SettingsContent: UIView {
     private func onPressOpenMailApp() {
         openMailApp?()
     }
-    
 }
-
-

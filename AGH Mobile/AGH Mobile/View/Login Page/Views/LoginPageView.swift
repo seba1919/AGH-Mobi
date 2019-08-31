@@ -1,73 +1,23 @@
-//
-//  LoginPageView.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 07/05/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 import SnapKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 class LoginPageView: UIView {
 
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
-    
-    // Private
-    private lazy var screenHeight = self.frame.height
-    private lazy var screenWidth =  self.frame.width
-    private lazy var topPadding = self.frame.height * 0.0225
-    private let leftMarginMultiplier: CGFloat = 0.18
-    private let rightMarginMultiplier: CGFloat = -0.18
-    
-    // Public
+    // MARK: - Public Properties
     public var pushAboutAsVC: (() -> Void)?
     public var pushSettingsVC: (() -> Void)?
     public var openRemindPasswordWeb: (() -> Void)?
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Init
+    // MARK: - Private Properties
+    private lazy var screenHeight = self.frame.height
+    private lazy var screenWidth = self.frame.width
+    private lazy var topPadding = self.frame.height * 0.0225
+    private let leftMarginMultiplier: CGFloat = 0.18
+    private let rightMarginMultiplier: CGFloat = -0.18
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup view methods
-    
-    public func setupUI() {
-        self.setupView()
-        self.setupConstraints()
-    }
-    
-    private func setupView() {
-        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(tabBarTitle)
-        self.addSubview(AGHLogo)
-        self.addSubview(infoLabel)
-        self.addSubview(IDTextField)
-        self.addSubview(passwordTextField)
-        self.addSubview(loginButton)
-        self.addSubview(remindPasswordButton)
-        self.addSubview(MacKNLogo)
-        self.addSubview(aboutAsButton)
-    }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
-    
-    // TabBar title
     private lazy var tabBarTitle: UILabel = {
         let tabBarPageTitle = TabBarPageTitleLabel(
             title: NSLocalizedString("LoginPageView_UserSettings", comment: ""))
@@ -76,7 +26,6 @@ class LoginPageView: UIView {
         return tabBarPageTitle
     }()
     
-    // AGH logo
     private lazy var AGHLogo: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -85,7 +34,6 @@ class LoginPageView: UIView {
         return image
     }()
     
-    // Information label
     private lazy var infoLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -97,20 +45,17 @@ class LoginPageView: UIView {
         return label
     }()
     
-    // ID TextField
-    private lazy var IDTextField: AGHTextField = {
+    private lazy var idTextField: AGHTextField = {
         let textField = AGHTextField(placeholder: NSLocalizedString("LoginPageView_Identificator", comment: ""))
         textField.keyboardType = UIKeyboardType.numberPad
         return textField
     }()
     
-    // Password TextField
     private lazy var passwordTextField: AGHTextField = {
         let textField = AGHTextField(placeholder: NSLocalizedString("LoginPageView_Password", comment: ""))
         return textField
     }()
     
-    // Login Button
     private lazy var loginButton: UIButton = {
         let button = AGHButton(
             title: NSLocalizedString("LoginPageView_SignIn", comment: ""))
@@ -119,7 +64,6 @@ class LoginPageView: UIView {
         return button
     }()
     
-    // Remind Password Button
     private lazy var remindPasswordButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -130,9 +74,8 @@ class LoginPageView: UIView {
         button.addTarget(self, action: #selector(onPressOpenRemindPasswordWeb), for: .touchUpInside)
         return button
     }()
-
-    // MacKN Logo
-    private lazy var MacKNLogo: UIImageView = {
+    
+    private lazy var macKNLogo: UIImageView = {
         let image = UIImage(named: "MacKNIcon")
         let logo = UIImageView(image: image)
         logo.translatesAutoresizingMaskIntoConstraints = false
@@ -142,7 +85,6 @@ class LoginPageView: UIView {
         return logo
     }()
     
-    // About As Button
     private lazy var aboutAsButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -154,18 +96,45 @@ class LoginPageView: UIView {
         return button
     }()
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup Constraints
+    // MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+}
+
+extension LoginPageView {
+
+    // MARK: - Setup view methods
+    public func setupUI() {
+        self.setupView()
+        self.setupConstraints()
+    }
+    
+    private func setupView() {
+        self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.addSubview(tabBarTitle)
+        self.addSubview(AGHLogo)
+        self.addSubview(infoLabel)
+        self.addSubview(idTextField)
+        self.addSubview(passwordTextField)
+        self.addSubview(loginButton)
+        self.addSubview(remindPasswordButton)
+        self.addSubview(macKNLogo)
+        self.addSubview(aboutAsButton)
+    }
+
+    // MARK: - Setup Constraints
     private func setupConstraints() {
-        
-        // TabBar Title
         tabBarTitle.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(topPadding)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         
-        // AGH logo
         AGHLogo.snp.makeConstraints { (make) in
             make.top.equalTo(tabBarTitle.snp.bottom).offset(screenHeight * 0.030)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
@@ -173,30 +142,26 @@ class LoginPageView: UIView {
             make.width.equalTo(AGHLogo.snp.height).multipliedBy(0.633)
         }
         
-        // Information label
         infoLabel.snp.makeConstraints { (make) in
             make.top.equalTo(AGHLogo.snp.bottom).offset(screenHeight * 0.030)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-            make.bottom.equalTo(IDTextField.snp.top).offset(screenHeight * -0.028)
+            make.bottom.equalTo(idTextField.snp.top).offset(screenHeight * -0.028)
         }
         
-        // ID TextField
-        IDTextField.snp.makeConstraints { (make) in
+        idTextField.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.top.equalTo(infoLabel.snp.bottom).offset(screenHeight * 0.028)
             make.left.equalTo(self.snp.left).offset(screenWidth * leftMarginMultiplier)
             make.right.equalTo(self.snp.right).offset(screenWidth * rightMarginMultiplier)
         }
         
-        // Password TextField
         passwordTextField.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
-            make.top.equalTo(IDTextField.snp.bottom).offset(screenHeight * 0.016)
+            make.top.equalTo(idTextField.snp.bottom).offset(screenHeight * 0.016)
             make.left.equalTo(self.snp.left).offset(screenWidth * leftMarginMultiplier)
             make.right.equalTo(self.snp.right).offset(screenWidth * rightMarginMultiplier)
         }
         
-        // Login Button
         loginButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.top.equalTo(passwordTextField.snp.bottom).offset(screenHeight * 0.037)
@@ -205,31 +170,25 @@ class LoginPageView: UIView {
             make.bottom.equalTo(remindPasswordButton.snp.top).offset(-3)
         }
         
-        // Remind Password Button
         remindPasswordButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         
-        // MacKN Logo
-        MacKNLogo.snp.makeConstraints { (make) in
+        macKNLogo.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.top.greaterThanOrEqualTo(remindPasswordButton.snp.bottom).offset(screenHeight * 0.036)
             make.height.equalTo(screenHeight * 0.062)
-            make.width.equalTo(MacKNLogo.snp.height).multipliedBy(MacKNLogo.frame.width / MacKNLogo.frame.height)
+            make.width.equalTo(macKNLogo.snp.height).multipliedBy(macKNLogo.frame.width / macKNLogo.frame.height)
             make.bottom.equalTo(aboutAsButton.snp.top).offset(-3)
         }
         
-        // About As Button
         aboutAsButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(screenHeight * -0.019)
         }
-        
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Selectors
-    
     @objc private func onPressPushAboutAsVC() {
         pushAboutAsVC?()
     }
@@ -241,4 +200,5 @@ class LoginPageView: UIView {
     @objc private func onPressOpenRemindPasswordWeb() {
         openRemindPasswordWeb?()
     }
+    
 }

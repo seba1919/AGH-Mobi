@@ -1,39 +1,21 @@
-//
-//  AGHButton.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 03/05/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 import SnapKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 final class AGHButton {
  
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
+    // MARK: - Private properties
     private let AGHButton: UIButton
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
-    
     init(title: String) {
         AGHButton = UIButton(type: .system)
         AGHButton.setTitle(title, for: .normal)
         self.setupLayout()
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup
-    
+    // MARK: - Setups
     private func setupLayout() {
         self.setupConstraintsAndCornerRadius()
         AGHButton.translatesAutoresizingMaskIntoConstraints = false
@@ -47,12 +29,12 @@ final class AGHButton {
         let screenHeight = UIScreen.main.bounds.height
         var height: CGFloat = 26
         
-        if (screenHeight < 569) {
+        if screenHeight < 569 {
             height = 17
             AGHButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        } else if (screenHeight > 569 && screenHeight < 668) {
+        } else if screenHeight > 569 && screenHeight < 668 {
             height = 22
-        } else if (screenHeight > 668 && screenHeight < 737) {
+        } else if screenHeight > 668 && screenHeight < 737 {
             height = 24
         } else if screenHeight > 737 {
             height = 26
@@ -63,10 +45,11 @@ final class AGHButton {
         AGHButton.layer.cornerRadius = height
         
     }
+}
+
+extension AGHButton {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public Methods
-    
     public func addTarget(_ target: Any?, action: Selector, for event: UIControl.Event) -> Self {
         AGHButton.addTarget(target, action: action, for: event)
         return self
@@ -75,5 +58,4 @@ final class AGHButton {
     public func build() -> UIButton {
         return AGHButton
     }
-    
 }

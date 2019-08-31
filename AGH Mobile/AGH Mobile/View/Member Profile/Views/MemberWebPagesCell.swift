@@ -1,69 +1,17 @@
-//
-//  MemberWebPagesCell.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 01/05/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 import SnapKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 class MemberWebPagesCell: UITableViewCell {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
-    
-    public static let identifier = "memberWebPagesCell"
-    public static let cellHeight: CGFloat = 35
+    // MARK: - Public Properties
+    static let identifier = "memberWebPagesCell"
+    static let cellHeight: CGFloat = 35
+    // MARK: - Private Properties
     private let mainColorForThisCell = UIColor(red: 25/255, green: 23/255, blue: 23/255, alpha: 1)
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Init
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup View Methods
-    
-    private func setupUI() {
-        setupView()
-        setupConstraints()
-    }
-    
-    private func setupView() {
-        self.addSubview(webPageImage)
-        self.addSubview(webPageName)
-    }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Public Methods
-    
-    public func setupImage(named Name: String) {
-        webPageImage.image = UIImage(named: Name)
-    }
-    
-    public func setupName(as Name: String) {
-        webPageName.text = Name
-    }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
-    
-    // Web Page Image
     private lazy var webPageImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +19,6 @@ class MemberWebPagesCell: UITableViewCell {
         return imageView
     }()
     
-    // Web Page Name
     private lazy var webPageName: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,12 +30,32 @@ class MemberWebPagesCell: UITableViewCell {
         return textView
     }()
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup Constraints
+    // MARK: - Init
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupUI()
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension MemberWebPagesCell {
+    
+    // MARK: - Setup View Methods
+    private func setupUI() {
+        setupView()
+        setupConstraints()
+    }
+    
+    private func setupView() {
+        self.addSubview(webPageImage)
+        self.addSubview(webPageName)
+    }
+    
+    // MARK: - Setup Constraints
     private func setupConstraints() {
-        
-        // Web Page Image
         webPageImage.snp.makeConstraints { (make) in
             make.width.equalTo(25)
             make.height.equalTo(25)
@@ -96,12 +63,20 @@ class MemberWebPagesCell: UITableViewCell {
             make.centerY.equalTo(webPageName.snp.centerY)
         }
         
-        // Web Page Name
         webPageName.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
             make.centerY.equalTo(self.snp.centerY)
         }
-        
+    }
+}
+
+// MARK: - Public Methods
+extension MemberWebPagesCell {
+    public func setupImage(named name: String) {
+        webPageImage.image = UIImage(named: name)
     }
     
+    public func setupName(as name: String) {
+        webPageName.text = name
+    }
 }

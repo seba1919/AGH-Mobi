@@ -1,34 +1,25 @@
-//
-//  ScheduleViewModel.swift
-//  AGH Mobile
-//
-//  Created by Sebastian Wiatrzyk on 02/07/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
 
 import Foundation
 
 final class ScheduleViewModel {
-    private static var scheduleProvider : ScheduleProvider?
     
-    internal static func setFaculty(faculty: Faculty) {
-        if (scheduleProvider != nil) {
+    private static var scheduleProvider: ScheduleProvider?
+    
+    static func setFaculty(faculty: Faculty) {
+        if scheduleProvider != nil {
             fatalError("Double call setFaculty()")
         }
         
         switch faculty {
-        case .EAIIB:
+        case .facultyOfEAIiIB:
             scheduleProvider = EAIIBScheduleImpl()
-            break
-        case .IET:
+        case .facultyOfIEiT:
             scheduleProvider = IETScheduleImpl()
-            break
-        case .FIS:
+        case .facultyOfFiIS:
             scheduleProvider = UniTimeScheduleImpl()
-            break
-        default: // dla pozostalych wydzialow bierzemy plan z WD
+        default:
             scheduleProvider = WDViewModel.model
-            break
         }
     }
     

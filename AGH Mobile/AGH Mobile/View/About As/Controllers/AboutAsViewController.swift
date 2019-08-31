@@ -1,24 +1,10 @@
-//
-//  File.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 16/04/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
-final class AboutAsViewController : UIViewController {
+class AboutAsViewController: UIViewController {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
-    
+    // MARK: - Private Properties
     // View
     private var aboutAsView: AboutAsView { return self.view as! AboutAsView }
     private lazy var screenWidth = UIScreen.main.bounds.size.width
@@ -33,25 +19,25 @@ final class AboutAsViewController : UIViewController {
     // WebPage
     private let webPageAddress = "https://www.mackn.agh.edu.pl"
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
-    
     override func loadView() {
         self.view = AboutAsView(frame: UIScreen.main.bounds)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.aboutAsView.setupUI()
         self.setupCollectionView()
         self.setupNavigationAttributs()
         self.setupActions()
         self.startAutoScrolling()
     }
+}
+
+extension AboutAsViewController {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup
-    
     private func setupCollectionView() {
         aboutAsView.teamGallery.delegate = self
         aboutAsView.teamGallery.dataSource = self
@@ -63,9 +49,7 @@ final class AboutAsViewController : UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - AutoScroll Methods
-    
     private func startAutoScrolling() {
         if timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 3.0,
@@ -120,37 +104,27 @@ final class AboutAsViewController : UIViewController {
                                 animated: true)
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
-    
     private func setupActions() {
-       
         aboutAsView.openWebPage = {
             if let url = URL(string: self.webPageAddress) {
                 UIApplication.shared.open(url)
             }
         }
-        
     }
-    
 }
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Extensions of UICollectionView
-
-// Date Source
+// MARK: - Extensions of UI Collection View Date Source
 extension AboutAsViewController: UICollectionViewDataSource {
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = aboutAsView.teamGallery.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier, for: indexPath) as! TeamGalleryCell
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = aboutAsView.teamGallery.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
+                                                               for: indexPath) as! TeamGalleryCell
         cell.setupImage(named: "user_large_About")
         cell.setupName(as: "Mateusz Bąk")
         return cell
@@ -158,10 +132,12 @@ extension AboutAsViewController: UICollectionViewDataSource {
     
 }
 
-// Delegate
+// MARK: - Extensions of UI Collection View Delegate
 extension AboutAsViewController: UIScrollViewDelegate, UICollectionViewDelegate {
     
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView,
+                                   withVelocity velocity: CGPoint,
+                                   targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         // Cell stay in the middle by this code
         let cellWidth = screenWidth * cellWidthScaling
         let cellWidthIncludingSpacing = cellWidth + minimumLineSpacing
@@ -203,11 +179,13 @@ extension AboutAsViewController: UIScrollViewDelegate, UICollectionViewDelegate 
     
 }
 
-// Flow Layout Delegate
+// MARK: - Extensions of UI Collection View Flow Layout Delegate
 extension AboutAsViewController: UICollectionViewDelegateFlowLayout {
     
     // Cell size
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellHeight = aboutAsView.teamGallery.frame.height
         let cellWidth = screenWidth * cellWidthScaling
         return CGSize(width: cellWidth,
@@ -215,7 +193,9 @@ extension AboutAsViewController: UICollectionViewDelegateFlowLayout {
     }
 
     // Cells Insets Edges
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         let cellWidth = screenWidth * cellWidthScaling
         let freeSpaceBetweenEdgesAndCalls = (view.bounds.width - cellWidth) / 2.0
         return UIEdgeInsets(top: 0,
@@ -225,12 +205,16 @@ extension AboutAsViewController: UICollectionViewDelegateFlowLayout {
     }
     
     // Cell Minimum Interitem Spacing
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
     // Cell Minimum Line Spacing
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return minimumLineSpacing // Space Between Calls
     }
     

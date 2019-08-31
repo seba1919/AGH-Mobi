@@ -1,25 +1,11 @@
-//
-//  AGHTextField.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 07/05/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 import SnapKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 final class AGHTextField: UITextField {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
+    // MARK: - Private properties
     private var placeholderText: String = "Text..."
     private var height: CGFloat = 26
     private let textPadding = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
@@ -33,9 +19,7 @@ final class AGHTextField: UITextField {
         return placeholder
     }()
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
-
     required init(placeholder: String) {
         super.init(frame: .zero)
         self.placeholderText = placeholder
@@ -46,9 +30,7 @@ final class AGHTextField: UITextField {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setups
-    
     private func setup() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.textColor = .mainRed
@@ -70,20 +52,18 @@ final class AGHTextField: UITextField {
     }
     
     private func setupCornerRadius() {
-        
         let screenHight = UIScreen.main.bounds.height
-        if (screenHight < 569) {
+        if screenHight < 569 {
             height = 17
             self.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        } else if (screenHight > 569 && screenHight < 668) {
+        } else if screenHight > 569 && screenHight < 668 {
             height = 22
-        } else if (screenHight > 668 && screenHight < 737) {
+        } else if screenHight > 668 && screenHight < 737 {
             height = 24
         } else if screenHight > 737 {
             height = 26
         }
         self.layer.cornerRadius = height
-
     }
     
     private func setupConstraints() {
@@ -91,10 +71,11 @@ final class AGHTextField: UITextField {
             make.height.equalTo(height * 2)
         }
     }
+}
+
+extension AGHTextField {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Override methods
-    
     override public func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: textPadding)
     }
@@ -106,6 +87,4 @@ final class AGHTextField: UITextField {
     override public func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: textPadding)
     }
-    
 }
-

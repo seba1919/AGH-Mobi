@@ -1,36 +1,20 @@
-//
-//  SettingsViewController.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 28/03/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 class SettingsViewController: UIViewController {
 
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
-    // View
+    // MARK: - Private Properties
     private var settingsView: SettingsView { return self.view as! SettingsView }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
-    
     override func loadView() {
         self.view = SettingsView(frame: UIScreen.main.bounds)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.settingsView.setupUI()
         self.setupActions()
     }
@@ -38,19 +22,17 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.setupNavigationAttributs()
     }
+}
+
+extension SettingsViewController {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup
-    
     private func setupNavigationAttributs() {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
-    
     private func setupActions() {
-        
         settingsView.settingsContent.pushAboutAsVC = {
             self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
         }
@@ -66,7 +48,5 @@ class SettingsViewController: UIViewController {
         settingsView.pushLoginPageVC = {
             self.navigationController?.pushViewController(LoginPageViewController(), animated: true)
         }
-        
     }
-    
 }

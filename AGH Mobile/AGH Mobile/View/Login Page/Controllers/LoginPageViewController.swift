@@ -1,58 +1,49 @@
-//
-//  LoginPageViewController.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 07/05/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 class LoginPageViewController: UIViewController {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Instance Variables
-    
-    // View
-    private var loginPageView: LoginPageView { return self.view as! LoginPageView }
+    // MARK: Private properties
+    private var loginPageView: LoginPageView { return view as! LoginPageView }
     private let remindPasswordWebURL = "https://dziekanat.agh.edu.pl/OdzyskiwanieHasla.aspx"
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
-    
     override func loadView() {
-        self.view = LoginPageView(frame: UIScreen.main.bounds)
+        view = LoginPageView(frame: UIScreen.main.bounds)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loginPageView.setupUI()
-        self.setupActions()
-        self.hideKeyboardWhenTappedAround()
+        
+        loginPageView.setupUI()
+        setupActions()
+        hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.setupNavigationAttributs()
+        setupNavigationAttributs()
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+}
+
+extension LoginPageViewController {
+    
     // MARK: - Setup
-    
     private func setupNavigationAttributs() {
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    // MARK: - Hide Keyboard When Tapped Around
+    private func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                 action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
-    
     private func setupActions() {
-        
         loginPageView.pushAboutAsVC = {
             self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
         }
@@ -66,31 +57,15 @@ class LoginPageViewController: UIViewController {
                 UIApplication.shared.open(url)
             }
         }
-        
     }
     
-}
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Extension of Hide Keyboard When Tapped Around
-
-extension LoginPageViewController {
-    
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
+    @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
     
 }
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
 // MARK: - Extension of TextFiled Delegate
-
 extension LoginPageViewController: UITextFieldDelegate {
     
 }
