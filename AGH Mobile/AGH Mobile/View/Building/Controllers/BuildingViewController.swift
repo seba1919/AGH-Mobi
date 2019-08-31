@@ -1,32 +1,16 @@
-//
-//  BuildingViewController.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 15/05/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 import MapKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 class BuildingViewController: UIViewController {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
+    // MARK: - Private Properties
     private var buildingView: BuildingView { return self.view as! BuildingView }
     private var address: String = ""
     private var buildingName: String = ""
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Lifecycle
-    
     override func loadView() {
         self.view = BuildingView(frame: UIScreen.main.bounds)
     }
@@ -41,10 +25,12 @@ class BuildingViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.setupNavigationAttributs()
     }
+}
+
+
+private extension BuildingViewController {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup
-    
+    // MARK: - Setups
     private func setupNavigationAttributs() {
         self.navigationItem.title = "Budynki"
         self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -59,24 +45,15 @@ class BuildingViewController: UIViewController {
         buildingView.setAddress(to: address)
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
-    
     private func setupActions() {
         buildingView.openNavigation = {
             self.openMapForPlace(for: 50.064552, and: 19.923064)
         }
     }
     
-}
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Extension of open map
-
-private extension BuildingViewController {
-    
+    // MARK: - Open map
     private func openMapForPlace(for latitude: CLLocationDegrees,and longitude: CLLocationDegrees) {
-        
         let latitude = latitude
         let longitude = longitude
         
@@ -91,7 +68,5 @@ private extension BuildingViewController {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = buildingName
         mapItem.openInMaps(launchOptions: options)
-        
     }
-    
 }
