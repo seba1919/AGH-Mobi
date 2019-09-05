@@ -1,6 +1,6 @@
 # README #
 
-## Konfifuracja projektu ##
+## Konfiguracja projektu ##
 1. Instalacja managera bibliotek Cocoapods ze strony https://cocoapods.org. Bez tego nie będzie możliwości skompilwoania projektu, gdyż korzystamy z zewętrznych bibliotek.
 Wystarczy odpalić terminal i przekleić ze strony: sudo gem install cocoapods
 -***Projekt należy otwierać przy pomocy pliku .xcworkspace (biała ikonka), a nie .xcproject (niebieska ikonka).
