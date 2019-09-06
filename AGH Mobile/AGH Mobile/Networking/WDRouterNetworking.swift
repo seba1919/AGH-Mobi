@@ -36,7 +36,7 @@ class WDRouterNetworking {
         
         
         let loginURL = URL(string: "https://dziekanat.agh.edu.pl/Logowanie2.aspx?ReturnUrl=%2fOcenyP.aspx")!
-        var validationURL: URL?
+//        var validationURL: URL?
         
         var request = URLRequest(url: loginURL)
         
@@ -67,7 +67,7 @@ class WDRouterNetworking {
                             
                         case .success(let data):
                             resolver.fulfill(data)
-                            validationURL = response.response?.url
+//                            validationURL = response.response?.url
                         case .failure(let error):
                             resolver.reject(error)
                         }
@@ -75,9 +75,7 @@ class WDRouterNetworking {
                         if let headerFields = response.response?.allHeaderFields as? [String: String], let URL = response.request?.url
                         {
                             let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
-                            print(cookies)
                             Alamofire.Session.default.session.configuration.httpCookieStorage?.setCookies(cookies, for: URL, mainDocumentURL: nil)
-                            response.response?.url == loginURL ? completion(false) : completion(true)
                         }
                 }
             }
@@ -101,9 +99,18 @@ class WDRouterNetworking {
             .then(on: DispatchQueue.global(qos: .background)) { innerHTML in
                 getViewStateFromHTML(innerHTML: innerHTML)
             }
+            .done() { data in
+                self.checkIfLoggedIn() == true ? completion(true) : completion(false)
+            }
             .catch(on: DispatchQueue.global(qos: .background)) { error in
                 print(error)
         }
+    }
+    
+    func checkIfLoggedIn() -> Bool {
+        guard let cookies = Alamofire.Session.default.session.configuration.httpCookieStorage?.cookies else { return false }
+        let validationCookie = cookies.filter({$0.name == ".ASPXUSERWU"})
+         return validationCookie.count == 1  ? true : false
         
     }
     
