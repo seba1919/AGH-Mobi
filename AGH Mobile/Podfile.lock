@@ -11,6 +11,7 @@ PODS:
     - PromiseKit/CorePromise
   - SnapKit (5.0.1)
   - SwiftSoup (2.2.0)
+  - SwiftToast (1.1.3)
   - Toast-Swift (5.0.0)
 
 DEPENDENCIES:
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - PromiseKit (~> 6.8)
   - SnapKit (~> 5.0.0)
   - SwiftSoup (~> 2.2.0)
+  - SwiftToast (~> 1.1.3)
   - Toast-Swift (~> 5.0.0)
 
 SPEC REPOS:
@@ -26,6 +28,7 @@ SPEC REPOS:
     - PromiseKit
     - SnapKit
     - SwiftSoup
+    - SwiftToast
     - Toast-Swift
 
 SPEC CHECKSUMS:
@@ -33,8 +36,9 @@ SPEC CHECKSUMS:
   PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftSoup: 230991361c5ba249d140161860a3864a28b63860
+  SwiftToast: 029cbeda85c04fb3fa5df774ba461b19971bc6c5
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
-PODFILE CHECKSUM: 34b155c87857485b1852ea50703dd07402142910
+PODFILE CHECKSUM: 0ff7d0bd655c831cb7f9366fcb8a0047d2b79af3
 
 COCOAPODS: 1.7.3

@@ -32,11 +32,10 @@ class WDRouterNetworking {
     
     
     //Mark: - Public methods
-    public func performLoginAction(userWDLogin: String, userWDPassword: String, completion: @escaping (Bool) -> Void) {
+    public func performLoginAction(userWDLogin: String, userWDPassword: String, withPart: UrlType = .OcenyP , completion: @escaping (Bool) -> Void) {
         
         
-        let loginURL = URL(string: "https://dziekanat.agh.edu.pl/Logowanie2.aspx?ReturnUrl=%2fOcenyP.aspx")!
-//        var validationURL: URL?
+        let loginURL = URL(string: "https://dziekanat.agh.edu.pl/Logowanie2.aspx?ReturnUrl=%2f" + withPart.rawValue + ".aspx")!
         
         var request = URLRequest(url: loginURL)
         
@@ -57,7 +56,7 @@ class WDRouterNetworking {
         ]
         
         
-        func initialLoginRequest() -> Promise<String> {
+        func initialLoginRequest() -> Promise<Void> {
             
             return Promise{ resolver in
                 AF.request(loginURL, method: .post, parameters: parametersToSend)
@@ -65,9 +64,8 @@ class WDRouterNetworking {
                         
                         switch response.result {
                             
-                        case .success(let data):
-                            resolver.fulfill(data)
-//                            validationURL = response.response?.url
+                        case .success(_):
+                            resolver.fulfill_()
                         case .failure(let error):
                             resolver.reject(error)
                         }
@@ -81,37 +79,96 @@ class WDRouterNetworking {
             }
         }
         
-        func getViewStateFromHTML(innerHTML: String) -> Promise<WDRequestData> {
-            return Promise { resolver in
-                
-                let data: Document = try SwiftSoup.parse(innerHTML)
-                let requestData = WDRequestData(viewState: try data.getElementById("__VIEWSTATE")?.val(),
-                                                viewGenerator: try data.getElementById("__VIEWSTATEGENERATOR")?.val(),
-                                                eventValidation: try data.getElementById("__EVENTVALIDATION")?.val())
-                
-                resolver.fulfill(requestData)
-            }
-        }
-        
         firstly {
             initialLoginRequest()
             }
-            .then(on: DispatchQueue.global(qos: .background)) { innerHTML in
-                getViewStateFromHTML(innerHTML: innerHTML)
+            .then(on: DispatchQueue.global(qos: .background)) {
+                self.checkIfLoggedIn()
             }
-            .done() { data in
-                self.checkIfLoggedIn() == true ? completion(true) : completion(false)
+            .done() { isLoggedIn in
+                isLoggedIn ? completion(true) : completion(false)
             }
             .catch(on: DispatchQueue.global(qos: .background)) { error in
                 print(error)
         }
     }
     
-    func checkIfLoggedIn() -> Bool {
-        guard let cookies = Alamofire.Session.default.session.configuration.httpCookieStorage?.cookies else { return false }
-        let validationCookie = cookies.filter({$0.name == ".ASPXUSERWU"})
-         return validationCookie.count == 1  ? true : false
+    enum UrlType: String {
+        case Ogloszenia
+        case Wynik2
+        case OcenyP
+        case Stypendia
+        case PracaDyp
+        case PodzGodz
+    }
+    
+    
+    func navigateTo(_ partOfUrl: UrlType = .OcenyP) -> Promise<Void> {
         
+        let url = "https://dziekanat.agh.edu.pl/" + partOfUrl.rawValue + ".aspx"
+        return Promise{ resolver in
+            AF.request(url, method: .post)
+                .responseString {  response in
+                    
+                    switch response.result {
+                        
+                    case .success(_):
+                        resolver.fulfill_()
+                    case .failure(let error):
+                        resolver.reject(error)
+                    }
+                    
+                    if let headerFields = response.response?.allHeaderFields as? [String: String], let URL = response.request?.url
+                    {
+                        let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
+                        Alamofire.Session.default.session.configuration.httpCookieStorage?.setCookies(cookies, for: URL, mainDocumentURL: nil)
+                    }
+            }
+        }
+    }
+    
+    func checkIfLoggedIn() -> Promise<Bool> {
+        
+        return Promise { resolver in
+            guard let cookies = Alamofire.Session.default.session.configuration.httpCookieStorage?.cookies else { resolver.reject(PromiseErrors.userIsNotLoggedIn); return }
+            let validationCookie = cookies.filter({$0.name == ".ASPXUSERWU"})
+            return validationCookie.count == 1  ? resolver.fulfill(true) : resolver.reject(PromiseErrors.userIsNotLoggedIn)
+        }
+
+    }
+    
+    
+    func checkIfSessionIsValid(completion: @escaping (Bool) -> Void) {
+        firstly {
+            navigateTo()
+            }
+            .then(on: DispatchQueue.global(qos: .background)) {
+                self.checkIfLoggedIn()// == true ? completion(true) : completion(false)
+            }
+            .catch(on: DispatchQueue.global(qos: .background)) { error in
+                print(error)
+        }
+    }
+    
+    func navigateTo(url withPart: UrlType = .OcenyP, completion: @escaping (Bool) -> Void) {
+        firstly {
+            navigateTo(withPart)
+            }
+            .then(on: DispatchQueue.global(qos: .background)) {
+                self.checkIfLoggedIn()
+            }
+            .catch(on: DispatchQueue.global(qos: .background)) { _ in
+                UIView.showSpinnerToast(message: NSLocalizedString("WDRouterNetworking_Reauthenticate", comment: ""))
+                self.performLoginAction(userWDLogin: "keychain.user", userWDPassword: "kaychain.password", withPart: withPart) { isLoggedIn in
+                    UIView.hideAllToasts()
+                    isLoggedIn ? completion(true) /* w ViewControllerze ladujemy nowy widok */ : completion(false) /* w ViewControllerze ladujemy widok Logowania */
+                }
+        }
+    }
+    
+    enum PromiseErrors: Error {
+        case userIsNotLoggedIn
+        case conditionBInvalid
     }
     
 }

@@ -63,3 +63,6 @@
 "LoginPageViewController_FulfillLoginData" = "Wprowadź dane logowania";
 "LoginPageViewController_InvalidLoginData" = "Błędne dane logowania";
 "LoginPageViewController_SuccessfulLogin" = "Logowanie ukończone powodzeniem";
+
+/* WDRouterNetworking */
+"WDRouterNetworking_Reauthenticate" = "Przywracanie sesji";

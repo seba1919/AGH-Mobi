@@ -62,15 +62,18 @@ class LoginPageViewController: UIViewController {
             guard let userWDPassword = self.loginPageView.passwordTextField.text else { return}
             if userWDLogin.isEmpty || userWDPassword.isEmpty {
                 self.loginPageView.loginButton.shake()
-                UIView.showToast(message: NSLocalizedString("LoginPageViewController_FulfillLoginData", comment: ""))
+                self.showToast(message: NSLocalizedString("LoginPageViewController_FulfillLoginData", comment: ""))
+//                UIView.showToast(message: NSLocalizedString("LoginPageViewController_FulfillLoginData", comment: ""))
                 return
             }
             WDRouterNetworking().performLoginAction(userWDLogin: userWDLogin, userWDPassword: userWDPassword) { isLoggedIn in
                 if isLoggedIn {
-                    UIView.showToast(message: NSLocalizedString("LoginPageViewController_SuccessfulLogin", comment: ""))
+                    self.showToast(message: NSLocalizedString("LoginPageViewController_SuccessfulLogin", comment: ""))
+//                    UIView.showToast(message: NSLocalizedString("LoginPageViewController_SuccessfulLogin", comment: ""))
                     self.navigationController?.pushViewController(SettingsViewController(), animated: true)
                 } else {
-                    UIView.showToast(message: NSLocalizedString("LoginPageViewController_InvalidLoginData", comment: ""))
+                    self.showToast(message: NSLocalizedString("LoginPageViewController_InvalidLoginData", comment: ""))
+//                    UIView.showToast(message: NSLocalizedString("LoginPageViewController_InvalidLoginData", comment: ""))
                 }
             }
         }
