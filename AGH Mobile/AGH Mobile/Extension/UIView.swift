@@ -24,14 +24,14 @@ extension UIView  {
         windows.last?.makeToast(message)
     }
     
-    class func showSpinnerToast (message: String) {
+    class func showSpinnerToast() {
         let windows = UIApplication.shared.windows
         windows.last?.makeToastActivity(.center)
     }
     
-    class func hideAllToasts() {
+    class func hideToastActivity() {
         let windows = UIApplication.shared.windows
-        windows.last?.hideAllToasts()
+        windows.last?.hideToastActivity()
     }
     
 }

@@ -53,6 +53,7 @@ class LoginPageViewController: UIViewController {
     
     private func setupActions() {
         
+        
         loginPageView.pushAboutAsVC = {
             self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
         }
@@ -62,19 +63,18 @@ class LoginPageViewController: UIViewController {
             guard let userWDPassword = self.loginPageView.passwordTextField.text else { return}
             if userWDLogin.isEmpty || userWDPassword.isEmpty {
                 self.loginPageView.loginButton.shake()
-                self.showToast(message: NSLocalizedString("LoginPageViewController_FulfillLoginData", comment: ""))
-//                UIView.showToast(message: NSLocalizedString("LoginPageViewController_FulfillLoginData", comment: ""))
+                UIView.showToast(message: NSLocalizedString("LoginPageViewController_FulfillLoginData", comment: ""))
                 return
             }
+            self.loginPageView.loginButton.isUserInteractionEnabled = false
             WDRouterNetworking().performLoginAction(userWDLogin: userWDLogin, userWDPassword: userWDPassword) { isLoggedIn in
                 if isLoggedIn {
-                    self.showToast(message: NSLocalizedString("LoginPageViewController_SuccessfulLogin", comment: ""))
-//                    UIView.showToast(message: NSLocalizedString("LoginPageViewController_SuccessfulLogin", comment: ""))
+                    UIView.showToast(message: NSLocalizedString("LoginPageViewController_SuccessfulLogin", comment: ""))
                     self.navigationController?.pushViewController(SettingsViewController(), animated: true)
                 } else {
-                    self.showToast(message: NSLocalizedString("LoginPageViewController_InvalidLoginData", comment: ""))
-//                    UIView.showToast(message: NSLocalizedString("LoginPageViewController_InvalidLoginData", comment: ""))
+                    UIView.showToast(message: NSLocalizedString("LoginPageViewController_InvalidLoginData", comment: ""))
                 }
+                self.loginPageView.loginButton.isUserInteractionEnabled = true
             }
         }
         

@@ -98,14 +98,14 @@ class LoginPageView: UIView {
     }()
     
     // ID TextField
-    public lazy var IDTextField: AGHTextField = {
+    private(set) lazy var IDTextField: AGHTextField = {
         let textField = AGHTextField(placeholder: NSLocalizedString("LoginPageView_Identificator", comment: ""))
         textField.keyboardType = UIKeyboardType.numberPad
         return textField
     }()
     
     // Password TextField
-    public lazy var passwordTextField: AGHTextField = {
+    private(set) lazy var passwordTextField: AGHTextField = {
         let textField = AGHTextField(placeholder: NSLocalizedString("LoginPageView_Password", comment: ""))
         textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
@@ -113,7 +113,7 @@ class LoginPageView: UIView {
     }()
     
     // Login Button
-    public lazy var loginButton: UIButton = {
+    private(set) lazy var loginButton: UIButton = {
         let button = AGHButton(
             title: NSLocalizedString("LoginPageView_SignIn", comment: ""))
             .build()

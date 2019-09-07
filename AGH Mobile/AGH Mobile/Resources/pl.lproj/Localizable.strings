@@ -66,3 +66,4 @@
 
 /* WDRouterNetworking */
 "WDRouterNetworking_Reauthenticate" = "Przywracanie sesji";
+"WDRouterNetworking_ServerError" = "Błąd połączenia z serwerem AGH";

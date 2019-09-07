@@ -13,7 +13,6 @@ target 'AGH Mobile' do
   pod 'PromiseKit', '~> 6.8'
   pod 'SwiftSoup', '~> 2.2.0'
   pod 'Toast-Swift', '~> 5.0.0'
-  pod 'SwiftToast', '~>1.1.3'
   
   target 'AGH MobileTests' do
     inherit! :search_paths
