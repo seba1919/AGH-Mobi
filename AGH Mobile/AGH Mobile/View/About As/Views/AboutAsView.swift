@@ -95,7 +95,7 @@ extension AboutAsView {
         macKNLogo.snp.makeConstraints { (make) in
             make.bottom.equalTo(webPageButton.snp.top).offset(-freeSpaceBetweenComponents)
             // Adaptation to the iPhone SE
-            if UIScreen.main.bounds.height < 569 {
+            if UIScreen.isSmallSize() {
                 make.height.equalTo(self.frame.height * 0.07)
             } else {
                 make.height.equalTo(self.frame.height * 0.123)

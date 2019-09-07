@@ -104,7 +104,7 @@ extension SettingsView {
         
         logoutButton.snp.makeConstraints { (make) in
             // Adaptation to the iPhone SE
-            if UIScreen.main.bounds.height < 569 {
+            if UIScreen.isSmallSize() {
                 make.bottom.equalToSuperview().offset(screenHeight * -0.11)
             } else {
                 make.bottom.equalToSuperview().offset(screenHeight * -0.125)

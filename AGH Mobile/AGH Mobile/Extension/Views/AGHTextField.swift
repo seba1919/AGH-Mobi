@@ -52,15 +52,14 @@ final class AGHTextField: UITextField {
     }
     
     private func setupCornerRadius() {
-        let screenHight = UIScreen.main.bounds.height
-        if screenHight < 569 {
+        if UIScreen.isSmallSize() {
             height = 17
             self.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        } else if screenHight > 569 && screenHight < 668 {
+        } else if UIScreen.isMediumSize() {
             height = 22
-        } else if screenHight > 668 && screenHight < 737 {
+        } else if UIScreen.isLargeSize() {
             height = 24
-        } else if screenHight > 737 {
+        } else if UIScreen.isBigSize() {
             height = 26
         }
         self.layer.cornerRadius = height

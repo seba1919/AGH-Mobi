@@ -21,16 +21,15 @@ final class DescriptionTextView {
         descriptionTextView.textAlignment = .justified
         descriptionTextView.textColor = UIColor.customGrayText
         
-        let screenHeight = UIScreen.main.bounds.height
         var fontSize: CGFloat = 15
         
-        if screenHeight < 569 {
+        if UIScreen.isSmallSize() {
             fontSize = 12
-        } else if screenHeight > 569 && screenHeight < 668 {
+        } else if UIScreen.isMediumSize() {
             fontSize = 12.5
-        } else if screenHeight > 668 && screenHeight < 737 {
+        } else if UIScreen.isLargeSize() {
             fontSize = 13.6
-        } else if screenHeight > 737 {
+        } else if UIScreen.isBigSize() {
             fontSize = 15
             descriptionTextView.textAlignment = .center // justified looks awfully
         }
