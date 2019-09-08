@@ -34,7 +34,7 @@ class WDRouterNetworking {
     //Mark: - Public methods
     public func performLoginAction(userWDLogin: String, userWDPassword: String, withPart: UrlType = .OcenyP , completion: @escaping (Bool) -> Void) {
         
-        UIView.showSpinnerToast()
+        CustomNotifications.addCustomSpinnerAlert()
         let loginURL = URL(string: "https://dziekanat.agh.edu.pl/Logowanie2.aspx?ReturnUrl=%2f" + withPart.rawValue + ".aspx")!
         
         var request = URLRequest(url: loginURL)
@@ -87,37 +87,36 @@ class WDRouterNetworking {
             }
             .done() { isLoggedIn in
                 isLoggedIn ? completion(true) : completion(false)
-                UIView.hideToastActivity()
+                CustomNotifications.hideCustomSpinnerAlert()
             }
             .catch(on: DispatchQueue.global(qos: .background)) { error in
                 print(error)
                 
                 DispatchQueue.main.async {
-                    UIView.showToast(message: NSLocalizedString("WDRouterNetworking_ServerError", comment: ""))
+                    CustomNotifications.addCustomAlert(with: NSLocalizedString("WDRouterNetworking_ServerError", comment: ""))
                 }
         }
     }
     
-    public func navigateTo(url withPart: UrlType = .OcenyP, completion: @escaping (Bool) -> Void) {
+    public func navigateTo(url withPart: UrlType = .OcenyP, loadingHandler: @escaping (Bool) -> Void) {
         firstly {
             navigateTo(withPart)
             }
             .then(on: DispatchQueue.global(qos: .background)) {
                 self.checkIfLoggedIn()
             }
-            
             .done() { validation in
                 if !validation {
                     //TODO: - KEYCHAIN IMPLEMENTATION
                     self.performLoginAction(userWDLogin: "keychain.user", userWDPassword: "keychain.password", withPart: withPart) { isLoggedIn in
-                        completion(isLoggedIn)
+                        loadingHandler(isLoggedIn)
                     }
-                } else { completion(true) }
+                } else { loadingHandler(true) }
             }
             .catch(on: DispatchQueue.global(qos: .background)) { error in
                 print(error)
                 DispatchQueue.main.async {
-                    UIView.showToast(message: NSLocalizedString("WDRouterNetworking_ServerError", comment: ""))
+                    CustomNotifications.addCustomAlert(with: NSLocalizedString("WDRouterNetworking_ServerError", comment: ""))
                 }
         }
     }
