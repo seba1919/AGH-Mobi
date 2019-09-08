@@ -31,7 +31,7 @@ extension MemberProfileViewController {
         memberProfileView.memberWebPagesTableView.register(MemberWebPagesCell.self,
                                                   forCellReuseIdentifier: MemberWebPagesCell.identifier)
         memberProfileView.memberWebPagesTableView.allowsSelection = false
-        memberProfileView.setupImage(named: "user_large_About")
+        memberProfileView.setupMemberImage("user_large_About")
     }
     
     private func setupNavigationAttributs() {
