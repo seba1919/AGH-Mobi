@@ -210,7 +210,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4B6B0143225C98B6001BF0F1 /* View */ = {
+		4B6B0143225C98B6001BF0F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				6198C9012280E652008D664F /* Login Page */,
@@ -222,7 +222,7 @@
 				611F4B0D2250E0480056416E /* Studies */,
 				611F4B132250E0480056416E /* For You */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		4B6B0144225C98FC001BF0F1 /* WD */ = {
@@ -276,7 +276,7 @@
 			path = TestModel;
 			sourceTree = "<group>";
 		};
-		4B87CCD82264EFC10028930A /* Model */ = {
+		4B87CCD82264EFC10028930A /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				65A9924922CBC45A0034DBE7 /* Schedule */,
@@ -284,17 +284,17 @@
 				4B6B0144225C98FC001BF0F1 /* WD */,
 				4B87CCCB2264E0340028930A /* Skos */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		4B87CCD92264F00A0028930A /* ViewModel */ = {
+		4B87CCD92264F00A0028930A /* View Models */ = {
 			isa = PBXGroup;
 			children = (
 				4B6B0148225C9B70001BF0F1 /* WDViewModel.swift */,
 				65A9923C22CBBCBB0034DBE7 /* ScheduleViewModel.swift */,
 				4B87CCCC2264E0430028930A /* SkosViewModel.swift */,
 			);
-			path = ViewModel;
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 		4B87CCDA2264F3770028930A /* Protocols */ = {
@@ -593,14 +593,13 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		61A743EB2277439900DFCB35 /* Extension */ = {
+		61A743EB2277439900DFCB35 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				6198C8F2227C2275008D664F /* Views */,
 				61A743EC227743BB00DFCB35 /* Colors.swift */,
 				61B92C81231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift */,
 			);
-			path = Extension;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		61AD7C68224BDCF7008340B3 = {
@@ -629,13 +628,14 @@
 		61AD7C73224BDCF7008340B3 /* AGH Mobile */ = {
 			isa = PBXGroup;
 			children = (
-				65A9924622CBC1530034DBE7 /* Globals */,
 				611F4AE62250D9A80056416E /* Application */,
-				4B87CCD82264EFC10028930A /* Model */,
-				4B6B0143225C98B6001BF0F1 /* View */,
-				4B87CCD92264F00A0028930A /* ViewModel */,
+				65A9924622CBC1530034DBE7 /* Globals */,
+				4B87CCD82264EFC10028930A /* Models */,
+				4B6B0143225C98B6001BF0F1 /* Views */,
+				4B87CCD92264F00A0028930A /* View Models */,
+				61A743EB2277439900DFCB35 /* Extensions */,
+				6515E87B232596CA00C6460A /* Reusables */,
 				61ECE89A224D1F7B00A9A806 /* Resources */,
-				61A743EB2277439900DFCB35 /* Extension */,
 				611F4AE92250D9FC0056416E /* Supporting Files */,
 			);
 			path = "AGH Mobile";
@@ -674,6 +674,14 @@
 				6574806C23089E19007DC4AF /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		6515E87B232596CA00C6460A /* Reusables */ = {
+			isa = PBXGroup;
+			children = (
+				6198C8F2227C2275008D664F /* Views */,
+			);
+			path = Reusables;
 			sourceTree = "<group>";
 		};
 		65A9924622CBC1530034DBE7 /* Globals */ = {
