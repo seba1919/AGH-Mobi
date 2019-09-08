@@ -2,6 +2,7 @@
 
 import UIKit
 
+// FIXME: - This extension is to be removed. Living wihtout it will reward us in maintainanablity
 extension UIScreen {
     
     /// Iphones SE, 5s and other small things
