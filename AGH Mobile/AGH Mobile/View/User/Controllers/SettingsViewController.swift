@@ -33,11 +33,11 @@ extension SettingsViewController {
     
     // MARK: - Actions
     private func setupActions() {
-        settingsView.settingsContent.pushAboutAsVC = {
-            self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
+        settingsView.settingsContentView.pushAboutUsVC = {
+            self.navigationController?.pushViewController(AboutUsViewController(), animated: true)
         }
         
-        settingsView.settingsContent.openMailApp = {
+        settingsView.settingsContentView.openMailApp = {
             let email = "mackn@agh.edu.pl"
             // Doesn't work in simulator
             if let url = URL(string: "mailto:\(email)") {

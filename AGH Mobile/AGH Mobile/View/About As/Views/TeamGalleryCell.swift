@@ -11,7 +11,7 @@ class TeamGalleryCell: UICollectionViewCell {
     private lazy var memberPhotoImageHight = self.frame.height * 0.75
 
     // MARK: - Components of View
-    private lazy var memberPhoto: UIImageView = {
+    private lazy var memberPhotoImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = ContentMode.scaleAspectFill
@@ -21,7 +21,7 @@ class TeamGalleryCell: UICollectionViewCell {
         return image
     }()
     
-    private lazy var memberName: UILabel = {
+    private lazy var memberNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -31,7 +31,7 @@ class TeamGalleryCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var memberSpecialization: UILabel = {
+    private lazy var memberSpecializationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -61,28 +61,28 @@ extension TeamGalleryCell {
     }
     
     private func setupView() {
-        self.addSubview(memberPhoto)
-        self.addSubview(memberName)
-        self.addSubview(memberSpecialization)
+        self.addSubview(memberPhotoImageView)
+        self.addSubview(memberNameLabel)
+        self.addSubview(memberSpecializationLabel)
     }
 
     // MARK: - Setup Constraints
     private func setupConstraints() {
     
-        memberPhoto.snp.makeConstraints { (make) in
+        memberPhotoImageView.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
             make.top.equalTo(self.snp.top)
             make.height.equalTo(memberPhotoImageHight)
-            make.width.equalTo(memberPhoto.snp.height)
-            make.bottom.lessThanOrEqualTo(memberName.snp.top).offset(self.frame.height * -0.1).priority(.low)
+            make.width.equalTo(memberPhotoImageView.snp.height)
+            make.bottom.lessThanOrEqualTo(memberNameLabel.snp.top).offset(self.frame.height * -0.1).priority(.low)
         }
 
-        memberName.snp.makeConstraints { (make) in
+        memberNameLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.bottom.equalTo(memberSpecialization.snp.top).offset(self.frame.height * -0.0125).priority(.required)
+            make.bottom.equalTo(memberSpecializationLabel.snp.top).offset(self.frame.height * -0.0125).priority(.required)
         }
 
-        memberSpecialization.snp.makeConstraints { (make) in
+        memberSpecializationLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
             make.bottom.equalTo(self.snp.bottom).priority(.required)
         }
@@ -90,14 +90,14 @@ extension TeamGalleryCell {
     
     // MARK: - Public Methods
     public func setupImage(named name: String) {
-        memberPhoto.image = UIImage(named: name)
+        memberPhotoImageView.image = UIImage(named: name)
     }
     
     public func setupName(as name: String) {
-        memberName.text = name
+        memberNameLabel.text = name
     }
     
     public func setupSpecialization(as name: String) {
-        memberSpecialization.text = name
+        memberSpecializationLabel.text = name
     }
 }

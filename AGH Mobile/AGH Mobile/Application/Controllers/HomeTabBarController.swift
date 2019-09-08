@@ -10,7 +10,6 @@ class HomeTabBarController: UITabBarController {
         self.setupControllers()
         self.setupUI()
     }
-  
 }
 
 extension HomeTabBarController {

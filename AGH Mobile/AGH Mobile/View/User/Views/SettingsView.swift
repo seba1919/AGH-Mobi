@@ -14,28 +14,28 @@ class SettingsView: UIView {
     private lazy var topPadding = self.frame.height * 0.0225
     
     // MARK: - Components of View
-    private lazy var tabBarTitle: UILabel = {
+    private lazy var tabBarTitleLabel: UILabel = {
         let tabBarPageTitle = TabBarPageTitleLabel(
             title: NSLocalizedString("SettingsView_UserSETTINGS", comment: ""))
             .build()
         return tabBarPageTitle
     }()
     
-    public private(set) lazy var userProfile: UserWDProfile = {
+    private(set) lazy var userProfileView: UserWDProfile = {
         let profile = UserWDProfile()
         profile.translatesAutoresizingMaskIntoConstraints = false
         profile.setupProfileImage(named: "user_small_About")
         return profile
     }()
     
-    private lazy var sectionTitle: UILabel = {
+    private lazy var sectionTitleLabel: UILabel = {
         let label = SectionTitle(
             title: NSLocalizedString("SettingsView_AccountIntegration", comment: ""))
             .build()
         return label
     }()
     
-    public private(set) lazy var settingsContent: SettingsContent = {
+    private(set) lazy var settingsContentView: SettingsContent = {
         let view = SettingsContent()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -69,35 +69,35 @@ extension SettingsView {
     
     private func setupView() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(tabBarTitle)
-        self.addSubview(userProfile)
-        self.addSubview(sectionTitle)
-        self.addSubview(settingsContent)
+        self.addSubview(tabBarTitleLabel)
+        self.addSubview(userProfileView)
+        self.addSubview(sectionTitleLabel)
+        self.addSubview(settingsContentView)
         self.addSubview(logoutButton)
     }
 
     // MARK: - Setup Constraints
     private func setupConstraints() {
         
-        tabBarTitle.snp.makeConstraints { (make) in
+        tabBarTitleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(topPadding)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         
-        userProfile.snp.makeConstraints { (make) in
-            make.top.equalTo(tabBarTitle.snp.bottom).offset(screenHeight * 0.04)
+        userProfileView.snp.makeConstraints { (make) in
+            make.top.equalTo(tabBarTitleLabel.snp.bottom).offset(screenHeight * 0.04)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
             make.height.equalTo(Double(screenHeight) * SettingsView.userProfileHightMultipliValue)
         }
         
-        sectionTitle.snp.makeConstraints { (make) in
-            make.top.equalTo(userProfile.snp.bottom).offset(screenHeight * 0.052)
+        sectionTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(userProfileView.snp.bottom).offset(screenHeight * 0.052)
             make.left.equalToSuperview().offset(20)
         }
         
-        settingsContent.snp.makeConstraints { (make) in
-            make.top.equalTo(sectionTitle.snp.bottom)
+        settingsContentView.snp.makeConstraints { (make) in
+            make.top.equalTo(sectionTitleLabel.snp.bottom)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(logoutButton.snp.top).offset(screenHeight * -0.052)
         }

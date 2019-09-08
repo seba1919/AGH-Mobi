@@ -10,8 +10,8 @@ class InformationContent: UIView {
     private lazy var screenWidth =  UIScreen.main.bounds.size.width
     
     // MARK: - Components of View
-    // Row no. 1 - "Sylabus"
-    private lazy var rowNo1: RowView = {
+    /// Sylabus
+    private lazy var sylabusRowView: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
         view.setupTitle(as: NSLocalizedString("InformationsContent_Syllabus", comment: ""))
@@ -19,8 +19,8 @@ class InformationContent: UIView {
         return view
     }()
     
-    // Row no. 2 - "Pracownicy Uczelni"
-    private lazy var rowNo2: RowView = {
+    /// Pracownicy Uczelni
+    private lazy var employeesRowView: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
         view.setupTitle(as: NSLocalizedString("InformationsContent_UniversityEmployees", comment: ""))
@@ -28,8 +28,8 @@ class InformationContent: UIView {
         return view
     }()
     
-    // Row no. 3 - "Regulamin Studiów"
-    private lazy var rowNo3: RowView = {
+    /// Regulamin Studiów
+    private lazy var regulationsRowView: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .top)
         view.setupTitle(as: NSLocalizedString("InformationsContent_UniversityStatute", comment: ""))
@@ -37,8 +37,8 @@ class InformationContent: UIView {
         return view
     }()
     
-    // Row no. 4 - "Rok Akademicki"
-    private lazy var rowNo4: RowView = {
+    /// Rok Akademicki
+    private lazy var academicYearRowView: RowView = {
         let view = RowView(style: .withLeftAccessory,
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: NSLocalizedString("InformationsContent_AcademicYear", comment: ""))
@@ -46,7 +46,7 @@ class InformationContent: UIView {
         return view
     }()
     
-    // StackView
+    /// StackView
     private lazy var stackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -81,10 +81,10 @@ extension InformationContent {
     }
     
     private func setupStackView() {
-        stackView.addArrangedSubview(rowNo1)
-        stackView.addArrangedSubview(rowNo2)
-        stackView.addArrangedSubview(rowNo3)
-        stackView.addArrangedSubview(rowNo4)
+        stackView.addArrangedSubview(sylabusRowView)
+        stackView.addArrangedSubview(employeesRowView)
+        stackView.addArrangedSubview(regulationsRowView)
+        stackView.addArrangedSubview(academicYearRowView)
         self.addSubview(stackView)
     }
     

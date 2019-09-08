@@ -26,11 +26,11 @@ extension MemberProfileViewController {
     
     // MARK: - Setup
     private func setupTableView() {
-        memberProfileView.memberWebPages.delegate = self
-        memberProfileView.memberWebPages.dataSource = self
-        memberProfileView.memberWebPages.register(MemberWebPagesCell.self,
+        memberProfileView.memberWebPagesTableView.delegate = self
+        memberProfileView.memberWebPagesTableView.dataSource = self
+        memberProfileView.memberWebPagesTableView.register(MemberWebPagesCell.self,
                                                   forCellReuseIdentifier: MemberWebPagesCell.identifier)
-        memberProfileView.memberWebPages.allowsSelection = false
+        memberProfileView.memberWebPagesTableView.allowsSelection = false
         memberProfileView.setupImage(named: "user_large_About")
     }
     
@@ -41,7 +41,7 @@ extension MemberProfileViewController {
     
 }
 
-// MARK: - Extension of UI Table View Data Source
+// MARK: - Extension of TableView Data Source
 extension MemberProfileViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,7 +56,7 @@ extension MemberProfileViewController: UITableViewDataSource {
     
 }
 
-// MARK: - Extension of UI Table View Delegate
+// MARK: - Extension of TableView Delegate
 extension MemberProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

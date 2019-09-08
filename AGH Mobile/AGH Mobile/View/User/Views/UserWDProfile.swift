@@ -11,7 +11,7 @@ class UserWDProfile: UIView {
     private lazy var viewHight = screenHeight * SettingsView.userProfileHightMultipliValue
     
     // MARK: - Components of View
-    private lazy var userPhoto: UIImageView = {
+    private lazy var userPhotoImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = ContentMode.scaleAspectFill
@@ -21,7 +21,7 @@ class UserWDProfile: UIView {
         return image
     }()
     
-    private lazy var userProfileType: UILabel = {
+    private lazy var userProfileTypeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
@@ -31,7 +31,7 @@ class UserWDProfile: UIView {
         return label
     }()
     
-    private lazy var userName: UILabel = {
+    private lazy var userNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
@@ -41,7 +41,7 @@ class UserWDProfile: UIView {
         return label
     }()
     
-    private lazy var userIndexNumber: UILabel = {
+    private lazy var userIndexNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
@@ -71,15 +71,15 @@ extension UserWDProfile {
     }
     
     private func setupView() {
-        self.addSubview(userPhoto)
-        self.addSubview(userProfileType)
-        self.addSubview(userName)
-        self.addSubview(userIndexNumber)
+        self.addSubview(userPhotoImageView)
+        self.addSubview(userProfileTypeLabel)
+        self.addSubview(userNameLabel)
+        self.addSubview(userIndexNumberLabel)
     }
     
     // MARK: - Setup Constraints
     private func setupConstraints() {
-        userPhoto.snp.makeConstraints { (make) in
+        userPhotoImageView.snp.makeConstraints { (make) in
             make.left.equalTo(self.snp.left)
             make.top.equalTo(self.snp.top)
             make.bottom.equalTo(self.snp.bottom)
@@ -87,17 +87,17 @@ extension UserWDProfile {
             make.width.equalTo(viewHight)
         }
         
-        userProfileType.snp.makeConstraints { (make) in
+        userProfileTypeLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.snp.top)
-            make.left.equalTo(userPhoto.snp.right).offset(spaceBetweenLabelAndPhoto)
+            make.left.equalTo(userPhotoImageView.snp.right).offset(spaceBetweenLabelAndPhoto)
         }
         
-        userName.snp.makeConstraints { (make) in
-            make.top.equalTo(userProfileType.snp.bottom)
-            make.left.equalTo(userPhoto.snp.right).offset(spaceBetweenLabelAndPhoto)
+        userNameLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(userProfileTypeLabel.snp.bottom)
+            make.left.equalTo(userPhotoImageView.snp.right).offset(spaceBetweenLabelAndPhoto)
         }
         
-        userIndexNumber.snp.makeConstraints { (make) in
+        userIndexNumberLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.snp.top)
             make.right.equalTo(self.snp.right)
         }
@@ -108,18 +108,18 @@ extension UserWDProfile {
     
     // MARK: - Public Methods
     public func setupProfileImage(named name: String) {
-        userPhoto.image = UIImage(named: name)
+        userPhotoImageView.image = UIImage(named: name)
     }
     
     public func setupProfileType(as profileType: String) {
-        userProfileType.text = profileType
+        userProfileTypeLabel.text = profileType
     }
     
     public func setupName(as name: String) {
-        userName.text = name
+        userNameLabel.text = name
     }
     
     public func setupIndexNumber(to indexNumber: String) {
-        userIndexNumber.text = indexNumber
+        userIndexNumberLabel.text = indexNumber
     }
 }

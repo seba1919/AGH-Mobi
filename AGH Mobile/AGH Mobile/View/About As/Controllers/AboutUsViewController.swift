@@ -2,11 +2,11 @@
 
 import UIKit
 
-class AboutAsViewController: UIViewController {
+class AboutUsViewController: UIViewController {
     
     // MARK: - Private Properties
     // View
-    private var aboutAsView: AboutAsView { return self.view as! AboutAsView }
+    private var aboutAsView: AboutUsView { return self.view as! AboutUsView }
     private lazy var screenWidth = UIScreen.main.bounds.size.width
     // Collection View
     private let cellWidthScaling: CGFloat = 0.5
@@ -21,7 +21,7 @@ class AboutAsViewController: UIViewController {
     
     // MARK: - Lifecycle
     override func loadView() {
-        self.view = AboutAsView(frame: UIScreen.main.bounds)
+        self.view = AboutUsView(frame: UIScreen.main.bounds)
     }
     
     override func viewDidLoad() {
@@ -35,13 +35,13 @@ class AboutAsViewController: UIViewController {
     }
 }
 
-extension AboutAsViewController {
+extension AboutUsViewController {
     
     // MARK: - Setup
     private func setupCollectionView() {
-        aboutAsView.teamGallery.delegate = self
-        aboutAsView.teamGallery.dataSource = self
-        aboutAsView.teamGallery.register(TeamGalleryCell.self, forCellWithReuseIdentifier: TeamGalleryCell.identifier)
+        aboutAsView.teamGalleryCollectionView.delegate = self
+        aboutAsView.teamGalleryCollectionView.dataSource = self
+        aboutAsView.teamGalleryCollectionView.register(TeamGalleryCell.self, forCellWithReuseIdentifier: TeamGalleryCell.identifier)
     }
     
     private func setupNavigationAttributs() {
@@ -97,7 +97,7 @@ extension AboutAsViewController {
     }
     
     private func scroll() {
-        let collection = self.aboutAsView.teamGallery
+        let collection = self.aboutAsView.teamGalleryCollectionView
         let index = IndexPath(item: counter, section: 0)
         collection.scrollToItem(at: index,
                                 at: .centeredHorizontally,
@@ -115,7 +115,7 @@ extension AboutAsViewController {
 }
 
 // MARK: - Extensions of UI Collection View Date Source
-extension AboutAsViewController: UICollectionViewDataSource {
+extension AboutUsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
@@ -123,7 +123,7 @@ extension AboutAsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = aboutAsView.teamGallery.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
+        let cell = aboutAsView.teamGalleryCollectionView.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
                                                                for: indexPath) as! TeamGalleryCell
         cell.setupImage(named: "user_large_About")
         cell.setupName(as: "Mateusz Bąk")
@@ -133,7 +133,7 @@ extension AboutAsViewController: UICollectionViewDataSource {
 }
 
 // MARK: - Extensions of UI Collection View Delegate
-extension AboutAsViewController: UIScrollViewDelegate, UICollectionViewDelegate {
+extension AboutUsViewController: UIScrollViewDelegate, UICollectionViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView,
                                    withVelocity velocity: CGPoint,
@@ -180,13 +180,13 @@ extension AboutAsViewController: UIScrollViewDelegate, UICollectionViewDelegate 
 }
 
 // MARK: - Extensions of UI Collection View Flow Layout Delegate
-extension AboutAsViewController: UICollectionViewDelegateFlowLayout {
+extension AboutUsViewController: UICollectionViewDelegateFlowLayout {
     
     // Cell size
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellHeight = aboutAsView.teamGallery.frame.height
+        let cellHeight = aboutAsView.teamGalleryCollectionView.frame.height
         let cellWidth = screenWidth * cellWidthScaling
         return CGSize(width: cellWidth,
                       height: cellHeight)

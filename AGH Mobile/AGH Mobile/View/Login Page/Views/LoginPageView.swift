@@ -6,7 +6,7 @@ import SnapKit
 class LoginPageView: UIView {
 
     // MARK: - Public Properties
-    public var pushAboutAsVC: (() -> Void)?
+    public var pushAboutUsVC: (() -> Void)?
     public var pushSettingsVC: (() -> Void)?
     public var openRemindPasswordWeb: (() -> Void)?
     
@@ -18,7 +18,7 @@ class LoginPageView: UIView {
     private let rightMarginMultiplier: CGFloat = -0.18
     
     // MARK: - Components of View
-    private lazy var tabBarTitle: UILabel = {
+    private lazy var tabBarTitleLabel: UILabel = {
         let tabBarPageTitle = TabBarPageTitleLabel(
             title: NSLocalizedString("LoginPageView_UserSettings", comment: ""))
             .build()
@@ -26,7 +26,7 @@ class LoginPageView: UIView {
         return tabBarPageTitle
     }()
     
-    private lazy var AGHLogo: UIImageView = {
+    private lazy var aghIconImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "agh_znak")
@@ -75,11 +75,11 @@ class LoginPageView: UIView {
         return button
     }()
     
-    private lazy var macKNLogo: UIImageView = {
+    private lazy var macKnIconImageView: UIImageView = {
         let image = UIImage(named: "MacKNIcon")
         let logo = UIImageView(image: image)
         logo.translatesAutoresizingMaskIntoConstraints = false
-        let tapOnMacKNLogo = UITapGestureRecognizer(target: self, action: #selector(self.onPressPushAboutAsVC))
+        let tapOnMacKNLogo = UITapGestureRecognizer(target: self, action: #selector(self.onPressPushAboutUsVC))
         logo.addGestureRecognizer(tapOnMacKNLogo)
         logo.isUserInteractionEnabled = true
         return logo
@@ -92,7 +92,7 @@ class LoginPageView: UIView {
         button.setTitleColor(UIColor.mainRed, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .regular)
         button.titleLabel?.textAlignment = .center
-        button.addTarget(self, action: #selector(onPressPushAboutAsVC), for: .touchUpInside)
+        button.addTarget(self, action: #selector(onPressPushAboutUsVC), for: .touchUpInside)
         return button
     }()
     
@@ -117,33 +117,33 @@ extension LoginPageView {
     
     private func setupView() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(tabBarTitle)
-        self.addSubview(AGHLogo)
+        self.addSubview(tabBarTitleLabel)
+        self.addSubview(aghIconImageView)
         self.addSubview(infoLabel)
         self.addSubview(idTextField)
         self.addSubview(passwordTextField)
         self.addSubview(loginButton)
         self.addSubview(remindPasswordButton)
-        self.addSubview(macKNLogo)
+        self.addSubview(macKnIconImageView)
         self.addSubview(aboutAsButton)
     }
 
     // MARK: - Setup Constraints
     private func setupConstraints() {
-        tabBarTitle.snp.makeConstraints { (make) in
+        tabBarTitleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(topPadding)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         
-        AGHLogo.snp.makeConstraints { (make) in
-            make.top.equalTo(tabBarTitle.snp.bottom).offset(screenHeight * 0.030)
+        aghIconImageView.snp.makeConstraints { (make) in
+            make.top.equalTo(tabBarTitleLabel.snp.bottom).offset(screenHeight * 0.030)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.height.equalTo(screenHeight * 0.252)
-            make.width.equalTo(AGHLogo.snp.height).multipliedBy(0.633)
+            make.width.equalTo(aghIconImageView.snp.height).multipliedBy(0.633)
         }
         
         infoLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(AGHLogo.snp.bottom).offset(screenHeight * 0.030)
+            make.top.equalTo(aghIconImageView.snp.bottom).offset(screenHeight * 0.030)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.bottom.equalTo(idTextField.snp.top).offset(screenHeight * -0.028)
         }
@@ -174,11 +174,11 @@ extension LoginPageView {
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         
-        macKNLogo.snp.makeConstraints { (make) in
+        macKnIconImageView.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.top.greaterThanOrEqualTo(remindPasswordButton.snp.bottom).offset(screenHeight * 0.036)
             make.height.equalTo(screenHeight * 0.062)
-            make.width.equalTo(macKNLogo.snp.height).multipliedBy(macKNLogo.frame.width / macKNLogo.frame.height)
+            make.width.equalTo(macKnIconImageView.snp.height).multipliedBy(macKnIconImageView.frame.width / macKnIconImageView.frame.height)
             make.bottom.equalTo(aboutAsButton.snp.top).offset(-3)
         }
         
@@ -189,8 +189,8 @@ extension LoginPageView {
     }
     
     // MARK: - Selectors
-    @objc private func onPressPushAboutAsVC() {
-        pushAboutAsVC?()
+    @objc private func onPressPushAboutUsVC() {
+        pushAboutUsVC?()
     }
     
     @objc private func onPressPushSettingsVC() {

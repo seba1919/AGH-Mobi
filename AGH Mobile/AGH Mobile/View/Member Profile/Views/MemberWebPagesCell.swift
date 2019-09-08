@@ -12,14 +12,14 @@ class MemberWebPagesCell: UITableViewCell {
     private let mainColorForThisCell = UIColor(red: 25/255, green: 23/255, blue: 23/255, alpha: 1)
     
     // MARK: - Components of View
-    private lazy var webPageImage: UIImageView = {
+    private lazy var webPageImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .mainRed
         return imageView
     }()
     
-    private lazy var webPageName: UITextView = {
+    private lazy var webPageNameTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isEditable = false
@@ -50,20 +50,20 @@ extension MemberWebPagesCell {
     }
     
     private func setupView() {
-        self.addSubview(webPageImage)
-        self.addSubview(webPageName)
+        self.addSubview(webPageImageView)
+        self.addSubview(webPageNameTextView)
     }
     
     // MARK: - Setup Constraints
     private func setupConstraints() {
-        webPageImage.snp.makeConstraints { (make) in
+        webPageImageView.snp.makeConstraints { (make) in
             make.width.equalTo(25)
             make.height.equalTo(25)
-            make.right.equalTo(webPageName.snp.left).offset(-8)
-            make.centerY.equalTo(webPageName.snp.centerY)
+            make.right.equalTo(webPageNameTextView.snp.left).offset(-8)
+            make.centerY.equalTo(webPageNameTextView.snp.centerY)
         }
         
-        webPageName.snp.makeConstraints { (make) in
+        webPageNameTextView.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
             make.centerY.equalTo(self.snp.centerY)
         }
@@ -72,11 +72,11 @@ extension MemberWebPagesCell {
 
 // MARK: - Public Methods
 extension MemberWebPagesCell {
-    public func setupImage(named name: String) {
-        webPageImage.image = UIImage(named: name)
+    public func setupWebPageImage(_ named: String) {
+        webPageImageView.image = UIImage(named: named)
     }
     
-    public func setupName(as name: String) {
-        webPageName.text = name
+    public func setupWebPageName(_ name: String) {
+        webPageNameTextView.text = name
     }
 }

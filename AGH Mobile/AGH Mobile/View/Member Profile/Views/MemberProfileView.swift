@@ -13,7 +13,7 @@ class MemberProfileView: UIView {
     private let cellNumber = 3 //CHANGE!
     
     // MARK: - Components of View
-    private lazy var memberPhoto: UIImageView = {
+    private lazy var memberPhotoImageView: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
@@ -23,7 +23,7 @@ class MemberProfileView: UIView {
         return image
     }()
     
-    private lazy var memberName: UILabel = {
+    private lazy var memberNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -33,7 +33,7 @@ class MemberProfileView: UIView {
         return label
     }()
 
-    private lazy var memberSpecialization: UILabel = {
+    private lazy var memberSpecializationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -43,7 +43,7 @@ class MemberProfileView: UIView {
         return label
     }()
 
-    private lazy var memberDescription: UITextView = {
+    private lazy var memberDescriptionTextView: UITextView = {
         let descriptionTextView = DescriptionTextView(
             text: """
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a nulla vel sapien accumsan mollis.
@@ -61,7 +61,7 @@ class MemberProfileView: UIView {
         return view
     }()
 
-    public private(set) lazy var memberWebPages: UITableView = {
+    public private(set) lazy var memberWebPagesTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         tableView.isScrollEnabled = false
@@ -90,47 +90,47 @@ extension MemberProfileView {
     
     private func setupViews() {
         self.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        self.addSubview(memberPhoto)
-        self.addSubview(memberName)
-        self.addSubview(memberSpecialization)
-        self.addSubview(memberDescription)
+        self.addSubview(memberPhotoImageView)
+        self.addSubview(memberNameLabel)
+        self.addSubview(memberSpecializationLabel)
+        self.addSubview(memberDescriptionTextView)
         self.addSubview(memberWebPageView)
-        memberWebPageView.addSubview(memberWebPages)
+        memberWebPageView.addSubview(memberWebPagesTableView)
     }
     
     // MARK: - Setup constraints
     private func setupConstraints() {
-        memberPhoto.snp.makeConstraints { (make) in
+        memberPhotoImageView.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(topPadding)
             make.height.equalTo(memberPhotoImageHight)
-            make.width.equalTo(memberPhoto.snp.height)
+            make.width.equalTo(memberPhotoImageView.snp.height)
         }
         
-        memberName.snp.makeConstraints { (make) in
+        memberNameLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.top.equalTo(memberPhoto.snp.bottom).offset(screenHeight * 0.0425).priority(.low)
+            make.top.equalTo(memberPhotoImageView.snp.bottom).offset(screenHeight * 0.0425).priority(.low)
         }
         
-        memberSpecialization.snp.makeConstraints { (make) in
+        memberSpecializationLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.top.equalTo(memberName.snp.bottom).offset(screenHeight * 0.01)
+            make.top.equalTo(memberNameLabel.snp.bottom).offset(screenHeight * 0.01)
         }
         
-        memberDescription.snp.makeConstraints { (make) in
-            make.top.equalTo(memberSpecialization.snp.bottom).offset(screenHeight * 0.03)
+        memberDescriptionTextView.snp.makeConstraints { (make) in
+            make.top.equalTo(memberSpecializationLabel.snp.bottom).offset(screenHeight * 0.03)
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)
         }
         
         memberWebPageView.snp.makeConstraints { (make) in
-            make.top.equalTo(memberDescription.snp.bottom).offset(screenWidth * 0.01)
+            make.top.equalTo(memberDescriptionTextView.snp.bottom).offset(screenWidth * 0.01)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.bottom.equalTo(self.snp.bottom).offset(screenHeight * -0.1)
         }
         
-        memberWebPages.snp.makeConstraints { (make) in
+        memberWebPagesTableView.snp.makeConstraints { (make) in
             make.centerY.equalTo(memberWebPageView.snp.centerY)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
@@ -142,19 +142,19 @@ extension MemberProfileView {
 // MARK: - Public Methods
 extension MemberProfileView {
     
-    public func setupImage(named name: String) {
-        memberPhoto.image = UIImage(named: name)
+    public func setupMemberImage(_ named: String) {
+        memberPhotoImageView.image = UIImage(named: named)
     }
     
-    public func setupName(as name: String) {
-        memberName.text = name
+    public func setupMemberName(_ name: String) {
+        memberNameLabel.text = name
     }
     
-    public func setupSpecialization(as name: String) {
-        memberSpecialization.text = name
+    public func setupMemberSpecialization(_ specialization: String) {
+        memberSpecializationLabel.text = specialization
     }
     
-    public func setupDescription(on text: String) {
-        memberDescription.text = text
+    public func setupMemberDescription(_ description: String) {
+        memberDescriptionTextView.text = description
     }
 }

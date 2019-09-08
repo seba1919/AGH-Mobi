@@ -3,7 +3,7 @@
 import UIKit
 import SnapKit
 
-class AboutAsView: UIView {
+class AboutUsView: UIView {
     
     // MARK: - Public properties
     var openWebPage: (() -> Void)?
@@ -13,7 +13,7 @@ class AboutAsView: UIView {
     private lazy var bottomPadding = self.frame.height * -0.030
     
     // MARK: - Components of View
-    public private(set) lazy var teamGallery: UICollectionView = {
+    private(set) lazy var teamGalleryCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         layout.scrollDirection = .horizontal
@@ -25,7 +25,7 @@ class AboutAsView: UIView {
         return collection
     }()
     
-    private lazy var aboutAsDescription: UITextView = {
+    private lazy var aboutAsDescriptionTextView: UITextView = {
         let descriptionTextView = DescriptionTextView(
             text: NSLocalizedString("AboutUsView_AboutUsDescription", comment: ""))
             .build()
@@ -33,7 +33,7 @@ class AboutAsView: UIView {
         return descriptionTextView
     }()
     
-    private lazy var macKNLogo: UIImageView = {
+    private lazy var macKnIconImageView: UIImageView = {
         let image = UIImage(named: "MacKNIcon")
         let icon = UIImageView(image: image)
         icon.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +59,7 @@ class AboutAsView: UIView {
     }
 }
 
-extension AboutAsView {
+extension AboutUsView {
     
     // MARK: - Setup view
     public func setupUI() {
@@ -69,30 +69,30 @@ extension AboutAsView {
     
     private func setupViews() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(teamGallery)
-        self.addSubview(aboutAsDescription)
-        self.addSubview(macKNLogo)
+        self.addSubview(teamGalleryCollectionView)
+        self.addSubview(aboutAsDescriptionTextView)
+        self.addSubview(macKnIconImageView)
         self.addSubview(webPageButton)
     }
     
     // MARK: - Setup Constraints
     private func setupConstraints() {
-        teamGallery.snp.makeConstraints { (make) in
+        teamGalleryCollectionView.snp.makeConstraints { (make) in
             make.height.greaterThanOrEqualTo(self.frame.height * 0.0685).priority(.high)
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(topPadding)
-            make.bottom.equalTo(aboutAsDescription.snp.top).offset(-freeSpaceBetweenComponents)
+            make.bottom.equalTo(aboutAsDescriptionTextView.snp.top).offset(-freeSpaceBetweenComponents)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         
-        aboutAsDescription.snp.makeConstraints { (make) in
-            make.bottom.equalTo(macKNLogo.snp.top).offset(-freeSpaceBetweenComponents)
+        aboutAsDescriptionTextView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(macKnIconImageView.snp.top).offset(-freeSpaceBetweenComponents)
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)
         }
         
-        macKNLogo.snp.makeConstraints { (make) in
+        macKnIconImageView.snp.makeConstraints { (make) in
             make.bottom.equalTo(webPageButton.snp.top).offset(-freeSpaceBetweenComponents)
             // Adaptation to the iPhone SE
             if UIScreen.isSmallSize() {
@@ -100,7 +100,7 @@ extension AboutAsView {
             } else {
                 make.height.equalTo(self.frame.height * 0.123)
             }
-            make.width.equalTo(macKNLogo.snp.height).multipliedBy(macKNLogo.frame.width / macKNLogo.frame.height)
+            make.width.equalTo(macKnIconImageView.snp.height).multipliedBy(macKnIconImageView.frame.width / macKnIconImageView.frame.height)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         

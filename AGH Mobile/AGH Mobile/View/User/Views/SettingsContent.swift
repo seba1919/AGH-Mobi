@@ -6,7 +6,7 @@ import SnapKit
 class SettingsContent: UIView {
     
     // MARK: - Public Properties
-    public var pushAboutAsVC: (() -> Void)?
+    public var pushAboutUsVC: (() -> Void)?
     public var openMailApp: (() -> Void)?
     // MARK: - Private Properties
     private lazy var screenHeight = UIScreen.main.bounds.size.height
@@ -14,49 +14,49 @@ class SettingsContent: UIView {
     private let topPadding: CGFloat = 3
     
     // MARK: - Components of View
-    // Row no. 1 - "Wirtualna Uczelnia"
-    private lazy var rowNo1: RowView = {
+    /// Wirtualna Uczelnia
+    private lazy var wdRow: RowView = {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .top)
         view.setupTitle(as: NSLocalizedString("SettingsContent_WU", comment: ""))
         return view
     }()
     
-    // Row no. 2 - "UPEL"
-    private lazy var rowNo2: RowView = {
+    /// UPEL
+    private lazy var upelRow: RowView = {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .top)
         view.setupTitle(as: NSLocalizedString("SettingsContent_UPEL", comment: ""))
         return view
     }()
     
-    // Row no. 3 - "Panel Usług Sieciowych"
-    private lazy var rowNo3: RowView = {
+    /// Panel Usług Sieciowych
+    private lazy var networkServicesPanelRowView: RowView = {
         let view = RowView(style: .normalWithIndentation,
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: NSLocalizedString("SettingsContent_NetworkServicesPanel", comment: ""))
         return view
     }()
     
-    // Row no. 4 - "Powiadomienia o ocenach"
-    private lazy var rowNo4: RowView = {
+    /// Powiadomienia o ocenach
+    private lazy var notificationsAboutAssessmentRowView: RowView = {
         let view = RowView(style: .withSwitch,
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: NSLocalizedString("SettingsContent_NotificationsAboutMarks", comment: ""))
         return view
     }()
     
-    // Row no. 5 - "O nas"
-    private lazy var rowNo5: RowView = {
+    /// O nas
+    private lazy var aboutUsRowView: RowView = {
         let view = RowView(style: .normal,
                            separatorPosition: .topAndBottom)
         view.setupTitle(as: NSLocalizedString("SettingsContent_AboutUs", comment: ""))
-        view.setAction = { self.onPressPushAboutAsVC() }
+        view.setAction = { self.onPressPushAboutUsVC() }
         return view
     }()
     
-    // Row no. 6 - "Skontaktuj się z nami"
-    private lazy var rowNo6: RowView = {
+    /// Skontaktuj się z nami
+    private lazy var contactRowView: RowView = {
         let view = RowView(style: .empty,
                            separatorPosition: .bottom)
         view.setupTitle(as: NSLocalizedString("SettingsContent_ContactUs", comment: ""))
@@ -64,8 +64,7 @@ class SettingsContent: UIView {
         return view
     }()
     
-    // StackView for Row no. 1 - 3
-    private lazy var stackViewNo1: UIStackView = {
+    private lazy var topStackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
@@ -74,8 +73,7 @@ class SettingsContent: UIView {
         return stack
     }()
     
-    // StackView for Row no. 5 - 6
-    private lazy var stackViewNo2: UIStackView = {
+    private lazy var bottomStackView: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
@@ -105,48 +103,44 @@ extension SettingsContent {
     
     private func setupView() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(rowNo4)
+        self.addSubview(notificationsAboutAssessmentRowView)
         setupStackViews()
     }
     
     private func setupStackViews() {
-        // First StackView
-        stackViewNo1.addArrangedSubview(rowNo1)
-        stackViewNo1.addArrangedSubview(rowNo2)
-        stackViewNo1.addArrangedSubview(rowNo3)
-        self.addSubview(stackViewNo1)
-        // Second StackView
-        stackViewNo2.addArrangedSubview(rowNo5)
-        stackViewNo2.addArrangedSubview(rowNo6)
-        self.addSubview(stackViewNo2)
+        ///  Top StackView
+        topStackView.addArrangedSubview(wdRow)
+        topStackView.addArrangedSubview(upelRow)
+        topStackView.addArrangedSubview(networkServicesPanelRowView)
+        self.addSubview(topStackView)
+        /// Bottom StackView
+        bottomStackView.addArrangedSubview(aboutUsRowView)
+        bottomStackView.addArrangedSubview(contactRowView)
+        self.addSubview(bottomStackView)
     }
     
     // MARK: - Setup Constraints
     private func setupConstraints() {
-        
-        // StackView for Row no. 1 - 3
-        stackViewNo1.snp.makeConstraints { (make) in
+        topStackView.snp.makeConstraints { (make) in
             make.top.equalTo(self.snp.top).offset(topPadding)
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(rowNo4.snp.top).offset(screenHeight * -0.063)
+            make.bottom.equalTo(notificationsAboutAssessmentRowView.snp.top).offset(screenHeight * -0.063)
         }
         
-        // Row no. 4
-        rowNo4.snp.makeConstraints { (make) in
+        notificationsAboutAssessmentRowView.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
         }
         
-        // StackView for Row no. 5 - 6
-        stackViewNo2.snp.makeConstraints { (make) in
-            make.top.equalTo(rowNo4.snp.bottom).offset(screenHeight * 0.063)
+        bottomStackView.snp.makeConstraints { (make) in
+            make.top.equalTo(notificationsAboutAssessmentRowView.snp.bottom).offset(screenHeight * 0.063)
             make.left.right.equalToSuperview()
             //make.bottom.equalTo(self.snp.bottom)
         }
     }
     
     // MARK: - Actions
-     private func onPressPushAboutAsVC() {
-        pushAboutAsVC?()
+     private func onPressPushAboutUsVC() {
+        pushAboutUsVC?()
     }
     
     private func onPressOpenMailApp() {

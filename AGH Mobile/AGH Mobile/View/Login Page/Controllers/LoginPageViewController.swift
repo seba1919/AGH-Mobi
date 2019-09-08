@@ -44,8 +44,8 @@ extension LoginPageViewController {
     
     // MARK: - Actions
     private func setupActions() {
-        loginPageView.pushAboutAsVC = {
-            self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
+        loginPageView.pushAboutUsVC = {
+            self.navigationController?.pushViewController(AboutUsViewController(), animated: true)
         }
         
         loginPageView.pushSettingsVC = {
