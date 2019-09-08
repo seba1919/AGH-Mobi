@@ -25,7 +25,7 @@ class AboutUsView: UIView {
         return collection
     }()
     
-    private lazy var aboutAsDescriptionTextView: UITextView = {
+    private lazy var aboutUsDescriptionTextView: UITextView = {
         let descriptionTextView = DescriptionTextView(
             text: NSLocalizedString("AboutUsView_AboutUsDescription", comment: ""))
             .build()
@@ -70,7 +70,7 @@ extension AboutUsView {
     private func setupViews() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         self.addSubview(teamGalleryCollectionView)
-        self.addSubview(aboutAsDescriptionTextView)
+        self.addSubview(aboutUsDescriptionTextView)
         self.addSubview(macKnIconImageView)
         self.addSubview(webPageButton)
     }
@@ -80,13 +80,13 @@ extension AboutUsView {
         teamGalleryCollectionView.snp.makeConstraints { (make) in
             make.height.greaterThanOrEqualTo(self.frame.height * 0.0685).priority(.high)
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(topPadding)
-            make.bottom.equalTo(aboutAsDescriptionTextView.snp.top).offset(-freeSpaceBetweenComponents)
+            make.bottom.equalTo(aboutUsDescriptionTextView.snp.top).offset(-freeSpaceBetweenComponents)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         
-        aboutAsDescriptionTextView.snp.makeConstraints { (make) in
+        aboutUsDescriptionTextView.snp.makeConstraints { (make) in
             make.bottom.equalTo(macKnIconImageView.snp.top).offset(-freeSpaceBetweenComponents)
             make.left.equalToSuperview().offset(16)
             make.right.equalToSuperview().offset(-16)

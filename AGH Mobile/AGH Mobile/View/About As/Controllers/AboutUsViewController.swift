@@ -6,7 +6,7 @@ class AboutUsViewController: UIViewController {
     
     // MARK: - Private Properties
     // View
-    private var aboutAsView: AboutUsView { return self.view as! AboutUsView }
+    private var aboutUsView: AboutUsView { return self.view as! AboutUsView }
     private lazy var screenWidth = UIScreen.main.bounds.size.width
     // Collection View
     private let cellWidthScaling: CGFloat = 0.5
@@ -27,7 +27,7 @@ class AboutUsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.aboutAsView.setupUI()
+        self.aboutUsView.setupUI()
         self.setupCollectionView()
         self.setupNavigationAttributs()
         self.setupActions()
@@ -39,9 +39,9 @@ extension AboutUsViewController {
     
     // MARK: - Setup
     private func setupCollectionView() {
-        aboutAsView.teamGalleryCollectionView.delegate = self
-        aboutAsView.teamGalleryCollectionView.dataSource = self
-        aboutAsView.teamGalleryCollectionView.register(TeamGalleryCell.self, forCellWithReuseIdentifier: TeamGalleryCell.identifier)
+        aboutUsView.teamGalleryCollectionView.delegate = self
+        aboutUsView.teamGalleryCollectionView.dataSource = self
+        aboutUsView.teamGalleryCollectionView.register(TeamGalleryCell.self, forCellWithReuseIdentifier: TeamGalleryCell.identifier)
     }
     
     private func setupNavigationAttributs() {
@@ -97,7 +97,7 @@ extension AboutUsViewController {
     }
     
     private func scroll() {
-        let collection = self.aboutAsView.teamGalleryCollectionView
+        let collection = self.aboutUsView.teamGalleryCollectionView
         let index = IndexPath(item: counter, section: 0)
         collection.scrollToItem(at: index,
                                 at: .centeredHorizontally,
@@ -106,7 +106,7 @@ extension AboutUsViewController {
     
     // MARK: - Actions
     private func setupActions() {
-        aboutAsView.openWebPage = {
+        aboutUsView.openWebPage = {
             if let url = URL(string: self.webPageAddress) {
                 UIApplication.shared.open(url)
             }
@@ -123,7 +123,7 @@ extension AboutUsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = aboutAsView.teamGalleryCollectionView.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
+        let cell = aboutUsView.teamGalleryCollectionView.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
                                                                for: indexPath) as! TeamGalleryCell
         cell.setupImage(named: "user_large_About")
         cell.setupName(as: "Mateusz Bąk")
@@ -186,7 +186,7 @@ extension AboutUsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellHeight = aboutAsView.teamGalleryCollectionView.frame.height
+        let cellHeight = aboutUsView.teamGalleryCollectionView.frame.height
         let cellWidth = screenWidth * cellWidthScaling
         return CGSize(width: cellWidth,
                       height: cellHeight)

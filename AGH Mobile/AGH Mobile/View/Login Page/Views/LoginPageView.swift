@@ -85,7 +85,7 @@ class LoginPageView: UIView {
         return logo
     }()
     
-    private lazy var aboutAsButton: UIButton = {
+    private lazy var aboutUsButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(NSLocalizedString("SettingsContent_AboutUs", comment: ""), for: .normal)
@@ -125,7 +125,7 @@ extension LoginPageView {
         self.addSubview(loginButton)
         self.addSubview(remindPasswordButton)
         self.addSubview(macKnIconImageView)
-        self.addSubview(aboutAsButton)
+        self.addSubview(aboutUsButton)
     }
 
     // MARK: - Setup Constraints
@@ -179,10 +179,10 @@ extension LoginPageView {
             make.top.greaterThanOrEqualTo(remindPasswordButton.snp.bottom).offset(screenHeight * 0.036)
             make.height.equalTo(screenHeight * 0.062)
             make.width.equalTo(macKnIconImageView.snp.height).multipliedBy(macKnIconImageView.frame.width / macKnIconImageView.frame.height)
-            make.bottom.equalTo(aboutAsButton.snp.top).offset(-3)
+            make.bottom.equalTo(aboutUsButton.snp.top).offset(-3)
         }
         
-        aboutAsButton.snp.makeConstraints { (make) in
+        aboutUsButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(screenHeight * -0.019)
         }
