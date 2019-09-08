@@ -4,35 +4,35 @@ import Foundation
 
 enum Faculty {
     /// Faculty of Electrical Engineering, Automatics, Computer Science and Biomedical Engineering
-    case facultyOfEAIiIB
+    case WEAIiIB
     /// Faculty of Energy and Fuels
-    case facultyOfEiP
+    case WEiP
     /// Faculty of Physics and Applied Computer Science
-    case facultyOfFiIS
+    case WFiIS
     /// Faculty of Mining Surveying and Environmental Engineering
-    case facultyOfGGiIŚ
+    case WGGiIŚ
     /// Faculty of Geology, Geophysics and Environmental Protection
-    case facultyOfGGiOŚ
+    case WGGiOŚ
     /// Faculty of Mining and Geoengineering
-    case facultyOfGiG
+    case WGiG
     /// Faculty of Humanities
-    case facultyOfH
+    case WH
     /// Faculty of Computer Science, Electronics and Telecommunications
-    case facultyOfIEiT
+    case WIEiT
     /// Faculty of Materials Science and Ceramics
-    case facultyOfIMiC
+    case WIMiC
     /// Faculty of Metals Engineering and Industrial Computer Science
-    case facultyOfIMiIP
+    case WIMiIP
     /// Faculty of Mechanical Engineering and Robotics
-    case facultyOfIMiR
+    case WIMiR
     /// Faculty of Non-Ferrous Metals
-    case facultyOfMN
+    case WMN
     /// Faculty of Applied Mathematics
-    case facultyOfMS
+    case WMS
     /// Faculty of Foundry Engineering
-    case facultyOfO
+    case WO
     /// Faculty of Drilling, Oil and Gas
-    case facultyOfWNiG
+    case WNiG
     /// Faculty of Management
-    case facultyOfZ
+    case WZ
 }
