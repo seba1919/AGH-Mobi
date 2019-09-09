@@ -100,7 +100,7 @@ class WDRouterNetworking {
     
     public func navigateTo(url withPart: UrlType = .OcenyP, loadingHandler: @escaping (Bool) -> Void) {
         firstly {
-            navigateTo(withPart)
+            navigation(withPart)
             }
             .then(on: DispatchQueue.global(qos: .background)) {
                 self.checkIfLoggedIn()
@@ -111,7 +111,10 @@ class WDRouterNetworking {
                     self.performLoginAction(userWDLogin: "keychain.user", userWDPassword: "keychain.password", withPart: withPart) { isLoggedIn in
                         loadingHandler(isLoggedIn)
                     }
-                } else { loadingHandler(true) }
+                } else {
+                    CustomNotifications.hideCustomSpinnerAlert()
+                    loadingHandler(true)
+                }
             }
             .catch(on: DispatchQueue.global(qos: .background)) { error in
                 print(error)
@@ -131,9 +134,10 @@ class WDRouterNetworking {
     }
     
     //MARK: - Fileprivate Methods
-    fileprivate func navigateTo(_ partOfUrl: UrlType = .OcenyP) -> Promise<Void> {
+    fileprivate func navigation(_ partOfUrl: UrlType = .OcenyP) -> Promise<Void> {
         
         let url = "https://dziekanat.agh.edu.pl/" + partOfUrl.rawValue + ".aspx"
+        CustomNotifications.addCustomSpinnerAlert()
         return Promise{ resolver in
             AF.request(url, method: .post)
                 .responseString {  response in
