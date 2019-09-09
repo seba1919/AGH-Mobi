@@ -66,7 +66,7 @@ class WDRouterNetworking {
         
         
         func initialLoginRequest() -> Promise<Void> {
-            CustomNotifications.addCustomSpinnerAlert()
+            CustomNotifications.showCustomSpinnerAlert()
 
             return Promise{ resolver in
                 AF.request(loginURL, method: .post, parameters: parametersToSend)
@@ -102,9 +102,7 @@ class WDRouterNetworking {
             .catch(on: DispatchQueue.global(qos: .background)) { error in
                 print(error)
                 
-                DispatchQueue.main.async {
-                    CustomNotifications.addCustomAlert(with: NSLocalizedString("WDRouterNetworking_ServerError", comment: ""))
-                }
+                DispatchQueue.main.async { CustomNotifications.setupAlertOnServerConnectionFailture() }
         }
     }
     
@@ -128,9 +126,7 @@ class WDRouterNetworking {
             }
             .catch(on: DispatchQueue.global(qos: .background)) { error in
                 print(error)
-                DispatchQueue.main.async {
-                    CustomNotifications.addCustomAlert(with: NSLocalizedString("WDRouterNetworking_ServerError", comment: ""))
-                }
+                DispatchQueue.main.async { CustomNotifications.setupAlertOnServerConnectionFailture() }
         }
     }
     
@@ -163,7 +159,7 @@ class WDRouterNetworking {
     fileprivate func navigation(_ partOfUrl: UrlType = .OcenyP) -> Promise<Void> {
         
         let url = "https://dziekanat.agh.edu.pl/" + partOfUrl.rawValue + ".aspx"
-        CustomNotifications.addCustomSpinnerAlert()
+        CustomNotifications.showCustomSpinnerAlert()
         return Promise{ resolver in
             AF.request(url, method: .post)
                 .responseString {  response in

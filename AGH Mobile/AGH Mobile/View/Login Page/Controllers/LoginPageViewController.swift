@@ -63,16 +63,16 @@ class LoginPageViewController: UIViewController {
             guard let userWDPassword = self.loginPageView.passwordTextField.text else { return}
             if userWDLogin.isEmpty || userWDPassword.isEmpty {
                 self.loginPageView.loginButton.shake()
-                CustomNotifications.addCustomAlert(with: NSLocalizedString("LoginPageViewController_FulfillLoginData", comment: ""))
+                CustomNotifications.setupAlertOnMissingLoginCredentials()
                 return
             }
             self.loginPageView.loginButton.isUserInteractionEnabled = false
             WDRouterNetworking().performLoginAction(userWDLogin: userWDLogin, userWDPassword: userWDPassword) { isLoggedIn in
                 if isLoggedIn {
-                    CustomNotifications.addCustomAlert(with: NSLocalizedString("LoginPageViewController_SuccessfulLogin", comment: ""))
+                    CustomNotifications.setupAlertOnLoginSuccess()
                     self.navigationController?.pushViewController(SettingsViewController(), animated: true)
                 } else {
-                    CustomNotifications.addCustomAlert(with: NSLocalizedString("LoginPageViewController_InvalidLoginData", comment: ""))
+                    CustomNotifications.setupAlertOnLoginFailiture()
                 }
                 self.loginPageView.loginButton.isUserInteractionEnabled = true
             }
