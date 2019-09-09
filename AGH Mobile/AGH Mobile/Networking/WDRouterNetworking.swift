@@ -111,6 +111,28 @@ class WDRouterNetworking {
         }
     }
     
+    //MARK: - NavigateTo Method Description
+    /**
+     
+    For making above method working please **type your user and password**
+    instead of ` "keychain.user" ` and ` "keychain.password" ` in line **124**
+     
+     # Use example for navigateTo method:
+     
+     ```
+     loginPageView.pushAboutUsVC = {
+         WDRouterNetworking().navigateTo(url: .Stypendia) { requestResult in
+             if requestResult == .success {
+                self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
+             } else if requestResult == .credentialsFailiture {
+                // Return to LoginPageViewController will be added here after coordinator implementation
+                print("Could not login. Please try again")
+             }
+         }
+     }
+     
+     ```
+     **/
     public func navigateTo(url withPart: UrlType = .OcenyP, requestHandler: @escaping (requestResponseType) -> Void) {
         firstly {
             navigation(withPart)
@@ -134,27 +156,6 @@ class WDRouterNetworking {
                 DispatchQueue.main.async { CustomNotifications.setupAlertOnServerConnectionFailture() }
         }
     }
-    /* ------------- USE EXAMPLE FOR ABOVE METHOD --------------------- */
-    /*
-     !!!!!!!!
-     
-     For making above method working please TYPE YOUR USER AND PASSWORD instead of "keychain.user" and "keychain.password" IN LINE 124
-    
-     !!!!!!!!
-     */
-    
-    /*
-     loginPageView.pushAboutUsVC = {
-         WDRouterNetworking().navigateTo(url: .Stypendia) { requestResult in
-             if requestResult == .success {
-                 self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
-             } else if requestResult == .credentialsFailiture {
-                 // Return to LoginPageViewController will be added here after coordinator implementation
-                 print("Could not login. Please try again")
-             }
-         }
-     }
-    */
     
     public func performLogoutAction(requestHandler: @escaping (Bool) -> Void)  {
 
