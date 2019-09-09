@@ -3,36 +3,36 @@
 import Foundation
 
 enum Faculty {
-    /// Faculty of Electrical Engineering, Automatics, Computer Science and Biomedical Engineering
-    case WEAIiIB
-    /// Faculty of Energy and Fuels
-    case WEiP
-    /// Faculty of Physics and Applied Computer Science
-    case WFiIS
-    /// Faculty of Mining Surveying and Environmental Engineering
-    case WGGiIŚ
-    /// Faculty of Geology, Geophysics and Environmental Protection
-    case WGGiOŚ
-    /// Faculty of Mining and Geoengineering
-    case WGiG
-    /// Faculty of Humanities
-    case WH
-    /// Faculty of Computer Science, Electronics and Telecommunications
-    case WIEiT
-    /// Faculty of Materials Science and Ceramics
-    case WIMiC
-    /// Faculty of Metals Engineering and Industrial Computer Science
-    case WIMiIP
-    /// Faculty of Mechanical Engineering and Robotics
-    case WIMiR
-    /// Faculty of Non-Ferrous Metals
-    case WMN
-    /// Faculty of Applied Mathematics
-    case WMS
-    /// Faculty of Foundry Engineering
-    case WO
-    /// Faculty of Drilling, Oil and Gas
-    case WNiG
-    /// Faculty of Management
-    case WZ
+    /// Wydział Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej
+    case ElectricalEngineeringAutomaticsComputerScienceAndBiomedicalEngineering
+    /// Wydział Energetyki i Paliw
+    case ComputerScienceElectronicsAndTelecommunications
+    /// Wydział Inżynierii Materiałowej i Ceramiki
+    case MetalsEngineeringAndIndustrialComputerScience
+    /// Wydział Inżynierii Mechanicznej i Robotyki
+    case EnergyAndFuels
+    /// Wydział Fizyki i Informatyki Stosowanej
+    case PhysicsAndAppliedComputerScience
+    /// Wydział Geodezji Górniczej i Inżynierii Środowiska
+    case MiningSurveyingAndEnvironmentalEngineering
+    /// Wydział Geologii, Geofizyki i Ochrony Środowiska
+    case GeologyGeophysicsAndEnvironmentalProtection
+    /// Wydział Górnictwa i Geoinżynierii
+    case MiningAndGeoengineering
+    /// Wydział Humanistyczny
+    case Humanities
+    /// Wydział Informatyki, Elektroniki i Telekomunikacji
+    case MaterialsScienceAndCeramics
+    /// Wydział Inżynierii Metali i Informatyki Przemysłowej
+    case MechanicalEngineeringAndRobotics
+    /// Wydział Metali Nieżelaznych
+    case NonFerrousMetals
+    /// Wydział Matematyki Stosowanej
+    case AppliedMathematics
+    /// Wydział Odewnictwa
+    case FoundryEngineering
+    /// Wydział Wiertnictwa Nafty i Gazu
+    case DrillingOilAndGas
+    /// Wydział Zarządzania
+    case Management
 }
