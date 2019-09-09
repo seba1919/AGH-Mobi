@@ -130,9 +130,8 @@ class WDRouterNetworking {
              }
          }
      }
-     
      ```
-     **/
+     */
     public func navigateTo(url withPart: UrlType = .OcenyP, requestHandler: @escaping (requestResponseType) -> Void) {
         firstly {
             navigation(withPart)
