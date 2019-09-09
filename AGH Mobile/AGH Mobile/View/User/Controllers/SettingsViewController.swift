@@ -64,7 +64,7 @@ class SettingsViewController: UIViewController {
         }
         
         settingsView.pushLoginPageVC = {
-            WDRouterNetworking().logout() { isLogout in
+            WDRouterNetworking().performLogoutAction() { isLogout in
                 if isLogout {
                     CustomNotifications.setupAlertOnLogoutSuccess()
                     self.navigationController?.pushViewController(LoginPageViewController(), animated: true)

@@ -68,10 +68,10 @@ class LoginPageViewController: UIViewController {
             }
             self.loginPageView.loginButton.isUserInteractionEnabled = false
             WDRouterNetworking().performLoginAction(userWDLogin: userWDLogin, userWDPassword: userWDPassword) { isLoggedIn in
-                if isLoggedIn {
+                if isLoggedIn == .success {
                     CustomNotifications.setupAlertOnLoginSuccess()
                     self.navigationController?.pushViewController(SettingsViewController(), animated: true)
-                } else {
+                } else if isLoggedIn == .credentialsFailiture {
                     CustomNotifications.setupAlertOnLoginFailiture()
                 }
                 self.loginPageView.loginButton.isUserInteractionEnabled = true
