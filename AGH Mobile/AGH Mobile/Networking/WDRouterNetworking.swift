@@ -19,6 +19,16 @@ struct WDRequestData {
     var eventValidation: String?
 }
 
+//MARK: - Global enumeration for navigation in WD
+enum UrlType: String {
+    case Ogloszenia
+    case Wynik2
+    case OcenyP
+    case Stypendia
+    case PracaDyp
+    case PodzGodz
+}
+
 //MARK: - Implementation
 class WDRouterNetworking {
     
@@ -34,7 +44,6 @@ class WDRouterNetworking {
     //Mark: - Public methods
     public func performLoginAction(userWDLogin: String, userWDPassword: String, withPart: UrlType = .OcenyP , completion: @escaping (Bool) -> Void) {
         
-        CustomNotifications.addCustomSpinnerAlert()
         let loginURL = URL(string: "https://dziekanat.agh.edu.pl/Logowanie2.aspx?ReturnUrl=%2f" + withPart.rawValue + ".aspx")!
         
         var request = URLRequest(url: loginURL)
@@ -57,7 +66,8 @@ class WDRouterNetworking {
         
         
         func initialLoginRequest() -> Promise<Void> {
-            
+            CustomNotifications.addCustomSpinnerAlert()
+
             return Promise{ resolver in
                 AF.request(loginURL, method: .post, parameters: parametersToSend)
                     .responseString {  response in
@@ -124,13 +134,29 @@ class WDRouterNetworking {
         }
     }
     
-    enum UrlType: String {
-        case Ogloszenia
-        case Wynik2
-        case OcenyP
-        case Stypendia
-        case PracaDyp
-        case PodzGodz
+    public func logout(logoutHandler: @escaping (Bool) -> Void)  {
+        
+        let url = "https://dziekanat.agh.edu.pl/Wyloguj.aspx"
+        
+        AF.request(url, method: .post)
+            .responseString {  response in
+                
+                switch response.result {
+                    
+                case .success(_):
+                    logoutHandler(true)
+                case .failure(let error):
+                    print(error)
+                    logoutHandler(false)
+                }
+                
+                if let headerFields = response.response?.allHeaderFields as? [String: String], let URL = response.request?.url
+                {
+                    let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
+                    Alamofire.Session.default.session.configuration.httpCookieStorage?.setCookies(cookies, for: URL, mainDocumentURL: nil)
+                }
+        }
+        
     }
     
     //MARK: - Fileprivate Methods
@@ -160,7 +186,7 @@ class WDRouterNetworking {
     }
     
     fileprivate func checkIfLoggedIn() -> Promise<Bool> {
-        
+
         return Promise { resolver in
             guard let cookies = Alamofire.Session.default.session.configuration.httpCookieStorage?.cookies else { resolver.fulfill(false) ; return }
             let validationCookie = cookies.filter({$0.name == ".ASPXUSERWU"})

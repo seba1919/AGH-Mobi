@@ -41,6 +41,9 @@
 "SettingsView_AccountIntegration" = "INTEGRACJA KONT";
 "SettingsView_SignOut" = "Wyloguj się";
 
+/* SettinsViewController */
+"SettingsViewController_LogoutError" = "Wystąpił błąd połączenia z serwerem. Spróbuj ponownie";
+"SettingsViewController_LogoutSuccess" = "Wylogowano";
 
 /* SettingsContent */
 "SettingsContent_WU" = "Wirtualna Uczelnia";

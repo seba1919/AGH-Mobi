@@ -64,7 +64,18 @@ class SettingsViewController: UIViewController {
         }
         
         settingsView.pushLoginPageVC = {
-            self.navigationController?.pushViewController(LoginPageViewController(), animated: true)
+            WDRouterNetworking().logout() { isLogout in
+                if isLogout {
+                    CustomNotifications.addCustomAlert(with: NSLocalizedString("SettingsViewController_LogoutSuccess", comment: ""))
+                    self.navigationController?.pushViewController(LoginPageViewController(), animated: true)
+                } else {
+                    CustomNotifications.addCustomAlert(with: NSLocalizedString("SettingsViewController_LogoutError", comment: ""))
+                }
+                // Version with coordinators will look like that:
+                // Method that triggers LoginCoordinator with login page view
+                // CustomNotifications.addCustomAlert(with: isLogout ? "SettingsViewController_LogoutSuccess" : "SettingsViewController_LogoutError")
+            }
+            
         }
         
     }
