@@ -12,11 +12,11 @@ final class ScheduleViewModel {
         }
         
         switch faculty {
-        case .ElectricalEngineeringAutomaticsComputerScienceAndBiomedicalEngineering:
+        case .WEAIiIBfaculty:
             scheduleProvider = EAIIBScheduleImpl()
-        case .ComputerScienceElectronicsAndTelecommunications:
+        case .WIEiTfaculty:
             scheduleProvider = IETScheduleImpl()
-        case .PhysicsAndAppliedComputerScience:
+        case .WFiISfaculty:
             scheduleProvider = UniTimeScheduleImpl()
         default:
             scheduleProvider = WDViewModel.model
