@@ -49,9 +49,9 @@ class SettingsView: UIView {
     
     private func setupView() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(tabBarTitle)
-        self.addSubview(userProfile)
-        self.addSubview(sectionTitle)
+        self.addSubview(tabBarTitleLabel)
+        self.addSubview(userWDProfile)
+        self.addSubview(sectionTitleLabel)
         self.addSubview(settingsContent)
         self.addSubview(logoutButton)
     }
@@ -60,7 +60,7 @@ class SettingsView: UIView {
     // MARK: - Components of View
     
     // TabBar Title
-    private lazy var tabBarTitle: UILabel = {
+    private lazy var tabBarTitleLabel: UILabel = {
         let tabBarPageTitle = TabBarPageTitleLabel(
             title: NSLocalizedString("SettingsView_UserSettings", comment: ""))
             .build()
@@ -68,7 +68,7 @@ class SettingsView: UIView {
     }()
     
     // User Profile
-    public private(set) lazy var userProfile: UserWDProfile = {
+    public private(set) lazy var userWDProfile: UserWDProfile = {
         let profile = UserWDProfile()
         profile.translatesAutoresizingMaskIntoConstraints = false
         profile.setupProfileImage(named: "user_small_About")
@@ -76,7 +76,7 @@ class SettingsView: UIView {
     }()
     
     // Section Title
-    private lazy var sectionTitle : UILabel = {
+    private lazy var sectionTitleLabel: UILabel = {
         let label = SectionTitle(
             title: NSLocalizedString("SettingsView_AccountIntegration", comment: ""))
             .build()
@@ -105,28 +105,28 @@ class SettingsView: UIView {
     private func setupConstraints() {
         
         // TabBar Title
-        tabBarTitle.snp.makeConstraints { (make) in
+        tabBarTitleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(topPadding)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         
         // User Profile
-        userProfile.snp.makeConstraints { (make) in
-            make.top.equalTo(tabBarTitle.snp.bottom).offset(screenHeight * 0.04)
+        userWDProfile.snp.makeConstraints { (make) in
+            make.top.equalTo(tabBarTitleLabel.snp.bottom).offset(screenHeight * 0.04)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
             make.height.equalTo(Double(screenHeight) * SettingsView.userProfileHightMultipliValue)
         }
         
         // Section Title
-        sectionTitle.snp.makeConstraints { (make) in
-            make.top.equalTo(userProfile.snp.bottom).offset(screenHeight * 0.052)
+        sectionTitleLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(userWDProfile.snp.bottom).offset(screenHeight * 0.052)
             make.left.equalToSuperview().offset(20)
         }
         
         // Settings
         settingsContent.snp.makeConstraints { (make) in
-            make.top.equalTo(sectionTitle.snp.bottom)
+            make.top.equalTo(sectionTitleLabel.snp.bottom)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(logoutButton.snp.top).offset(screenHeight * -0.052)
         }
@@ -134,7 +134,7 @@ class SettingsView: UIView {
         // Logout Button
         logoutButton.snp.makeConstraints { (make) in
             // Adaptation to the iPhone SE
-            if (UIScreen.main.bounds.height < 569) {
+            if UIScreen.isSmallSize() {
                 make.bottom.equalToSuperview().offset(screenHeight * -0.11)
             } else {
                 make.bottom.equalToSuperview().offset(screenHeight * -0.125)

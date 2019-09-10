@@ -20,9 +20,9 @@ class AboutUsCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = AboutUsViewController()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let viewController = AboutUsViewController()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func showMember() {

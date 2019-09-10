@@ -41,7 +41,6 @@ final class TestWDImpl: ModelWD {
     }
     
     func getScheduleForDays(amount: Int) -> [DaySchedule] {
-        
         let day1 = DaySchedule(date: "15.04.2019",
                                entries: [TimetableEntry(from: "11:30",
                                                         until: "13:00",

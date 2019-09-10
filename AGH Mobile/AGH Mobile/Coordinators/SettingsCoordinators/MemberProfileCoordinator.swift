@@ -20,10 +20,9 @@ class MemberProfileViewCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = MemberProfileViewController()
-
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+        let viewController = MemberProfileViewController()
+        viewController.coordinator = self
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     func didFinishStalkingMember() {

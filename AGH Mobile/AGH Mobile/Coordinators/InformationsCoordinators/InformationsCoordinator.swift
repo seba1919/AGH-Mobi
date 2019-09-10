@@ -16,13 +16,13 @@ class InformationsCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         
-        let vc = InformationsViewController()
-        vc.tabBarItem.title = NSLocalizedString("TabBar_Informations", comment: "")
-        vc.tabBarItem.image = UIImage(named: "info_inactive")
-        vc.tabBarItem.selectedImage = UIImage(named: "info_active")
-        vc.coordinator = self
+        let viewController = InformationsViewController()
+        viewController.tabBarItem.title = NSLocalizedString("TabBar_Informations", comment: "")
+        viewController.tabBarItem.image = UIImage(named: "info_inactive")
+        viewController.tabBarItem.selectedImage = UIImage(named: "info_active")
+        viewController.coordinator = self
         
-        navigationController.viewControllers = [vc]
+        navigationController.viewControllers = [viewController]
     }
 
     func start() {

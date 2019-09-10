@@ -4,13 +4,8 @@ import UIKit
 
 class InformationsViewController: UIViewController {
 
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Coordinator
-    weak var coordinator:  InformationsCoordinator?
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
+    // MARK: - Instance properties
+    weak var coordinator: InformationsCoordinator?
     // View
     private var infromationsView: InformationsView { return self.view as! InformationsView }
     

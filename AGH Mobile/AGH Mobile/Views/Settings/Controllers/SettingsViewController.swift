@@ -16,19 +16,12 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Coordinators
-    weak var coordinator:  SettingsCoordinator?
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
+    // MARK: - Instance properties
+    weak var coordinator: SettingsCoordinator?
     // View
     private var settingsView: SettingsView { return self.view as! SettingsView }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
     // MARK: - Lifecycle
-    
     override func loadView() {
         self.view = SettingsView(frame: UIScreen.main.bounds)
     }

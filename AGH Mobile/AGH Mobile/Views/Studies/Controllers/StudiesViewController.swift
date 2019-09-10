@@ -3,9 +3,10 @@
 import UIKit
 
 class StudiesViewController: UIViewController {
-    // MARK: - Coordinator
-    weak var coordinator:  StudiesCoordinator?
-    // MARK: - Private properties
+    
+    // MARK: - Instance properties
+    weak var coordinator: StudiesCoordinator?
+    // Private
     private var studiesView: StudiesView { return view as! StudiesView }
     
     // MARK: - Lifecycle

@@ -55,16 +55,16 @@ class UserWDProfile: UIView {
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public Methods
     
-    public func setupProfileImage(named Name: String) {
-        userPhoto.image = UIImage(named: Name)
+    public func setupProfileImage(named name: String) {
+        userPhoto.image = UIImage(named: name)
     }
     
     public func setupProfileType(as profileType: String) {
         userProfileType.text = profileType
     }
     
-    public func setupName(as Name: String) {
-        userName.text = Name
+    public func setupName(as name: String) {
+        userName.text = name
     }
     
     public func setupIndexNumber(to indexNumber: String) {

@@ -4,7 +4,7 @@ import UIKit
 
 class ForYouViewController: UIViewController {
     // MARK: - Coordinator
-    weak var coordinator:  ForYouCoordinator?
+    weak var coordinator: ForYouCoordinator?
     // MARK: - Private properties
     private var forYouView: ForYouView { return view as! ForYouView }
     

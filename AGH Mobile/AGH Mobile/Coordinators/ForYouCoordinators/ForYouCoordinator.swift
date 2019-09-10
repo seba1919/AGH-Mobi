@@ -16,16 +16,15 @@ class ForYouCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         
-        let vc = ForYouViewController()
-        vc.tabBarItem.title = NSLocalizedString("TabBar_ForYou", comment: "")
-        vc.tabBarItem.image = UIImage(named: "for_you_inactive")
-        vc.tabBarItem.selectedImage = UIImage(named: "for_you_active")
-        vc.coordinator = self
+        let viewController = ForYouViewController()
+        viewController.tabBarItem.title = NSLocalizedString("TabBar_ForYou", comment: "")
+        viewController.tabBarItem.image = UIImage(named: "for_you_inactive")
+        viewController.tabBarItem.selectedImage = UIImage(named: "for_you_active")
+        viewController.coordinator = self
         
-        navigationController.viewControllers = [vc]
+        navigationController.viewControllers = [viewController]
     }
     
-
     func start() {
 
     }

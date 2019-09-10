@@ -15,13 +15,13 @@ class StudiesCoordinator: Coordinator {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        let vc = StudiesViewController()
-        vc.tabBarItem.title = NSLocalizedString("TabBar_Studies", comment: "")
-        vc.tabBarItem.image = UIImage(named: "studies_inactive")
-        vc.tabBarItem.selectedImage = UIImage(named: "studies_active")
-        vc.coordinator = self
+        let viewController = StudiesViewController()
+        viewController.tabBarItem.title = NSLocalizedString("TabBar_Studies", comment: "")
+        viewController.tabBarItem.image = UIImage(named: "studies_inactive")
+        viewController.tabBarItem.selectedImage = UIImage(named: "studies_active")
+        viewController.coordinator = self
         
-        navigationController.viewControllers = [vc]
+        navigationController.viewControllers = [viewController]
     }
     
     func start() {

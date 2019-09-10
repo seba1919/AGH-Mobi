@@ -100,7 +100,8 @@ extension AboutUsView {
             } else {
                 make.height.equalTo(self.frame.height * 0.123)
             }
-            make.width.equalTo(macKnIconImageView.snp.height).multipliedBy(macKnIconImageView.frame.width / macKnIconImageView.frame.height)
+            make.width.equalTo(macKnIconImageView.snp.height)
+                .multipliedBy(macKnIconImageView.frame.width / macKnIconImageView.frame.height)
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
         }
         

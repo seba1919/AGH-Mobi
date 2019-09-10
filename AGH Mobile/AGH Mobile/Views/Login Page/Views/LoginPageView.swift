@@ -178,7 +178,8 @@ extension LoginPageView {
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.top.greaterThanOrEqualTo(remindPasswordButton.snp.bottom).offset(screenHeight * 0.036)
             make.height.equalTo(screenHeight * 0.062)
-            make.width.equalTo(macKnIconImageView.snp.height).multipliedBy(macKnIconImageView.frame.width / macKnIconImageView.frame.height)
+            make.width.equalTo(macKnIconImageView.snp.height)
+                .multipliedBy(macKnIconImageView.frame.width / macKnIconImageView.frame.height)
             make.bottom.equalTo(aboutUsButton.snp.top).offset(-3)
         }
         

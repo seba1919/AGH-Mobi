@@ -15,20 +15,20 @@ class SettingsCoordinator: Coordinator {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        let vc = SettingsViewController()
-        vc.coordinator = self
+        let viewController = SettingsViewController()
+        viewController.coordinator = self
         
-        vc.tabBarItem.title = NSLocalizedString("TabBar_Settings", comment: "")
-        vc.tabBarItem.image = UIImage(named: "settings_inactive")
-        vc.tabBarItem.selectedImage = UIImage(named: "settings_active")
+        viewController.tabBarItem.title = NSLocalizedString("TabBar_Settings", comment: "")
+        viewController.tabBarItem.image = UIImage(named: "settings_inactive")
+        viewController.tabBarItem.selectedImage = UIImage(named: "settings_active")
         
-        navigationController.viewControllers = [vc]
+        navigationController.viewControllers = [viewController]
     }
 
     func start() {
     }
     
-    func showTeamMembers(){
+    func showTeamMembers() {
         let child = AboutUsCoordinator(navigationController: self.navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)

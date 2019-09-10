@@ -74,17 +74,22 @@ extension TeamGalleryCell {
             make.top.equalTo(self.snp.top)
             make.height.equalTo(memberPhotoImageHight)
             make.width.equalTo(memberPhotoImageView.snp.height)
-            make.bottom.lessThanOrEqualTo(memberNameLabel.snp.top).offset(self.frame.height * -0.1).priority(.low)
+            make.bottom.lessThanOrEqualTo(memberNameLabel.snp.top)
+                .offset(self.frame.height * -0.1)
+                .priority(.low)
         }
 
         memberNameLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.bottom.equalTo(memberSpecializationLabel.snp.top).offset(self.frame.height * -0.0125).priority(.required)
+            make.bottom.equalTo(memberSpecializationLabel.snp.top)
+                .offset(self.frame.height * -0.0125)
+                .priority(.required)
         }
 
         memberSpecializationLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(self.snp.centerX)
-            make.bottom.equalTo(self.snp.bottom).priority(.required)
+            make.bottom.equalTo(self.snp.bottom)
+                .priority(.required)
         }
     }
     
