@@ -13,21 +13,19 @@ class SettingsCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
-    var rootViewController: SettingsViewController?
-    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-    }
-    
-    // Initializing rootViewController method
-    func start() {
         let vc = SettingsViewController()
-        rootViewController = vc
         vc.coordinator = self
         
         vc.tabBarItem.title = NSLocalizedString("TabBar_Settings", comment: "")
         vc.tabBarItem.image = UIImage(named: "settings_inactive")
         vc.tabBarItem.selectedImage = UIImage(named: "settings_active")
+        
+        navigationController.viewControllers = [vc]
+    }
+
+    func start() {
     }
     
     func showTeamMembers(){

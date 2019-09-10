@@ -15,16 +15,13 @@ class MemberProfileViewCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
-    var rootViewController: MemberProfileViewController?
-    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
-    // Initializing rootViewController method
+
     func start() {
         let vc = MemberProfileViewController()
-        rootViewController = vc
+
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

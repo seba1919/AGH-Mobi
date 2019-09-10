@@ -13,20 +13,18 @@ class InformationsCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
-    var rootViewController: InformationsViewController?
-    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-    }
-    
-    // Initializing rootViewController method
-    func start() {
-        let vc = InformationsViewController()
-        rootViewController = vc
-        vc.coordinator = self
         
+        let vc = InformationsViewController()
         vc.tabBarItem.title = NSLocalizedString("TabBar_Informations", comment: "")
         vc.tabBarItem.image = UIImage(named: "info_inactive")
         vc.tabBarItem.selectedImage = UIImage(named: "info_active")
+        vc.coordinator = self
+        
+        navigationController.viewControllers = [vc]
+    }
+
+    func start() {
     }
 }

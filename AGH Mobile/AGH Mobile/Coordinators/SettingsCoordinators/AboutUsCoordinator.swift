@@ -15,16 +15,12 @@ class AboutUsCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
-    var rootViewController: AboutAsViewController?
-    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-    
-    // Initializing rootViewController method
+
     func start() {
         let vc = AboutAsViewController()
-        rootViewController = vc
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

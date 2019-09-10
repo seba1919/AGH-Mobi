@@ -76,7 +76,6 @@
 		65CEF5092309DB7F002A45F6 /* InformationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CEF5082309DB7F002A45F6 /* InformationsCoordinator.swift */; };
 		65CEF50B2309DB85002A45F6 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CEF50A2309DB85002A45F6 /* SettingsCoordinator.swift */; };
 		65CEF50D2309DBA0002A45F6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CEF50C2309DBA0002A45F6 /* Coordinator.swift */; };
-		65CEF50F2309DBAD002A45F6 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CEF50E2309DBAD002A45F6 /* TabBarCoordinator.swift */; };
 		65CEF52E230AEB8D002A45F6 /* AboutUsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CEF52D230AEB8D002A45F6 /* AboutUsCoordinator.swift */; };
 		65CEF530230AEF7C002A45F6 /* MemberProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CEF52F230AEF7C002A45F6 /* MemberProfileCoordinator.swift */; };
 		76ED7A09ADF48FAF996EEFD2 /* Pods_AGH_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */; };
@@ -181,7 +180,6 @@
 		65CEF5082309DB7F002A45F6 /* InformationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsCoordinator.swift; sourceTree = "<group>"; };
 		65CEF50A2309DB85002A45F6 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		65CEF50C2309DBA0002A45F6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		65CEF50E2309DBAD002A45F6 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		65CEF52D230AEB8D002A45F6 /* AboutUsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsCoordinator.swift; sourceTree = "<group>"; };
 		65CEF52F230AEF7C002A45F6 /* MemberProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileCoordinator.swift; sourceTree = "<group>"; };
 		77F59FBE253B8BA7BCED5272 /* Pods-AGH MobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -732,7 +730,6 @@
 				65CEF5002309DB27002A45F6 /* InformationsCoordinators */,
 				65CEF5012309DB46002A45F6 /* SettingsCoordinators */,
 				65CEF50C2309DBA0002A45F6 /* Coordinator.swift */,
-				65CEF50E2309DBAD002A45F6 /* TabBarCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -1040,7 +1037,6 @@
 				4BC1567D22661EE700ED633C /* TimetableEntry.swift in Sources */,
 				65CEF5072309DB77002A45F6 /* MapsCoordinator.swift in Sources */,
 				61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */,
-				65CEF50F2309DBAD002A45F6 /* TabBarCoordinator.swift in Sources */,
 				613324B6228483C100C7C474 /* SectionTitle.swift in Sources */,
 				65A9925222CBCF7F0034DBE7 /* ScholarshipInfo.swift in Sources */,
 				65A9924B22CBC4970034DBE7 /* IETScheduleImpl.swift in Sources */,

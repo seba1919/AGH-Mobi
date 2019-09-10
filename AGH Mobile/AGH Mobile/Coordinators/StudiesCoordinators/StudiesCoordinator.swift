@@ -12,21 +12,18 @@ class StudiesCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
-    
-    var rootViewController: StudiesViewController?
-    
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-    }
-    
-    // Initializing rootViewController method
-    func start() {
         let vc = StudiesViewController()
-        rootViewController = vc
-        vc.coordinator = self
-        
         vc.tabBarItem.title = NSLocalizedString("TabBar_Studies", comment: "")
         vc.tabBarItem.image = UIImage(named: "studies_inactive")
         vc.tabBarItem.selectedImage = UIImage(named: "studies_active")
+        vc.coordinator = self
+        
+        navigationController.viewControllers = [vc]
+    }
+    
+    func start() {
     }
 }

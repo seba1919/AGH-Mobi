@@ -13,20 +13,20 @@ class ForYouCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
-    public var rootViewController: ForYouViewController?
-    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-    }
-    
-    // Initializing rootViewController method
-    func start() {
-        let vc = ForYouViewController()
-        rootViewController = vc
-        vc.coordinator = self
         
+        let vc = ForYouViewController()
         vc.tabBarItem.title = NSLocalizedString("TabBar_ForYou", comment: "")
         vc.tabBarItem.image = UIImage(named: "for_you_inactive")
         vc.tabBarItem.selectedImage = UIImage(named: "for_you_active")
+        vc.coordinator = self
+        
+        navigationController.viewControllers = [vc]
+    }
+    
+
+    func start() {
+
     }
 }
