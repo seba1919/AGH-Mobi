@@ -1,10 +1,4 @@
-//
-//  HomeTabBarController.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 28/03/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
 
 import UIKit
 
@@ -27,24 +21,27 @@ class HomeTabBarController: UITabBarController {
                            settings.navigationController]
         self.setupTabBarStyling()
     }
+}
+
+extension HomeTabBarController {
     
     // MARK: - Setup tabBar styling
     private func setupTabBarStyling() {
         // TabBar background color
         self.tabBar.backgroundColor = .customLightGray
-        // TabBar tint color
+        /// TabBar tint color
         self.tabBar.tintColor = .mainRed
-        // Setups for each items in TabBar
+        /// Setups for each items in TabBar
         if let items = self.tabBar.items {
             for item in items {
-                // Text attributes for normal state
+                /// Text attributes for normal state
                 item.setTitleTextAttributes([
-                    NSAttributedString.Key.font : UIFont.systemFont(ofSize: 10.5),
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10.5),
                     NSAttributedString.Key.foregroundColor: UIColor.customDarkGray
                     ], for: .normal)
-                // Text attributes for selected state
+                /// Text attributes for selected state
                 item.setTitleTextAttributes([
-                    NSAttributedString.Key.font : UIFont.systemFont(ofSize: 10.5),
+                    NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10.5),
                     NSAttributedString.Key.foregroundColor: UIColor.mainRed
                     ], for: .selected)
             }

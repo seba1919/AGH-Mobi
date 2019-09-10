@@ -20,7 +20,7 @@ class AboutUsCoordinator: Coordinator {
     }
 
     func start() {
-        let vc = AboutAsViewController()
+        let vc = AboutUsViewController()
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
