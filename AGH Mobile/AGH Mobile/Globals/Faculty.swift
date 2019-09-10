@@ -10,35 +10,35 @@ import Foundation
 
 enum Faculty {
     /// Wydział Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej
-    case ElectricalEngineeringAutomaticsComputerScienceAndBiomedicalEngineering
+    case WEAIiIBfaculty
     /// Wydział Energetyki i Paliw
-    case ComputerScienceElectronicsAndTelecommunications
+    case WIEiTfaculty
     /// Wydział Inżynierii Materiałowej i Ceramiki
-    case MetalsEngineeringAndIndustrialComputerScience
+    case WIMiIPfaculty
     /// Wydział Inżynierii Mechanicznej i Robotyki
-    case EnergyAndFuels
+    case WEiPfaculty
     /// Wydział Fizyki i Informatyki Stosowanej
-    case PhysicsAndAppliedComputerScience
+    case WFiISfaculty
     /// Wydział Geodezji Górniczej i Inżynierii Środowiska
-    case MiningSurveyingAndEnvironmentalEngineering
+    case WGGiIŚfaculty
     /// Wydział Geologii, Geofizyki i Ochrony Środowiska
-    case GeologyGeophysicsAndEnvironmentalProtection
+    case WGGiOŚfaculty
     /// Wydział Górnictwa i Geoinżynierii
-    case MiningAndGeoengineering
+    case WGiGfaculty
     /// Wydział Humanistyczny
-    case Humanities
+    case WHfaculty
     /// Wydział Informatyki, Elektroniki i Telekomunikacji
-    case MaterialsScienceAndCeramics
+    case WIMiCfaculty
     /// Wydział Inżynierii Metali i Informatyki Przemysłowej
-    case MechanicalEngineeringAndRobotics
+    case WIMiRfaculty
     /// Wydział Metali Nieżelaznych
-    case NonFerrousMetals
+    case WMNfaculty
     /// Wydział Matematyki Stosowanej
-    case AppliedMathematics
+    case WMSfaculty
     /// Wydział Odewnictwa
-    case FoundryEngineering
+    case WOfaculty
     /// Wydział Wiertnictwa Nafty i Gazu
-    case DrillingOilAndGas
+    case WWNiGfaculty
     /// Wydział Zarządzania
-    case Management
+    case WZfaculty
 }

@@ -17,11 +17,11 @@ final class ScheduleViewModel {
         }
         
         switch faculty {
-        case .ElectricalEngineeringAutomaticsComputerScienceAndBiomedicalEngineering:
+        case .WEAIiIBfaculty:
             scheduleProvider = EAIIBScheduleImpl()
-        case .ComputerScienceElectronicsAndTelecommunications:
+        case .WIEiTfaculty:
             scheduleProvider = IETScheduleImpl()
-        case .PhysicsAndAppliedComputerScience:
+        case .WFiISfaculty:
             scheduleProvider = UniTimeScheduleImpl()
             break
         default: // dla pozostalych wydzialow bierzemy plan z WD
