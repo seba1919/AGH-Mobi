@@ -1,10 +1,4 @@
-//
-//  SettingsCoordinator.swift
-//  AGH Mobile
-//
-//  Created by Sebastian Wiatrzyk on 18/08/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
 
 import UIKit
 
@@ -24,11 +18,8 @@ class SettingsCoordinator: Coordinator {
         
         navigationController.viewControllers = [viewController]
     }
-
-    func start() {
-    }
     
-    func showTeamMembers() {
+    func showTeamMembers(){
         let child = AboutUsCoordinator(navigationController: self.navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)

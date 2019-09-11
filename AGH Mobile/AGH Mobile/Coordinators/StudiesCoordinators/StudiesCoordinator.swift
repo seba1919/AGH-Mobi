@@ -1,20 +1,15 @@
-//
-//  StudiesCoordinator.swift
-//  AGH Mobile
-//
-//  Created by Sebastian Wiatrzyk on 18/08/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
 
 import UIKit
 
-class StudiesCoordinator: Coordinator {
+class StudiesCoordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        
         let viewController = StudiesViewController()
         viewController.tabBarItem.title = NSLocalizedString("TabBar_Studies", comment: "")
         viewController.tabBarItem.image = UIImage(named: "studies_inactive")
@@ -22,8 +17,5 @@ class StudiesCoordinator: Coordinator {
         viewController.coordinator = self
         
         navigationController.viewControllers = [viewController]
-    }
-    
-    func start() {
     }
 }

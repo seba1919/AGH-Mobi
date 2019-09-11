@@ -1,14 +1,8 @@
-//
-//  InformationsCoordinator.swift
-//  AGH Mobile
-//
-//  Created by Sebastian Wiatrzyk on 18/08/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
 
 import UIKit
 
-class InformationsCoordinator: Coordinator {
+class InformationsCoordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
@@ -23,8 +17,5 @@ class InformationsCoordinator: Coordinator {
         viewController.coordinator = self
         
         navigationController.viewControllers = [viewController]
-    }
-
-    func start() {
     }
 }

@@ -1,14 +1,8 @@
-//
-//  ForYouCoordinator.swift
-//  AGH Mobile
-//
-//  Created by Sebastian Wiatrzyk on 18/08/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
 
 import UIKit
 
-class ForYouCoordinator: Coordinator {
+class ForYouCoordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
@@ -23,9 +17,5 @@ class ForYouCoordinator: Coordinator {
         viewController.coordinator = self
         
         navigationController.viewControllers = [viewController]
-    }
-    
-    func start() {
-
     }
 }
