@@ -21,35 +21,34 @@ struct WDRequestData {
 
 //MARK: - Global enumeration for navigation in WD
 enum UrlType: String {
-    case Ogloszenia
-    case Wynik2
-    case OcenyP
-    case Stypendia
-    case PracaDyp
-    case PodzGodz
+    case ogloszenia
+    case wynik2
+    case ocenyP
+    case stypendia
+    case pracaDyp
+    case podzGodz
 }
 
 //MARK: - Global enumeration for handling request response
-enum requestResponseType {
+enum RequestResponseType {
     case success
     case credentialsFailiture
     case serverFailiture
 }
 
-//MARK: - Implementation
+// MARK: - Implementation
 class WDRouterNetworking {
     
-    //MARK: - Singleton Instance
+    // MARK: - Singleton Instance
     static let sharedInstance = WDRouterNetworking()
     
-    //MARK: - Private Properties
+    // MARK: - Private Properties
     private var viewState = ""
     private var viewGenerator = ""
     private var  eventValidation = ""
     
-    
-    //Mark: - Public methods
-    public func performLoginAction(userWDLogin: String, userWDPassword: String, withPart: UrlType = .OcenyP , requestHandler: @escaping (requestResponseType) -> Void) {
+    // Mark: - Public methods
+    public func performLoginAction(userWDLogin: String, userWDPassword: String, withPart: UrlType = .ocenyP , requestHandler: @escaping (RequestResponseType) -> Void) {
         
         CustomNotifications.showCustomSpinnerAlert()
         let loginURL = URL(string: "https://dziekanat.agh.edu.pl/Logowanie2.aspx?ReturnUrl=%2f" + withPart.rawValue + ".aspx")!
@@ -69,9 +68,7 @@ class WDRouterNetworking {
             "ctl00$ctl00$ContentPlaceHolder$MiddleContentPlaceHolder$txtHaslo": userWDPassword,
             "ctl00$ctl00$ContentPlaceHolder$MiddleContentPlaceHolder$butLoguj": "Zaloguj",
             "ctl00$ctl00$ContentPlaceHolder$MiddleContentPlaceHolder$rbKto": "student",
-            "__EVENTVALIDATION": eventValidation,
-        ]
-        
+            "__EVENTVALIDATION": eventValidation]
         
         func initialLoginRequest() -> Promise<Void> {
 
@@ -132,7 +129,7 @@ class WDRouterNetworking {
      }
      ```
      */
-    public func navigateTo(url withPart: UrlType = .OcenyP, requestHandler: @escaping (requestResponseType) -> Void) {
+    public func navigateTo(url withPart: UrlType = .ocenyP, requestHandler: @escaping (RequestResponseType) -> Void) {
         firstly {
             navigation(withPart)
             }
@@ -176,7 +173,7 @@ class WDRouterNetworking {
     }
     
     //MARK: - Fileprivate Methods
-    fileprivate func navigation(_ partOfUrl: UrlType = .OcenyP) -> Promise<Void> {
+    fileprivate func navigation(_ partOfUrl: UrlType = .ocenyP) -> Promise<Void> {
         
         let url = "https://dziekanat.agh.edu.pl/" + partOfUrl.rawValue + ".aspx"
         CustomNotifications.showCustomSpinnerAlert()
