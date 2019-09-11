@@ -1,14 +1,9 @@
-//
-//  AGH_MobileTests.swift
-//  AGH MobileTests
-//
-//  Created by Mateusz Bąk on 27/03/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
 
 import XCTest
 @testable import AGH_Mobile
 
+// swiftlint:disable:next type_name
 class AGH_MobileTests: XCTestCase {
 
     override func setUp() {
