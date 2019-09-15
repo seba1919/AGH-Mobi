@@ -78,17 +78,18 @@ extension StudiesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ClassesCell.identifier, for: indexPath) as! ClassesCell
         
-        var ShortcutNameOfType = ["LAB", "ĆL", "W", "A", "ĆL", "W", "A"]
-        var NameOfActivities = ["Bazy danych", "Programowanie współbierzne", "Lingwistyka formalna", "Programowanie współbierzne i asbdbas asdasdsd", "Programowanie współbierzne", "Lingwistyka formalna", "Programowanie współbierzne i asbdbas asdasdsd"]
-        var TimeOfActivities = ["8:00 - 9:30", "12:30 - 14:00", "14:00 - 15:30", "18:30 - 20:00", "12:30 - 14:00", "14:00 - 15:30", "18:30 - 20:00"]
-        var PlaceOfActivities = ["C-2 208", "C-2 315", "C-2 224", "B-1 015", "C-2 315", "C-2 224", "B-1 015"]
-        var CountingDownOfActivities = ["Trwa", "Za 4 godziny", "Za 5 godzin", "Za 10 godzin", "Za 4 godziny", "Za 5 godzin", "Za 10 godzin"]
+        var shortcutNameOfType = ["LAB", "ĆL", "W", "A", "ĆL", "W", "A"]
+        var nameOfActivities = ["Bazy danych", "Programowanie współbierzne", "Lingwistyka formalna", "Programowanie współbierzne i asbdbas asdasdsd",
+                                "Programowanie współbierzne", "Lingwistyka formalna", "Programowanie współbierzne i asbdbas asdasdsd"]
+        var timeOfActivities = ["8:00 - 9:30", "12:30 - 14:00", "14:00 - 15:30", "18:30 - 20:00", "12:30 - 14:00", "14:00 - 15:30", "18:30 - 20:00"]
+        var placeOfActivities = ["C-2 208", "C-2 315", "C-2 224", "B-1 015", "C-2 315", "C-2 224", "B-1 015"]
+        var countingDownOfActivities = ["Trwa", "Za 4 godziny", "Za 5 godzin", "Za 10 godzin", "Za 4 godziny", "Za 5 godzin", "Za 10 godzin"]
         
-        cell.setShortcutNameOfType(to: ShortcutNameOfType[indexPath.row])
-        cell.setNameOfActivities(to: NameOfActivities[indexPath.row])
-        cell.setTimeOfActivities(to: TimeOfActivities[indexPath.row])
-        cell.setPlaceOfActivities(to: PlaceOfActivities[indexPath.row])
-        cell.setCountingDownOfActivities(to: CountingDownOfActivities[indexPath.row])
+        cell.setShortcutNameOfType(to: shortcutNameOfType[indexPath.row])
+        cell.setNameOfActivities(to: nameOfActivities[indexPath.row])
+        cell.setTimeOfActivities(to: timeOfActivities[indexPath.row])
+        cell.setPlaceOfActivities(to: placeOfActivities[indexPath.row])
+        cell.setCountingDownOfActivities(to: countingDownOfActivities[indexPath.row])
         
         return cell
     }
