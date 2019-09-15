@@ -6,20 +6,20 @@
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
-//MARK: - Imports
+// MARK: - Imports
 import Foundation
 import PromiseKit
 import SwiftSoup
 import Alamofire
 
-//MARK: - Global struct
+// MARK: - Global struct
 struct WDRequestData {
     var viewState: String?
     var viewGenerator: String?
     var eventValidation: String?
 }
 
-//MARK: - Global enumeration for navigation in WD
+// MARK: - Global enumeration for navigation in WD
 enum UrlType: String {
     case ogloszenia
     case wynik2
@@ -29,7 +29,7 @@ enum UrlType: String {
     case podzGodz
 }
 
-//MARK: - Global enumeration for handling request response
+// MARK: - Global enumeration for handling request response
 enum RequestResponseType {
     case success
     case credentialsFailiture
@@ -47,11 +47,15 @@ class WDRouterNetworking {
     private var viewGenerator = ""
     private var  eventValidation = ""
     
-    // Mark: - Public methods
-    public func performLoginAction(userWDLogin: String, userWDPassword: String, withPart: UrlType = .ocenyP , requestHandler: @escaping (RequestResponseType) -> Void) {
+    // MARK: - Public methods
+    public func performLoginAction(userWDLogin: String,
+                                   userWDPassword: String,
+                                   withPart: UrlType = .ocenyP,
+                                   requestHandler: @escaping (RequestResponseType) -> Void) {
         
         CustomNotifications.showCustomSpinnerAlert()
-        let loginURL = URL(string: "https://dziekanat.agh.edu.pl/Logowanie2.aspx?ReturnUrl=%2f" + withPart.rawValue + ".aspx")!
+        let urlString = "https://dziekanat.agh.edu.pl/Logowanie2.aspx?ReturnUrl=%2f"
+        let loginURL = URL(string: urlString + withPart.rawValue + ".aspx")!
         
         var request = URLRequest(url: loginURL)
         
@@ -72,13 +76,14 @@ class WDRouterNetworking {
         
         func initialLoginRequest() -> Promise<Void> {
 
-            return Promise{ resolver in
+            return Promise { resolver in
                 AF.request(loginURL, method: .post, parameters: parametersToSend)
                     .responseString {  response in
                         
                         switch response.result {
                             
-                        case .success(_):
+                        case .success(let success):
+                            print(success)
                             resolver.fulfill_()
                         case .failure(let error):
                             resolver.reject(error)
@@ -94,7 +99,7 @@ class WDRouterNetworking {
             .then(on: DispatchQueue.global(qos: .background)) {
                 self.checkIfLoggedIn()
             }
-            .done() { isLoggedIn in
+            .done { isLoggedIn in
                 isLoggedIn ? requestHandler(.success) : requestHandler(.credentialsFailiture)
                 CustomNotifications.hideCustomSpinnerAlert()
             }
@@ -108,7 +113,7 @@ class WDRouterNetworking {
         }
     }
     
-    //MARK: - NavigateTo Method Description
+    // MARK: - NavigateTo Method Description
     /**
      
     For making above method working please **type your user and password**
@@ -136,10 +141,12 @@ class WDRouterNetworking {
             .then(on: DispatchQueue.global(qos: .background)) {
                 self.checkIfLoggedIn()
             }
-            .done() { validation in
+            .done { validation in
                 if !validation {
-                    //TODO: - KEYCHAIN IMPLEMENTATION
-                    self.performLoginAction(userWDLogin: "keychain.user", userWDPassword: "keychain.password", withPart: withPart) { isLoggedIn in
+                    // TODO: - KEYCHAIN IMPLEMENTATION
+                    self.performLoginAction(userWDLogin: "keychain.user",
+                                            userWDPassword: "keychain.password",
+                                            withPart: withPart) { isLoggedIn in
                         requestHandler(isLoggedIn)
                     }
                 } else {
@@ -153,7 +160,7 @@ class WDRouterNetworking {
         }
     }
     
-    public func performLogoutAction(requestHandler: @escaping (Bool) -> Void)  {
+    public func performLogoutAction(requestHandler: @escaping (Bool) -> Void) {
 
         let url = "https://dziekanat.agh.edu.pl/Wyloguj.aspx"
         
@@ -161,7 +168,8 @@ class WDRouterNetworking {
             .responseString {  response in
                 
                 switch response.result {
-                case .success(_):
+                case .success(let success):
+                    print(success)
                     requestHandler(true)
                 case .failure(let error):
                     print(error)
@@ -172,18 +180,19 @@ class WDRouterNetworking {
         
     }
     
-    //MARK: - Fileprivate Methods
+    // MARK: - Fileprivate Methods
     fileprivate func navigation(_ partOfUrl: UrlType = .ocenyP) -> Promise<Void> {
         
         let url = "https://dziekanat.agh.edu.pl/" + partOfUrl.rawValue + ".aspx"
         CustomNotifications.showCustomSpinnerAlert()
-        return Promise{ resolver in
+        return Promise { resolver in
             AF.request(url, method: .post)
                 .responseString {  response in
                     
                     switch response.result {
                         
-                    case .success(_):
+                    case .success(let success):
+                        print(success)
                         resolver.fulfill_()
                     case .failure(let error):
                         resolver.reject(error)
@@ -194,16 +203,20 @@ class WDRouterNetworking {
     }
     
     fileprivate func saveCookiesToStorage(from response: DataResponse<String>) {
-        if let headerFields = response.response?.allHeaderFields as? [String: String], let URL = response.request?.url
-        {
+        if let headerFields = response.response?.allHeaderFields as? [String: String], let URL = response.request?.url {
             let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
-            Alamofire.Session.default.session.configuration.httpCookieStorage?.setCookies(cookies, for: URL, mainDocumentURL: nil)
+            Alamofire.Session.default.session.configuration.httpCookieStorage?.setCookies(cookies,
+                                                                                          for: URL,
+                                                                                          mainDocumentURL: nil)
         }
     }
     
     fileprivate func checkIfLoggedIn() -> Promise<Bool> {
         return Promise { resolver in
-            guard let cookies = Alamofire.Session.default.session.configuration.httpCookieStorage?.cookies else { resolver.fulfill(false) ; return }
+            guard let cookies = Alamofire.Session.default.session.configuration.httpCookieStorage?.cookies else {
+                resolver.fulfill(false)
+                return
+            }
             let validationCookie = cookies.filter({$0.name == ".ASPXUSERWU"})
             validationCookie.count == 1  ? resolver.fulfill(true) : resolver.fulfill(false)
         }

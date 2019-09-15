@@ -11,7 +11,7 @@ import UIKit
 
 class CustomNotifications {
     
-    //MARK: - Custom Alert Notifications Fot LoginPageViewController
+    // MARK: - Custom Alert Notifications Fot LoginPageViewController
     public static func setupAlertOnLoginFailiture() {
         UIView.showToast(message: NSLocalizedString("CustomNotifications_InvalidLoginData", comment: ""))
     }
@@ -24,12 +24,12 @@ class CustomNotifications {
         UIView.showToast(message: NSLocalizedString("CustomNotifications_MissingLoginCredentials", comment: ""))
     }
     
-    //MARK: - Custom Alert Notifications Fot WDRouterNetworking
+    // MARK: - Custom Alert Notifications Fot WDRouterNetworking
     public static func setupAlertOnServerConnectionFailture() {
         UIView.showToast(message: NSLocalizedString("CustomNotifications_ServerError", comment: ""))
     }
     
-    //MARK: - Custom Alert Notifications Fot SettingsViewController
+    // MARK: - Custom Alert Notifications Fot SettingsViewController
     public static func setupAlertOnLogoutSuccess() {
         UIView.showToast(message: NSLocalizedString("CustomNotifications_LogoutSuccess", comment: ""))
     }
@@ -38,7 +38,7 @@ class CustomNotifications {
         UIView.showToast(message: NSLocalizedString("CustomNotifications_LogoutError", comment: ""))
     }
     
-    //MARK: - Custom Spinner Alert Notifications Fot Application
+    // MARK: - Custom Spinner Alert Notifications Fot Application
     public static func showCustomSpinnerAlert() {
         UIView.showSpinnerToast()
     }

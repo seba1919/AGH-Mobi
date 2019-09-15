@@ -53,7 +53,6 @@ class LoginPageViewController: UIViewController {
     
     private func setupActions() {
         
-        
         loginPageView.pushAboutAsVC = {
             self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
         }
@@ -67,7 +66,8 @@ class LoginPageViewController: UIViewController {
                 return
             }
             self.loginPageView.loginButton.isUserInteractionEnabled = false
-            WDRouterNetworking().performLoginAction(userWDLogin: userWDLogin, userWDPassword: userWDPassword) { isLoggedIn in
+            WDRouterNetworking().performLoginAction(userWDLogin: userWDLogin,
+                                                    userWDPassword: userWDPassword) { isLoggedIn in
                 if isLoggedIn == .success {
                     CustomNotifications.setupAlertOnLoginSuccess()
                     self.navigationController?.pushViewController(SettingsViewController(), animated: true)
