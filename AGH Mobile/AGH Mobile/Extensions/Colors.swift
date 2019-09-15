@@ -22,4 +22,5 @@ extension UIColor {
     /// Text Color
     static let textColor = UIColor(red: 88/255, green: 88/255, blue: 88/255, alpha: 1)
     static let shortcutDarkGray = UIColor(red: 105/255, green: 102/255, blue: 104/255, alpha: 1)
+    static let lightPeach = UIColor(red: 239/255, green: 213/255, blue: 213/255, alpha: 1)
 }

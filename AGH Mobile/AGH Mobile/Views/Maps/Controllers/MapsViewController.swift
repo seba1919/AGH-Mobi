@@ -13,7 +13,8 @@ final class MapsViewController: UIViewController {
     private var listContentViewController: ListContentViewController!
     private var mapDataFeatures: [Feature] = [] {
         didSet {
-            listContentViewController.listContentView.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+            listContentViewController.listContentView.tableView.reloadSections(IndexSet(integer: 0),
+                                                                               with: .fade)
         }
     }
     
@@ -31,7 +32,7 @@ final class MapsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {

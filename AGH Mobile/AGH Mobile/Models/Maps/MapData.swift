@@ -2,9 +2,10 @@
 
 import Foundation
 
+// MARK: - MapData Model Description
 /**
  ```
- // Example of usage
+ // MARK: Example of usage
  guard let url = Bundle.main.url(forResource: "MapCategoryBuildings",
                                  withExtension: "geojson") else {
      return
