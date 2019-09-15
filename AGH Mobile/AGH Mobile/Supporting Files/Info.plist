@@ -40,8 +40,10 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Czy mogę?</string>
+	<string>Czy możemy skorzystać z Twojej lokalizacji by określić odległość do najbliszych spotów?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Czy ja mogę?</string>
+	<string>Czy możemy skorzystać z Twojej lokalizacji by określić odległość do najbliszych spotów?</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

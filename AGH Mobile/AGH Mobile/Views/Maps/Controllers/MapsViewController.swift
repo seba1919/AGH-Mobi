@@ -29,6 +29,11 @@ final class MapsViewController: UIViewController {
         fetchMapData(forResource: "MapCategoryBuildings")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupMap()
@@ -144,6 +149,8 @@ extension MapsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
+        let buildingViewController = BuildingViewController()
+        self.navigationController?.pushViewController(buildingViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

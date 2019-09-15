@@ -24,7 +24,7 @@ extension HomeTabBarController {
                             withTitle: NSLocalizedString("TabBar_Studies", comment: ""),
                             andImageName: "studies_active",
                             for: StudiesViewController()),
-                           createDummyViewController(
+                           createDummyNavigationController(
                             withTitle: NSLocalizedString("TabBar_Maps", comment: ""),
                             andImageName: "maps_active",
                             for: MapsViewController()),
