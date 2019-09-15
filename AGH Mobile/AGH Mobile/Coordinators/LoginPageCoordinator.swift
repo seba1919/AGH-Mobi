@@ -2,24 +2,24 @@
 
 import UIKit
 
-class MemberProfileViewCoordinator: Coordinator {
-    weak var parentCoordinator: AboutUsCoordinator?
-    
+class LoginPageCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
-    
     var navigationController: UINavigationController
+    
+    weak var parentCoordinator: Coordinator?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
-
+    
     func start() {
-        let viewController = MemberProfileViewController()
+        let viewController = LoginPageViewController()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func didFinishWatchingMember() {
+    // MARK: - Methods to navigate to other ViewControllers
+    func signIn() {
         parentCoordinator?.childDidFinish(self)
     }
 }

@@ -18,4 +18,17 @@ class InformationsCoordinator {
         
         navigationController.viewControllers = [viewController]
     }
+    
+    // MARK: - Methods to navigate to other ViewControllers
+    func openSyllabus() {
+        
+    }
+    
+    func openUniversityStaff() {
+        
+    }
+    
+    func openStudyRegulations() {
+        
+    }
 }

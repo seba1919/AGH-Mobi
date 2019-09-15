@@ -18,4 +18,9 @@ class MapsCoordinator {
         
         navigationController.viewControllers = [viewController]
     }
+    
+    // MARK: - Methods to navigate to other ViewControllers
+    func openBuilding() {
+        
+    }
 }

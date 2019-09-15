@@ -26,6 +26,15 @@ class SettingsCoordinator: Coordinator {
         child.start()
     }
     
+    
+    func openUPEL() {
+        
+    }
+    
+    func openNetworkServicesPanel() {
+        
+    }
+    
     func signOut() {
         
     }

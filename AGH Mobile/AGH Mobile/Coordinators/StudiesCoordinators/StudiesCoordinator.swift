@@ -18,4 +18,29 @@ class StudiesCoordinator {
         
         navigationController.viewControllers = [viewController]
     }
+    
+    // MARK: - Methods to navigate to other ViewControllers
+    func openUniversityClassCard() {
+        
+    }
+    
+    func openSchedule() {
+        
+    }
+    
+    func openGradebook() {
+        
+    }
+    
+    func openSyllabuss() {
+        
+    }
+    
+    func openUniversityStaffList() {
+        
+    }
+    
+    func openMyCourses() {
+        
+    }
 }
