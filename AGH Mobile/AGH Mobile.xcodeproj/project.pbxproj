@@ -30,6 +30,15 @@
 		611F4B1D2250E0480056416E /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B172250E0480056416E /* ForYouViewController.swift */; };
 		611F4B1F225104240056416E /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B1E225104240056416E /* ForYouView.swift */; };
 		611F4B62225115DF0056416E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611F4B61225115DF0056416E /* Assets.xcassets */; };
+		612233F3232D0D6000E95812 /* Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612233F2232D0D6000E95812 /* Previews.swift */; };
+		612233F7232E20F200E95812 /* ListContentFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612233F6232E20F200E95812 /* ListContentFloatingPanelLayout.swift */; };
+		612233F9232E249800E95812 /* PlaceDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612233F8232E249800E95812 /* PlaceDetailsTableViewCell.swift */; };
+		61223403232E512300E95812 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61223402232E512300E95812 /* MapData.swift */; };
+		61223404232E5E2300E95812 /* MapCategoryBuildings.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 612233FB232E405900E95812 /* MapCategoryBuildings.geojson */; };
+		61223405232E5E2900E95812 /* MapCategoryFood.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 612233FD232E4EDE00E95812 /* MapCategoryFood.geojson */; };
+		61223406232E5E2C00E95812 /* MapCategoryPhotocopying.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 612233FE232E4EEC00E95812 /* MapCategoryPhotocopying.geojson */; };
+		61223407232E5E2F00E95812 /* MapCategoryLibraries.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 612233FF232E4F6C00E95812 /* MapCategoryLibraries.geojson */; };
+		61223408232E5E3200E95812 /* MapCategoryShops.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 61223400232E4F7500E95812 /* MapCategoryShops.geojson */; };
 		6124131F22526752007D04C0 /* StudiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124131E22526752007D04C0 /* StudiesView.swift */; };
 		61241321225267A9007D04C0 /* MapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61241320225267A9007D04C0 /* MapsView.swift */; };
 		61241323225267E3007D04C0 /* InformationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61241322225267E3007D04C0 /* InformationsView.swift */; };
@@ -57,6 +66,10 @@
 		61AD7C8A224BDCF8008340B3 /* AGH_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C89224BDCF8008340B3 /* AGH_MobileTests.swift */; };
 		61AD7C95224BDCF8008340B3 /* AGH_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C94224BDCF8008340B3 /* AGH_MobileUITests.swift */; };
 		61B92C82231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B92C81231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift */; };
+		61C0BD352326C17D000A5E6A /* ListContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0BD342326C17D000A5E6A /* ListContentViewController.swift */; };
+		61C0BD372326C242000A5E6A /* ListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0BD362326C242000A5E6A /* ListContentView.swift */; };
+		61C0BD392326D692000A5E6A /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0BD382326D692000A5E6A /* CategoryCollectionViewCell.swift */; };
+		61C0BD3B2326DA87000A5E6A /* CategoriesTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C0BD3A2326DA87000A5E6A /* CategoriesTableViewHeader.swift */; };
 		61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */; };
 		6574806A23089E19007DC4AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6574806C23089E19007DC4AF /* Localizable.strings */; };
 		65A9923D22CBBCBB0034DBE7 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9923C22CBBCBB0034DBE7 /* ScheduleViewModel.swift */; };
@@ -119,6 +132,15 @@
 		611F4B172250E0480056416E /* ForYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		611F4B1E225104240056416E /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
 		611F4B61225115DF0056416E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		612233F2232D0D6000E95812 /* Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previews.swift; sourceTree = "<group>"; };
+		612233F6232E20F200E95812 /* ListContentFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentFloatingPanelLayout.swift; sourceTree = "<group>"; };
+		612233F8232E249800E95812 /* PlaceDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		612233FB232E405900E95812 /* MapCategoryBuildings.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MapCategoryBuildings.geojson; sourceTree = "<group>"; };
+		612233FD232E4EDE00E95812 /* MapCategoryFood.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MapCategoryFood.geojson; sourceTree = "<group>"; };
+		612233FE232E4EEC00E95812 /* MapCategoryPhotocopying.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MapCategoryPhotocopying.geojson; sourceTree = "<group>"; };
+		612233FF232E4F6C00E95812 /* MapCategoryLibraries.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MapCategoryLibraries.geojson; sourceTree = "<group>"; };
+		61223400232E4F7500E95812 /* MapCategoryShops.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MapCategoryShops.geojson; sourceTree = "<group>"; };
+		61223402232E512300E95812 /* MapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapData.swift; sourceTree = "<group>"; };
 		6124131E22526752007D04C0 /* StudiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudiesView.swift; sourceTree = "<group>"; };
 		61241320225267A9007D04C0 /* MapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsView.swift; sourceTree = "<group>"; };
 		61241322225267E3007D04C0 /* InformationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsView.swift; sourceTree = "<group>"; };
@@ -153,6 +175,10 @@
 		61AD7C94224BDCF8008340B3 /* AGH_MobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGH_MobileUITests.swift; sourceTree = "<group>"; };
 		61AD7C96224BDCF8008340B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61B92C81231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+iPhonesSizes.swift"; sourceTree = "<group>"; };
+		61C0BD342326C17D000A5E6A /* ListContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentViewController.swift; sourceTree = "<group>"; };
+		61C0BD362326C242000A5E6A /* ListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentView.swift; sourceTree = "<group>"; };
+		61C0BD382326D692000A5E6A /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		61C0BD3A2326DA87000A5E6A /* CategoriesTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewHeader.swift; sourceTree = "<group>"; };
 		61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		6574806B23089E19007DC4AF /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65A9923C22CBBCBB0034DBE7 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
@@ -279,6 +305,7 @@
 		4B87CCD82264EFC10028930A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				61223401232E50EB00E95812 /* Maps */,
 				65A9924922CBC45A0034DBE7 /* Schedule */,
 				4B87CCDA2264F3770028930A /* Protocols */,
 				4B6B0144225C98FC001BF0F1 /* WD */,
@@ -440,6 +467,8 @@
 			isa = PBXGroup;
 			children = (
 				611F4B0B2250E0480056416E /* MapsViewController.swift */,
+				61C0BD342326C17D000A5E6A /* ListContentViewController.swift */,
+				612233F2232D0D6000E95812 /* Previews.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -448,6 +477,11 @@
 			isa = PBXGroup;
 			children = (
 				61241320225267A9007D04C0 /* MapsView.swift */,
+				61C0BD362326C242000A5E6A /* ListContentView.swift */,
+				612233F6232E20F200E95812 /* ListContentFloatingPanelLayout.swift */,
+				61C0BD3A2326DA87000A5E6A /* CategoriesTableViewHeader.swift */,
+				61C0BD382326D692000A5E6A /* CategoryCollectionViewCell.swift */,
+				612233F8232E249800E95812 /* PlaceDetailsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -500,6 +534,26 @@
 				611F4B1E225104240056416E /* ForYouView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		61223401232E50EB00E95812 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				61223402232E512300E95812 /* MapData.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
+		61223409232E994100E95812 /* Map Data */ = {
+			isa = PBXGroup;
+			children = (
+				612233FB232E405900E95812 /* MapCategoryBuildings.geojson */,
+				612233FD232E4EDE00E95812 /* MapCategoryFood.geojson */,
+				612233FE232E4EEC00E95812 /* MapCategoryPhotocopying.geojson */,
+				612233FF232E4F6C00E95812 /* MapCategoryLibraries.geojson */,
+				61223400232E4F7500E95812 /* MapCategoryShops.geojson */,
+			);
+			path = "Map Data";
 			sourceTree = "<group>";
 		};
 		6157791B2265F75200C1BCDC /* About As */ = {
@@ -670,6 +724,7 @@
 		61ECE89A224D1F7B00A9A806 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				61223409232E994100E95812 /* Map Data */,
 				611F4B61225115DF0056416E /* Assets.xcassets */,
 				6574806C23089E19007DC4AF /* Localizable.strings */,
 			);
@@ -826,8 +881,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61223407232E5E2F00E95812 /* MapCategoryLibraries.geojson in Resources */,
+				61223408232E5E3200E95812 /* MapCategoryShops.geojson in Resources */,
 				611F4B62225115DF0056416E /* Assets.xcassets in Resources */,
+				61223404232E5E2300E95812 /* MapCategoryBuildings.geojson in Resources */,
+				61223405232E5E2900E95812 /* MapCategoryFood.geojson in Resources */,
 				6574806A23089E19007DC4AF /* Localizable.strings in Resources */,
+				61223406232E5E2C00E95812 /* MapCategoryPhotocopying.geojson in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -944,6 +1004,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				612233F3232D0D6000E95812 /* Previews.swift in Sources */,
 				65A9923F22CBBCFF0034DBE7 /* ScheduleProvider.swift in Sources */,
 				4BC1567B22661D4B00ED633C /* DaySchedule.swift in Sources */,
 				4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */,
@@ -952,6 +1013,7 @@
 				6198C9052280E6AB008D664F /* LoginPageViewController.swift in Sources */,
 				6198C8F8227C3BD7008D664F /* SettingsContent.swift in Sources */,
 				4B6B0157225CD289001BF0F1 /* TestWDImpl.swift in Sources */,
+				61C0BD352326C17D000A5E6A /* ListContentViewController.swift in Sources */,
 				61241323225267E3007D04C0 /* InformationsView.swift in Sources */,
 				65A9924822CBC1A60034DBE7 /* Faculty.swift in Sources */,
 				4B87CCD52264E8130028930A /* TestSkosImpl.swift in Sources */,
@@ -967,17 +1029,21 @@
 				6198C8F6227C25CA008D664F /* UserWDProfile.swift in Sources */,
 				4B6B0152225CCD7C001BF0F1 /* Grades.swift in Sources */,
 				4B87CCD72264E9170028930A /* Employee.swift in Sources */,
+				61C0BD392326D692000A5E6A /* CategoryCollectionViewCell.swift in Sources */,
 				611F4B1D2250E0480056416E /* ForYouViewController.swift in Sources */,
 				4B87CCCD2264E0430028930A /* SkosViewModel.swift in Sources */,
 				611F4B1F225104240056416E /* ForYouView.swift in Sources */,
 				615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */,
 				65A9924D22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift in Sources */,
+				61223403232E512300E95812 /* MapData.swift in Sources */,
+				612233F9232E249800E95812 /* PlaceDetailsTableViewCell.swift in Sources */,
 				4B87CCCF2264E05F0028930A /* ModelSkos.swift in Sources */,
 				65A9924322CBBE500034DBE7 /* IETSchedule.swift in Sources */,
 				6198C9092280EC2E008D664F /* AGHTextField.swift in Sources */,
 				6124131F22526752007D04C0 /* StudiesView.swift in Sources */,
 				4BC1567D22661EE700ED633C /* TimetableEntry.swift in Sources */,
 				61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */,
+				61C0BD3B2326DA87000A5E6A /* CategoriesTableViewHeader.swift in Sources */,
 				613324B6228483C100C7C474 /* SectionTitle.swift in Sources */,
 				65A9925222CBCF7F0034DBE7 /* ScholarshipInfo.swift in Sources */,
 				65A9924B22CBC4970034DBE7 /* IETScheduleImpl.swift in Sources */,
@@ -990,7 +1056,9 @@
 				6198C8FC227C3F9E008D664F /* AGHButton.swift in Sources */,
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 				611F4B1C2250E0480056416E /* StudiesViewController.swift in Sources */,
+				61C0BD372326C242000A5E6A /* ListContentView.swift in Sources */,
 				611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */,
+				612233F7232E20F200E95812 /* ListContentFloatingPanelLayout.swift in Sources */,
 				61A42D8022869DE000761A0E /* TabBarPageTitleLabel.swift in Sources */,
 				4BC1567422660AC600ED633C /* PersonalInfo.swift in Sources */,
 				61241321225267A9007D04C0 /* MapsView.swift in Sources */,
@@ -1175,7 +1243,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RSVCT9A9H;
 				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1195,7 +1263,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RSVCT9A9H;
 				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

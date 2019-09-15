@@ -1,0 +1,299 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek A0"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.92332,
+                    50.064506
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek A1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.922538,
+                    50.065096
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek A2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.92186,
+                    50.065243
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek A3/A4"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.919993,
+                    50.065498
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek C1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.922709,
+                    50.06539
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek C2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.922677,
+                    50.065879
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek C3"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.921592,
+                    50.066142
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek C4"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.920103,
+                    50.065656
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek B1"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.919424,
+                    50.065985
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek B2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.918793,
+                    50.066087
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek B3"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.918159,
+                    50.066262
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek B4"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.91756,
+                    50.06635
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek B5"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.917017,
+                    50.06712
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek B6"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.916428,
+                    50.066235
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek B7"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.916514,
+                    50.067348
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek D4"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.917527,
+                    50.065779
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek D5"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.915246,
+                    50.067054
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek D6"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.9149,
+                    50.066817
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek D8"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.910975,
+                    50.066604
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek D11"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.912103,
+                    50.067325
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "markerColor": "#11053b",
+                "name": "Budynek D17"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.912603,
+                    50.068063
+                ]
+            }
+        }
+    ]
+}

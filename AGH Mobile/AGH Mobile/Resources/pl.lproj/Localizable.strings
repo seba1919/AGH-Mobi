@@ -1,8 +1,4 @@
 /* 
-  Localizable.strings
-  AGH Mobile
-
-  Created by Sebastian Wiatrzyk on 17/08/2019.
   Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 */
 
@@ -24,19 +20,19 @@
 "LoginPageView_ForgotPassword" = "Zapomniałeś hasła?";
 
 
-/*InformationsView*/
+/* InformationsView */
 "InformationsView_Information" = "Informacje";
 "InformationsView_StudiesInformation" = "INFORMACJE UCZELNIANE";
 
 
-/*InformationsContent*/
+/* InformationsContent */
 "InformationsContent_Syllabus" = "Syllabus";
 "InformationsContent_UniversityEmployees" = "Pracownicy Uczelni";
 "InformationsContent_UniversityStatute" = "Regulamin Studiów";
 "InformationsContent_AcademicYear" = "Rok Akademicki";
 
 
-/*SettingsView*/
+/* SettingsView */
 "SettingsView_UserSettings" = "Ustawienia Użytkownika";
 "SettingsView_AccountIntegration" = "INTEGRACJA KONT";
 "SettingsView_SignOut" = "Wyloguj się";
@@ -59,4 +55,9 @@
 "AboutUsView_AboutUsDescription" = "Aplikacja powstała w ramach działania koła naukowego MacKN i nie jest oficjalną\n aplikacją Akademii Górniczo-Hutniczej w Krakowie.\n\nKoło Naukowe MacKN zrzesza pasjonatów programowania na iOS i macOS oraz pasjonatów fotografii. Działamy przy Katedrze Informatyki Stosowanej Wydziału Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie.";
 "AboutUsView_StudentScienceCircleWebPage" = "strona internetowa koła";
 
-
+/* Maps */
+"Map_Category_Buildings" = "Budynki Uczelniane";
+"Map_Category_Food" = "Jedzenie";
+"Map_Category_Photocopying" = "Ksero";
+"Map_Category_Libraries" = "Biblioteki i Czytelnie";
+"Map_Category_Shops" = "Sklepy";

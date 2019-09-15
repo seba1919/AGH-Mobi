@@ -10,7 +10,6 @@ class MemberProfileViewController: UIViewController {
     
     // MARK: - Lifecycle
     override func loadView() {
-        super.loadView()
         self.view = MemberProfileView(frame: UIScreen.main.bounds)
     }
     
