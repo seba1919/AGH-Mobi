@@ -13,8 +13,7 @@ final class MapsViewController: UIViewController {
     private var listContentViewController: ListContentViewController!
     private var mapDataFeatures: [Feature] = [] {
         didSet {
-            listContentViewController.listContentView.tableView.reloadSections(IndexSet(integer: 0),
-                                                                               with: .fade)
+            reloadTableView()
         }
     }
     
@@ -85,6 +84,7 @@ extension MapsViewController {
     
     // MARK: - Map methods
     fileprivate func setupMap() {
+        mapsView.mapView.delegate = self
         let annotations = creatAnnotations(fromData: mapDataFeatures)
         mapsView.mapView.addAnnotations(annotations)
         mapsView.mapView.showAnnotations(annotations, animated: true)
@@ -93,20 +93,23 @@ extension MapsViewController {
     private func creatAnnotations(fromData features: [Feature]) -> [MKAnnotation] {
         var annotations: [MKAnnotation] = Array()
         for feature in features {
-            let coordinates = feature.geometry.coordinates
-            let annotation = MKPointAnnotation()
-            annotation.title = feature.properties.name
-            annotation.coordinate = CLLocationCoordinate2D(latitude: coordinates[1],
-                                                           longitude: coordinates[0])
+            let annotation = MapAnnotation(forFeature: feature)
             annotations.append(annotation)
         }
         return annotations
+    }
+    
+    // MARK: - TableView methods
+    private func reloadTableView() {
+        listContentViewController.listContentView.tableView.reloadSections(IndexSet(integer: 0),
+                                                                           with: .fade)
     }
 }
 
 // MARK: - Extension of FloatingPanelController Delegate
 extension MapsViewController: FloatingPanelControllerDelegate {
     
+    // swiftlint:disable:next identifier_name
     func floatingPanel(_ vc: FloatingPanelController,
                        layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         return ListContentFloatingPanelLayout()
@@ -151,10 +154,24 @@ extension MapsViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         
         let buildingViewController = BuildingViewController()
+        buildingViewController.dataFeature = mapDataFeatures[indexPath.row]
         self.navigationController?.pushViewController(buildingViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return PlaceDetailsTableViewCell.cellHeight
+    }
+}
+
+// MARK: - Extension of MapKitMapView Delegate
+extension MapsViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let selectedAnnotation = mapView.selectedAnnotations.first as? MapAnnotation {
+            let buildingViewController = BuildingViewController()
+            buildingViewController.dataFeature = selectedAnnotation.feature
+            self.navigationController?.pushViewController(buildingViewController, animated: true)
+            mapView.deselectAnnotation(selectedAnnotation, animated: true)
+        }
     }
 }

@@ -121,7 +121,6 @@ class BuildingView: UIView {
     private lazy var mapView: MKMapView = {
         let map = MKMapView(frame: .zero)
         map.layer.cornerRadius = cornerRadius
-        centerMapOnAGH(for: map)
         return map
     }()
     
@@ -252,40 +251,43 @@ extension BuildingView {
     @objc private func onPressOpenNavigation() {
         openNavigation?()
     }
-    
-    // MARK: - Center map on AGH
-    private func centerMapOnAGH(for map: MKMapView) {
-        let initialLocation = CLLocation(latitude: 50.064552, longitude: 19.923064)
-        let regionRadius: CLLocationDistance = 200
-        let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        map.setRegion(coordinateRegion, animated: true)
-    }
 }
 
+// MARK: - Public Method
 extension BuildingView {
     
-    // MARK: - Public Methods
-    public func setBuildingImage(named name: String) {
+    func setBuildingImage(_ name: String) {
         buildingImage.image = UIImage(named: name)
     }
     
-    public func setBuildingName(to name: String) {
+    func setBuildingName(_ name: String) {
         buildingName.text = name
     }
     
-    public func setDepartmentName(to name: String) {
+    func setDepartmentName(_ name: String) {
         departmentName.text = name
     }
     
-    public func setOpeningHours(to text: String) {
+    func setOpeningHours(_ text: String) {
         openingHours.text = text
     }
     
-    public func setAddress(to address: String) {
+    func setAddress(_ address: String) {
         self.address.text = address
     }
     
-    public func setupLocationOnAddress() {
-        
+    // MARK: - Center map on AGH
+    func centerMap(on latitude: Double, and longitude: Double) {
+        let map = mapView
+        let initialLocation = CLLocationCoordinate2D(latitude: latitude,
+                                                     longitude: longitude)
+        let regionRadius: CLLocationDistance = 800
+        let coordinateRegion = MKCoordinateRegion(center: initialLocation,
+                                                  latitudinalMeters: regionRadius,
+                                                  longitudinalMeters: regionRadius)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = initialLocation
+        map.addAnnotation(annotation)
+        map.setRegion(coordinateRegion, animated: true)
     }
 }

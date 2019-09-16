@@ -8,9 +8,10 @@ class MapsView: UIView {
     
     // MARK: - Componetnts of View
     private(set) lazy var mapView: MKMapView = {
-        let view = MKMapView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
+        let mapView = MKMapView()
+        mapView.isRotateEnabled = false
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        return mapView
     }()
 
     // MARK: - Init
