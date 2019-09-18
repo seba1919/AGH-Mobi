@@ -20,6 +20,14 @@ class LoginPageCoordinator: Coordinator {
     
     // MARK: - Methods to navigate to other ViewControllers
     func signIn() {
+        navigationController.popViewController(animated: true)
         parentCoordinator?.childDidFinish(self)
+    }
+    
+    func showAboutUs() {
+        let child = AboutUsCoordinator(navigationController: self.navigationController)
+        child.parentCoordinator = self
+        childCoordinators.append(child)
+        child.start()
     }
 }
