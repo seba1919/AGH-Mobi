@@ -14,7 +14,7 @@ import UIKit
 /// We need to know only three things:
 /// - How to implement `coordinator` for a `view controller`?
 /// - How to use in `view controller`?
-/// - How to dealocate coordinator?
+/// - How to dealocate coordinator from coordinators' stack (`childCoordinators`)?
 ///
 /// How to implement coordinator for a view controller?
 /// ==========================================================
@@ -41,7 +41,7 @@ import UIKit
 /// func showAboutUs() {
 ///     let child = AboutUsCoordinator(navigationController: self.navigationController)
 ///     child.parentCoordinator = self // *not required
-///     childCoordinators.append(child) // save in coordinators stack
+///     childCoordinators.append(child) // save in coordinators "stack"
 ///     child.start() //initialize AboutUsCoordinator's view controller and push to a display
 /// }
 /// ```
@@ -59,7 +59,7 @@ import UIKit
 /// coordinator?.showAboutUs()
 /// ```
 ///
-/// How coordinators in stack are dealocated?
+/// How to dealocate coordinator from coordinators' stack (`childCoordinators`)?
 /// =========================================
 /// When we pop out view controller, we neeed to dealocate it's coordinator form parent coordinator's stack.
 /// To do that, we use Coordinator's method `childDidFinish()`
@@ -72,14 +72,14 @@ import UIKit
 ///       parentCoordinator?.childDidFinish(self) //removing from parent stack, here parent is SettingsCoordinator
 /// }
 protocol Coordinator: AnyObject {
-    var childCoordinators: [Coordinator] { get set } //stack of coordinators
+    var childCoordinators: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
 
     func start()
 }
 
 extension Coordinator {
-    //Method that removes coordinator from a coordinators stack. Should be applied at popping out a view controller
+    //Method that removes coordinator from a coordinators "stack". Should be applied at popping out a view controller
     func childDidFinish(_ child: Coordinator?) {
         for (index, coordinator) in childCoordinators.enumerated() where coordinator === child {
             childCoordinators.remove(at: index)
@@ -88,7 +88,7 @@ extension Coordinator {
     }
 }
 
-// Make initialization of start method optional
+// To make initialization of start method optional
 extension Coordinator {
     func start() {}
 }
