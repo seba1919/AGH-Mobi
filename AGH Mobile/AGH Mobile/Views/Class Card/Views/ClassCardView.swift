@@ -6,4 +6,22 @@
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ClassCardView: UIView {
+    
+    // MARK: - Private properties
+    
+    // MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        backgroundColor = .white
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+}

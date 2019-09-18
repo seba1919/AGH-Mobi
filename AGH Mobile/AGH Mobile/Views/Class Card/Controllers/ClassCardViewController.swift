@@ -6,4 +6,16 @@
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ClassCardController: UIViewController {
+    
+    // MARK: - Private properties
+    private var classCardView: ClassCardView { return view as! ClassCardView }
+    
+    // MARK: - Lifecycle
+    override func loadView() {
+        view = ClassCardView(frame: UIScreen.main.bounds)
+    }
+    
+}
