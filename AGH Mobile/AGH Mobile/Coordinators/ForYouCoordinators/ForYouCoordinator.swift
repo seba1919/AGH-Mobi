@@ -21,26 +21,26 @@ class ForYouCoordinator {
     
     // MARK: - Methods to navigate to other ViewControllers
     func openSchedule() {
-        // FIXME: To be implemented
+        // To be implemented
     }
     
     func openGradebook() {
-        // FIXME: To be implemented
+        // To be implemented
     }
     
     func openUniversityStaffList() {
-        // FIXME: To be implemented
+        // To be implemented
     }
     
     func openSyllabuss() {
-        // FIXME: To be implemented
+        // To be implemented
     }
     
     func openUniversityClassCard() {
-        // FIXME: To be implemented
+        // To be implemented
     }
     
     func openEditPanel() {
-        // FIXME: To be implemented
+        // To be implemented
     }
 }

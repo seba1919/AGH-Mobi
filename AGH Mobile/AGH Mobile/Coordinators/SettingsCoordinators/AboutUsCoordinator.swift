@@ -3,7 +3,7 @@
 import UIKit
 
 class AboutUsCoordinator: Coordinator {
-    weak var parentCoordinator: SettingsCoordinator?
+    weak var parentCoordinator: Coordinator?
     
     var childCoordinators = [Coordinator]()
     
@@ -19,6 +19,7 @@ class AboutUsCoordinator: Coordinator {
         navigationController.pushViewController(viewController, animated: true)
     }
     
+    // MARK: - Methods to navigate to other ViewControllers
     func showMember() {
         let child = MemberProfileViewCoordinator(navigationController: self.navigationController)
         child.parentCoordinator = self

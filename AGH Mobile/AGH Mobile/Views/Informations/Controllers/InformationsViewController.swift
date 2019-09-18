@@ -16,7 +16,6 @@ class InformationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.infromationsView.setupUI()
     }
     

@@ -9,6 +9,7 @@ class MapsCoordinator {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        navigationController.navigationBar.tintColor = .mainRed
         
         let viewController = MapsViewController()
         viewController.tabBarItem.title = NSLocalizedString("TabBar_Maps", comment: "")
@@ -20,7 +21,7 @@ class MapsCoordinator {
     }
     
     // MARK: - Methods to navigate to other ViewControllers
-    func openBuilding() {
-        
+    func showBuilding() {
+        // To be implemented
     }
 }

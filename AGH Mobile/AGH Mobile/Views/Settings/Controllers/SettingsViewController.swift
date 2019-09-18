@@ -49,7 +49,7 @@ class SettingsViewController: UIViewController {
     private func setupActions() {
         
         settingsView.settingsContent.pushAboutAsVC = {
-            self.coordinator?.showTeamMembers()
+            self.coordinator?.showAboutUs()
         }
         
         settingsView.settingsContent.openMailApp = {
@@ -61,7 +61,7 @@ class SettingsViewController: UIViewController {
         }
         
         settingsView.pushLoginPageVC = {
-            self.navigationController?.pushViewController(LoginPageViewController(), animated: true)
+            self.coordinator?.signOut()
         }
         
     }

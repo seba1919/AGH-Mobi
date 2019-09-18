@@ -9,6 +9,7 @@ class StudiesCoordinator {
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        navigationController.navigationBar.tintColor = .mainRed
         
         let viewController = StudiesViewController()
         viewController.tabBarItem.title = NSLocalizedString("TabBar_Studies", comment: "")
@@ -21,26 +22,26 @@ class StudiesCoordinator {
     
     // MARK: - Methods to navigate to other ViewControllers
     func openUniversityClassCard() {
-        
+        // To be implemented
     }
     
     func openSchedule() {
-        
+        // To be implemented
     }
     
     func openGradebook() {
-        
+        // To be implemented
     }
     
     func openSyllabuss() {
-        
+        // To be implemented
     }
     
     func openUniversityStaffList() {
-        
+        // To be implemented
     }
     
     func openMyCourses() {
-        
+        // To be implemented
     }
 }

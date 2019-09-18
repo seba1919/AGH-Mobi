@@ -9,6 +9,7 @@ class InformationsCoordinator {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        navigationController.navigationBar.tintColor = .mainRed
         
         let viewController = InformationsViewController()
         viewController.tabBarItem.title = NSLocalizedString("TabBar_Informations", comment: "")
@@ -20,15 +21,15 @@ class InformationsCoordinator {
     }
     
     // MARK: - Methods to navigate to other ViewControllers
-    func openSyllabus() {
-        
+    func showSyllabus() {
+        // To be implemented
     }
     
-    func openUniversityStaff() {
-        
+    func showUniversityStaff() {
+        // To be implemented
     }
     
-    func openStudyRegulations() {
-        
+    func showStudyRegulations() {
+        // To be implemented
     }
 }
