@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClassCardController: UIViewController {
+class ClassCardViewController: UIViewController {
     
     // MARK: - Private properties
     private var classCardView: ClassCardView { return view as! ClassCardView }
@@ -17,5 +17,21 @@ class ClassCardController: UIViewController {
     override func loadView() {
         view = ClassCardView(frame: UIScreen.main.bounds)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.classCardView.setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.setupNavigationAttributs()
+    }
+    
+    private func setupNavigationAttributs() {
+        
+        self.navigationItem.title = "Karta Zajęć"
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+
     
 }
