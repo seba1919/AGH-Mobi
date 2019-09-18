@@ -9,6 +9,7 @@
 // MARK: - Import
 
 import UIKit
+import MapKit
 
 // MARK: - Implementation
 
@@ -22,6 +23,8 @@ class ClassCardView: UIView {
     private lazy var spacingInRows = screenHeight * 0.0125
     private let leftMargin: CGFloat = 20
     private let rightMargin: CGFloat = -20
+    private let cornerRadius: CGFloat = 15.0
+
 
     
     // MARK: - Init
@@ -38,6 +41,7 @@ class ClassCardView: UIView {
     // MARK: - Setup view methods
     
     public func setupUI() {
+        setupProperties()
         setupViews()
         setupConstraints()
     }
@@ -48,7 +52,9 @@ class ClassCardView: UIView {
         [subjectName,
          separator,
          subjectType,
-         rowStackView].forEach({addSubview($0)})
+         rowStackView,
+         mapView,
+         showRouteButton].forEach({addSubview($0)})
         
         [classHourRowView,
          teacherRowView,
@@ -85,7 +91,7 @@ class ClassCardView: UIView {
     
 
     private lazy var classHourRowView: RowView = {
-        let view = RowView(style: .withDescription, separatorPosition: .none, accessory: .withoutRightAccessory)
+        let view = RowView(style: .withDescription, separatorPosition: .none, touchDetect: .off, accessory: .withoutRightAccessory)
         view.setupTitle(as: "Poniedziałek 9.30-11.00")
         view.setupDescription(as: "Grupa W")
         view.setupLeftAccessory(named: "clock_Classes")
@@ -128,6 +134,21 @@ class ClassCardView: UIView {
         stack.spacing = 0.0
         return stack
     }()
+    
+    // Map
+    private lazy var mapView: MKMapView = {
+        let map = MKMapView(frame: .zero)
+        map.layer.cornerRadius = cornerRadius
+        centerMapOnAGH(for: map)
+        return map
+    }()
+    
+    // Show Route Button
+    private lazy var showRouteButton: UIButton = {
+        let button = AGHButton(title: "pokaż trasę").build()
+                         //      style: .withLeftAccessory, leftAccesoryName: "star").build()
+        return button
+    }()
 
     // MARK: - Constraints
     
@@ -153,7 +174,52 @@ class ClassCardView: UIView {
             make.left.right.equalToSuperview()
         }
         
+        // Map
+        mapView.snp.makeConstraints { (make) in
+            make.top.equalTo(rowStackView.snp.bottom).offset(spacing)
+            make.centerX.equalTo(safeAreaLayoutGuide)
+            make.left.equalToSuperview().offset(leftMargin)
+            make.right.equalToSuperview().offset(rightMargin)
+            make.bottom.equalTo(showRouteButton.snp.top).offset(-spacing)
+        }
+        
+        // Show Route Button
+        showRouteButton.snp.makeConstraints { (make) in
+            make.width.equalTo(160)
+            make.centerX.equalTo(safeAreaLayoutGuide)
+            make.bottom.equalTo(safeAreaLayoutGuide).offset(-spacing)
+        }
+
     }
     
-
+    private func setupProperties() {
+        
+        if UIScreen.isSmallSize() {
+            
+            spacing = screenHeight * 0.02
+            spacingInRows = screenHeight * 0.01
+            subjectName.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+            subjectType.font = UIFont.systemFont(ofSize: 11, weight: .bold)
+            
+        }
+        else if UIScreen.isMediumSize(){
+            
+            spacing = screenHeight * 0.025
+            spacingInRows = screenHeight * 0.01
+            subjectName.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+            subjectType.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+        }
+    }
+    
+    
+}
+    extension ClassCardView {
+        
+        func centerMapOnAGH(for map: MKMapView) {
+            let initialLocation = CLLocation(latitude: 50.064552, longitude: 19.923064)
+            let regionRadius: CLLocationDistance = 200
+            let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+            map.setRegion(coordinateRegion, animated: true)
+        }
+        
 }

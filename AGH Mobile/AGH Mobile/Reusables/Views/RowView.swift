@@ -270,17 +270,17 @@ extension RowView {
         leftAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
             make.left.equalTo(self.snp.left).offset(leftMargin)
-            make.top.equalTo(self.snp.top).offset(16)
-            make.bottom.equalTo(self.snp.bottom).offset(-16)
+            make.top.equalTo(self.snp.top).offset(topPadding)
+            make.bottom.equalTo(self.snp.bottom).offset(bottomPadding)
         }
         title.snp.makeConstraints { (make) in
             make.left.equalTo(leftAccessory.snp.right).offset(12)
-            make.top.equalTo(self.snp.top).offset(8)
+            make.top.equalTo(self.snp.top).offset(topPadding * 0.4)
         }
         titleDescription.snp.makeConstraints { (make) in
             make.left.equalTo(title.snp.left)
             make.top.equalTo(title.snp.bottom)
-            make.bottom.equalTo(self.snp.bottom).offset(-8)
+            make.bottom.equalTo(self.snp.bottom).offset(bottomPadding * 0.4)
         }
         rightAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
