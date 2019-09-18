@@ -333,6 +333,10 @@ extension RowView {
         title.text = name
     }
     
+    public func setupTextColor(as color: UIColor) {
+        title.textColor = color
+    }
+    
     public func setupLeftAccessory(named name: String) {
         leftAccessory.image = UIImage(named: name)
     }

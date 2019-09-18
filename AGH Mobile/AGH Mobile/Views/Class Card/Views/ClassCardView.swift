@@ -85,26 +85,34 @@ class ClassCardView: UIView {
     
 
     private lazy var classHourRowView: RowView = {
-        let view = RowView(style: .empty, separatorPosition: .none)
+        let view = RowView(style: .withLeftAccessory, separatorPosition: .none)
         view.setupTitle(as: "Poniedziałek 9.30 - 11.00")
+        view.setupLeftAccessory(named: "clock_Classes")
+        view.setupTextColor(as: .customDarkGrayText)
         return view
     }()
     
     private lazy var teacherRowView: RowView = {
         let view = RowView(style: .withLeftAccessory, separatorPosition: .none)
         view.setupTitle(as: "prof.Jan Kowalski")
+        view.setupLeftAccessory(named: "human_Classes")
+        view.setupTextColor(as: .customDarkGrayText)
         return view
     }()
     
     private lazy var buildingRowView: RowView = {
-        let view = RowView(style: .normal, separatorPosition: .none)
+        let view = RowView(style: .withLeftAccessory, separatorPosition: .none)
         view.setupTitle(as: "Budynek C2")
+        view.setupLeftAccessory(named: "location_Classes")
+        view.setupTextColor(as: .customDarkGrayText)
         return view
     }()
 
     private lazy var ectsNumberRowView: RowView = {
-        let view = RowView(style: .normal, separatorPosition: .none)
+        let view = RowView(style: .withLeftAccessory, separatorPosition: .none)
         view.setupTitle(as: "4ECTS")
+        view.setupLeftAccessory(named: "book_Classes")
+        view.setupTextColor(as: .customDarkGrayText)
         return view
     }()
     
@@ -137,7 +145,7 @@ class ClassCardView: UIView {
         }
         
         rowStackView.snp.makeConstraints { (make) in
-            make.top.equalTo(subjectType.snp.bottom)
+            make.top.equalTo(subjectType.snp.bottom).offset(spacingInRows)
             make.left.right.equalToSuperview()
         }
         
