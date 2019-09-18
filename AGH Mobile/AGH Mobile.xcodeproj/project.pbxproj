@@ -23,6 +23,8 @@
 		4BC156782266102B00ED633C /* StudyProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC156772266102B00ED633C /* StudyProgress.swift */; };
 		4BC1567B22661D4B00ED633C /* DaySchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1567A22661D4B00ED633C /* DaySchedule.swift */; };
 		4BC1567D22661EE700ED633C /* TimetableEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC1567C22661EE700ED633C /* TimetableEntry.swift */; };
+		522690DC233237340073F53A /* ClassCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522690DB233237340073F53A /* ClassCardView.swift */; };
+		522690DE233237450073F53A /* ClassCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522690DD233237450073F53A /* ClassCardViewController.swift */; };
 		611F4B192250E0480056416E /* InformationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4AFF2250E0480056416E /* InformationsViewController.swift */; };
 		611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B052250E0480056416E /* SettingsViewController.swift */; };
 		611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B0B2250E0480056416E /* MapsViewController.swift */; };
@@ -110,6 +112,8 @@
 		4BC156772266102B00ED633C /* StudyProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyProgress.swift; sourceTree = "<group>"; };
 		4BC1567A22661D4B00ED633C /* DaySchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySchedule.swift; sourceTree = "<group>"; };
 		4BC1567C22661EE700ED633C /* TimetableEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableEntry.swift; sourceTree = "<group>"; };
+		522690DB233237340073F53A /* ClassCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCardView.swift; sourceTree = "<group>"; };
+		522690DD233237450073F53A /* ClassCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCardViewController.swift; sourceTree = "<group>"; };
 		554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_MobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B0E798F6F514B98BE09314 /* Pods-AGH MobileUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.release.xcconfig"; sourceTree = "<group>"; };
 		611F4AFF2250E0480056416E /* InformationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationsViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		4B6B0143225C98B6001BF0F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				522690D8233236FF0073F53A /* Class Card */,
 				6198C9012280E652008D664F /* Login Page */,
 				6198C8E42279E8C6008D664F /* Member Profile */,
 				6157791B2265F75200C1BCDC /* About As */,
@@ -347,6 +352,31 @@
 				4BC1567C22661EE700ED633C /* TimetableEntry.swift */,
 			);
 			path = Structures;
+			sourceTree = "<group>";
+		};
+		522690D8233236FF0073F53A /* Class Card */ = {
+			isa = PBXGroup;
+			children = (
+				522690D92332370D0073F53A /* Controllers */,
+				522690DA233237180073F53A /* Views */,
+			);
+			path = "Class Card";
+			sourceTree = "<group>";
+		};
+		522690D92332370D0073F53A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				522690DD233237450073F53A /* ClassCardViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		522690DA233237180073F53A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				522690DB233237340073F53A /* ClassCardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		611F4AE62250D9A80056416E /* Application */ = {
@@ -955,12 +985,14 @@
 				61241323225267E3007D04C0 /* InformationsView.swift in Sources */,
 				65A9924822CBC1A60034DBE7 /* Faculty.swift in Sources */,
 				4B87CCD52264E8130028930A /* TestSkosImpl.swift in Sources */,
+				522690DE233237450073F53A /* ClassCardViewController.swift in Sources */,
 				6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */,
 				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				65A9924522CBBEC70034DBE7 /* UniTimeSchedule.swift in Sources */,
 				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				613324B8228486DD00C7C474 /* InformationContent.swift in Sources */,
 				615779212265F7D400C1BCDC /* AboutUsView.swift in Sources */,
+				522690DC233237340073F53A /* ClassCardView.swift in Sources */,
 				65A9923D22CBBCBB0034DBE7 /* ScheduleViewModel.swift in Sources */,
 				6198C8FE227C8215008D664F /* SeparatorView.swift in Sources */,
 				6198C900227C89B0008D664F /* RowView.swift in Sources */,
