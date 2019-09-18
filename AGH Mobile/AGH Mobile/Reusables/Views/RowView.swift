@@ -39,6 +39,7 @@ final class RowView: UIView {
         case top
         case bottom
         case topAndBottom
+        case none
     }
     /// Touch Detect
     public enum TouchDetect {
@@ -123,6 +124,8 @@ final class RowView: UIView {
             setupBottomSeparator()
         case .topAndBottom:
             setupTopAndBottomSeparators()
+        case .none:
+            break
         }
         
         // Touch Detect

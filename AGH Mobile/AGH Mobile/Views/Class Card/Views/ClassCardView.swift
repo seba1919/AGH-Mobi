@@ -47,8 +47,13 @@ class ClassCardView: UIView {
         
         [subjectName,
          separator,
-         subjectType].forEach({addSubview($0)})
+         subjectType,
+         rowStackView].forEach({addSubview($0)})
         
+        [classHourRowView,
+         teacherRowView,
+         buildingRowView,
+         ectsNumberRowView].forEach({rowStackView.addArrangedSubview($0)})
     }
     
     // MARK: - Components of View
@@ -77,7 +82,40 @@ class ClassCardView: UIView {
         lbl.text = "Wykład"
         return lbl
     }()
+    
 
+    private lazy var classHourRowView: RowView = {
+        let view = RowView(style: .empty, separatorPosition: .none)
+        view.setupTitle(as: "Poniedziałek 9.30 - 11.00")
+        return view
+    }()
+    
+    private lazy var teacherRowView: RowView = {
+        let view = RowView(style: .withLeftAccessory, separatorPosition: .none)
+        view.setupTitle(as: "prof.Jan Kowalski")
+        return view
+    }()
+    
+    private lazy var buildingRowView: RowView = {
+        let view = RowView(style: .normal, separatorPosition: .none)
+        view.setupTitle(as: "Budynek C2")
+        return view
+    }()
+
+    private lazy var ectsNumberRowView: RowView = {
+        let view = RowView(style: .normal, separatorPosition: .none)
+        view.setupTitle(as: "4ECTS")
+        return view
+    }()
+    
+    private lazy var rowStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .equalSpacing
+        stack.spacing = 0.0
+        return stack
+    }()
 
     // MARK: - Constraints
     
@@ -85,24 +123,24 @@ class ClassCardView: UIView {
         
         subjectName.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(spacing)
-            make.left.equalToSuperview().offset(leftMargin)
-            make.right.equalToSuperview().offset(rightMargin)
-
+            make.left.right.equalToSuperview().offset(leftMargin)
         }
         
         separator.snp.makeConstraints { (make) in
             make.top.equalTo(subjectName.snp.bottom).offset(spacing)
-            make.left.equalToSuperview().offset(leftMargin)
-            make.right.equalToSuperview().offset(rightMargin)
+            make.left.right.equalToSuperview().offset(leftMargin)
         }
         
         subjectType.snp.makeConstraints { (make) in
             make.top.equalTo(separator.snp.bottom).offset(spacingInRows)
-            make.left.equalToSuperview().offset(leftMargin)
-            make.right.equalToSuperview().offset(rightMargin)
+            make.left.right.equalToSuperview().offset(leftMargin)
         }
-
-
+        
+        rowStackView.snp.makeConstraints { (make) in
+            make.top.equalTo(subjectType.snp.bottom)
+            make.left.right.equalToSuperview()
+        }
+        
     }
     
 
