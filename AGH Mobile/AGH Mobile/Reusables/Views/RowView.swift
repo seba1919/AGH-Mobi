@@ -32,7 +32,12 @@ final class RowView: UIView {
         case normalWithIndentation
         case withSwitch
         case withLeftAccessory
+        case withDescription
         case empty
+    }
+    public enum RightAccesory {
+        case withRightAccessory
+        case withoutRightAccessory
     }
     /// Separator Positions
     public enum SeparatorPosition {
@@ -54,6 +59,16 @@ final class RowView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.text = "Title is not set" // Show if not use setupTitle method
+        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: fontSize, weight: .regular)
+        return label
+    }()
+    
+    private lazy var titleDescription: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
+        label.text = "Description is not set" // Show if not use setupDescription method
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: fontSize, weight: .regular)
         return label
@@ -93,7 +108,8 @@ final class RowView: UIView {
     // MARK: - Init
     required init(style: Style = .normal,
                   separatorPosition: SeparatorPosition = .top,
-                  touchDetect: TouchDetect = .on) {
+                  touchDetect: TouchDetect = .on,
+                  accessory: RightAccesory = .withRightAccessory) {
         
         super.init(frame: CGRect.zero)
         
@@ -112,6 +128,14 @@ final class RowView: UIView {
             touchDetectStatus = .off
         case .withLeftAccessory:
             setupWithLeftAccessoryStyle()
+        case .withDescription:
+            setupWithDescriptionStyle()
+            switch accessory {
+                case .withRightAccessory:
+                    break
+                case .withoutRightAccessory:
+                    removeRightAccessoryFromWithDescriptionStyle()
+            }
         case .empty:
             setupEmptyStyle()
         }
@@ -165,6 +189,18 @@ extension RowView {
         self.addSubview(leftAccessory)
         self.addSubview(rightAccessory)
         self.setupWithLeftAccessoryStyleConstraints()
+    }
+    
+    private func setupWithDescriptionStyle() {
+        self.addSubview(title)
+        self.addSubview(leftAccessory)
+        self.addSubview(rightAccessory)
+        self.addSubview(titleDescription)
+        self.setupWithDescriptionStyleConstraints()
+    }
+    
+    private func removeRightAccessoryFromWithDescriptionStyle() {
+        rightAccessory.removeFromSuperview()
     }
     
     private func setupEmptyStyle() {
@@ -223,6 +259,28 @@ extension RowView {
             make.left.equalTo(leftAccessory.snp.right).offset(12)
             make.top.equalTo(self.snp.top).offset(topPadding)
             make.bottom.equalTo(self.snp.bottom).offset(bottomPadding)
+        }
+        rightAccessory.snp.makeConstraints { (make) in
+            make.centerY.equalTo(self.snp.centerY)
+            make.right.equalTo(self.snp.right).offset(rightMargin + rightPadding)
+        }
+    }
+    
+    private func setupWithDescriptionStyleConstraints() {
+        leftAccessory.snp.makeConstraints { (make) in
+            make.centerY.equalTo(self.snp.centerY)
+            make.left.equalTo(self.snp.left).offset(leftMargin)
+            make.top.equalTo(self.snp.top).offset(16)
+            make.bottom.equalTo(self.snp.bottom).offset(-16)
+        }
+        title.snp.makeConstraints { (make) in
+            make.left.equalTo(leftAccessory.snp.right).offset(12)
+            make.top.equalTo(self.snp.top).offset(8)
+        }
+        titleDescription.snp.makeConstraints { (make) in
+            make.left.equalTo(title.snp.left)
+            make.top.equalTo(title.snp.bottom)
+            make.bottom.equalTo(self.snp.bottom).offset(-8)
         }
         rightAccessory.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.snp.centerY)
@@ -333,8 +391,13 @@ extension RowView {
         title.text = name
     }
     
+    public func setupDescription(as name: String) {
+        titleDescription.text = name
+    }
+    
     public func setupTextColor(as color: UIColor) {
         title.textColor = color
+        titleDescription.textColor = color
     }
     
     public func setupLeftAccessory(named name: String) {
