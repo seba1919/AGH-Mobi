@@ -6,15 +6,18 @@
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
 //
 
-// MARK: - Import
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Import
 
 import UIKit
 import MapKit
 
-// MARK: - Implementation
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Implementation
 
 class ClassCardView: UIView {
     
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Private properties
     
     private lazy var screenHeight = self.frame.height
@@ -26,7 +29,7 @@ class ClassCardView: UIView {
     private let cornerRadius: CGFloat = 15.0
 
 
-    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -37,7 +40,7 @@ class ClassCardView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup view methods
     
     public func setupUI() {
@@ -56,12 +59,49 @@ class ClassCardView: UIView {
          mapView,
          showRouteButton].forEach({addSubview($0)})
         
-        [classHourRowView,
+        [classHoursRowView,
          teacherRowView,
          buildingRowView,
          ectsNumberRowView].forEach({rowStackView.addArrangedSubview($0)})
     }
     
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Public Methods
+    
+    public func setupSubjectName(as Name: String) {
+        subjectName.text = Name
+    }
+    
+    public func setupSubjectTypeName(as Name: String) {
+        subjectType.text = Name
+    }
+    
+    public func setupClassHours(on Name: String) {
+        classHoursRowView.setupTitle(as: Name)
+    }
+    
+    public func setupGroupName(as Name: String) {
+        classHoursRowView.setupDescription(as: Name)
+    }
+    
+    public func setupTeacherName(as Name: String) {
+        teacherRowView.setupTitle(as: Name)
+    }
+    
+    public func setupBuildingName(as Name: String) {
+        buildingRowView.setupTitle(as: Name)
+    }
+    
+    public func setupClassroomNumber(as Number: String) {
+        buildingRowView.setupDescription(as: Number)
+    }
+    
+    public func setupECTSNumber(as Number: String) {
+        ectsNumberRowView.setupTitle(as: Number)
+    }
+    
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
 
     private lazy var subjectName: UILabel = {
@@ -70,7 +110,7 @@ class ClassCardView: UIView {
         lbl.font = UIFont.systemFont(ofSize: 35, weight: .bold)
         lbl.textColor = .black
         lbl.textAlignment = .left
-        lbl.text = "Bazy Danych"
+        lbl.text = "Przedmiot"
         return lbl
     }()
     
@@ -85,15 +125,15 @@ class ClassCardView: UIView {
         lbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         lbl.textColor = .mainRed
         lbl.textAlignment = .left
-        lbl.text = "Wykład"
+        lbl.text = "Rodzaj zajęć"
         return lbl
     }()
     
 
-    private lazy var classHourRowView: RowView = {
+    private lazy var classHoursRowView: RowView = {
         let view = RowView(style: .withDescription, separatorPosition: .none, touchDetect: .off, accessory: .withoutRightAccessory)
-        view.setupTitle(as: "Poniedziałek 9.30-11.00")
-        view.setupDescription(as: "Grupa W")
+        view.setupTitle(as: "Data")
+        view.setupDescription(as: "Grupa")
         view.setupLeftAccessory(named: "clock_Classes")
         view.setupTextColor(as: .customDarkGrayText)
         return view
@@ -101,7 +141,7 @@ class ClassCardView: UIView {
     
     private lazy var teacherRowView: RowView = {
         let view = RowView(style: .withLeftAccessory, separatorPosition: .none)
-        view.setupTitle(as: "prof.dr.hab.Jan Kowalski")
+        view.setupTitle(as: "Prowadzący")
         view.setupLeftAccessory(named: "human_Classes")
         view.setupTextColor(as: .customDarkGrayText)
         return view
@@ -109,8 +149,8 @@ class ClassCardView: UIView {
     
     private lazy var buildingRowView: RowView = {
         let view = RowView(style: .withDescription, separatorPosition: .none)
-        view.setupTitle(as: "Budynek C2")
-        view.setupDescription(as: "224")
+        view.setupTitle(as: "Budynek")
+        view.setupDescription(as: "Sala")
         view.setupLeftAccessory(named: "location_Classes")
         view.setupTextColor(as: .customDarkGrayText)
         return view
@@ -118,7 +158,7 @@ class ClassCardView: UIView {
 
     private lazy var ectsNumberRowView: RowView = {
         let view = RowView(style: .withDescription, separatorPosition: .none)
-        view.setupTitle(as: "4ECTS")
+        view.setupTitle(as: "Punkty ECTS")
         view.setupDescription(as: "Syllabus")
         view.setupLeftAccessory(named: "book_Classes")
         view.setupTextColor(as: .customDarkGrayText)
