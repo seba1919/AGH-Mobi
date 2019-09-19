@@ -5,11 +5,17 @@ import UIKit
 class ForYouViewController: UIViewController {
 
     // MARK: - Private properties
-    private var forYouView: ForYouView { return view as! ForYouView }
+    private var forYouView: GradesView { return view as! GradesView }
     
     // MARK: - Lifecycle
     override func loadView() {
-        view = ForYouView(frame: UIScreen.main.bounds)
+        view = GradesView(frame: UIScreen.main.bounds)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.forYouView.setupUI()
+
     }
     
 }
