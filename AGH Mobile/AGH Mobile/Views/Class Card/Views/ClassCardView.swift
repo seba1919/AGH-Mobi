@@ -28,6 +28,10 @@ class ClassCardView: UIView {
     private let rightMargin: CGFloat = -20
     private let cornerRadius: CGFloat = 15.0
 
+    // MARK: - Public properties
+
+    public var openNavigation: (() -> Void)?
+
 
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
@@ -187,6 +191,7 @@ class ClassCardView: UIView {
     private lazy var showRouteButton: UIButton = {
         let button = AGHButton(title: "pokaż trasę").build()
                          //      style: .withLeftAccessory, leftAccesoryName: "star").build()
+        button.addTarget(self, action: #selector(onPressOpenNavigation), for: .touchUpInside)
         return button
     }()
 
@@ -251,11 +256,20 @@ class ClassCardView: UIView {
         }
     }
     
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Selectors
+    
+    @objc private func onPressOpenNavigation() {
+        openNavigation?()
+    }
+
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Extension of center map on AGH
     
 }
-    extension ClassCardView {
+   private extension ClassCardView {
         
-        func centerMapOnAGH(for map: MKMapView) {
+       private func centerMapOnAGH(for map: MKMapView) {
             let initialLocation = CLLocation(latitude: 50.064552, longitude: 19.923064)
             let regionRadius: CLLocationDistance = 200
             let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)

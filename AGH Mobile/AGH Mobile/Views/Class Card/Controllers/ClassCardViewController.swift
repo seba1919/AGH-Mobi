@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
 class ClassCardViewController: UIViewController {
     
     // MARK: - Private properties
     private var classCardView: ClassCardView { return view as! ClassCardView }
-    
+    private var buildingName: String = ""
+
     // MARK: - Lifecycle
     override func loadView() {
         view = ClassCardView(frame: UIScreen.main.bounds)
@@ -22,6 +24,7 @@ class ClassCardViewController: UIViewController {
         super.viewDidLoad()
         self.classCardView.setupUI()
         self.setupData()
+        self.setupActions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,13 +50,40 @@ class ClassCardViewController: UIViewController {
         classCardView.setupECTSNumber(as: "4ECTS")
     }
 
-    
-    
     // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
+    
+    private func setupActions() {
+        classCardView.openNavigation = {
+            self.openMapForPlace(for: 50.064552, and: 19.923064)
+        }
+    }
     
     @objc private func rightBarButtonItemTapped() {
         print("Edycja")
     }
+}
+
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Extension of open map
+
+private extension ClassCardViewController {
     
+    private func openMapForPlace(for latitude: CLLocationDegrees,and longitude: CLLocationDegrees) {
+        
+        let latitude = latitude
+        let longitude = longitude
+        
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = buildingName
+        mapItem.openInMaps(launchOptions: options)
+    }
 }
