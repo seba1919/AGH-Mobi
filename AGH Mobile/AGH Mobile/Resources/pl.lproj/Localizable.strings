@@ -60,3 +60,9 @@
 "AboutUsView_StudentScienceCircleWebPage" = "strona internetowa koła";
 
 
+/* GradesView */
+"GradesView_FinalGrades" = "Końcowe";
+"GradesView_PartialGrades" = "Cząstkowe";
+"GradesView_LastGrade" = "OSTATNIA OCENA";
+
+/* AGHLastGradeAlert */
