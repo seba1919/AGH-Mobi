@@ -55,6 +55,14 @@
 "UserWDProfile_User" = "UŻYTKOWNIK";
 
 
+/* ClassCardView */
+"ClassCardView_ClassCard" = "Karta zajęć";
+
+
+/* ClassCardContent */
+"ClassCardContent_Syllabus" = "Syllabus";
+
+
 /* AboutUsView */
 "AboutUsView_AboutUsDescription" = "Aplikacja powstała w ramach działania koła naukowego MacKN i nie jest oficjalną\n aplikacją Akademii Górniczo-Hutniczej w Krakowie.\n\nKoło Naukowe MacKN zrzesza pasjonatów programowania na iOS i macOS oraz pasjonatów fotografii. Działamy przy Katedrze Informatyki Stosowanej Wydziału Elektrotechniki, Automatyki, Informatyki i Inżynierii Biomedycznej Akademii Górniczo-Hutniczej im. Stanisława Staszica w Krakowie.";
 "AboutUsView_StudentScienceCircleWebPage" = "strona internetowa koła";

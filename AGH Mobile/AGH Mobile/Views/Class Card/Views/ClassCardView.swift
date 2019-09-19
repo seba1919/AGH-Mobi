@@ -73,7 +73,7 @@ class ClassCardView: UIView {
     private lazy var ectsNumberRowView: RowView = {
         let view = RowView(style: .withDescription, separatorPosition: .none)
         view.setupTitle(as: " ")
-        view.setupDescription(as: "Syllabus")
+        view.setupDescription(as: NSLocalizedString("ClassCardContent_Syllabus", comment: ""))
         view.setupLeftAccessory(named: "book_Classes")
         view.setupTextColor(as: .customDarkGrayText)
         
