@@ -43,9 +43,9 @@ class GradesView: UIView {
         return control
     }()
     
-    private lazy var gradesTableView: UITableView = {
+    private(set) lazy var gradesTableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .brown
+        tableView.tableFooterView = UIView()
         return tableView
     }()
     

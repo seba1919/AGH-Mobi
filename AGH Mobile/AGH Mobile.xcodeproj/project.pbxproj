@@ -71,6 +71,7 @@
 		65A9924D22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9924C22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift */; };
 		65A9924F22CBC7250034DBE7 /* UniTimeScheduleImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9924E22CBC7250034DBE7 /* UniTimeScheduleImpl.swift */; };
 		65A9925222CBCF7F0034DBE7 /* ScholarshipInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9925122CBCF7F0034DBE7 /* ScholarshipInfo.swift */; };
+		6B2E959E2334AAB700153C02 /* AGHGradesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2E959D2334AAB700153C02 /* AGHGradesCell.swift */; };
 		6B6192FB2333869F00E627BC /* GradesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6192FA2333869F00E627BC /* GradesView.swift */; };
 		76ED7A09ADF48FAF996EEFD2 /* Pods_AGH_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */; };
 		8F3A8D473740ED8EC2AF437E /* Pods_AGH_MobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */; };
@@ -170,6 +171,7 @@
 		65A9924C22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAIIBScheduleImpl.swift; sourceTree = "<group>"; };
 		65A9924E22CBC7250034DBE7 /* UniTimeScheduleImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniTimeScheduleImpl.swift; sourceTree = "<group>"; };
 		65A9925122CBCF7F0034DBE7 /* ScholarshipInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipInfo.swift; sourceTree = "<group>"; };
+		6B2E959D2334AAB700153C02 /* AGHGradesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AGHGradesCell.swift; sourceTree = "<group>"; };
 		6B6192FA2333869F00E627BC /* GradesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesView.swift; sourceTree = "<group>"; };
 		77F59FBE253B8BA7BCED5272 /* Pods-AGH MobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_MobileUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -565,6 +567,7 @@
 			isa = PBXGroup;
 			children = (
 				6198C8FB227C3F9E008D664F /* AGHButton.swift */,
+				6B2E959D2334AAB700153C02 /* AGHGradesCell.swift */,
 				0404C8AF23340A9B006D98F9 /* AGHLastGradeAlert.swift */,
 				0404C8AC2333E9B6006D98F9 /* AGHSegmentedControl.swift */,
 				6198C9082280EC2E008D664F /* AGHTextField.swift */,
@@ -981,6 +984,7 @@
 				4B87CCCD2264E0430028930A /* SkosViewModel.swift in Sources */,
 				611F4B1F225104240056416E /* ForYouView.swift in Sources */,
 				615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */,
+				6B2E959E2334AAB700153C02 /* AGHGradesCell.swift in Sources */,
 				65A9924D22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift in Sources */,
 				4B87CCCF2264E05F0028930A /* ModelSkos.swift in Sources */,
 				65A9924322CBBE500034DBE7 /* IETSchedule.swift in Sources */,
