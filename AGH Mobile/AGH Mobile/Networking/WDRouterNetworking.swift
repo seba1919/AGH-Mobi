@@ -1,10 +1,4 @@
-//
-//  WDRouterNetworking.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Wagner on 06/09/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
 
 // MARK: - Imports
 import Foundation
@@ -45,17 +39,17 @@ class WDRouterNetworking {
     // MARK: - Private Properties
     private var viewState = ""
     private var viewGenerator = ""
-    private var  eventValidation = ""
+    private var eventValidation = ""
     
     // MARK: - Public methods
-    public func performLoginAction(userWDLogin: String,
+    func performLoginAction(userWDLogin: String,
                                    userWDPassword: String,
                                    withPart: UrlType = .ocenyP,
                                    requestHandler: @escaping (RequestResponseType) -> Void) {
         
         CustomNotifications.showCustomSpinnerAlert()
         let urlString = "https://dziekanat.agh.edu.pl/Logowanie2.aspx?ReturnUrl=%2f"
-        let loginURL = URL(string: urlString + withPart.rawValue + ".aspx")!
+        guard let loginURL = URL(string: urlString + withPart.rawValue + ".aspx") else { return }
         
         var request = URLRequest(url: loginURL)
         
@@ -72,10 +66,11 @@ class WDRouterNetworking {
             "ctl00$ctl00$ContentPlaceHolder$MiddleContentPlaceHolder$txtHaslo": userWDPassword,
             "ctl00$ctl00$ContentPlaceHolder$MiddleContentPlaceHolder$butLoguj": "Zaloguj",
             "ctl00$ctl00$ContentPlaceHolder$MiddleContentPlaceHolder$rbKto": "student",
-            "__EVENTVALIDATION": eventValidation]
+            "__EVENTVALIDATION": eventValidation
+        ]
         
         func initialLoginRequest() -> Promise<Void> {
-
+            
             return Promise { resolver in
                 AF.request(loginURL, method: .post, parameters: parametersToSend)
                     .responseString {  response in
@@ -116,21 +111,21 @@ class WDRouterNetworking {
     // MARK: - NavigateTo Method Description
     /**
      
-    For making above method working please **type your user and password**
-    instead of ` "keychain.user" ` and ` "keychain.password" ` in line **124**
+     For making above method working please **type your user and password**
+     instead of ` "keychain.user" ` and ` "keychain.password" ` in line **124**
      
      # Use example for navigateTo method:
      
      ```
      loginPageView.pushAboutUsVC = {
-         WDRouterNetworking().navigateTo(url: .Stypendia) { requestResult in
-             if requestResult == .success {
-                self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
-             } else if requestResult == .credentialsFailiture {
-                // Return to LoginPageViewController will be added here after coordinator implementation
-                print("Could not login. Please try again")
-             }
-         }
+     WDRouterNetworking().navigateTo(url: .Stypendia) { requestResult in
+     if requestResult == .success {
+     self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
+     } else if requestResult == .credentialsFailiture {
+     // Return to LoginPageViewController will be added here after coordinator implementation
+     print("Could not login. Please try again")
+     }
+     }
      }
      ```
      */
@@ -147,7 +142,7 @@ class WDRouterNetworking {
                     self.performLoginAction(userWDLogin: "keychain.user",
                                             userWDPassword: "keychain.password",
                                             withPart: withPart) { isLoggedIn in
-                        requestHandler(isLoggedIn)
+                                                requestHandler(isLoggedIn)
                     }
                 } else {
                     CustomNotifications.hideCustomSpinnerAlert()
@@ -156,12 +151,14 @@ class WDRouterNetworking {
             }
             .catch(on: DispatchQueue.global(qos: .background)) { error in
                 print(error)
-                DispatchQueue.main.async { CustomNotifications.setupAlertOnServerConnectionFailture() }
+                DispatchQueue.main.async {
+                    CustomNotifications.setupAlertOnServerConnectionFailture()
+                }
         }
     }
     
     public func performLogoutAction(requestHandler: @escaping (Bool) -> Void) {
-
+        
         let url = "https://dziekanat.agh.edu.pl/Wyloguj.aspx"
         
         AF.request(url, method: .post)
