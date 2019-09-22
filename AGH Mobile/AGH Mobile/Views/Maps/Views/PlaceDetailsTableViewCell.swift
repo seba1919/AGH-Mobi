@@ -30,7 +30,7 @@ class PlaceDetailsTableViewCell: UITableViewCell {
     private lazy var annotationImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        if let image = UIImage(named: "location_Classes")?.withRenderingMode(.alwaysTemplate) {
+        if let image = UIImage(named: "location2_Classes")?.withRenderingMode(.alwaysTemplate) {
             imageView.image = image
         }
         imageView.tintColor = .white

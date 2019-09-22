@@ -9,10 +9,36 @@ class ListContentView: UIView {
     private(set) lazy var searchBarTextField: UITextField = {
         let field = UITextField()
         field.translatesAutoresizingMaskIntoConstraints = false
-        
+        field.autocorrectionType = .no
         field.layer.cornerRadius = 10.0
         field.backgroundColor = .searchBarBackground
-        // TODO: Dokończyć search bar
+        field.font = UIFont.systemFont(ofSize: 17, weight: .regular)
+        field.textColor = .customDarkGray
+        
+        //let searchIcon = UIImage(named: "")
+        let searchIconPlaceholder = UIView(frame: CGRect(x: 0,
+                                                         y: 0,
+                                                         width: 22,
+                                                         height: 36))
+        searchIconPlaceholder.backgroundColor = .clear
+        let searchIconImageView = UIImageView(frame: CGRect(x: 8,
+                                                            y: 11,
+                                                            width: 14,
+                                                            height: 14))
+        //searchIconImageView.image = searchIcon
+        searchIconImageView.tintColor = .customDarkGray
+        searchIconPlaceholder.addSubview(searchIconImageView)
+        field.leftView = searchIconPlaceholder
+        field.leftViewMode = .always
+        
+        // Placeholder
+        let attributs: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor.customDarkGray,
+                                                        .font: UIFont.systemFont(ofSize: 17.0,
+                                                                                 weight: .regular)]
+        let placeholderText = NSLocalizedString("Map_SearchBar_Placeholder",
+                                                comment: "")
+        field.attributedPlaceholder = NSAttributedString(string: placeholderText,
+                                                         attributes: attributs)
         
         return field
     }()

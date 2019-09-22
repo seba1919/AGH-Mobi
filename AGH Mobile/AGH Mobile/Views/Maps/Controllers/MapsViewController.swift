@@ -52,6 +52,7 @@ extension MapsViewController {
         listContentViewController = ListContentViewController()
         listContentViewController.listContentView.tableView.delegate = self
         listContentViewController.listContentView.tableView.dataSource = self
+        listContentViewController.listContentView.searchBarTextField.delegate = self
     }
     
     fileprivate func setupListFloatingPanelController() {
@@ -104,6 +105,11 @@ extension MapsViewController {
         listContentViewController.listContentView.tableView.reloadSections(IndexSet(integer: 0),
                                                                            with: .fade)
     }
+    
+    // MARK: - Actions
+    private func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 // MARK: - Extension of FloatingPanelController Delegate
@@ -113,6 +119,11 @@ extension MapsViewController: FloatingPanelControllerDelegate {
     func floatingPanel(_ vc: FloatingPanelController,
                        layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
         return ListContentFloatingPanelLayout()
+    }
+    
+    // swiftlint:disable:next identifier_name
+    func floatingPanelWillBeginDragging(_ vc: FloatingPanelController) {
+        dismissKeyboard()
     }
 }
 
@@ -135,8 +146,8 @@ extension MapsViewController: UITableViewDataSource {
         locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
-            let userCoordinates = CLLocation(latitude: (locationManager.location?.coordinate.latitude)!,
-                                             longitude: (locationManager.location?.coordinate.longitude)!)
+            let userCoordinates = CLLocation(latitude: (locationManager.location?.coordinate.latitude) ?? 0.0,
+                                             longitude: (locationManager.location?.coordinate.longitude) ?? 0.0)
             let destinationCoordinates = CLLocation(latitude: mapFeature.geometry.coordinates[1],
                                                     longitude: mapFeature.geometry.coordinates[0])
             let distance = userCoordinates.distance(from: destinationCoordinates) // in meters
@@ -173,5 +184,20 @@ extension MapsViewController: MKMapViewDelegate {
             self.navigationController?.pushViewController(buildingViewController, animated: true)
             mapView.deselectAnnotation(selectedAnnotation, animated: true)
         }
+    }
+}
+
+// MARK: - Extension of Textfield Delegate
+extension MapsViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        listFloatingPanelController.move(to: .full,
+                                         animated: true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        dismissKeyboard()
+        return false
     }
 }
