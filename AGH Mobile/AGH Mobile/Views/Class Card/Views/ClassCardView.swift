@@ -65,7 +65,7 @@ class ClassCardView: UIView {
     
     private lazy var ectsNumberRowView: RowView = {
         let rowView = RowView(style: .withDescription, separatorPosition: .none)
-        rowView.setupDescription(as: NSLocalizedString("ClassCardContent_Syllabus", comment: ""))
+        rowView.setupTitleDescriptionLabelWith(text: NSLocalizedString("ClassCardContent_Syllabus", comment: ""))
         rowView.setupLeftAccessory(named: "book_Classes")
         rowView.setupTextColor(as: .customDarkGrayText)
         
@@ -106,7 +106,7 @@ class ClassCardView: UIView {
     // MARK: - Setup view methods
     
     public func setupUI() {
-        setupProperties()
+        setupUIProperties()
         setupViews()
         setupConstraints()
     }
@@ -168,7 +168,7 @@ class ClassCardView: UIView {
     
     // MARK: - Adaptation to the iPhone 8 and below
     
-    private func setupProperties() {
+    private func setupUIProperties() {
         
         if UIScreen.isSmallSize() {
             spacing = screenHeight * 0.02
@@ -204,35 +204,35 @@ extension ClassCardView {
     
     // MARK: - Public Methods
     
-    public func setSubjectName(as Name: String) {
-        subjectNameLabel.text = Name
+    public func setSubjectNameLabelWith(text: String) {
+        subjectNameLabel.text = text
     }
     
-    public func setSubjectTypeName(as Name: String) {
-        subjectTypeLabel.text = Name
+    public func setSubjectTypeNameLabelWith(text: String) {
+        subjectTypeLabel.text = text
     }
     
-    public func setClassHours(on Name: String) {
-        classHoursRowView.setupTitle(as: Name)
+    public func setClassHoursLabelWith(text: String) {
+        classHoursRowView.setupTitle(as: text)
     }
     
-    public func setGroupName(as Name: String) {
-        classHoursRowView.setupDescription(as: Name)
+    public func setGroupNameLabelWith(text: String) {
+        classHoursRowView.setupTitleDescriptionLabelWith(text: text)
     }
     
-    public func setTeacherName(as Name: String) {
-        teacherRowView.setupTitle(as: Name)
+    public func setTeacherNameLabelWith(text: String) {
+        teacherRowView.setupTitle(as: text)
     }
     
-    public func setBuildingName(as Name: String) {
-        buildingRowView.setupTitle(as: Name)
+    public func setBuildingNameLabelWith(text: String) {
+        buildingRowView.setupTitle(as: text)
     }
     
-    public func setClassroomNumber(as Number: String) {
-        buildingRowView.setupDescription(as: Number)
+    public func setClassroomNumberLabelWith(text: String) {
+        buildingRowView.setupTitleDescriptionLabelWith(text: text)
     }
     
-    public func setECTSNumber(as Number: String) {
-        ectsNumberRowView.setupTitle(as: Number)
+    public func setECTSNumberLabelWith(text: String) {
+        ectsNumberRowView.setupTitle(as: text)
     }
 }

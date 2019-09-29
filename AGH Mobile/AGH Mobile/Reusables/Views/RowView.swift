@@ -390,8 +390,8 @@ extension RowView {
         title.text = name
     }
     
-    public func setupDescription(as name: String) {
-        titleDescriptionLabel.text = name
+    public func setupTitleDescriptionLabelWith(text: String) {
+        titleDescriptionLabel.text = text
     }
     
     public func setupTextColor(as color: UIColor) {

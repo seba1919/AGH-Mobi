@@ -17,17 +17,17 @@ class ClassCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.classCardView.setupUI()
-        self.setupData()
-        self.setupActions()
+        self.setupClassCardViewData()
+        self.setupClassCardViewActions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.setupNavigationAttributs()
+        self.setupNavigationAttributes()
     }
     
     // MARK: - Setup
     
-    private func setupNavigationAttributs() {
+    private func setupNavigationAttributes() {
         self.navigationItem.title = NSLocalizedString("ClassCardView_ClassCard", comment: "")
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(rightBarButtonItemTapped))
@@ -35,20 +35,20 @@ class ClassCardViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     
-    private func setupData() {
-        classCardView.setSubjectName(as: "Bazy Danych")
-        classCardView.setSubjectTypeName(as: "Wykład")
-        classCardView.setClassHours(on: "Poniedziałek 9.30-11.00")
-        classCardView.setGroupName(as: "Grupa W")
-        classCardView.setTeacherName(as: "prof.dr.hab.Jan Kowalski")
-        classCardView.setBuildingName(as: "Budynek C2")
-        classCardView.setClassroomNumber(as: "224")
-        classCardView.setECTSNumber(as: "4ECTS")
+    private func setupClassCardViewData() {
+        classCardView.setSubjectNameLabelWith(text: "Bazy Danych")
+        classCardView.setSubjectTypeNameLabelWith(text: "Wykład")
+        classCardView.setClassHoursLabelWith(text: "Poniedziałek 9.30-11.00")
+        classCardView.setGroupNameLabelWith(text: "Grupa W")
+        classCardView.setTeacherNameLabelWith(text: "prof.dr.hab.Jan Kowalski")
+        classCardView.setBuildingNameLabelWith(text: "Budynek C2")
+        classCardView.setClassroomNumberLabelWith(text: "224")
+        classCardView.setECTSNumberLabelWith(text: "4ECTS")
     }
     
     // MARK: - Actions
     
-    private func setupActions() {
+    private func setupClassCardViewActions() {
         classCardView.openNavigation = {
             self.openMapForPlace(for: 50.064552, and: 19.923064)
         }
