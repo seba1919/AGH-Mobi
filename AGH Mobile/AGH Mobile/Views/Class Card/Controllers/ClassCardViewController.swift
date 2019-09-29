@@ -64,10 +64,6 @@ class ClassCardViewController: UIViewController {
 private extension ClassCardViewController {
     
     private func openMapForPlace(for latitude: CLLocationDegrees,and longitude: CLLocationDegrees) {
-        
-        let latitude = latitude
-        let longitude = longitude
-        
         let regionDistance:CLLocationDistance = 10000
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
         let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
