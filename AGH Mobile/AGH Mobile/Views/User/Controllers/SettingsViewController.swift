@@ -3,7 +3,9 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    // MARK: - Instance properties
+    weak var coordinator: SettingsCoordinator?
     // MARK: - Private Properties
     private var settingsView: SettingsView { return self.view as! SettingsView }
     
@@ -34,7 +36,7 @@ extension SettingsViewController {
     // MARK: - Actions
     private func setupActions() {
         settingsView.settingsContentView.pushAboutUsVC = {
-            self.navigationController?.pushViewController(AboutUsViewController(), animated: true)
+            self.coordinator?.showAboutUs()
         }
         
         settingsView.settingsContentView.openMailApp = {
@@ -46,7 +48,7 @@ extension SettingsViewController {
         }
         
         settingsView.pushLoginPageVC = {
-            self.navigationController?.pushViewController(LoginPageViewController(), animated: true)
+            self.coordinator?.signOut()
         }
     }
 }

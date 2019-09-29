@@ -4,6 +4,8 @@ import UIKit
 
 class AboutUsViewController: UIViewController {
     
+    // MARK: - Instance properties
+    weak var coordinator: AboutUsCoordinator?
     // MARK: - Private Properties
     // View
     private var aboutUsView: AboutUsView { return self.view as! AboutUsView }
@@ -168,7 +170,7 @@ extension AboutUsViewController: UIScrollViewDelegate, UICollectionViewDelegate 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(MemberProfileViewController(), animated: true)
+        coordinator?.showMember()
         self.stopAutoScrolling()
     }
     

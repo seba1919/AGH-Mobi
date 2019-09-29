@@ -58,6 +58,15 @@
 		61AD7C95224BDCF8008340B3 /* AGH_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AD7C94224BDCF8008340B3 /* AGH_MobileUITests.swift */; };
 		61B92C82231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B92C81231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift */; };
 		61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */; };
+		65324823233D39A800AB63A8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6532481C233D39A700AB63A8 /* Coordinator.swift */; };
+		65324827233D39A800AB63A8 /* LoginPageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65324820233D39A800AB63A8 /* LoginPageCoordinator.swift */; };
+		65324829233D39AB00AB63A8 /* ForYouCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65324828233D39AB00AB63A8 /* ForYouCoordinator.swift */; };
+		6532482C233D39E800AB63A8 /* InformationsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6532482B233D39E800AB63A8 /* InformationsCoordinator.swift */; };
+		65324830233D3A1000AB63A8 /* MapsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6532482F233D3A1000AB63A8 /* MapsCoordinator.swift */; };
+		65324835233D3A2600AB63A8 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65324832233D3A2600AB63A8 /* SettingsCoordinator.swift */; };
+		65324836233D3A2600AB63A8 /* AboutUsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65324833233D3A2600AB63A8 /* AboutUsCoordinator.swift */; };
+		65324837233D3A2600AB63A8 /* MemberProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65324834233D3A2600AB63A8 /* MemberProfileCoordinator.swift */; };
+		6532483A233D3A3300AB63A8 /* StudiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65324839233D3A3300AB63A8 /* StudiesCoordinator.swift */; };
 		6574806A23089E19007DC4AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6574806C23089E19007DC4AF /* Localizable.strings */; };
 		65A9923D22CBBCBB0034DBE7 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9923C22CBBCBB0034DBE7 /* ScheduleViewModel.swift */; };
 		65A9923F22CBBCFF0034DBE7 /* ScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9923E22CBBCFF0034DBE7 /* ScheduleProvider.swift */; };
@@ -154,6 +163,15 @@
 		61AD7C96224BDCF8008340B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61B92C81231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+iPhonesSizes.swift"; sourceTree = "<group>"; };
 		61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
+		6532481C233D39A700AB63A8 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		65324820233D39A800AB63A8 /* LoginPageCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageCoordinator.swift; sourceTree = "<group>"; };
+		65324828233D39AB00AB63A8 /* ForYouCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouCoordinator.swift; sourceTree = "<group>"; };
+		6532482B233D39E800AB63A8 /* InformationsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationsCoordinator.swift; sourceTree = "<group>"; };
+		6532482F233D3A1000AB63A8 /* MapsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsCoordinator.swift; sourceTree = "<group>"; };
+		65324832233D3A2600AB63A8 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		65324833233D3A2600AB63A8 /* AboutUsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsCoordinator.swift; sourceTree = "<group>"; };
+		65324834233D3A2600AB63A8 /* MemberProfileCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberProfileCoordinator.swift; sourceTree = "<group>"; };
+		65324839233D3A3300AB63A8 /* StudiesCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudiesCoordinator.swift; sourceTree = "<group>"; };
 		6574806B23089E19007DC4AF /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65A9923C22CBBCBB0034DBE7 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		65A9923E22CBBCFF0034DBE7 /* ScheduleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleProvider.swift; sourceTree = "<group>"; };
@@ -628,6 +646,7 @@
 		61AD7C73224BDCF7008340B3 /* AGH Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				65324819233D390E00AB63A8 /* Coordinators */,
 				611F4AE62250D9A80056416E /* Application */,
 				65A9924622CBC1530034DBE7 /* Globals */,
 				4B87CCD82264EFC10028930A /* Models */,
@@ -682,6 +701,62 @@
 				6198C8F2227C2275008D664F /* Views */,
 			);
 			path = Reusables;
+			sourceTree = "<group>";
+		};
+		65324819233D390E00AB63A8 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				65324838233D3A2D00AB63A8 /* StudiesCoordinators */,
+				6532482A233D39B200AB63A8 /* ForYouCoordinators */,
+				6532482E233D3A0A00AB63A8 /* MapsCoordinators */,
+				6532482D233D39FE00AB63A8 /* InformationsCoordinators */,
+				65324831233D3A1F00AB63A8 /* SettingsCoordinators */,
+				6532481C233D39A700AB63A8 /* Coordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		6532482A233D39B200AB63A8 /* ForYouCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				65324828233D39AB00AB63A8 /* ForYouCoordinator.swift */,
+			);
+			path = ForYouCoordinators;
+			sourceTree = "<group>";
+		};
+		6532482D233D39FE00AB63A8 /* InformationsCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				6532482B233D39E800AB63A8 /* InformationsCoordinator.swift */,
+			);
+			path = InformationsCoordinators;
+			sourceTree = "<group>";
+		};
+		6532482E233D3A0A00AB63A8 /* MapsCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				6532482F233D3A1000AB63A8 /* MapsCoordinator.swift */,
+			);
+			path = MapsCoordinators;
+			sourceTree = "<group>";
+		};
+		65324831233D3A1F00AB63A8 /* SettingsCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				65324820233D39A800AB63A8 /* LoginPageCoordinator.swift */,
+				65324833233D3A2600AB63A8 /* AboutUsCoordinator.swift */,
+				65324834233D3A2600AB63A8 /* MemberProfileCoordinator.swift */,
+				65324832233D3A2600AB63A8 /* SettingsCoordinator.swift */,
+			);
+			path = SettingsCoordinators;
+			sourceTree = "<group>";
+		};
+		65324838233D3A2D00AB63A8 /* StudiesCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				65324839233D3A3300AB63A8 /* StudiesCoordinator.swift */,
+			);
+			path = StudiesCoordinators;
 			sourceTree = "<group>";
 		};
 		65A9924622CBC1530034DBE7 /* Globals */ = {
@@ -948,6 +1023,8 @@
 				4BC1567B22661D4B00ED633C /* DaySchedule.swift in Sources */,
 				4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */,
 				4B6B0147225C9960001BF0F1 /* ModelWD.swift in Sources */,
+				6532482C233D39E800AB63A8 /* InformationsCoordinator.swift in Sources */,
+				65324830233D3A1000AB63A8 /* MapsCoordinator.swift in Sources */,
 				6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */,
 				6198C9052280E6AB008D664F /* LoginPageViewController.swift in Sources */,
 				6198C8F8227C3BD7008D664F /* SettingsContent.swift in Sources */,
@@ -957,14 +1034,17 @@
 				4B87CCD52264E8130028930A /* TestSkosImpl.swift in Sources */,
 				6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */,
 				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
+				65324835233D3A2600AB63A8 /* SettingsCoordinator.swift in Sources */,
 				65A9924522CBBEC70034DBE7 /* UniTimeSchedule.swift in Sources */,
 				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				613324B8228486DD00C7C474 /* InformationContent.swift in Sources */,
 				615779212265F7D400C1BCDC /* AboutUsView.swift in Sources */,
+				6532483A233D3A3300AB63A8 /* StudiesCoordinator.swift in Sources */,
 				65A9923D22CBBCBB0034DBE7 /* ScheduleViewModel.swift in Sources */,
 				6198C8FE227C8215008D664F /* SeparatorView.swift in Sources */,
 				6198C900227C89B0008D664F /* RowView.swift in Sources */,
 				6198C8F6227C25CA008D664F /* UserWDProfile.swift in Sources */,
+				65324836233D3A2600AB63A8 /* AboutUsCoordinator.swift in Sources */,
 				4B6B0152225CCD7C001BF0F1 /* Grades.swift in Sources */,
 				4B87CCD72264E9170028930A /* Employee.swift in Sources */,
 				611F4B1D2250E0480056416E /* ForYouViewController.swift in Sources */,
@@ -972,20 +1052,24 @@
 				611F4B1F225104240056416E /* ForYouView.swift in Sources */,
 				615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */,
 				65A9924D22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift in Sources */,
+				65324837233D3A2600AB63A8 /* MemberProfileCoordinator.swift in Sources */,
 				4B87CCCF2264E05F0028930A /* ModelSkos.swift in Sources */,
 				65A9924322CBBE500034DBE7 /* IETSchedule.swift in Sources */,
 				6198C9092280EC2E008D664F /* AGHTextField.swift in Sources */,
 				6124131F22526752007D04C0 /* StudiesView.swift in Sources */,
+				65324823233D39A800AB63A8 /* Coordinator.swift in Sources */,
 				4BC1567D22661EE700ED633C /* TimetableEntry.swift in Sources */,
 				61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */,
 				613324B6228483C100C7C474 /* SectionTitle.swift in Sources */,
 				65A9925222CBCF7F0034DBE7 /* ScholarshipInfo.swift in Sources */,
 				65A9924B22CBC4970034DBE7 /* IETScheduleImpl.swift in Sources */,
+				65324829233D39AB00AB63A8 /* ForYouCoordinator.swift in Sources */,
 				6198C9072280E6C3008D664F /* LoginPageView.swift in Sources */,
 				4B6B0154225CCE2A001BF0F1 /* CourseType.swift in Sources */,
 				611F4B192250E0480056416E /* InformationsViewController.swift in Sources */,
 				6157791F2265F77E00C1BCDC /* AboutUsViewController.swift in Sources */,
 				6198C8E62279E8F2008D664F /* MemberProfileViewController.swift in Sources */,
+				65324827233D39A800AB63A8 /* LoginPageCoordinator.swift in Sources */,
 				65A9924F22CBC7250034DBE7 /* UniTimeScheduleImpl.swift in Sources */,
 				6198C8FC227C3F9E008D664F /* AGHButton.swift in Sources */,
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
