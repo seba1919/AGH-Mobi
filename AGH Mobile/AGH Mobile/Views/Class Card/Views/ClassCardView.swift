@@ -25,7 +25,6 @@ class ClassCardView: UIView {
         label.font = UIFont.systemFont(ofSize: 35, weight: .bold)
         label.textColor = .black
         label.textAlignment = .left
-        label.text = " "
         return label
     }()
     
@@ -40,14 +39,11 @@ class ClassCardView: UIView {
         label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
         label.textColor = .mainRed
         label.textAlignment = .left
-        label.text = " "
         return label
     }()
     
     private lazy var classHoursRowView: RowView = {
         let rowView = RowView(style: .withDescription, separatorPosition: .none, touchDetect: .off, accessory: .withoutRightAccessory)
-        rowView.setupTitle(as: " ")
-        rowView.setupDescription(as: " ")
         rowView.setupLeftAccessory(named: "clock_Classes")
         rowView.setupTextColor(as: .customDarkGrayText)
         return rowView
@@ -55,7 +51,6 @@ class ClassCardView: UIView {
     
     private lazy var teacherRowView: RowView = {
         let rowView = RowView(style: .withLeftAccessory, separatorPosition: .none)
-        rowView.setupTitle(as: " ")
         rowView.setupLeftAccessory(named: "human_Classes")
         rowView.setupTextColor(as: .customDarkGrayText)
         return rowView
@@ -63,8 +58,6 @@ class ClassCardView: UIView {
     
     private lazy var buildingRowView: RowView = {
         let rowView = RowView(style: .withDescription, separatorPosition: .none)
-        rowView.setupTitle(as: " ")
-        rowView.setupDescription(as: " ")
         rowView.setupLeftAccessory(named: "location_Classes")
         rowView.setupTextColor(as: .customDarkGrayText)
         return rowView
@@ -72,7 +65,6 @@ class ClassCardView: UIView {
     
     private lazy var ectsNumberRowView: RowView = {
         let rowView = RowView(style: .withDescription, separatorPosition: .none)
-        rowView.setupTitle(as: " ")
         rowView.setupDescription(as: NSLocalizedString("ClassCardContent_Syllabus", comment: ""))
         rowView.setupLeftAccessory(named: "book_Classes")
         rowView.setupTextColor(as: .customDarkGrayText)

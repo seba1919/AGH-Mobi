@@ -68,7 +68,6 @@ final class RowView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.text = "Description is not set" // Show if not use setupDescription method
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: fontSize, weight: .regular)
         return label
