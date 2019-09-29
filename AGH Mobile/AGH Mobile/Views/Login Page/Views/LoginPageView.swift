@@ -4,7 +4,7 @@ import UIKit
 import SnapKit
 
 class LoginPageView: UIView {
-
+    
     // MARK: - Public Properties
     public var pushAboutUsVC: (() -> Void)?
     public var pushSettingsVC: (() -> Void)?
@@ -53,6 +53,8 @@ class LoginPageView: UIView {
     
     private lazy var passwordTextField: AGHTextField = {
         let textField = AGHTextField(placeholder: NSLocalizedString("LoginPageView_Password", comment: ""))
+        textField.isSecureTextEntry = true
+        textField.autocapitalizationType = .none
         return textField
     }()
     
@@ -104,11 +106,11 @@ class LoginPageView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
 extension LoginPageView {
-
+    
     // MARK: - Setup view methods
     public func setupUI() {
         self.setupView()
@@ -127,7 +129,7 @@ extension LoginPageView {
         self.addSubview(macKnIconImageView)
         self.addSubview(aboutUsButton)
     }
-
+    
     // MARK: - Setup Constraints
     private func setupConstraints() {
         tabBarTitleLabel.snp.makeConstraints { (make) in

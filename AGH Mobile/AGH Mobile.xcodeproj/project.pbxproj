@@ -59,6 +59,8 @@
 		61B92C82231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B92C81231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift */; };
 		61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */; };
 		6574806A23089E19007DC4AF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6574806C23089E19007DC4AF /* Localizable.strings */; };
+		657F48FA2328FA40002E0810 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657F48F92328FA40002E0810 /* UIView.swift */; };
+		657F48FE2328FA6D002E0810 /* CustomNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657F48FD2328FA6D002E0810 /* CustomNotifications.swift */; };
 		65A9923D22CBBCBB0034DBE7 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9923C22CBBCBB0034DBE7 /* ScheduleViewModel.swift */; };
 		65A9923F22CBBCFF0034DBE7 /* ScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9923E22CBBCFF0034DBE7 /* ScheduleProvider.swift */; };
 		65A9924122CBBDED0034DBE7 /* EAIIBSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9924022CBBDED0034DBE7 /* EAIIBSchedule.swift */; };
@@ -69,6 +71,7 @@
 		65A9924D22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9924C22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift */; };
 		65A9924F22CBC7250034DBE7 /* UniTimeScheduleImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9924E22CBC7250034DBE7 /* UniTimeScheduleImpl.swift */; };
 		65A9925222CBCF7F0034DBE7 /* ScholarshipInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A9925122CBCF7F0034DBE7 /* ScholarshipInfo.swift */; };
+		6B45197C23222C0200D8E5EF /* WDRouterNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45197B23222C0200D8E5EF /* WDRouterNetworking.swift */; };
 		76ED7A09ADF48FAF996EEFD2 /* Pods_AGH_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */; };
 		8F3A8D473740ED8EC2AF437E /* Pods_AGH_MobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */; };
 		AA7425C01AFAEC2A6CE94699 /* Pods_AGH_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9454BF74EFD6E6A8CE744B70 /* Pods_AGH_Mobile.framework */; };
@@ -155,6 +158,8 @@
 		61B92C81231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+iPhonesSizes.swift"; sourceTree = "<group>"; };
 		61ECE8A3224D315B00A9A806 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		6574806B23089E19007DC4AF /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		657F48F92328FA40002E0810 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		657F48FD2328FA6D002E0810 /* CustomNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNotifications.swift; sourceTree = "<group>"; };
 		65A9923C22CBBCBB0034DBE7 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		65A9923E22CBBCFF0034DBE7 /* ScheduleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleProvider.swift; sourceTree = "<group>"; };
 		65A9924022CBBDED0034DBE7 /* EAIIBSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAIIBSchedule.swift; sourceTree = "<group>"; };
@@ -165,6 +170,7 @@
 		65A9924C22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EAIIBScheduleImpl.swift; sourceTree = "<group>"; };
 		65A9924E22CBC7250034DBE7 /* UniTimeScheduleImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniTimeScheduleImpl.swift; sourceTree = "<group>"; };
 		65A9925122CBCF7F0034DBE7 /* ScholarshipInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScholarshipInfo.swift; sourceTree = "<group>"; };
+		6B45197B23222C0200D8E5EF /* WDRouterNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDRouterNetworking.swift; sourceTree = "<group>"; };
 		77F59FBE253B8BA7BCED5272 /* Pods-AGH MobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_MobileUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9454BF74EFD6E6A8CE744B70 /* Pods_AGH_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -598,6 +604,7 @@
 			children = (
 				61A743EC227743BB00DFCB35 /* Colors.swift */,
 				61B92C81231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift */,
+				657F48F92328FA40002E0810 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -633,9 +640,10 @@
 				4B87CCD82264EFC10028930A /* Models */,
 				4B6B0143225C98B6001BF0F1 /* Views */,
 				4B87CCD92264F00A0028930A /* View Models */,
-				61A743EB2277439900DFCB35 /* Extensions */,
 				6515E87B232596CA00C6460A /* Reusables */,
 				61ECE89A224D1F7B00A9A806 /* Resources */,
+				6B45197A23222BB500D8E5EF /* Networking */,
+				61A743EB2277439900DFCB35 /* Extensions */,
 				611F4AE92250D9FC0056416E /* Supporting Files */,
 			);
 			path = "AGH Mobile";
@@ -679,6 +687,7 @@
 		6515E87B232596CA00C6460A /* Reusables */ = {
 			isa = PBXGroup;
 			children = (
+				657F48FD2328FA6D002E0810 /* CustomNotifications.swift */,
 				6198C8F2227C2275008D664F /* Views */,
 			);
 			path = Reusables;
@@ -701,6 +710,14 @@
 				65A9924E22CBC7250034DBE7 /* UniTimeScheduleImpl.swift */,
 			);
 			path = Schedule;
+			sourceTree = "<group>";
+		};
+		6B45197A23222BB500D8E5EF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6B45197B23222C0200D8E5EF /* WDRouterNetworking.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		C08FECE8D4AF6BDCAEAA9087 /* Pods */ = {
@@ -951,6 +968,7 @@
 				6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */,
 				6198C9052280E6AB008D664F /* LoginPageViewController.swift in Sources */,
 				6198C8F8227C3BD7008D664F /* SettingsContent.swift in Sources */,
+				657F48FE2328FA6D002E0810 /* CustomNotifications.swift in Sources */,
 				4B6B0157225CD289001BF0F1 /* TestWDImpl.swift in Sources */,
 				61241323225267E3007D04C0 /* InformationsView.swift in Sources */,
 				65A9924822CBC1A60034DBE7 /* Faculty.swift in Sources */,
@@ -960,12 +978,14 @@
 				65A9924522CBBEC70034DBE7 /* UniTimeSchedule.swift in Sources */,
 				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				613324B8228486DD00C7C474 /* InformationContent.swift in Sources */,
+				657F48FA2328FA40002E0810 /* UIView.swift in Sources */,
 				615779212265F7D400C1BCDC /* AboutUsView.swift in Sources */,
 				65A9923D22CBBCBB0034DBE7 /* ScheduleViewModel.swift in Sources */,
 				6198C8FE227C8215008D664F /* SeparatorView.swift in Sources */,
 				6198C900227C89B0008D664F /* RowView.swift in Sources */,
 				6198C8F6227C25CA008D664F /* UserWDProfile.swift in Sources */,
 				4B6B0152225CCD7C001BF0F1 /* Grades.swift in Sources */,
+				6B45197C23222C0200D8E5EF /* WDRouterNetworking.swift in Sources */,
 				4B87CCD72264E9170028930A /* Employee.swift in Sources */,
 				611F4B1D2250E0480056416E /* ForYouViewController.swift in Sources */,
 				4B87CCCD2264E0430028930A /* SkosViewModel.swift in Sources */,
