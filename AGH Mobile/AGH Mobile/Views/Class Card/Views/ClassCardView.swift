@@ -87,9 +87,8 @@ class ClassCardView: UIView {
         centerMapOnAGH(for: mapView)
         return mapView
     }()
-    
     private lazy var showRouteButton: UIButton = {
-        let button = AGHButton(title: "pokaż trasę").build()
+        let button = AGHButton(title: NSLocalizedString("ClassCardContent_ShowRoute", comment: "")).build()
         button.addTarget(self, action: #selector(onPressOpenNavigation), for: .touchUpInside)
         return button
     }()

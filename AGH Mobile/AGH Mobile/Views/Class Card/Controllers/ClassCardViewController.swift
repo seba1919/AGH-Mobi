@@ -31,7 +31,7 @@ class ClassCardViewController: UIViewController {
         self.navigationItem.title = NSLocalizedString("ClassCardView_ClassCard", comment: "")
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         let rightBarButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(rightBarButtonItemTapped))
-        rightBarButton.title = "Edycja"
+        rightBarButton.title = NSLocalizedString("ClassCardView_Edit", comment: "")
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
     

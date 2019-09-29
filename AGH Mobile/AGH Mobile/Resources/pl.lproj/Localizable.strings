@@ -57,10 +57,12 @@
 
 /* ClassCardView */
 "ClassCardView_ClassCard" = "Karta zajęć";
+"ClassCardView_Edit" = "Edytuj";
 
 
 /* ClassCardContent */
 "ClassCardContent_Syllabus" = "Syllabus";
+"ClassCardContent_ShowRoute" = "Pokaż trasę";
 
 
 /* AboutUsView */
