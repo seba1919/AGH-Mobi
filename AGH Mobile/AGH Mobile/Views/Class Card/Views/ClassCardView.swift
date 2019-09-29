@@ -19,81 +19,81 @@ class ClassCardView: UIView {
     
     // MARK: - Components of View
     
-    private lazy var subjectName: UILabel = {
-        let lbl = UILabel()
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.font = UIFont.systemFont(ofSize: 35, weight: .bold)
-        lbl.textColor = .black
-        lbl.textAlignment = .left
-        lbl.text = " "
-        return lbl
+    private lazy var subjectNameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 35, weight: .bold)
+        label.textColor = .black
+        label.textAlignment = .left
+        label.text = " "
+        return label
     }()
     
     private lazy var separator: UIView = {
-        let v = SeparatorView().build()
-        return v
+        let separatorView = SeparatorView().build()
+        return separatorView
     }()
     
-    private lazy var subjectType: UILabel = {
-        let lbl = UILabel()
-        lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.font = UIFont.systemFont(ofSize: 15, weight: .bold)
-        lbl.textColor = .mainRed
-        lbl.textAlignment = .left
-        lbl.text = " "
-        return lbl
+    private lazy var subjectTypeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 15, weight: .bold)
+        label.textColor = .mainRed
+        label.textAlignment = .left
+        label.text = " "
+        return label
     }()
     
     private lazy var classHoursRowView: RowView = {
-        let view = RowView(style: .withDescription, separatorPosition: .none, touchDetect: .off, accessory: .withoutRightAccessory)
-        view.setupTitle(as: " ")
-        view.setupDescription(as: " ")
-        view.setupLeftAccessory(named: "clock_Classes")
-        view.setupTextColor(as: .customDarkGrayText)
-        return view
+        let rowView = RowView(style: .withDescription, separatorPosition: .none, touchDetect: .off, accessory: .withoutRightAccessory)
+        rowView.setupTitle(as: " ")
+        rowView.setupDescription(as: " ")
+        rowView.setupLeftAccessory(named: "clock_Classes")
+        rowView.setupTextColor(as: .customDarkGrayText)
+        return rowView
     }()
     
     private lazy var teacherRowView: RowView = {
-        let view = RowView(style: .withLeftAccessory, separatorPosition: .none)
-        view.setupTitle(as: " ")
-        view.setupLeftAccessory(named: "human_Classes")
-        view.setupTextColor(as: .customDarkGrayText)
-        return view
+        let rowView = RowView(style: .withLeftAccessory, separatorPosition: .none)
+        rowView.setupTitle(as: " ")
+        rowView.setupLeftAccessory(named: "human_Classes")
+        rowView.setupTextColor(as: .customDarkGrayText)
+        return rowView
     }()
     
     private lazy var buildingRowView: RowView = {
-        let view = RowView(style: .withDescription, separatorPosition: .none)
-        view.setupTitle(as: " ")
-        view.setupDescription(as: " ")
-        view.setupLeftAccessory(named: "location_Classes")
-        view.setupTextColor(as: .customDarkGrayText)
-        return view
+        let rowView = RowView(style: .withDescription, separatorPosition: .none)
+        rowView.setupTitle(as: " ")
+        rowView.setupDescription(as: " ")
+        rowView.setupLeftAccessory(named: "location_Classes")
+        rowView.setupTextColor(as: .customDarkGrayText)
+        return rowView
     }()
     
     private lazy var ectsNumberRowView: RowView = {
-        let view = RowView(style: .withDescription, separatorPosition: .none)
-        view.setupTitle(as: " ")
-        view.setupDescription(as: NSLocalizedString("ClassCardContent_Syllabus", comment: ""))
-        view.setupLeftAccessory(named: "book_Classes")
-        view.setupTextColor(as: .customDarkGrayText)
+        let rowView = RowView(style: .withDescription, separatorPosition: .none)
+        rowView.setupTitle(as: " ")
+        rowView.setupDescription(as: NSLocalizedString("ClassCardContent_Syllabus", comment: ""))
+        rowView.setupLeftAccessory(named: "book_Classes")
+        rowView.setupTextColor(as: .customDarkGrayText)
         
-        return view
+        return rowView
     }()
     
     private lazy var rowStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.distribution = .equalSpacing
-        stack.spacing = 0.0
-        return stack
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 0.0
+        return stackView
     }()
     
     private lazy var mapView: MKMapView = {
-        let map = MKMapView(frame: .zero)
-        map.layer.cornerRadius = cornerRadius
-        centerMapOnAGH(for: map)
-        return map
+        let mapView = MKMapView(frame: .zero)
+        mapView.layer.cornerRadius = cornerRadius
+        centerMapOnAGH(for: mapView)
+        return mapView
     }()
     
     private lazy var showRouteButton: UIButton = {
@@ -123,9 +123,9 @@ class ClassCardView: UIView {
     private func setupViews() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        addSubview(subjectName)
+        addSubview(subjectNameLabel)
         addSubview(separator)
-        addSubview(subjectType)
+        addSubview(subjectTypeLabel)
         addSubview(rowStackView)
         addSubview(mapView)
         addSubview(showRouteButton)
@@ -140,23 +140,23 @@ class ClassCardView: UIView {
     
     private func setupConstraints() {
         
-        subjectName.snp.makeConstraints { (make) in
+        subjectNameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(spacing)
             make.left.right.equalToSuperview().offset(leftMargin)
         }
         
         separator.snp.makeConstraints { (make) in
-            make.top.equalTo(subjectName.snp.bottom).offset(spacing)
+            make.top.equalTo(subjectNameLabel.snp.bottom).offset(spacing)
             make.left.right.equalToSuperview().offset(leftMargin)
         }
         
-        subjectType.snp.makeConstraints { (make) in
+        subjectTypeLabel.snp.makeConstraints { (make) in
             make.top.equalTo(separator.snp.bottom).offset(spacingInRows)
             make.left.right.equalToSuperview().offset(leftMargin)
         }
         
         rowStackView.snp.makeConstraints { (make) in
-            make.top.equalTo(subjectType.snp.bottom).offset(spacingInRows)
+            make.top.equalTo(subjectTypeLabel.snp.bottom).offset(spacingInRows)
             make.left.right.equalToSuperview()
         }
         
@@ -182,14 +182,14 @@ class ClassCardView: UIView {
         if UIScreen.isSmallSize() {
             spacing = screenHeight * 0.02
             spacingInRows = screenHeight * 0.01
-            subjectName.font = UIFont.systemFont(ofSize: 25, weight: .bold)
-            subjectType.font = UIFont.systemFont(ofSize: 11, weight: .bold)
+            subjectNameLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
+            subjectTypeLabel.font = UIFont.systemFont(ofSize: 11, weight: .bold)
         }
         else if UIScreen.isMediumSize(){
             spacing = screenHeight * 0.025
             spacingInRows = screenHeight * 0.01
-            subjectName.font = UIFont.systemFont(ofSize: 30, weight: .bold)
-            subjectType.font = UIFont.systemFont(ofSize: 13, weight: .bold)
+            subjectNameLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+            subjectTypeLabel.font = UIFont.systemFont(ofSize: 13, weight: .bold)
         }
     }
     
@@ -214,11 +214,11 @@ extension ClassCardView {
     // MARK: - Public Methods
     
     public func setSubjectName(as Name: String) {
-        subjectName.text = Name
+        subjectNameLabel.text = Name
     }
     
     public func setSubjectTypeName(as Name: String) {
-        subjectType.text = Name
+        subjectTypeLabel.text = Name
     }
     
     public func setClassHours(on Name: String) {

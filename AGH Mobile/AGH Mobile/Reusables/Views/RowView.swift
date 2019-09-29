@@ -64,7 +64,7 @@ final class RowView: UIView {
         return label
     }()
     
-    private lazy var titleDescription: UILabel = {
+    private lazy var titleDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
@@ -195,7 +195,7 @@ extension RowView {
         self.addSubview(title)
         self.addSubview(leftAccessory)
         self.addSubview(rightAccessory)
-        self.addSubview(titleDescription)
+        self.addSubview(titleDescriptionLabel)
         self.setupWithDescriptionStyleConstraints()
     }
     
@@ -277,7 +277,7 @@ extension RowView {
             make.left.equalTo(leftAccessory.snp.right).offset(12)
             make.top.equalTo(self.snp.top).offset(topPadding * 0.4)
         }
-        titleDescription.snp.makeConstraints { (make) in
+        titleDescriptionLabel.snp.makeConstraints { (make) in
             make.left.equalTo(title.snp.left)
             make.top.equalTo(title.snp.bottom)
             make.bottom.equalTo(self.snp.bottom).offset(bottomPadding * 0.4)
@@ -392,12 +392,12 @@ extension RowView {
     }
     
     public func setupDescription(as name: String) {
-        titleDescription.text = name
+        titleDescriptionLabel.text = name
     }
     
     public func setupTextColor(as color: UIColor) {
         title.textColor = color
-        titleDescription.textColor = color
+        titleDescriptionLabel.textColor = color
     }
     
     public func setupLeftAccessory(named name: String) {
