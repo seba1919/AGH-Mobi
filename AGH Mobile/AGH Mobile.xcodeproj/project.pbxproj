@@ -72,6 +72,8 @@
 		76ED7A09ADF48FAF996EEFD2 /* Pods_AGH_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */; };
 		8F3A8D473740ED8EC2AF437E /* Pods_AGH_MobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */; };
 		AA7425C01AFAEC2A6CE94699 /* Pods_AGH_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9454BF74EFD6E6A8CE744B70 /* Pods_AGH_Mobile.framework */; };
+		FA2E684C2333CDA800485F68 /* SkOsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E684B2333CDA800485F68 /* SkOsViewController.swift */; };
+		FA2E684E2333CDBB00485F68 /* SkOsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2E684D2333CDBB00485F68 /* SkOsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		9454BF74EFD6E6A8CE744B70 /* Pods_AGH_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DAF2A659C668A915AD4D8CA /* Pods-AGH MobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileTests/Pods-AGH MobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		D055B5334B7E17670374A273 /* Pods-AGH MobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileTests/Pods-AGH MobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA2E684B2333CDA800485F68 /* SkOsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkOsViewController.swift; sourceTree = "<group>"; };
+		FA2E684D2333CDBB00485F68 /* SkOsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkOsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +217,7 @@
 		4B6B0143225C98B6001BF0F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA2E68482333CD6A00485F68 /* SkOs */,
 				6198C9012280E652008D664F /* Login Page */,
 				6198C8E42279E8C6008D664F /* Member Profile */,
 				6157791B2265F75200C1BCDC /* About As */,
@@ -716,6 +721,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FA2E68482333CD6A00485F68 /* SkOs */ = {
+			isa = PBXGroup;
+			children = (
+				FA2E68492333CD8200485F68 /* Controllers */,
+				FA2E684A2333CD8D00485F68 /* Views */,
+			);
+			path = SkOs;
+			sourceTree = "<group>";
+		};
+		FA2E68492333CD8200485F68 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA2E684B2333CDA800485F68 /* SkOsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FA2E684A2333CD8D00485F68 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FA2E684D2333CDBB00485F68 /* SkOsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -958,6 +988,7 @@
 				6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */,
 				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				65A9924522CBBEC70034DBE7 /* UniTimeSchedule.swift in Sources */,
+				FA2E684C2333CDA800485F68 /* SkOsViewController.swift in Sources */,
 				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				613324B8228486DD00C7C474 /* InformationContent.swift in Sources */,
 				615779212265F7D400C1BCDC /* AboutUsView.swift in Sources */,
@@ -971,6 +1002,7 @@
 				4B87CCCD2264E0430028930A /* SkosViewModel.swift in Sources */,
 				611F4B1F225104240056416E /* ForYouView.swift in Sources */,
 				615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */,
+				FA2E684E2333CDBB00485F68 /* SkOsView.swift in Sources */,
 				65A9924D22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift in Sources */,
 				4B87CCCF2264E05F0028930A /* ModelSkos.swift in Sources */,
 				65A9924322CBBE500034DBE7 /* IETSchedule.swift in Sources */,
