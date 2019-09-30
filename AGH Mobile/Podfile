@@ -9,10 +9,11 @@ target 'AGH Mobile' do
 
   # Pods for AGH Mobile
   pod 'Alamofire', '~> 5.0.0-beta.5'
-  pod 'SnapKit', '~> 5.0.0'
-  pod 'PromiseKit', '~> 6.8'
-  pod 'SwiftSoup', '~> 2.2.0'
-  pod 'Toast-Swift', '~> 5.0.0'
+  pod 'SnapKit'
+  pod 'PromiseKit'
+  pod 'SwiftSoup'
+  pod 'Toast-Swift'
+  pod 'FloatingPanel'
   
   target 'AGH MobileTests' do
     inherit! :search_paths

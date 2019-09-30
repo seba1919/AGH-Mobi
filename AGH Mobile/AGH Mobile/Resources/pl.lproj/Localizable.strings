@@ -65,3 +65,11 @@
 "CustomNotifications_ServerError" = "Błąd połączenia z serwerem AGH";
 "CustomNotifications_LogoutSuccess" = "Wylogowano";
 "CustomNotifications_LogoutError" = "Wystąpił błąd połączenia z serwerem. Spróbuj ponownie";
+
+/* Maps */
+"Map_Category_Buildings" = "Budynki Uczelniane";
+"Map_Category_Food" = "Jedzenie";
+"Map_Category_Photocopying" = "Ksero";
+"Map_Category_Libraries" = "Biblioteki i Czytelnie";
+"Map_Category_Shops" = "Sklepy";
+"Map_SearchBar_Placeholder" = "Search";

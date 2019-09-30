@@ -15,17 +15,17 @@ class ListContentView: UIView {
         field.font = UIFont.systemFont(ofSize: 17, weight: .regular)
         field.textColor = .customDarkGray
         
-        //let searchIcon = UIImage(named: "")
+        let searchIcon = UIImage(named: "search")?.withRenderingMode(.alwaysTemplate)
         let searchIconPlaceholder = UIView(frame: CGRect(x: 0,
                                                          y: 0,
-                                                         width: 22,
+                                                         width: 28,
                                                          height: 36))
         searchIconPlaceholder.backgroundColor = .clear
         let searchIconImageView = UIImageView(frame: CGRect(x: 8,
                                                             y: 11,
                                                             width: 14,
                                                             height: 14))
-        //searchIconImageView.image = searchIcon
+        searchIconImageView.image = searchIcon
         searchIconImageView.tintColor = .customDarkGray
         searchIconPlaceholder.addSubview(searchIconImageView)
         field.leftView = searchIconPlaceholder

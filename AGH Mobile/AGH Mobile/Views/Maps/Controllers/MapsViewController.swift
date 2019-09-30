@@ -185,6 +185,30 @@ extension MapsViewController: MKMapViewDelegate {
             mapView.deselectAnnotation(selectedAnnotation, animated: true)
         }
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        guard !annotation.isKind(of: MKUserLocation.self) else {
+            return nil
+        }
+        
+        if let annotation = annotation as? MapAnnotation {
+            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "test")
+            
+            // Resize image
+            let pinImage = UIImage(named: "building_focused")
+//            let size = CGSize(width: 25, height: 28.5)
+//            UIGraphicsBeginImageContext(size)
+//            pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+//            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            
+            annotationView.image = pinImage
+            annotationView.canShowCallout = true
+            return annotationView
+        }
+        
+        return nil
+    }
 }
 
 // MARK: - Extension of Textfield Delegate
