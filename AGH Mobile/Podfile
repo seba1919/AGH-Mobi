@@ -8,11 +8,12 @@ target 'AGH Mobile' do
   use_frameworks!
 
   # Pods for AGH Mobile
-  pod 'Alamofire'
-  pod 'SnapKit'
-  pod 'FloatingPanel'
-
-
+  pod 'Alamofire', '~> 5.0.0-beta.5'
+  pod 'SnapKit', '~> 5.0.0'
+  pod 'PromiseKit', '~> 6.8'
+  pod 'SwiftSoup', '~> 2.2.0'
+  pod 'Toast-Swift', '~> 5.0.0'
+  
   target 'AGH MobileTests' do
     inherit! :search_paths
     # Pods for testing
