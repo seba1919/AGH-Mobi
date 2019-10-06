@@ -2,9 +2,9 @@
     "type": "FeatureCollection",
     "features": [
         {
-            "type": "Feature",
+            "type": "MapCategoryLibraries",
             "properties": {
-                "markerColor": "#bc1387",
+                "imageName": "book",
                 "name": ""
             },
             "geometry": {

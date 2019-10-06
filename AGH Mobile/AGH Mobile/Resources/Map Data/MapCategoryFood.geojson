@@ -2,9 +2,9 @@
     "type": "FeatureCollection",
     "features": [
         {
-            "type": "Feature",
+            "type": "MapCategoryFood",
             "properties": {
-                "markerColor": "#bc1387",
+                "imageName": "cultery",
                 "name": ""
             },
             "geometry": {

@@ -2,9 +2,9 @@
     "type": "FeatureCollection",
     "features": [
         {
-            "type": "Feature",
+            "type": "MapCategoryPhotocopying",
             "properties": {
-                "markerColor": "#bc1387",
+                "imageName": "xero",
                 "name": ""
             },
             "geometry": {

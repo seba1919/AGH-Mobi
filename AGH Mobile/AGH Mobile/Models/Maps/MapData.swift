@@ -28,9 +28,9 @@ import Foundation
      "type": "FeatureCollection",
      "features": [
          {
-             "type": "Feature",
+             "type": "MapCategoryBuildings",
              "properties": {
-                 "markerColor": "#bc1387",
+                 "imageName": "building",
                  "name": "A1"
              },
              "geometry": {
@@ -47,17 +47,17 @@ import Foundation
 */
 struct MapData: Decodable {
     let type: String
-    let features: [Feature]
+    let features: [MapDataFeature]
 }
 
-struct Feature: Decodable {
+struct MapDataFeature: Decodable {
     let type: String
     let properties: Properties
     let geometry: Geometry
 }
 
 struct Properties: Decodable {
-    let markerColor: String
+    let imageName: String
     let name: String
 }
 

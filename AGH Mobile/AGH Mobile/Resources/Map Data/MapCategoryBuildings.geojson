@@ -2,9 +2,9 @@
     "type": "FeatureCollection",
     "features": [
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek A0"
             },
             "geometry": {
@@ -16,9 +16,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek A1"
             },
             "geometry": {
@@ -30,9 +30,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek A2"
             },
             "geometry": {
@@ -44,9 +44,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek A3/A4"
             },
             "geometry": {
@@ -58,9 +58,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek C1"
             },
             "geometry": {
@@ -72,9 +72,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek C2"
             },
             "geometry": {
@@ -86,9 +86,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek C3"
             },
             "geometry": {
@@ -100,9 +100,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek C4"
             },
             "geometry": {
@@ -114,9 +114,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek B1"
             },
             "geometry": {
@@ -128,9 +128,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek B2"
             },
             "geometry": {
@@ -142,9 +142,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek B3"
             },
             "geometry": {
@@ -156,9 +156,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek B4"
             },
             "geometry": {
@@ -170,9 +170,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek B5"
             },
             "geometry": {
@@ -184,9 +184,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek B6"
             },
             "geometry": {
@@ -198,9 +198,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek B7"
             },
             "geometry": {
@@ -212,9 +212,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek D4"
             },
             "geometry": {
@@ -226,9 +226,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek D5"
             },
             "geometry": {
@@ -240,9 +240,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek D6"
             },
             "geometry": {
@@ -254,9 +254,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek D8"
             },
             "geometry": {
@@ -268,9 +268,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek D11"
             },
             "geometry": {
@@ -282,9 +282,9 @@
             }
         },
         {
-            "type": "Feature",
+            "type": "MapCategoryBuildings",
             "properties": {
-                "markerColor": "#11053b",
+                "imageName": "building",
                 "name": "Budynek D17"
             },
             "geometry": {
