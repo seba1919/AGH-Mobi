@@ -30,7 +30,6 @@
 		611F4B1D2250E0480056416E /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B172250E0480056416E /* ForYouViewController.swift */; };
 		611F4B1F225104240056416E /* ForYouView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 611F4B1E225104240056416E /* ForYouView.swift */; };
 		611F4B62225115DF0056416E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 611F4B61225115DF0056416E /* Assets.xcassets */; };
-		612233F3232D0D6000E95812 /* Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612233F2232D0D6000E95812 /* Previews.swift */; };
 		612233F7232E20F200E95812 /* ListContentFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612233F6232E20F200E95812 /* ListContentFloatingPanelLayout.swift */; };
 		612233F9232E249800E95812 /* PlaceDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612233F8232E249800E95812 /* PlaceDetailsTableViewCell.swift */; };
 		61223403232E512300E95812 /* MapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61223402232E512300E95812 /* MapData.swift */; };
@@ -52,6 +51,7 @@
 		6157791F2265F77E00C1BCDC /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6157791E2265F77E00C1BCDC /* AboutUsViewController.swift */; };
 		615779212265F7D400C1BCDC /* AboutUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779202265F7D400C1BCDC /* AboutUsView.swift */; };
 		615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615779282267089100C1BCDC /* DescriptionTextView.swift */; };
+		6164BD90234A2CAD006F1611 /* MapAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6164BD8F234A2CAD006F1611 /* MapAnnotationView.swift */; };
 		6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E0227898B6008D664F /* TeamGalleryCell.swift */; };
 		6198C8E62279E8F2008D664F /* MemberProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */; };
 		6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198C8E92279E947008D664F /* MemberProfileView.swift */; };
@@ -139,7 +139,6 @@
 		611F4B172250E0480056416E /* ForYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		611F4B1E225104240056416E /* ForYouView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouView.swift; sourceTree = "<group>"; };
 		611F4B61225115DF0056416E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		612233F2232D0D6000E95812 /* Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previews.swift; sourceTree = "<group>"; };
 		612233F6232E20F200E95812 /* ListContentFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContentFloatingPanelLayout.swift; sourceTree = "<group>"; };
 		612233F8232E249800E95812 /* PlaceDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		612233FB232E405900E95812 /* MapCategoryBuildings.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = MapCategoryBuildings.geojson; sourceTree = "<group>"; };
@@ -161,6 +160,7 @@
 		6157791E2265F77E00C1BCDC /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		615779202265F7D400C1BCDC /* AboutUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsView.swift; sourceTree = "<group>"; };
 		615779282267089100C1BCDC /* DescriptionTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextView.swift; sourceTree = "<group>"; };
+		6164BD8F234A2CAD006F1611 /* MapAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationView.swift; sourceTree = "<group>"; };
 		6198265F23199EC600141CFC /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6198C8E0227898B6008D664F /* TeamGalleryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamGalleryCell.swift; sourceTree = "<group>"; };
 		6198C8E52279E8F2008D664F /* MemberProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberProfileViewController.swift; sourceTree = "<group>"; };
@@ -483,7 +483,6 @@
 			children = (
 				611F4B0B2250E0480056416E /* MapsViewController.swift */,
 				61C0BD342326C17D000A5E6A /* ListContentViewController.swift */,
-				612233F2232D0D6000E95812 /* Previews.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -493,6 +492,7 @@
 			children = (
 				61241320225267A9007D04C0 /* MapsView.swift */,
 				6122341A232FFBC100E95812 /* MapAnnotation.swift */,
+				6164BD8F234A2CAD006F1611 /* MapAnnotationView.swift */,
 				61C0BD362326C242000A5E6A /* ListContentView.swift */,
 				612233F6232E20F200E95812 /* ListContentFloatingPanelLayout.swift */,
 				61C0BD3A2326DA87000A5E6A /* CategoriesTableViewHeader.swift */,
@@ -1057,11 +1057,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				612233F3232D0D6000E95812 /* Previews.swift in Sources */,
 				65A9923F22CBBCFF0034DBE7 /* ScheduleProvider.swift in Sources */,
 				4BC1567B22661D4B00ED633C /* DaySchedule.swift in Sources */,
 				4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */,
 				4B6B0147225C9960001BF0F1 /* ModelWD.swift in Sources */,
+				6164BD90234A2CAD006F1611 /* MapAnnotationView.swift in Sources */,
 				6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */,
 				6198C9052280E6AB008D664F /* LoginPageViewController.swift in Sources */,
 				6198C8F8227C3BD7008D664F /* SettingsContent.swift in Sources */,

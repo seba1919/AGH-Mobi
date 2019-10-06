@@ -5,12 +5,12 @@ import MapKit
 class MapAnnotation: NSObject, MKAnnotation {
 
     // MARK: - Public property
-    var feature: Feature
+    var feature: MapDataFeature
     var coordinate: CLLocationCoordinate2D
     var title: String?
 
     // MARK: - Init
-    init(forFeature feature: Feature) {
+    init(forFeature feature: MapDataFeature) {
         self.feature = feature
         self.title = feature.properties.name
         self.coordinate = CLLocationCoordinate2D(latitude: feature.geometry.coordinates[1],

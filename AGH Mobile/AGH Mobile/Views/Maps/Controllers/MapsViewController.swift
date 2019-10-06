@@ -11,7 +11,8 @@ final class MapsViewController: UIViewController {
     private var mapsView: MapsView { return view as! MapsView }
     private var listFloatingPanelController: FloatingPanelController!
     private var listContentViewController: ListContentViewController!
-    private var mapDataFeatures: [Feature] = [] {
+    private let locationManager = CLLocationManager()
+    private var mapDataFeatures: [MapDataFeature] = [] {
         didSet {
             reloadTableView()
         }
@@ -26,7 +27,8 @@ final class MapsViewController: UIViewController {
         super.viewDidLoad()
         setupListContentViewController()
         setupListFloatingPanelController()
-        fetchMapData(forResource: "MapCategoryBuildings")
+        setupLocationManager()
+        fetchAllMapData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,14 +50,14 @@ final class MapsViewController: UIViewController {
 extension MapsViewController {
     
     // MARK: - Setups
-    fileprivate func setupListContentViewController() {
+    private func setupListContentViewController() {
         listContentViewController = ListContentViewController()
         listContentViewController.listContentView.tableView.delegate = self
         listContentViewController.listContentView.tableView.dataSource = self
         listContentViewController.listContentView.searchBarTextField.delegate = self
     }
     
-    fileprivate func setupListFloatingPanelController() {
+    private func setupListFloatingPanelController() {
         listFloatingPanelController = FloatingPanelController()
         listFloatingPanelController.delegate = self
         listFloatingPanelController.set(contentViewController: listContentViewController)
@@ -65,33 +67,51 @@ extension MapsViewController {
         listFloatingPanelController.addPanel(toParent: self)
     }
     
+    private func setupLocationManager() {
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
     // MARK: - Networking and data
-    fileprivate func fetchMapData(forResource resourceName: String) {
+    private func fetchMapData(forResource resourceName: String) -> [MapDataFeature]? {
         guard let urlMapCategoryBuildings = Bundle.main.url(forResource: resourceName,
                                                             withExtension: "geojson") else {
-            return
+            return nil
         }
         
         do {
             let jsonData = try Data(contentsOf: urlMapCategoryBuildings)
             let result = try JSONDecoder().decode(MapData.self, from: jsonData)
             
-            mapDataFeatures = result.features
+            return result.features
         } catch {
             print("Error while parsing: \(error)")
-            return
+            return nil
+        }
+    }
+    
+    private func fetchAllMapData() {
+        let mapDataCategoriesNames = ["MapCategoryBuildings",
+                                      "MapCategoryFood",
+                                      "MapCategoryPhotocopying",
+                                      "MapCategoryLibraries",
+                                      "MapCategoryShops"]
+        
+        for mapDataCategoryName in mapDataCategoriesNames {
+            guard let mapData = fetchMapData(forResource: mapDataCategoryName) else { return }
+            mapDataFeatures += mapData
         }
     }
     
     // MARK: - Map methods
-    fileprivate func setupMap() {
+    private func setupMap() {
         mapsView.mapView.delegate = self
         let annotations = creatAnnotations(fromData: mapDataFeatures)
         mapsView.mapView.addAnnotations(annotations)
         mapsView.mapView.showAnnotations(annotations, animated: true)
     }
     
-    private func creatAnnotations(fromData features: [Feature]) -> [MKAnnotation] {
+    private func creatAnnotations(fromData features: [MapDataFeature]) -> [MKAnnotation] {
         var annotations: [MKAnnotation] = Array()
         for feature in features {
             let annotation = MapAnnotation(forFeature: feature)
@@ -141,18 +161,19 @@ extension MapsViewController: UITableViewDataSource {
         let mapFeature = mapDataFeatures[indexPath.row]
         placeDetailsCell.placeTitle = mapFeature.properties.name
         
-        let locationManager = CLLocationManager()
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            let userCoordinates = CLLocation(latitude: (locationManager.location?.coordinate.latitude) ?? 0.0,
-                                             longitude: (locationManager.location?.coordinate.longitude) ?? 0.0)
+        if let location = locationManager.location {
+            let latitude = location.coordinate.latitude
+            let longitude = location.coordinate.longitude
+            let userCoordinates = CLLocation(latitude: latitude,
+                                             longitude: longitude)
             let destinationCoordinates = CLLocation(latitude: mapFeature.geometry.coordinates[1],
                                                     longitude: mapFeature.geometry.coordinates[0])
             let distance = userCoordinates.distance(from: destinationCoordinates) // in meters
             let distanceInKm = distance / 1000.0
             placeDetailsCell.distanceFromUser = String(format: "%.2f", distanceInKm) + " km"
+        } else {
+            placeDetailsCell.distanceFromUser = NSLocalizedString("Map_Autorization",
+                                                                  comment: "")
         }
         return placeDetailsCell
     }
@@ -162,11 +183,7 @@ extension MapsViewController: UITableViewDataSource {
 extension MapsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        
-        let buildingViewController = BuildingViewController()
-        buildingViewController.dataFeature = mapDataFeatures[indexPath.row]
-        self.navigationController?.pushViewController(buildingViewController, animated: true)
+        // TODO: Floting Panel Details
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -179,31 +196,18 @@ extension MapsViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         if let selectedAnnotation = mapView.selectedAnnotations.first as? MapAnnotation {
-            let buildingViewController = BuildingViewController()
-            buildingViewController.dataFeature = selectedAnnotation.feature
-            self.navigationController?.pushViewController(buildingViewController, animated: true)
-            mapView.deselectAnnotation(selectedAnnotation, animated: true)
+            // TODO: Floting Panel Details
         }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
         guard !annotation.isKind(of: MKUserLocation.self) else {
             return nil
         }
         
         if let annotation = annotation as? MapAnnotation {
-            let annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "test")
-            
-            // Resize image
-            let pinImage = UIImage(named: "building_focused")
-//            let size = CGSize(width: 25, height: 28.5)
-//            UIGraphicsBeginImageContext(size)
-//            pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
-//            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-            
-            annotationView.image = pinImage
-            annotationView.canShowCallout = true
+            let annotationView = MapAnnotationView(annotation: annotation,
+                                                   reuseIdentifier: MapAnnotationView.annotationViewId)
             return annotationView
         }
         
@@ -215,7 +219,6 @@ extension MapsViewController: MKMapViewDelegate {
 extension MapsViewController: UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
         listFloatingPanelController.move(to: .full,
                                          animated: true)
     }

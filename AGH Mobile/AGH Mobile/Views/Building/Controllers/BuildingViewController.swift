@@ -6,7 +6,7 @@ import MapKit
 class BuildingViewController: UIViewController {
     
     // MARK: - Public Properties
-    var dataFeature: Feature? {
+    var dataFeature: MapDataFeature? {
         didSet {
             updataData()
         }
