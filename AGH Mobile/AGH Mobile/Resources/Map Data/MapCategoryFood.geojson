@@ -5,13 +5,209 @@
             "type": "MapCategoryFood",
             "properties": {
                 "imageName": "cultery",
-                "name": ""
+                "name": "Limonkova"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
-                    0
+                    19.921115,
+                    50.066499
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Tawo"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.918454,
+                    50.065507
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Obieżyświat"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.920131,
+                    50.066806
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Stołówka Nawojka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.918531,
+                    50.064948
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Suto Handroll"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.914764,
+                    50.067466
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Pizzeria DaGrasso"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.915427,
+                    50.067741
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Makarun Kawiory"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.910493,
+                    50.068057
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Zapieksy i Kebsy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.909798,
+                    50.068084
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Pizzeria Babilon"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.907075,
+                    50.067850
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Fresh"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.911876,
+                    50.067700
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Świniarnia"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.907863,
+                    50.068705
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Oliwka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.904406,
+                    50.068881
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Góra Olimp Pizza & Pub"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.922715,
+                    50.066595
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Automat B4"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.917402,
+                    50.066309
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryFood",
+            "properties": {
+                "imageName": "cultery",
+                "name": "Automat C2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.921300,
+                    50.066243
                 ]
             }
         }

@@ -5,13 +5,83 @@
             "type": "MapCategoryPhotocopying",
             "properties": {
                 "imageName": "xero",
-                "name": ""
+                "name": "CopyHeaven"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
-                    0
+                    19.920153,
+                    50.066928
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryPhotocopying",
+            "properties": {
+                "imageName": "xero",
+                "name": "Drukmania"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.920605,
+                    50.067308
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryPhotocopying",
+            "properties": {
+                "imageName": "xero",
+                "name": "Olimp Ksero Druk"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.922801,
+                    50.066720
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryPhotocopying",
+            "properties": {
+                "imageName": "xero",
+                "name": "Ksero kawiory"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.913162,
+                    50.067662
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryPhotocopying",
+            "properties": {
+                "imageName": "xero",
+                "name": "Ksero Kapitol"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.907074,
+                    50.067815
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryPhotocopying",
+            "properties": {
+                "imageName": "xero",
+                "name": "Ksero Atio.pl"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.907723,
+                    50.068977
                 ]
             }
         }

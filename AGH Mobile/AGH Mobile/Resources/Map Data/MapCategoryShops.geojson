@@ -5,13 +5,41 @@
             "type": "MapCategoryShops",
             "properties": {
                 "imageName": "trolley",
-                "name": ""
+                "name": "Avita"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
-                    0
+                    19.921937,
+                    50.066797
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryShops",
+            "properties": {
+                "imageName": "trolley",
+                "name": "Żabka"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.914247,
+                    50.067419
+                ]
+            }
+        },
+        {
+            "type": "MapCategoryShops",
+            "properties": {
+                "imageName": "trolley",
+                "name": "Lewiatan"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    19.907582,
+                    50.068725
                 ]
             }
         }

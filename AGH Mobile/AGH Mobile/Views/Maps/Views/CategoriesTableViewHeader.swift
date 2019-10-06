@@ -3,8 +3,6 @@
 import UIKit
 
 class CategoriesTableViewHeader: UIView {
-
-    // MARK: - Public Properties
     
     // MARK: - Components of View
     lazy var layout: UICollectionViewFlowLayout = {

@@ -5,13 +5,13 @@
             "type": "MapCategoryLibraries",
             "properties": {
                 "imageName": "book",
-                "name": ""
+                "name": "Biblioteka Główna"
             },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
-                    0,
-                    0
+                    19.921495,
+                    50.065715
                 ]
             }
         }
