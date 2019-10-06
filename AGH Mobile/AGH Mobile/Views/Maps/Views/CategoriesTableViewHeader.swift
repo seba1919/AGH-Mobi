@@ -5,7 +5,7 @@ import UIKit
 class CategoriesTableViewHeader: UIView {
     
     // MARK: - Components of View
-    lazy var layout: UICollectionViewFlowLayout = {
+    private(set) lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 15.0
@@ -14,7 +14,7 @@ class CategoriesTableViewHeader: UIView {
         return layout
     }()
     
-    lazy var collectionView: UICollectionView = {
+    private(set) lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero,
                                           collectionViewLayout: layout)
         collection.backgroundColor = .white
@@ -59,52 +59,6 @@ extension CategoriesTableViewHeader {
     fileprivate func setupCollectionView() {
         collectionView.register(CategoryCollectionViewCell.self,
                                 forCellWithReuseIdentifier: CategoryCollectionViewCell.cellIdentifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-    }
-}
-
-// MARK: - Extension of CollectionView Data Source
-extension CategoriesTableViewHeader: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        return CategoriesData.titles.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.cellIdentifier,
-                                                      for: indexPath) as! CategoryCollectionViewCell
-        cell.setupCategoryIconImage(CategoriesData.images[indexPath.row])
-        cell.setupCategoryTitle(CategoriesData.titles[indexPath.row])
-        return cell
-    }
-}
-
-// MARK: - Extension of CollectionView Delegate
-extension CategoriesTableViewHeader: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.25,
-                       delay: 0,
-                       options: [.curveEaseIn, .curveEaseOut],
-                       animations: {
-            let cell = collectionView.cellForItem(at: indexPath) as! CategoryCollectionViewCell
-            cell.categoryRoundView.backgroundColor = .mainRed
-            cell.categoryIconImageView.tintColor = .white
-        })
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.25,
-                       delay: 0,
-                       options: [.curveEaseIn, .curveEaseOut],
-                       animations: {
-            let cell = collectionView.cellForItem(at: indexPath) as! CategoryCollectionViewCell
-            cell.categoryRoundView.backgroundColor = .white
-            cell.categoryIconImageView.tintColor = .mainRed
-        })
     }
 }
 

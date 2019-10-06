@@ -12,6 +12,11 @@ final class MapsViewController: UIViewController {
     private var listFloatingPanelController: FloatingPanelController!
     private var listContentViewController: ListContentViewController!
     private let locationManager = CLLocationManager()
+    private let mapDataCategoriesNames = ["MapCategoryBuildings",
+                                          "MapCategoryFood",
+                                          "MapCategoryPhotocopying",
+                                          "MapCategoryLibraries",
+                                          "MapCategoryShops"]
     private var mapDataFeatures: [MapDataFeature] = [] {
         didSet {
             reloadTableView()
@@ -54,6 +59,12 @@ extension MapsViewController {
         listContentViewController = ListContentViewController()
         listContentViewController.listContentView.tableView.delegate = self
         listContentViewController.listContentView.tableView.dataSource = self
+        if listContentViewController.listContentView.tableView.tableHeaderView is CategoriesTableViewHeader {
+            let tableHeaderView = listContentViewController.listContentView.tableView.tableHeaderView
+            let header = tableHeaderView as! CategoriesTableViewHeader
+            header.collectionView.delegate = self
+            header.collectionView.dataSource = self
+        }
         listContentViewController.listContentView.searchBarTextField.delegate = self
     }
     
@@ -91,12 +102,6 @@ extension MapsViewController {
     }
     
     private func fetchAllMapData() {
-        let mapDataCategoriesNames = ["MapCategoryBuildings",
-                                      "MapCategoryFood",
-                                      "MapCategoryPhotocopying",
-                                      "MapCategoryLibraries",
-                                      "MapCategoryShops"]
-        
         for mapDataCategoryName in mapDataCategoriesNames {
             guard let mapData = fetchMapData(forResource: mapDataCategoryName) else { return }
             mapDataFeatures += mapData
@@ -188,6 +193,58 @@ extension MapsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return PlaceDetailsTableViewCell.cellHeight
+    }
+}
+
+// MARK: - Extension of CollectionView Data Source
+extension MapsViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return CategoriesData.titles.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.cellIdentifier,
+                                                      for: indexPath) as! CategoryCollectionViewCell
+        cell.setupCategoryIconImage(CategoriesData.images[indexPath.row])
+        cell.setupCategoryTitle(CategoriesData.titles[indexPath.row])
+        return cell
+    }
+}
+
+// MARK: - Extension of CollectionView Delegate
+extension MapsViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.25,
+                       delay: 0,
+                       options: [.curveEaseIn, .curveEaseOut],
+                       animations: {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell {
+                cell.categoryRoundView.backgroundColor = .mainRed
+                cell.categoryIconImageView.tintColor = .white
+            }
+        }, completion: { _ in
+            if let mapData = self.fetchMapData(forResource: self.mapDataCategoriesNames[indexPath.row]) {
+                self.mapDataFeatures = mapData
+            }
+        })
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        mapDataFeatures = Array()
+
+        UIView.animate(withDuration: 0.25,
+                       delay: 0,
+                       options: [.curveEaseIn, .curveEaseOut],
+                       animations: {
+            if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell {
+                cell.categoryRoundView.backgroundColor = .white
+                cell.categoryIconImageView.tintColor = .mainRed
+            }
+        })
     }
 }
 
