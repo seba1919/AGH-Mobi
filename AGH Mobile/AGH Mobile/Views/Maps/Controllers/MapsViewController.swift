@@ -12,6 +12,7 @@ final class MapsViewController: UIViewController {
     private var listFloatingPanelController: FloatingPanelController!
     private var listContentViewController: ListContentViewController!
     private let locationManager = CLLocationManager()
+    private var selectedCellIndexPath: IndexPath?
     private let mapDataCategoriesNames = ["MapCategoryBuildings",
                                           "MapCategoryFood",
                                           "MapCategoryPhotocopying",
@@ -20,6 +21,7 @@ final class MapsViewController: UIViewController {
     private var mapDataFeatures: [MapDataFeature] = [] {
         didSet {
             reloadTableView()
+            reloadAnnotations()
         }
     }
     
@@ -111,6 +113,11 @@ extension MapsViewController {
     // MARK: - Map methods
     private func setupMap() {
         mapsView.mapView.delegate = self
+        reloadAnnotations()
+    }
+    
+    private func reloadAnnotations() {
+        mapsView.mapView.removeAnnotations(mapsView.mapView.annotations)
         let annotations = creatAnnotations(fromData: mapDataFeatures)
         mapsView.mapView.addAnnotations(annotations)
         mapsView.mapView.showAnnotations(annotations, animated: true)
@@ -217,6 +224,18 @@ extension MapsViewController: UICollectionViewDataSource {
 // MARK: - Extension of CollectionView Delegate
 extension MapsViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        if let selectedCellIndexPath = selectedCellIndexPath {
+            if selectedCellIndexPath == indexPath {
+                fetchAllMapData()
+                collectionView.deselectItem(at: indexPath, animated: true)
+                // TODO: Change seleced color 
+                return false
+            }
+        }
+        return true
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         UIView.animate(withDuration: 0.25,
                        delay: 0,
@@ -231,6 +250,7 @@ extension MapsViewController: UICollectionViewDelegate {
                 self.mapDataFeatures = mapData
             }
         })
+        selectedCellIndexPath = indexPath
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
