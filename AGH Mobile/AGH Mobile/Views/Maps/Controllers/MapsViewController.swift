@@ -225,11 +225,19 @@ extension MapsViewController: UICollectionViewDataSource {
 extension MapsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        if let selectedCellIndexPath = selectedCellIndexPath {
-            if selectedCellIndexPath == indexPath {
-                fetchAllMapData()
-                collectionView.deselectItem(at: indexPath, animated: true)
-                // TODO: Change seleced color 
+        if let selectedCell = selectedCellIndexPath {
+            if selectedCell == indexPath {
+                mapDataFeatures = Array()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                    self.fetchAllMapData()
+                }
+                collectionView.deselectItem(at: indexPath,
+                                            animated: false)
+                if let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell {
+                    cell.categoryRoundView.backgroundColor = .white
+                    cell.categoryIconImageView.tintColor = .mainRed
+                }
+                selectedCellIndexPath = nil
                 return false
             }
         }
