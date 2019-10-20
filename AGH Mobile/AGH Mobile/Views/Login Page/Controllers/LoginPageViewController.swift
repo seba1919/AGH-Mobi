@@ -57,7 +57,9 @@ extension LoginPageViewController {
                 return
             }
             self.loginPageView.loginButton.isUserInteractionEnabled = false
-            WDRouterNetworking().performLoginAction(userWDLogin: userWDLogin, userWDPassword: userWDPassword) { isLoggedIn in
+            WDRouterNetworking()
+                .performWDLoginAction(userLogin: userWDLogin,
+                                      userPassword: userWDPassword) { isLoggedIn in
                 if isLoggedIn == .success {
                     CustomNotifications.setupAlertOnLoginSuccess()
                     self.navigationController?.pushViewController(SettingsViewController(), animated: true)
