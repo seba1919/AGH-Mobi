@@ -59,7 +59,7 @@ class WDRouterNetworking {
                                                       requestHandler: @escaping (WDRequestResponseType) -> Void) {
         
         firstly {
-            navigationToSubpage(with: subpageType)
+            navigateToSubpage(with: subpageType)
         }
         .then(on: DispatchQueue.global(qos: .background)) {
             self.checkIfLoggedIn()
@@ -140,7 +140,7 @@ class WDRouterNetworking {
     }
     
     // MARK: - Fileprivate Methods
-    fileprivate func navigationToSubpage(with subpageWDURLType: WDSubpageURLType = .gradesECTSPoints) -> Promise<Void> {
+    fileprivate func navigateToSubpage(with subpageWDURLType: WDSubpageURLType = .gradesECTSPoints) -> Promise<Void> {
         
         let url = WDRequestComponentsGenerator.getURLToSubpage(with: subpageWDURLType)
         CustomNotifications.showCustomSpinnerAlert()
