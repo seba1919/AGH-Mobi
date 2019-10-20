@@ -43,9 +43,9 @@ class WDRouterNetworking {
     
     // MARK: - Public methods
     func performLoginAction(userWDLogin: String,
-                                   userWDPassword: String,
-                                   withPart: UrlType = .ocenyP,
-                                   requestHandler: @escaping (RequestResponseType) -> Void) {
+                            userWDPassword: String,
+                            withPart: UrlType = .ocenyP,
+                            requestHandler: @escaping (RequestResponseType) -> Void) {
         
         CustomNotifications.showCustomSpinnerAlert()
         let urlString = "https://dziekanat.agh.edu.pl/Logowanie2.aspx?ReturnUrl=%2f"

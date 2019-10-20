@@ -58,7 +58,6 @@ extension SettingsViewController {
                 // CustomNotifications.addCustomAlert(with: isLogout ?
                 //"SettingsViewController_LogoutSuccess" : "SettingsViewController_LogoutError")
             }
-            
         }
     }
 }

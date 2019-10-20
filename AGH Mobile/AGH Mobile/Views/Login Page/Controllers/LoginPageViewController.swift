@@ -49,7 +49,23 @@ extension LoginPageViewController {
         }
         
         loginPageView.pushSettingsVC = {
-            self.navigationController?.pushViewController(SettingsViewController(), animated: true)
+            guard let userWDLogin = self.loginPageView.idTextField.text else { return}
+            guard let userWDPassword = self.loginPageView.passwordTextField.text else { return}
+            if userWDLogin.isEmpty || userWDPassword.isEmpty {
+                self.loginPageView.loginButton.shake()
+                CustomNotifications.setupAlertOnMissingLoginCredentials()
+                return
+            }
+            self.loginPageView.loginButton.isUserInteractionEnabled = false
+            WDRouterNetworking().performLoginAction(userWDLogin: userWDLogin, userWDPassword: userWDPassword) { isLoggedIn in
+                if isLoggedIn == .success {
+                    CustomNotifications.setupAlertOnLoginSuccess()
+                    self.navigationController?.pushViewController(SettingsViewController(), animated: true)
+                } else if isLoggedIn == .credentialsFailiture {
+                    CustomNotifications.setupAlertOnLoginFailiture()
+                }
+                self.loginPageView.loginButton.isUserInteractionEnabled = true
+            }
         }
         
         loginPageView.openRemindPasswordWeb = {
