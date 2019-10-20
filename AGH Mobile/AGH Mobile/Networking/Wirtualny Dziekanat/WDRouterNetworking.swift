@@ -6,11 +6,14 @@ import Alamofire
 class WDRouterNetworking {
     
     // MARK: - Instance Properties
+    // Components needed for preparing requests to Wirutualny Dziekanat.
+    // They are related to an Wirtualny Dziekanat architecture that is based on old ASP.NET
     fileprivate var viewState = ""
     fileprivate var viewGenerator = ""
     fileprivate var eventValidation = ""
     fileprivate let cookiesName = ".ASPXUSERWU"
 
+    // MARK: - Public methods to handle networking around Wirtualny Dziekanat
     public func performWDLoginAction(userLogin: String,
                                      userPassword: String,
                                      withWDSubpageURLType
@@ -34,7 +37,7 @@ class WDRouterNetworking {
                               withRequestHandler: requestHandler)
     }
     
-    // MARK: - performNavigationProcedureToWDSubpage Method Description
+    // MARK: performNavigationProcedureToWDSubpage Method Description
     /**
      
      For making above method working please **type your user and password**
@@ -66,7 +69,7 @@ class WDRouterNetworking {
         }
         .done { validation in
             if !validation {
-                //TODO: - KEYCHAIN IMPLEMENTATION
+                //TODO: KEYCHAIN IMPLEMENTATION
                 self.performWDLoginAction(userLogin: "keychain.user",
                                           userPassword: "keychain.password",
                                           withWDSubpageURLType: subpageType) { isLoggedIn in
@@ -84,10 +87,11 @@ class WDRouterNetworking {
     }
     
     public func performLogoutAction(logoutHandler: @escaping () -> Void) {
-        
         logoutHandler()
-        
-        //clean cookies
+        cleanCookies()
+    }
+    
+    fileprivate func cleanCookies() {
         guard let cookiesStorage = Alamofire.Session.default.session
             .configuration.httpCookieStorage else { return }
         
@@ -98,6 +102,7 @@ class WDRouterNetworking {
         }
     }
     
+    // MARK: - Fileprivate methods
     fileprivate func performLoginProcedure(withLoginURL loginURL: URL,
                                            withParametersToSend parametersToSend: Parameters,
                                            withRequestHandler
@@ -139,7 +144,6 @@ class WDRouterNetworking {
         }
     }
     
-    // MARK: - Fileprivate Methods
     fileprivate func navigateToSubpage(with subpageWDURLType: WDSubpageURLType = .gradesECTSPoints) -> Promise<Void> {
         
         let url = WDRequestComponentsGenerator.getURLToSubpage(with: subpageWDURLType)
