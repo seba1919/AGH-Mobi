@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Years</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>%u lat</string>
+			<key>one</key>
+			<string>%u rok</string>
+			<key>few</key>
+			<string>%u lata</string>
+			<key>many</key>
+			<string>%u lat</string>
+			<key>other</key>
+			<string>%u roku</string>
+		</dict>
+	</dict>
+	<key>Days</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>%u dni</string>
+			<key>one</key>
+			<string>%u dzień</string>
+			<key>few</key>
+			<string>%u dni</string>
+			<key>many</key>
+			<string>%u dni</string>
+			<key>other</key>
+			<string>%u dnia</string>
+		</dict>
+	</dict>
+	<key>Hours</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>%u godzin</string>
+			<key>one</key>
+			<string>%u godzina</string>
+			<key>few</key>
+			<string>%u godziny</string>
+			<key>many</key>
+			<string>%u godzin</string>
+			<key>other</key>
+			<string>%u godziny</string>
+		</dict>
+	</dict>
+	<key>Minutes</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>%u minut</string>
+			<key>one</key>
+			<string>%u minuta</string>
+			<key>few</key>
+			<string>%u minuty</string>
+			<key>many</key>
+			<string>%u minut</string>
+			<key>other</key>
+			<string>%u minuty</string>
+		</dict>
+	</dict>
+	<key>Seconds</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>%u sekund</string>
+			<key>one</key>
+			<string>%u sekunda</string>
+			<key>few</key>
+			<string>%u sekundy</string>
+			<key>many</key>
+			<string>%u sekund</string>
+			<key>other</key>
+			<string>%u sekundy</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

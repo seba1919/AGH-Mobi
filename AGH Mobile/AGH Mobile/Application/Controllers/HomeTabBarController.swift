@@ -49,7 +49,7 @@ extension HomeTabBarController {
                 /// Text attributes for normal state
                 item.setTitleTextAttributes([
                     NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10.5),
-                    NSAttributedString.Key.foregroundColor: UIColor.customDarkGray
+                    NSAttributedString.Key.foregroundColor: UIColor.customMediumGray
                     ], for: .normal)
                 /// Text attributes for selected state
                 item.setTitleTextAttributes([

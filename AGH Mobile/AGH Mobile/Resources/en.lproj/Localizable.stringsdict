@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Weekday</key>
+	<dict>
+		<key>NSStringLocalizedFormatKey</key>
+		<string>%#@VARIABLE@</string>
+		<key>VARIABLE</key>
+		<dict>
+			<key>NSStringFormatSpecTypeKey</key>
+			<string>NSStringPluralRuleType</string>
+			<key>NSStringFormatValueTypeKey</key>
+			<string>u</string>
+			<key>zero</key>
+			<string>Niedziela</string>
+			<key>one</key>
+			<string>Poniedziałek</string>
+			<key>two</key>
+			<string>Wtorek</string>
+			<key>three</key>
+			<string>Środa</string>
+			<key>four</key>
+			<string>Czwartek</string>
+			<key>five</key>
+			<string>Piątek</string>
+			<key>six</key>
+			<string>Sobota</string>
+			<key>any</key>
+			<string></string>
+		</dict>
+	</dict>
+</dict>
+</plist>

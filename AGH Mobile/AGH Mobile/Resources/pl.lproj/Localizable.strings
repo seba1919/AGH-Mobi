@@ -49,6 +49,45 @@
 "SettingsContent_AboutUs" = "O nas";
 "SettingsContent_ContactUs" = "Skontaktuj się z nami";
 
+/* ScheduleView */
+"ScheduleView_Schedule" = "Plan zajęć";
+"Sunday" = "Niedziela";
+"Monday" = "Poniedziałek";
+"Tuesday" = "Wtorek";
+"Wednesday" = "Środa";
+"Thursday" = "Czwartek";
+"Friday" = "Piątek";
+"Saturday" = "Sobota";
+
+"Sunday_Short" = "nie";
+"Monday_Short" = "pon";
+"Tuesday_Short" = "wt";
+"Wednesday_Short" = "śr";
+"Thursday_Short" = "czw";
+"Friday_Short" = "pt";
+"Saturday_Short" = "so";
+
+"January" = "Stycznia";
+"February" = "Lutego";
+"March" = "Marca";
+"April" = "Kwietnia";
+"May" = "Maja";
+"June" = "Czerwca";
+"July" = "Lipca";
+"August" = "Sierpnia";
+"September" = "Września";
+"October" = "Października";
+"November" = "Listopada";
+"December" = "Grudnia";
+
+"ScheduleView_Day" = "Dzień";
+"ScheduleView_Week" = "Tydzień";
+
+"ScheduleView_EmptyStateTitle" = "Brak zajęć";
+"ScheduleView_EmptyStateSubitle" = "w tym dniu nie masz zapisanych żadnych zajęć :)";
+
+"And" = "i";
+"ScheduleView_BreakLabel" = "%@ przerwy";
 
 /* UserWDProfile */
 "UserWDProfile_User" = "UŻYTKOWNIK";

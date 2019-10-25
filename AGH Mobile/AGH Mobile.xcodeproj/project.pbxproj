@@ -74,6 +74,32 @@
 		6B45197C23222C0200D8E5EF /* WDRouterNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B45197B23222C0200D8E5EF /* WDRouterNetworking.swift */; };
 		76ED7A09ADF48FAF996EEFD2 /* Pods_AGH_MobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554F55C7E663789FC597AA5F /* Pods_AGH_MobileTests.framework */; };
 		8F3A8D473740ED8EC2AF437E /* Pods_AGH_MobileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */; };
+		981A31E92356322B00DA6FBB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981A31E82356322B00DA6FBB /* String.swift */; };
+		981A31EA2356340900DA6FBB /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 981A31EC2356340900DA6FBB /* Localizable.stringsdict */; };
+		9829684D234A9CFB006EFFD5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296834234A9CF8006EFFD5 /* CalendarView.swift */; };
+		9829684E234A9CFB006EFFD5 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296835234A9CF8006EFFD5 /* Schedule.swift */; };
+		9829684F234A9CFB006EFFD5 /* InfoBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296836234A9CF8006EFFD5 /* InfoBox.swift */; };
+		98296850234A9CFB006EFFD5 /* DailyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296837234A9CF8006EFFD5 /* DailyScheduleView.swift */; };
+		98296851234A9CFB006EFFD5 /* ScheduleBreakItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296838234A9CF9006EFFD5 /* ScheduleBreakItem.swift */; };
+		98296852234A9CFB006EFFD5 /* CalendarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296839234A9CF9006EFFD5 /* CalendarItem.swift */; };
+		98296853234A9CFB006EFFD5 /* KeyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829683A234A9CF9006EFFD5 /* KeyItem.swift */; };
+		98296854234A9CFB006EFFD5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829683B234A9CF9006EFFD5 /* Date.swift */; };
+		98296855234A9CFB006EFFD5 /* ScheduleKeyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829683C234A9CF9006EFFD5 /* ScheduleKeyItem.swift */; };
+		98296856234A9CFB006EFFD5 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829683D234A9CF9006EFFD5 /* Header.swift */; };
+		98296858234A9CFB006EFFD5 /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829683F234A9CF9006EFFD5 /* TimeInterval.swift */; };
+		9829685B234A9CFB006EFFD5 /* SubjectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296842234A9CFA006EFFD5 /* SubjectItem.swift */; };
+		9829685C234A9CFB006EFFD5 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296843234A9CFA006EFFD5 /* Timeline.swift */; };
+		9829685D234A9CFB006EFFD5 /* InfoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296844234A9CFA006EFFD5 /* InfoMessage.swift */; };
+		9829685E234A9CFB006EFFD5 /* KeyItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296845234A9CFA006EFFD5 /* KeyItemData.swift */; };
+		9829685F234A9CFB006EFFD5 /* BreakItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296846234A9CFA006EFFD5 /* BreakItemData.swift */; };
+		98296860234A9CFB006EFFD5 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296847234A9CFA006EFFD5 /* Box.swift */; };
+		98296861234A9CFB006EFFD5 /* TimelineBreakItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296848234A9CFA006EFFD5 /* TimelineBreakItem.swift */; };
+		98296862234A9CFB006EFFD5 /* ScheduleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296849234A9CFB006EFFD5 /* ScheduleItem.swift */; };
+		98296864234A9CFB006EFFD5 /* TimelineKeyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829684B234A9CFB006EFFD5 /* TimelineKeyItem.swift */; };
+		98296865234A9CFB006EFFD5 /* TimelineItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9829684C234A9CFB006EFFD5 /* TimelineItemData.swift */; };
+		98296867234A9D26006EFFD5 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98296866234A9D26006EFFD5 /* ScheduleViewController.swift */; };
+		9831DC45235A7967004DEE31 /* EmptyScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9831DC44235A7967004DEE31 /* EmptyScheduleView.swift */; };
+		9861EE5C234BDB500030ADFF /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9861EE5B234BDB500030ADFF /* ScheduleView.swift */; };
 		AA7425C01AFAEC2A6CE94699 /* Pods_AGH_Mobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9454BF74EFD6E6A8CE744B70 /* Pods_AGH_Mobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -174,6 +200,32 @@
 		77F59FBE253B8BA7BCED5272 /* Pods-AGH MobileUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileUITests/Pods-AGH MobileUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		93331B44848AD393CED8E3B5 /* Pods_AGH_MobileUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_MobileUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9454BF74EFD6E6A8CE744B70 /* Pods_AGH_Mobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AGH_Mobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		981A31E82356322B00DA6FBB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		981A31ED2356340A00DA6FBB /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = pl; path = pl.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		98296834234A9CF8006EFFD5 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		98296835234A9CF8006EFFD5 /* Schedule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		98296836234A9CF8006EFFD5 /* InfoBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoBox.swift; sourceTree = "<group>"; };
+		98296837234A9CF8006EFFD5 /* DailyScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyScheduleView.swift; sourceTree = "<group>"; };
+		98296838234A9CF9006EFFD5 /* ScheduleBreakItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleBreakItem.swift; sourceTree = "<group>"; };
+		98296839234A9CF9006EFFD5 /* CalendarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarItem.swift; sourceTree = "<group>"; };
+		9829683A234A9CF9006EFFD5 /* KeyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyItem.swift; sourceTree = "<group>"; };
+		9829683B234A9CF9006EFFD5 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		9829683C234A9CF9006EFFD5 /* ScheduleKeyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleKeyItem.swift; sourceTree = "<group>"; };
+		9829683D234A9CF9006EFFD5 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		9829683F234A9CF9006EFFD5 /* TimeInterval.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
+		98296842234A9CFA006EFFD5 /* SubjectItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectItem.swift; sourceTree = "<group>"; };
+		98296843234A9CFA006EFFD5 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
+		98296844234A9CFA006EFFD5 /* InfoMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoMessage.swift; sourceTree = "<group>"; };
+		98296845234A9CFA006EFFD5 /* KeyItemData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyItemData.swift; sourceTree = "<group>"; };
+		98296846234A9CFA006EFFD5 /* BreakItemData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreakItemData.swift; sourceTree = "<group>"; };
+		98296847234A9CFA006EFFD5 /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		98296848234A9CFA006EFFD5 /* TimelineBreakItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineBreakItem.swift; sourceTree = "<group>"; };
+		98296849234A9CFB006EFFD5 /* ScheduleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleItem.swift; sourceTree = "<group>"; };
+		9829684B234A9CFB006EFFD5 /* TimelineKeyItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineKeyItem.swift; sourceTree = "<group>"; };
+		9829684C234A9CFB006EFFD5 /* TimelineItemData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineItemData.swift; sourceTree = "<group>"; };
+		98296866234A9D26006EFFD5 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		9831DC44235A7967004DEE31 /* EmptyScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyScheduleView.swift; sourceTree = "<group>"; };
+		9861EE5B234BDB500030ADFF /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		9DAF2A659C668A915AD4D8CA /* Pods-AGH MobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileTests/Pods-AGH MobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		D055B5334B7E17670374A273 /* Pods-AGH MobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AGH MobileTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AGH MobileTests/Pods-AGH MobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +271,7 @@
 		4B6B0143225C98B6001BF0F1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9829682F234A9C9D006EFFD5 /* Schedule */,
 				6198C9012280E652008D664F /* Login Page */,
 				6198C8E42279E8C6008D664F /* Member Profile */,
 				6157791B2265F75200C1BCDC /* About As */,
@@ -605,6 +658,7 @@
 				61A743EC227743BB00DFCB35 /* Colors.swift */,
 				61B92C81231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift */,
 				657F48F92328FA40002E0810 /* UIView.swift */,
+				981A31E82356322B00DA6FBB /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -680,6 +734,7 @@
 			children = (
 				611F4B61225115DF0056416E /* Assets.xcassets */,
 				6574806C23089E19007DC4AF /* Localizable.strings */,
+				981A31EC2356340900DA6FBB /* Localizable.stringsdict */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -718,6 +773,61 @@
 				6B45197B23222C0200D8E5EF /* WDRouterNetworking.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		9829682F234A9C9D006EFFD5 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				98296830234A9CAE006EFFD5 /* Schedule Component */,
+				98296832234A9CD2006EFFD5 /* Controllers */,
+				98296833234A9CD9006EFFD5 /* Views */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		98296830234A9CAE006EFFD5 /* Schedule Component */ = {
+			isa = PBXGroup;
+			children = (
+				98296847234A9CFA006EFFD5 /* Box.swift */,
+				98296846234A9CFA006EFFD5 /* BreakItemData.swift */,
+				98296839234A9CF9006EFFD5 /* CalendarItem.swift */,
+				98296834234A9CF8006EFFD5 /* CalendarView.swift */,
+				98296837234A9CF8006EFFD5 /* DailyScheduleView.swift */,
+				9829683B234A9CF9006EFFD5 /* Date.swift */,
+				9831DC44235A7967004DEE31 /* EmptyScheduleView.swift */,
+				9829683D234A9CF9006EFFD5 /* Header.swift */,
+				98296836234A9CF8006EFFD5 /* InfoBox.swift */,
+				98296844234A9CFA006EFFD5 /* InfoMessage.swift */,
+				9829683A234A9CF9006EFFD5 /* KeyItem.swift */,
+				98296845234A9CFA006EFFD5 /* KeyItemData.swift */,
+				98296835234A9CF8006EFFD5 /* Schedule.swift */,
+				98296838234A9CF9006EFFD5 /* ScheduleBreakItem.swift */,
+				98296849234A9CFB006EFFD5 /* ScheduleItem.swift */,
+				9829683C234A9CF9006EFFD5 /* ScheduleKeyItem.swift */,
+				98296842234A9CFA006EFFD5 /* SubjectItem.swift */,
+				9829683F234A9CF9006EFFD5 /* TimeInterval.swift */,
+				98296843234A9CFA006EFFD5 /* Timeline.swift */,
+				98296848234A9CFA006EFFD5 /* TimelineBreakItem.swift */,
+				9829684C234A9CFB006EFFD5 /* TimelineItemData.swift */,
+				9829684B234A9CFB006EFFD5 /* TimelineKeyItem.swift */,
+			);
+			path = "Schedule Component";
+			sourceTree = "<group>";
+		};
+		98296832234A9CD2006EFFD5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				98296866234A9D26006EFFD5 /* ScheduleViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		98296833234A9CD9006EFFD5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9861EE5B234BDB500030ADFF /* ScheduleView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		C08FECE8D4AF6BDCAEAA9087 /* Pods */ = {
@@ -845,6 +955,7 @@
 			files = (
 				611F4B62225115DF0056416E /* Assets.xcassets in Resources */,
 				6574806A23089E19007DC4AF /* Localizable.strings in Resources */,
+				981A31EA2356340900DA6FBB /* Localizable.stringsdict in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -963,6 +1074,7 @@
 			files = (
 				65A9923F22CBBCFF0034DBE7 /* ScheduleProvider.swift in Sources */,
 				4BC1567B22661D4B00ED633C /* DaySchedule.swift in Sources */,
+				9829685D234A9CFB006EFFD5 /* InfoMessage.swift in Sources */,
 				4B6B014E225CC9A1001BF0F1 /* Course.swift in Sources */,
 				4B6B0147225C9960001BF0F1 /* ModelWD.swift in Sources */,
 				6198C8EA2279E947008D664F /* MemberProfileView.swift in Sources */,
@@ -971,8 +1083,16 @@
 				657F48FE2328FA6D002E0810 /* CustomNotifications.swift in Sources */,
 				4B6B0157225CD289001BF0F1 /* TestWDImpl.swift in Sources */,
 				61241323225267E3007D04C0 /* InformationsView.swift in Sources */,
+				9829685F234A9CFB006EFFD5 /* BreakItemData.swift in Sources */,
+				981A31E92356322B00DA6FBB /* String.swift in Sources */,
 				65A9924822CBC1A60034DBE7 /* Faculty.swift in Sources */,
+				98296860234A9CFB006EFFD5 /* Box.swift in Sources */,
+				98296850234A9CFB006EFFD5 /* DailyScheduleView.swift in Sources */,
 				4B87CCD52264E8130028930A /* TestSkosImpl.swift in Sources */,
+				9829685E234A9CFB006EFFD5 /* KeyItemData.swift in Sources */,
+				98296858234A9CFB006EFFD5 /* TimeInterval.swift in Sources */,
+				98296851234A9CFB006EFFD5 /* ScheduleBreakItem.swift in Sources */,
+				98296852234A9CFB006EFFD5 /* CalendarItem.swift in Sources */,
 				6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */,
 				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				65A9924522CBBEC70034DBE7 /* UniTimeSchedule.swift in Sources */,
@@ -983,6 +1103,7 @@
 				65A9923D22CBBCBB0034DBE7 /* ScheduleViewModel.swift in Sources */,
 				6198C8FE227C8215008D664F /* SeparatorView.swift in Sources */,
 				6198C900227C89B0008D664F /* RowView.swift in Sources */,
+				9829684E234A9CFB006EFFD5 /* Schedule.swift in Sources */,
 				6198C8F6227C25CA008D664F /* UserWDProfile.swift in Sources */,
 				4B6B0152225CCD7C001BF0F1 /* Grades.swift in Sources */,
 				6B45197C23222C0200D8E5EF /* WDRouterNetworking.swift in Sources */,
@@ -991,35 +1112,50 @@
 				4B87CCCD2264E0430028930A /* SkosViewModel.swift in Sources */,
 				611F4B1F225104240056416E /* ForYouView.swift in Sources */,
 				615779292267089100C1BCDC /* DescriptionTextView.swift in Sources */,
+				9829685C234A9CFB006EFFD5 /* Timeline.swift in Sources */,
 				65A9924D22CBC6D50034DBE7 /* EAIIBScheduleImpl.swift in Sources */,
 				4B87CCCF2264E05F0028930A /* ModelSkos.swift in Sources */,
 				65A9924322CBBE500034DBE7 /* IETSchedule.swift in Sources */,
 				6198C9092280EC2E008D664F /* AGHTextField.swift in Sources */,
+				98296867234A9D26006EFFD5 /* ScheduleViewController.swift in Sources */,
+				98296862234A9CFB006EFFD5 /* ScheduleItem.swift in Sources */,
 				6124131F22526752007D04C0 /* StudiesView.swift in Sources */,
 				4BC1567D22661EE700ED633C /* TimetableEntry.swift in Sources */,
 				61ECE8A4224D315B00A9A806 /* HomeTabBarController.swift in Sources */,
+				98296855234A9CFB006EFFD5 /* ScheduleKeyItem.swift in Sources */,
 				613324B6228483C100C7C474 /* SectionTitle.swift in Sources */,
 				65A9925222CBCF7F0034DBE7 /* ScholarshipInfo.swift in Sources */,
+				98296864234A9CFB006EFFD5 /* TimelineKeyItem.swift in Sources */,
+				9831DC45235A7967004DEE31 /* EmptyScheduleView.swift in Sources */,
 				65A9924B22CBC4970034DBE7 /* IETScheduleImpl.swift in Sources */,
 				6198C9072280E6C3008D664F /* LoginPageView.swift in Sources */,
+				9861EE5C234BDB500030ADFF /* ScheduleView.swift in Sources */,
 				4B6B0154225CCE2A001BF0F1 /* CourseType.swift in Sources */,
 				611F4B192250E0480056416E /* InformationsViewController.swift in Sources */,
 				6157791F2265F77E00C1BCDC /* AboutUsViewController.swift in Sources */,
 				6198C8E62279E8F2008D664F /* MemberProfileViewController.swift in Sources */,
 				65A9924F22CBC7250034DBE7 /* UniTimeScheduleImpl.swift in Sources */,
 				6198C8FC227C3F9E008D664F /* AGHButton.swift in Sources */,
+				98296854234A9CFB006EFFD5 /* Date.swift in Sources */,
 				61AD7C75224BDCF7008340B3 /* AppDelegate.swift in Sources */,
 				611F4B1C2250E0480056416E /* StudiesViewController.swift in Sources */,
 				611F4B1B2250E0480056416E /* MapsViewController.swift in Sources */,
+				9829684D234A9CFB006EFFD5 /* CalendarView.swift in Sources */,
+				9829684F234A9CFB006EFFD5 /* InfoBox.swift in Sources */,
+				9829685B234A9CFB006EFFD5 /* SubjectItem.swift in Sources */,
 				61A42D8022869DE000761A0E /* TabBarPageTitleLabel.swift in Sources */,
 				4BC1567422660AC600ED633C /* PersonalInfo.swift in Sources */,
 				61241321225267A9007D04C0 /* MapsView.swift in Sources */,
 				61A743ED227743BB00DFCB35 /* Colors.swift in Sources */,
+				98296853234A9CFB006EFFD5 /* KeyItem.swift in Sources */,
 				61B92C82231AAE1F0006E2A4 /* UIScreen+iPhonesSizes.swift in Sources */,
+				98296856234A9CFB006EFFD5 /* Header.swift in Sources */,
 				6198C8EC227A0C65008D664F /* MemberWebPagesCell.swift in Sources */,
 				4B6B0149225C9B70001BF0F1 /* WDViewModel.swift in Sources */,
+				98296861234A9CFB006EFFD5 /* TimelineBreakItem.swift in Sources */,
 				4B6B0150225CCBC5001BF0F1 /* Grade.swift in Sources */,
 				4BC156782266102B00ED633C /* StudyProgress.swift in Sources */,
+				98296865234A9CFB006EFFD5 /* TimelineItemData.swift in Sources */,
 				65A9924122CBBDED0034DBE7 /* EAIIBSchedule.swift in Sources */,
 				4B87CCD32264E6B10028930A /* WDImplv2.swift in Sources */,
 				61241325225267FC007D04C0 /* SettingsView.swift in Sources */,
@@ -1064,6 +1200,14 @@
 				6574806B23089E19007DC4AF /* pl */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		981A31EC2356340900DA6FBB /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				981A31ED2356340A00DA6FBB /* pl */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1193,14 +1337,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9RSVCT9A9H;
+				DEVELOPMENT_TEAM = 76HYQ4AXM3;
 				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.bak.test;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.b.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1213,14 +1357,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9RSVCT9A9H;
+				DEVELOPMENT_TEAM = 76HYQ4AXM3;
 				INFOPLIST_FILE = "$(SRCROOT)/AGH Mobile/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = pl.bak.test;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.b.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
