@@ -11,7 +11,7 @@ class WDRouterNetworking {
     fileprivate var viewState = ""
     fileprivate var viewGenerator = ""
     fileprivate var eventValidation = ""
-    fileprivate let cookiesName = ".ASPXUSERWU"
+    fileprivate let credencialCookiesName = ".ASPXUSERWU"
 
     // MARK: - Public methods to handle networking around Wirtualny Dziekanat
     public func performWDLoginAction(userLogin: String,
@@ -144,7 +144,7 @@ class WDRouterNetworking {
         }
     }
     
-    fileprivate func navigateToSubpage(with subpageWDURLType: WDSubpageURLType = .gradesECTSPoints) -> Promise<Void> {
+    fileprivate func navigateToSubpage(with subpageWDURLType: WDSubpageURLType) -> Promise<Void> {
         
         let url = WDRequestComponentsGenerator.getURLToSubpage(with: subpageWDURLType)
         CustomNotifications.showCustomSpinnerAlert()
@@ -182,7 +182,7 @@ class WDRouterNetworking {
                     return
             }
             
-            let validationCookie = allCookies.filter({$0.name == cookiesName})
+            let validationCookie = allCookies.filter({$0.name == credencialCookiesName})
            
             if validationCookie.isEmpty {
                 resolver.fulfill(false)
