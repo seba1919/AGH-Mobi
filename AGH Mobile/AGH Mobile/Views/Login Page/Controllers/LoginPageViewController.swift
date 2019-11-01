@@ -51,7 +51,25 @@ extension LoginPageViewController {
         }
         
         loginPageView.pushSettingsVC = {
-            self.coordinator?.signIn()
+            guard let userWDLogin = self.loginPageView.idTextField.text else { return}
+            guard let userWDPassword = self.loginPageView.passwordTextField.text else { return}
+            if userWDLogin.isEmpty || userWDPassword.isEmpty {
+                self.loginPageView.loginButton.shake()
+                CustomNotifications.setupAlertOnMissingLoginCredentials()
+                return
+            }
+            self.loginPageView.loginButton.isUserInteractionEnabled = false
+            WDRouterNetworking()
+                .performWDLoginAction(userLogin: userWDLogin,
+                                      userPassword: userWDPassword) { isLoggedIn in
+                if isLoggedIn == .success {
+                    CustomNotifications.setupAlertOnLoginSuccess()
+                    self.coordinator?.signIn()
+                } else if isLoggedIn == .credentialsFailiture {
+                    CustomNotifications.setupAlertOnLoginFailiture()
+                }
+                self.loginPageView.loginButton.isUserInteractionEnabled = true
+            }
         }
         
         loginPageView.openRemindPasswordWeb = {
