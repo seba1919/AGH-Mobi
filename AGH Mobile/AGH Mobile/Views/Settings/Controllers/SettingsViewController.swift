@@ -61,9 +61,9 @@ class SettingsViewController: UIViewController {
         }
         
         settingsView.pushLoginPageVC = {
-            self.coordinator?.signOut()
+            WDRouterNetworking().performLogoutAction {
+                self.coordinator?.signOut()
+            }
         }
-        
     }
-    
 }
