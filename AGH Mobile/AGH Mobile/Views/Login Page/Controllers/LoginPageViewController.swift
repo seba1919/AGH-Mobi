@@ -35,7 +35,7 @@ extension LoginPageViewController {
     private func setupNavigationAttributs() {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
+    
     // MARK: - Hide Keyboard When Tapped Around
     private func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
