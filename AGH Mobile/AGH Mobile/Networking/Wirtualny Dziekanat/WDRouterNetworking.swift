@@ -5,7 +5,7 @@ import Alamofire
 
 class WDRouterNetworking {
     
-    // MARK: - Instance Properties
+    // MARK: Wirtualny Dziekanat request parameters
     // Components needed for preparing requests to Wirutualny Dziekanat.
     // They are related to an Wirtualny Dziekanat architecture that is based on old ASP.NET
     fileprivate var viewState = ""
@@ -164,7 +164,7 @@ class WDRouterNetworking {
         }
     }
     
-    fileprivate func saveCookiesToStorage(from response: DataResponse<String>) {
+    fileprivate func saveCookiesToStorage(from response: AFDataResponse<String>) {
         if let headerFields = response.response?.allHeaderFields as? [String: String], let URL = response.request?.url {
             let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
             Alamofire.Session.default.session
