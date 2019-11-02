@@ -10,7 +10,6 @@ class UserWDProfile: UIView {
     private let spaceBetweenLabelAndPhoto: CGFloat = 15
     private lazy var screenHeight = Double(UIScreen.main.bounds.size.height)
     private lazy var viewHight = screenHeight * SettingsView.userProfileHightMultipliValue
-    
 
     // MARK: - Init
     override init(frame: CGRect) {
