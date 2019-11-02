@@ -33,7 +33,18 @@ class SettingsViewController: UIViewController {
     private func setupActions() {
         
         settingsView.settingsContent.pushAboutAsVC = {
-            self.coordinator?.showAboutUs()
+//            self.coordinator?.showAboutUs()
+            WDRouterNetworking().performNavigationProcedureToWDSubpage(with: .gradesECTSPoints) { response in
+                switch response {
+                case .success:
+                    print(response)
+                case .serverFailiture:
+                    print(response)
+                case .credentialsFailiture:
+                    print(response)
+                }
+                
+            }
         }
         
         settingsView.settingsContent.openMailApp = {

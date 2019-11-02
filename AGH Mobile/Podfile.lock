@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.0.0-rc.3)
+  - Kanna (5.0.0)
   - PromiseKit (6.11.0):
     - PromiseKit/CorePromise (= 6.11.0)
     - PromiseKit/Foundation (= 6.11.0)
@@ -15,6 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
+  - Kanna (~> 5.0.0)
   - PromiseKit (~> 6.8)
   - SnapKit (~> 5.0.0)
   - SwiftSoup (~> 2.2.0)
@@ -28,14 +30,16 @@ SPEC REPOS:
     - Toast-Swift
   trunk:
     - Alamofire
+    - Kanna
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
+  Kanna: a32875df62975f8f4b871e933b4ea1a5c3b8be0f
   PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftSoup: 230991361c5ba249d140161860a3864a28b63860
   Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
-PODFILE CHECKSUM: 1d58188f517d1ba1954441b87b1da64ae0ea3ec3
+PODFILE CHECKSUM: 74b8f8936d1e31c397ca8aeac81e43515eed2a6f
 
 COCOAPODS: 1.8.4

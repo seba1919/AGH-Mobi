@@ -47,7 +47,7 @@ extension LoginPageViewController {
     // MARK: - Actions
     private func setupActions() {
         loginPageView.pushAboutUsVC = {
-            self.coordinator?.showAboutUs()
+            WUHTMLParser.getGradesFrom()
         }
         
         loginPageView.pushSettingsVC = {
