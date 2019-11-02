@@ -7,39 +7,36 @@ class SettingsCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
+    weak var parentCoordinator: Coordinator?
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        navigationController.navigationBar.tintColor = .mainRed
-        
+    }
+    
+    internal func start() {
         let viewController = SettingsViewController()
         viewController.coordinator = self
-        viewController.tabBarItem.title = NSLocalizedString("TabBar_Settings", comment: "")
-        viewController.tabBarItem.image = UIImage(named: "settings_inactive")
-        viewController.tabBarItem.selectedImage = UIImage(named: "settings_active")
-        
-        navigationController.viewControllers = [viewController]
+        navigationController.pushViewController(viewController, animated: true)
     }
     
     // MARK: - Methods to navigate to other ViewControllers
-    func showAboutUs() {
+    public func showAboutUs() {
         let child = AboutUsCoordinator(navigationController: self.navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()
     }
     
-    func openUPEL() {
+    public func openUPEL() {
         // To be implemented
     }
     
-    func openNetworkServicesPanel() {
+    public func openNetworkServicesPanel() {
         // To be implemented
     }
     
-    func signOut() {
-        let child = LoginPageCoordinator(navigationController: self.navigationController)
-        child.parentCoordinator = self
-        childCoordinators.append(child)
-        child.start()
+    public func signOut() {
+        navigationController.popViewController(animated: true)
+        parentCoordinator?.childDidFinish(self)
     }
 }

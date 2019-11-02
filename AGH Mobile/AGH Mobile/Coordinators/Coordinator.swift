@@ -73,9 +73,11 @@ import UIKit
 ///       parentCoordinator?.childDidFinish(self) //removing from parent stack, here parent is SettingsCoordinator
 /// }
 protocol Coordinator: AnyObject {
+    ///Stack for view controllers' coordinators
     var childCoordinators: [Coordinator] { get set }
     var navigationController: UINavigationController { get set }
-
+    
+    ///View Controller initialisation
     func start()
 }
 

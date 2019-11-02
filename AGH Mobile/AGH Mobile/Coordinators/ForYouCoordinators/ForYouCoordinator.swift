@@ -6,10 +6,14 @@ class ForYouCoordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
-    
+        
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        
+        navigationControllerSetup()
+    }
+    
+    ///View Controller setup to be connected to tabBar
+    fileprivate func navigationControllerSetup() {
         let viewController = ForYouViewController()
         viewController.tabBarItem.title = NSLocalizedString("TabBar_ForYou", comment: "")
         viewController.tabBarItem.image = UIImage(named: "for_you_inactive")
@@ -20,27 +24,27 @@ class ForYouCoordinator {
     }
     
     // MARK: - Methods to navigate to other ViewControllers
-    func openSchedule() {
+    public func openSchedule() {
         // To be implemented
     }
     
-    func openGradebook() {
+    public func openGradebook() {
         // To be implemented
     }
     
-    func openUniversityStaffList() {
+    public func openUniversityStaffList() {
         // To be implemented
     }
     
-    func openSyllabuss() {
+    public func openSyllabuss() {
         // To be implemented
     }
     
-    func openUniversityClassCard() {
+    public func openUniversityClassCard() {
         // To be implemented
     }
     
-    func openEditPanel() {
+    public func openEditPanel() {
         // To be implemented
     }
 }

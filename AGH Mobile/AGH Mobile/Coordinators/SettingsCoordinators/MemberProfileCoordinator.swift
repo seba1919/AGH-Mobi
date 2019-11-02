@@ -13,13 +13,13 @@ class MemberProfileViewCoordinator: Coordinator {
         self.navigationController = navigationController
     }
 
-    func start() {
+    internal func start() {
         let viewController = MemberProfileViewController()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
     
-    func didFinishWatchingMember() {
+    public func didFinishWatchingMember() {
         parentCoordinator?.childDidFinish(self)
     }
 }

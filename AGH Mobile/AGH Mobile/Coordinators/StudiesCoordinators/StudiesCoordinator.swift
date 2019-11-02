@@ -6,9 +6,14 @@ class StudiesCoordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
-
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        navigationControllerSetup()
+    }
+    
+    ///View Controller setup to be connected to tabBar
+    fileprivate func navigationControllerSetup() {
         navigationController.navigationBar.tintColor = .mainRed
         
         let viewController = StudiesViewController()
@@ -21,27 +26,27 @@ class StudiesCoordinator {
     }
     
     // MARK: - Methods to navigate to other ViewControllers
-    func openUniversityClassCard() {
+    public func openUniversityClassCard() {
         // To be implemented
     }
     
-    func openSchedule() {
+    public func openSchedule() {
         // To be implemented
     }
     
-    func openGradebook() {
+    public func openGradebook() {
         // To be implemented
     }
     
-    func openSyllabuss() {
+    public func openSyllabuss() {
         // To be implemented
     }
     
-    func openUniversityStaffList() {
+    public func openUniversityStaffList() {
         // To be implemented
     }
     
-    func openMyCourses() {
+    public func openMyCourses() {
         // To be implemented
     }
 }

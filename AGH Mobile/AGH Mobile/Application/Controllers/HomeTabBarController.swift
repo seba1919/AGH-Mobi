@@ -9,7 +9,7 @@ class HomeTabBarController: UITabBarController {
     let studies = StudiesCoordinator(navigationController: UINavigationController())
     let maps = MapsCoordinator(navigationController: UINavigationController())
     let informations = InformationsCoordinator(navigationController: UINavigationController())
-    let settings = SettingsCoordinator(navigationController: UINavigationController())
+    let loginPage = LoginPageCoordinator(navigationController: UINavigationController())
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -18,7 +18,7 @@ class HomeTabBarController: UITabBarController {
                            studies.navigationController,
                            maps.navigationController,
                            informations.navigationController,
-                           settings.navigationController]
+                           loginPage.navigationController]
         self.setupTabBarStyling()
     }
 }

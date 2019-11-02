@@ -13,21 +13,21 @@ class AboutUsCoordinator: Coordinator {
         self.navigationController = navigationController
     }
 
-    func start() {
+    internal func start() {
         let viewController = AboutUsViewController()
         viewController.coordinator = self
         navigationController.pushViewController(viewController, animated: true)
     }
     
     // MARK: - Methods to navigate to other ViewControllers
-    func showMember() {
+    public func showMember() {
         let child = MemberProfileViewCoordinator(navigationController: self.navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)
         child.start()
     }
     
-    func didFinishWatchingTeamMembersGallery() {
+    public func didFinishWatchingTeamMembersGallery() {
         parentCoordinator?.childDidFinish(self)
     }
 }

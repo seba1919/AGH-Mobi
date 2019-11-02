@@ -9,6 +9,11 @@ class InformationsCoordinator {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        navigationControllerSetup()
+    }
+    
+    ///View Controller setup to be connected to tabBar
+    fileprivate func navigationControllerSetup() {
         navigationController.navigationBar.tintColor = .mainRed
         
         let viewController = InformationsViewController()
@@ -21,15 +26,15 @@ class InformationsCoordinator {
     }
     
     // MARK: - Methods to navigate to other ViewControllers
-    func showSyllabus() {
+    public func showSyllabus() {
         // To be implemented
     }
     
-    func showUniversityStaff() {
+    public func showUniversityStaff() {
         // To be implemented
     }
     
-    func showStudyRegulations() {
+    public func showStudyRegulations() {
         // To be implemented
     }
 }

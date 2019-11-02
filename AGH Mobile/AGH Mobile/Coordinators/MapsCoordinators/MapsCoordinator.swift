@@ -6,9 +6,14 @@ class MapsCoordinator {
     var childCoordinators = [Coordinator]()
     
     var navigationController: UINavigationController
-
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        navigationControllerSetup()
+    }
+    
+    ///View Controller setup to be connected to tabBar
+    fileprivate func navigationControllerSetup() {
         navigationController.navigationBar.tintColor = .mainRed
         
         let viewController = MapsViewController()
@@ -21,7 +26,7 @@ class MapsCoordinator {
     }
     
     // MARK: - Methods to navigate to other ViewControllers
-    func showBuilding() {
+    public func showBuilding() {
         // To be implemented
     }
 }
