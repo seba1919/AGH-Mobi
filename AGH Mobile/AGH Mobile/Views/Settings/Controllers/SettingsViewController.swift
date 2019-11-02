@@ -63,6 +63,7 @@ class SettingsViewController: UIViewController {
         settingsView.pushLoginPageVC = {
             WDRouterNetworking().performLogoutAction {
                 self.coordinator?.signOut()
+                CustomNotifications.setupAlertOnLogoutSuccess()
             }
         }
     }
