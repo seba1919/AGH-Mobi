@@ -5,94 +5,16 @@ import SnapKit
 
 class SettingsContent: UIView {
     
-<<<<<<< HEAD:AGH Mobile/AGH Mobile/Views/Settings/Views/SettingsContent.swift
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Coordinators
-    weak var coordinator:  SettingsCoordinator?
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
+    // MARK: - Instance properties
+    weak var coordinator: SettingsCoordinator?
     // Private
-=======
-    // MARK: - Public Properties
-    public var pushAboutUsVC: (() -> Void)?
-    public var openMailApp: (() -> Void)?
-    // MARK: - Private Properties
->>>>>>> master:AGH Mobile/AGH Mobile/Views/User/Views/SettingsContent.swift
     private lazy var screenHeight = UIScreen.main.bounds.size.height
     private lazy var screenWidth =  UIScreen.main.bounds.size.width
     private let topPadding: CGFloat = 3
+    // Public
+    public var pushAboutAsVC: (() -> Void)?
+    public var openMailApp: (() -> Void)?
     
-    // MARK: - Components of View
-    /// Wirtualna Uczelnia
-    private lazy var wdRow: RowView = {
-        let view = RowView(style: .normalWithIndentation,
-                           separatorPosition: .top)
-        view.setupTitle(as: NSLocalizedString("SettingsContent_WU", comment: ""))
-        return view
-    }()
-    
-    /// UPEL
-    private lazy var upelRow: RowView = {
-        let view = RowView(style: .normalWithIndentation,
-                           separatorPosition: .top)
-        view.setupTitle(as: NSLocalizedString("SettingsContent_UPEL", comment: ""))
-        return view
-    }()
-    
-    /// Panel Usług Sieciowych
-    private lazy var networkServicesPanelRowView: RowView = {
-        let view = RowView(style: .normalWithIndentation,
-                           separatorPosition: .topAndBottom)
-        view.setupTitle(as: NSLocalizedString("SettingsContent_NetworkServicesPanel", comment: ""))
-        return view
-    }()
-    
-    /// Powiadomienia o ocenach
-    private lazy var notificationsAboutAssessmentRowView: RowView = {
-        let view = RowView(style: .withSwitch,
-                           separatorPosition: .topAndBottom)
-        view.setupTitle(as: NSLocalizedString("SettingsContent_NotificationsAboutMarks", comment: ""))
-        return view
-    }()
-    
-    /// O nas
-    private lazy var aboutUsRowView: RowView = {
-        let view = RowView(style: .normal,
-                           separatorPosition: .topAndBottom)
-        view.setupTitle(as: NSLocalizedString("SettingsContent_AboutUs", comment: ""))
-        view.setAction = { self.onPressPushAboutUsVC() }
-        return view
-    }()
-    
-    /// Skontaktuj się z nami
-    private lazy var contactRowView: RowView = {
-        let view = RowView(style: .empty,
-                           separatorPosition: .bottom)
-        view.setupTitle(as: NSLocalizedString("SettingsContent_ContactUs", comment: ""))
-        view.setAction = { self.onPressOpenMailApp() }
-        return view
-    }()
-    
-    private lazy var topStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.distribution = .equalSpacing
-        stack.spacing = 0.0
-        return stack
-    }()
-    
-    private lazy var bottomStackView: UIStackView = {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.distribution = .equalSpacing
-        stack.spacing = 0.0
-        return stack
-    }()
-
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -102,9 +24,6 @@ class SettingsContent: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension SettingsContent {
     
     // MARK: - Setup view methods
     private func setupUI() {
@@ -114,44 +33,120 @@ extension SettingsContent {
     
     private func setupView() {
         self.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        self.addSubview(notificationsAboutAssessmentRowView)
+        self.addSubview(rowNo4)
         setupStackViews()
     }
     
     private func setupStackViews() {
-        ///  Top StackView
-        topStackView.addArrangedSubview(wdRow)
-        topStackView.addArrangedSubview(upelRow)
-        topStackView.addArrangedSubview(networkServicesPanelRowView)
-        self.addSubview(topStackView)
-        /// Bottom StackView
-        bottomStackView.addArrangedSubview(aboutUsRowView)
-        bottomStackView.addArrangedSubview(contactRowView)
-        self.addSubview(bottomStackView)
+        // First StackView
+        stackViewNo1.addArrangedSubview(rowNo1)
+        stackViewNo1.addArrangedSubview(rowNo2)
+        stackViewNo1.addArrangedSubview(rowNo3)
+        self.addSubview(stackViewNo1)
+        // Second StackView
+        stackViewNo2.addArrangedSubview(rowNo5)
+        stackViewNo2.addArrangedSubview(rowNo6)
+        self.addSubview(stackViewNo2)
     }
+
+    // MARK: - Components of View
+    // Row no. 1 - "Wirtualna Uczelnia"
+    private lazy var rowNo1: RowView = {
+        let view = RowView(style: .normalWithIndentation,
+                           separatorPosition: .top)
+        view.setupTitle(as: NSLocalizedString("SettingsContent_WU", comment: ""))
+        return view
+    }()
+    
+    // Row no. 2 - "UPEL"
+    private lazy var rowNo2: RowView = {
+        let view = RowView(style: .normalWithIndentation,
+                           separatorPosition: .top)
+        view.setupTitle(as: NSLocalizedString("SettingsContent_UPEL", comment: ""))
+        return view
+    }()
+    
+    // Row no. 3 - "Panel Usług Sieciowych"
+    private lazy var rowNo3: RowView = {
+        let view = RowView(style: .normalWithIndentation,
+                           separatorPosition: .topAndBottom)
+        view.setupTitle(as: NSLocalizedString("SettingsContent_NetworkServicesPanel", comment: ""))
+        return view
+    }()
+    
+    // Row no. 4 - "Powiadomienia o ocenach"
+    private lazy var rowNo4: RowView = {
+        let view = RowView(style: .withSwitch,
+                           separatorPosition: .topAndBottom)
+        view.setupTitle(as: NSLocalizedString("SettingsContent_NotificationsAboutMarks", comment: ""))
+        return view
+    }()
+    
+    // Row no. 5 - "O nas"
+    private lazy var rowNo5: RowView = {
+        let view = RowView(style: .normal,
+                           separatorPosition: .topAndBottom)
+        view.setupTitle(as: NSLocalizedString("SettingsContent_AboutUs", comment: ""))
+        view.setAction = { self.onPressPushAboutAsVC() }
+        return view
+    }()
+    
+    // Row no. 6 - "Skontaktuj się z nami"
+    private lazy var rowNo6: RowView = {
+        let view = RowView(style: .empty,
+                           separatorPosition: .bottom)
+        view.setupTitle(as: NSLocalizedString("SettingsContent_ContactUs", comment: ""))
+        view.setAction = { self.onPressOpenMailApp() }
+        return view
+    }()
+    
+    // StackView for Row no. 1 - 3
+    private lazy var stackViewNo1: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .equalSpacing
+        stack.spacing = 0.0
+        return stack
+    }()
+    
+    // StackView for Row no. 5 - 6
+    private lazy var stackViewNo2: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.distribution = .equalSpacing
+        stack.spacing = 0.0
+        return stack
+    }()
     
     // MARK: - Setup Constraints
     private func setupConstraints() {
-        topStackView.snp.makeConstraints { (make) in
+        
+        // StackView for Row no. 1 - 3
+        stackViewNo1.snp.makeConstraints { (make) in
             make.top.equalTo(self.snp.top).offset(topPadding)
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(notificationsAboutAssessmentRowView.snp.top).offset(screenHeight * -0.063)
+            make.bottom.equalTo(rowNo4.snp.top)
+            .offset(screenHeight * -0.063)
         }
         
-        notificationsAboutAssessmentRowView.snp.makeConstraints { (make) in
+        // Row no. 4
+        rowNo4.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
         }
         
-        bottomStackView.snp.makeConstraints { (make) in
-            make.top.equalTo(notificationsAboutAssessmentRowView.snp.bottom).offset(screenHeight * 0.063)
+        // StackView for Row no. 5 - 6
+        stackViewNo2.snp.makeConstraints { (make) in
+            make.top.equalTo(rowNo4.snp.bottom).offset(screenHeight * 0.063)
             make.left.right.equalToSuperview()
             //make.bottom.equalTo(self.snp.bottom)
         }
     }
     
     // MARK: - Actions
-     private func onPressPushAboutUsVC() {
-        pushAboutUsVC?()
+     private func onPressPushAboutAsVC() {
+        pushAboutAsVC?()
     }
     
     private func onPressOpenMailApp() {

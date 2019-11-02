@@ -3,14 +3,14 @@
 import UIKit
 
 class MapsViewController: UIViewController {
-    // MARK: - Coordinator
+
+    // MARK: - Instance Variables
     weak var coordinator: MapsCoordinator?
-    // MARK: - Private properties
-    private var mapsView: MapsView { return view as! MapsView }
-    
+    var mapsView: MapsView { return self.view as! MapsView }
+
     // MARK: - Lifecycle
     override func loadView() {
-        view = MapsView(frame: UIScreen.main.bounds)
+        self.view = MapsView(frame: UIScreen.main.bounds)
     }
     
 }

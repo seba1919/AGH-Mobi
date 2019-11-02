@@ -3,14 +3,14 @@
 import UIKit
 
 class ForYouViewController: UIViewController {
-    // MARK: - Coordinator
+    
+    // MARK: - Instance Variables
     weak var coordinator: ForYouCoordinator?
-    // MARK: - Private properties
-    private var forYouView: ForYouView { return view as! ForYouView }
+    var forYouView: ForYouView { return self.view as! ForYouView }
     
     // MARK: - Lifecycle
     override func loadView() {
-        view = ForYouView(frame: UIScreen.main.bounds)
+        self.view = ForYouView(frame: UIScreen.main.bounds)
     }
     
 }

@@ -4,7 +4,9 @@ import UIKit
 
 class InformationsViewController: UIViewController {
 
-    // MARK: - Private properties
+    // MARK: - Instance properties
+    weak var coordinator: InformationsCoordinator?
+    // View
     private var infromationsView: InformationsView { return self.view as! InformationsView }
     
     // MARK: - Lifecycle
@@ -14,7 +16,6 @@ class InformationsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.infromationsView.setupUI()
     }
     

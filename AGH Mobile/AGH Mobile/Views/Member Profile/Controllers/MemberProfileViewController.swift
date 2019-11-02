@@ -3,8 +3,10 @@
 import UIKit
 
 class MemberProfileViewController: UIViewController {
-
-    // MARK: - Private Properties
+    
+    // MARK: - Instance properties
+    weak var coordinator: MemberProfileViewCoordinator?
+    // View
     private var memberProfileView: MemberProfileView { return self.view as! MemberProfileView }
     private let cellNumber = 3 //CHANGE!
     

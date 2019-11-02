@@ -5,7 +5,9 @@ import SnapKit
 
 class InformationContent: UIView {
     
-    // MARK: - Private properties
+    // MARK: - Instance properties
+    weak var coordinator: InformationsCoordinator?
+    // View
     private lazy var screenHeight = UIScreen.main.bounds.size.height
     private lazy var screenWidth =  UIScreen.main.bounds.size.width
     
@@ -16,6 +18,7 @@ class InformationContent: UIView {
                            separatorPosition: .top)
         view.setupTitle(as: NSLocalizedString("InformationsContent_Syllabus", comment: ""))
         view.setupLeftAccessory(named: "book_Info")
+        
         return view
     }()
     

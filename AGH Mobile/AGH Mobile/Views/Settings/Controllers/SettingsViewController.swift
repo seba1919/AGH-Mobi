@@ -4,10 +4,11 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    // MARK: - Instance properties
     weak var coordinator: SettingsCoordinator?
-
+    // View
     private var settingsView: SettingsView { return self.view as! SettingsView }
-    
+
     // MARK: - Lifecycle
     override func loadView() {
         self.view = SettingsView(frame: UIScreen.main.bounds)
@@ -15,7 +16,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.settingsView.setupUI()
         self.setupActions()
     }
@@ -23,24 +23,22 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.setupNavigationAttributs()
     }
-}
-
-extension SettingsViewController {
     
-    // MARK: - Setup
+    // MARK: - Setup navigation controller
     private func setupNavigationAttributs() {
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     // MARK: - Actions
     private func setupActions() {
-    settingsView.settingsContent.pushAboutAsVC = {
-            self.coordinator?.showTeamMembers()
+        
+        settingsView.settingsContent.pushAboutAsVC = {
+            self.coordinator?.showAboutUs()
         }
         
-        settingsView.settingsContentView.openMailApp = {
+        settingsView.settingsContent.openMailApp = {
             let email = "mackn@agh.edu.pl"
-            // Doesn't work in simulator
+            // Doesn't work in simulator - test in phisical device
             if let url = URL(string: "mailto:\(email)") {
                 UIApplication.shared.open(url)
             }
@@ -48,8 +46,8 @@ extension SettingsViewController {
         
         settingsView.pushLoginPageVC = {
             WDRouterNetworking().performLogoutAction {
-                CustomNotifications.setupAlertOnLogoutSuccess()
                 self.coordinator?.signOut()
+                CustomNotifications.setupAlertOnLogoutSuccess()
             }
         }
     }

@@ -4,42 +4,30 @@ import UIKit
 
 class HomeTabBarController: UITabBarController {
     
+    // MARK: - Coordinators
+    let forYou = ForYouCoordinator(navigationController: UINavigationController())
+    let studies = StudiesCoordinator(navigationController: UINavigationController())
+    let maps = MapsCoordinator(navigationController: UINavigationController())
+    let informations = InformationsCoordinator(navigationController: UINavigationController())
+    let loginPage = LoginPageCoordinator(navigationController: UINavigationController())
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupControllers()
-        self.setupUI()
+        viewControllers = [forYou.navigationController,
+                           studies.navigationController,
+                           maps.navigationController,
+                           informations.navigationController,
+                           loginPage.navigationController]
+        self.setupTabBarStyling()
     }
 }
 
 extension HomeTabBarController {
     
-    // MARK: - Setups
-    private func setupControllers() {
-        viewControllers = [createDummyViewController(
-            withTitle: NSLocalizedString("TabBar_ForYou", comment: ""),
-            andImageName: "for_you_active",
-            for: ForYouViewController()),
-                           createDummyViewController(
-                            withTitle: NSLocalizedString("TabBar_Studies", comment: ""),
-                            andImageName: "studies_active",
-                            for: StudiesViewController()),
-                           createDummyViewController(
-                            withTitle: NSLocalizedString("TabBar_Maps", comment: ""),
-                            andImageName: "maps_active",
-                            for: MapsViewController()),
-                           createDummyNavigationController(
-                            withTitle: NSLocalizedString("TabBar_Informations", comment: ""),
-                            andImageName: "info_active",
-                            for: InformationsViewController()),
-                           createDummyNavigationController(
-                            withTitle: NSLocalizedString("TabBar_Settings", comment: ""),
-                            andImageName: "me_active",
-                            for: LoginPageViewController())]
-    }
-    
-    private func setupUI() {
-        /// TabBar background color
+    // MARK: - Setup tabBar styling
+    private func setupTabBarStyling() {
+        // TabBar background color
         self.tabBar.backgroundColor = .customLightGray
         /// TabBar tint color
         self.tabBar.tintColor = .mainRed
@@ -58,24 +46,5 @@ extension HomeTabBarController {
                     ], for: .selected)
             }
         }
-    }
-    
-    // MARK: - View Controllers Factories
-    private func createDummyViewController(withTitle title: String,
-                                           andImageName imageName: String,
-                                           for viewController: UIViewController) -> UIViewController {
-        viewController.tabBarItem.title = title
-        viewController.tabBarItem.image = UIImage(named: imageName)
-        return viewController
-    }
-    
-    private func createDummyNavigationController(withTitle title: String,
-                                                 andImageName imageName: String,
-                                                 for viewController: UIViewController) -> UINavigationController {
-        let navigationController = UINavigationController(rootViewController: viewController)
-        navigationController.tabBarItem.title = title
-        navigationController.tabBarItem.image = UIImage(named: imageName)
-        navigationController.navigationBar.tintColor = .mainRed
-        return navigationController
     }
 }

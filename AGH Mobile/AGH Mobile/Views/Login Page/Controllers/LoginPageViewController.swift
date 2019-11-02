@@ -4,7 +4,9 @@ import UIKit
 
 class LoginPageViewController: UIViewController {
     
-    // MARK: Private properties
+    // MARK: Instance properties
+    weak var coordinator: LoginPageCoordinator?
+    // Private
     private var loginPageView: LoginPageView { return view as! LoginPageView }
     private let remindPasswordWebURL = "https://dziekanat.agh.edu.pl/OdzyskiwanieHasla.aspx"
     
@@ -45,7 +47,7 @@ extension LoginPageViewController {
     // MARK: - Actions
     private func setupActions() {
         loginPageView.pushAboutUsVC = {
-            self.navigationController?.pushViewController(AboutUsViewController(), animated: true)
+            self.coordinator?.showAboutUs()
         }
         
         loginPageView.pushSettingsVC = {
@@ -62,7 +64,7 @@ extension LoginPageViewController {
                                       userPassword: userWDPassword) { isLoggedIn in
                 if isLoggedIn == .success {
                     CustomNotifications.setupAlertOnLoginSuccess()
-                    self.navigationController?.pushViewController(SettingsViewController(), animated: true)
+                    self.coordinator?.signIn()
                 } else if isLoggedIn == .credentialsFailiture {
                     CustomNotifications.setupAlertOnLoginFailiture()
                 }
