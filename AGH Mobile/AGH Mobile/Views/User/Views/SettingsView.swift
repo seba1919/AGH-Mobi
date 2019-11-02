@@ -16,7 +16,7 @@ class SettingsView: UIView {
     // MARK: - Components of View
     private lazy var tabBarTitleLabel: UILabel = {
         let tabBarPageTitle = TabBarPageTitleLabel(
-            title: NSLocalizedString("SettingsView_UserSETTINGS", comment: ""))
+            title: NSLocalizedString("SettingsView_UserSettings", comment: ""))
             .build()
         return tabBarPageTitle
     }()

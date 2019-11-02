@@ -4,7 +4,9 @@ import UIKit
 
 class LoginPageViewController: UIViewController {
     
-    // MARK: Private properties
+    // MARK: Instance properties
+    weak var coordinator: LoginPageCoordinator?
+    // Private
     private var loginPageView: LoginPageView { return view as! LoginPageView }
     private let remindPasswordWebURL = "https://dziekanat.agh.edu.pl/OdzyskiwanieHasla.aspx"
     
@@ -33,7 +35,7 @@ extension LoginPageViewController {
     private func setupNavigationAttributs() {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
-
+    
     // MARK: - Hide Keyboard When Tapped Around
     private func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
@@ -45,11 +47,29 @@ extension LoginPageViewController {
     // MARK: - Actions
     private func setupActions() {
         loginPageView.pushAboutUsVC = {
-            self.navigationController?.pushViewController(AboutUsViewController(), animated: true)
+            self.coordinator?.showAboutUs()
         }
         
         loginPageView.pushSettingsVC = {
-            self.navigationController?.pushViewController(SettingsViewController(), animated: true)
+            guard let userWDLogin = self.loginPageView.idTextField.text else { return}
+            guard let userWDPassword = self.loginPageView.passwordTextField.text else { return}
+            if userWDLogin.isEmpty || userWDPassword.isEmpty {
+                self.loginPageView.loginButton.shake()
+                CustomNotifications.setupAlertOnMissingLoginCredentials()
+                return
+            }
+            self.loginPageView.loginButton.isUserInteractionEnabled = false
+            WDRouterNetworking()
+                .performWDLoginAction(userLogin: userWDLogin,
+                                      userPassword: userWDPassword) { isLoggedIn in
+                if isLoggedIn == .success {
+                    CustomNotifications.setupAlertOnLoginSuccess()
+                    self.coordinator?.signIn()
+                } else if isLoggedIn == .credentialsFailiture {
+                    CustomNotifications.setupAlertOnLoginFailiture()
+                }
+                self.loginPageView.loginButton.isUserInteractionEnabled = true
+            }
         }
         
         loginPageView.openRemindPasswordWeb = {

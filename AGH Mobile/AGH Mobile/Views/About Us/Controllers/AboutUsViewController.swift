@@ -2,9 +2,10 @@
 
 import UIKit
 
-class AboutUsViewController: UIViewController {
+final class AboutUsViewController: UIViewController {
     
-    // MARK: - Private Properties
+    // MARK: - Instance properties
+    weak var coordinator: AboutUsCoordinator?
     // View
     private var aboutUsView: AboutUsView { return self.view as! AboutUsView }
     private lazy var screenWidth = UIScreen.main.bounds.size.width
@@ -41,7 +42,8 @@ extension AboutUsViewController {
     private func setupCollectionView() {
         aboutUsView.teamGalleryCollectionView.delegate = self
         aboutUsView.teamGalleryCollectionView.dataSource = self
-        aboutUsView.teamGalleryCollectionView.register(TeamGalleryCell.self, forCellWithReuseIdentifier: TeamGalleryCell.identifier)
+        aboutUsView.teamGalleryCollectionView.register(TeamGalleryCell.self,
+                                                       forCellWithReuseIdentifier: TeamGalleryCell.identifier)
     }
     
     private func setupNavigationAttributs() {
@@ -123,8 +125,9 @@ extension AboutUsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = aboutUsView.teamGalleryCollectionView.dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
-                                                               for: indexPath) as! TeamGalleryCell
+        let cell = aboutUsView.teamGalleryCollectionView
+            .dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
+                                 for: indexPath) as! TeamGalleryCell
         cell.setupImage(named: "user_large_About")
         cell.setupName(as: "Mateusz Bąk")
         return cell
@@ -168,7 +171,7 @@ extension AboutUsViewController: UIScrollViewDelegate, UICollectionViewDelegate 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.navigationController?.pushViewController(MemberProfileViewController(), animated: true)
+        coordinator?.showMember()
         self.stopAutoScrolling()
     }
     

@@ -3,7 +3,8 @@
 import UIKit
 
 class MapsViewController: UIViewController {
-
+    // MARK: - Coordinator
+    weak var coordinator: MapsCoordinator?
     // MARK: - Private properties
     private var mapsView: MapsView { return view as! MapsView }
     

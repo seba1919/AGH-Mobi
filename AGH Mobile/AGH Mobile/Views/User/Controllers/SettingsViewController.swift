@@ -4,7 +4,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    // MARK: - Private Properties
+    weak var coordinator: SettingsCoordinator?
+
     private var settingsView: SettingsView { return self.view as! SettingsView }
     
     // MARK: - Lifecycle
@@ -33,8 +34,8 @@ extension SettingsViewController {
     
     // MARK: - Actions
     private func setupActions() {
-        settingsView.settingsContentView.pushAboutUsVC = {
-            self.navigationController?.pushViewController(AboutUsViewController(), animated: true)
+    settingsView.settingsContent.pushAboutAsVC = {
+            self.coordinator?.showTeamMembers()
         }
         
         settingsView.settingsContentView.openMailApp = {
@@ -46,7 +47,10 @@ extension SettingsViewController {
         }
         
         settingsView.pushLoginPageVC = {
-            self.navigationController?.pushViewController(LoginPageViewController(), animated: true)
+            WDRouterNetworking().performLogoutAction {
+                CustomNotifications.setupAlertOnLogoutSuccess()
+                self.coordinator?.signOut()
+            }
         }
     }
 }

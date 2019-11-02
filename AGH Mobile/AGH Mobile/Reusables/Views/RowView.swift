@@ -48,9 +48,9 @@ final class RowView: UIView {
     }
     /// Touch Detect
     public enum TouchDetect {
-        case on
-        case onWithAnimationOff
-        case off
+        case enabled
+        case enabledWithAnimationDisabled
+        case disabled
     }
     
     // MARK: - Components of View
@@ -124,7 +124,7 @@ final class RowView: UIView {
             setupNormalWithIndentationStyle()
         case .withSwitch:
             setupWithSwitchStyle()
-            touchDetectStatus = .off
+            touchDetectStatus = .disabled
         case .withLeftAccessory:
             setupWithLeftAccessoryStyle()
         case .withDescription:
@@ -152,7 +152,7 @@ final class RowView: UIView {
         }
         
         // Touch Detect
-        if !(touchDetectStatus == .off) {
+        if !(touchDetectStatus == .disabled) {
             self.addTouchGestureRecognizer()
         }
     }
@@ -334,7 +334,7 @@ extension RowView {
         
         switch sender.state {
         case .began:
-            if !(touchDetectStatus == .onWithAnimationOff) {
+            if !(touchDetectStatus == .enabledWithAnimationDisabled) {
                 self.animateRowBackgroundColor(to: #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 0.6677279538))
             }
         case .ended:

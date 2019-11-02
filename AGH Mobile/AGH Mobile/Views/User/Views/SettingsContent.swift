@@ -5,10 +5,21 @@ import SnapKit
 
 class SettingsContent: UIView {
     
+<<<<<<< HEAD:AGH Mobile/AGH Mobile/Views/Settings/Views/SettingsContent.swift
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Coordinators
+    weak var coordinator:  SettingsCoordinator?
+    
+    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+    // MARK: - Properties
+    
+    // Private
+=======
     // MARK: - Public Properties
     public var pushAboutUsVC: (() -> Void)?
     public var openMailApp: (() -> Void)?
     // MARK: - Private Properties
+>>>>>>> master:AGH Mobile/AGH Mobile/Views/User/Views/SettingsContent.swift
     private lazy var screenHeight = UIScreen.main.bounds.size.height
     private lazy var screenWidth =  UIScreen.main.bounds.size.width
     private let topPadding: CGFloat = 3

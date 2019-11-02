@@ -10,7 +10,7 @@ excluded:
 - Carthage
 - Pods
 - SwiftLint/Common/3rdPartyLib
-
+- AGH Mobile/Models/WD/TestModelWD/TestWDImpl.swift
 line_length:
 warning: 150
 error: 250

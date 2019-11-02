@@ -4,7 +4,7 @@ import UIKit
 import SnapKit
 
 class LoginPageView: UIView {
-
+    
     // MARK: - Public Properties
     public var pushAboutUsVC: (() -> Void)?
     public var pushSettingsVC: (() -> Void)?
@@ -45,18 +45,20 @@ class LoginPageView: UIView {
         return label
     }()
     
-    private lazy var idTextField: AGHTextField = {
+    private(set) lazy var idTextField: AGHTextField = {
         let textField = AGHTextField(placeholder: NSLocalizedString("LoginPageView_Identificator", comment: ""))
         textField.keyboardType = UIKeyboardType.numberPad
         return textField
     }()
     
-    private lazy var passwordTextField: AGHTextField = {
+    private(set) lazy var passwordTextField: AGHTextField = {
         let textField = AGHTextField(placeholder: NSLocalizedString("LoginPageView_Password", comment: ""))
+        textField.isSecureTextEntry = true
+        textField.autocapitalizationType = .none
         return textField
     }()
     
-    private lazy var loginButton: UIButton = {
+    private(set) lazy var loginButton: UIButton = {
         let button = AGHButton(
             title: NSLocalizedString("LoginPageView_SignIn", comment: ""))
             .build()
@@ -104,11 +106,11 @@ class LoginPageView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
 
 extension LoginPageView {
-
+    
     // MARK: - Setup view methods
     public func setupUI() {
         self.setupView()
@@ -127,7 +129,7 @@ extension LoginPageView {
         self.addSubview(macKnIconImageView)
         self.addSubview(aboutUsButton)
     }
-
+    
     // MARK: - Setup Constraints
     private func setupConstraints() {
         tabBarTitleLabel.snp.makeConstraints { (make) in
@@ -178,7 +180,8 @@ extension LoginPageView {
             make.centerX.equalTo(safeAreaLayoutGuide.snp.centerX)
             make.top.greaterThanOrEqualTo(remindPasswordButton.snp.bottom).offset(screenHeight * 0.036)
             make.height.equalTo(screenHeight * 0.062)
-            make.width.equalTo(macKnIconImageView.snp.height).multipliedBy(macKnIconImageView.frame.width / macKnIconImageView.frame.height)
+            make.width.equalTo(macKnIconImageView.snp.height)
+                .multipliedBy(macKnIconImageView.frame.width / macKnIconImageView.frame.height)
             make.bottom.equalTo(aboutUsButton.snp.top).offset(-3)
         }
         
