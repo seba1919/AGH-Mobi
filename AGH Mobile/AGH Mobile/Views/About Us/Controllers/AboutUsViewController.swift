@@ -2,9 +2,6 @@
 
 import UIKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 final class AboutUsViewController: UIViewController {
     
     // MARK: - Instance properties

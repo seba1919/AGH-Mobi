@@ -65,7 +65,8 @@ import UIKit
 /// To do that, we use Coordinator's method `childDidFinish()`
 ///
 ///
-/// After sign in, we need to pop out `LoginVC` (which is pushed over `SettingsVC`). We need to implement in `LoginPageCoordinator`:
+/// After sign in, we need to pop out `LoginVC` (which is pushed over `SettingsVC`).
+/// We need to implement in `LoginPageCoordinator`:
 /// ```
 /// func signIn() {
 ///       navigationController.popViewController(animated: true) //dismissing VC

@@ -896,7 +896,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "AGH University of Science and Technology";
 				TargetAttributes = {
 					61AD7C70224BDCF7008340B3 = {
@@ -1071,7 +1071,6 @@
 				6198C8E1227898B6008D664F /* TeamGalleryCell.swift in Sources */,
 				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				65A9924522CBBEC70034DBE7 /* UniTimeSchedule.swift in Sources */,
-				611F4B1A2250E0480056416E /* SettingsViewController.swift in Sources */,
 				65CEF50B2309DB85002A45F6 /* SettingsCoordinator.swift in Sources */,
 				613324B8228486DD00C7C474 /* InformationContent.swift in Sources */,
 				657F48FA2328FA40002E0810 /* UIView.swift in Sources */,

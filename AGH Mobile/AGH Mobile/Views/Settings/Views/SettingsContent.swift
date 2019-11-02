@@ -1,19 +1,7 @@
-//
-//  SettingsContent.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 03/05/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 import SnapKit
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
 
 class SettingsContent: UIView {
     
@@ -27,9 +15,7 @@ class SettingsContent: UIView {
     public var pushAboutAsVC: (() -> Void)?
     public var openMailApp: (() -> Void)?
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -39,9 +25,7 @@ class SettingsContent: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup view methods
-    
     private func setupUI() {
         setupView()
         setupConstraints()
@@ -64,10 +48,8 @@ class SettingsContent: UIView {
         stackViewNo2.addArrangedSubview(rowNo6)
         self.addSubview(stackViewNo2)
     }
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
     // MARK: - Components of View
-    
     // Row no. 1 - "Wirtualna Uczelnia"
     private lazy var rowNo1: RowView = {
         let view = RowView(style: .normalWithIndentation,
@@ -138,16 +120,15 @@ class SettingsContent: UIView {
         return stack
     }()
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup Constraints
-    
     private func setupConstraints() {
         
         // StackView for Row no. 1 - 3
         stackViewNo1.snp.makeConstraints { (make) in
             make.top.equalTo(self.snp.top).offset(topPadding)
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(rowNo4.snp.top).offset(screenHeight * -0.063)
+            make.bottom.equalTo(rowNo4.snp.top)
+            .offset(screenHeight * -0.063)
         }
         
         // Row no. 4
@@ -161,12 +142,9 @@ class SettingsContent: UIView {
             make.left.right.equalToSuperview()
             //make.bottom.equalTo(self.snp.bottom)
         }
-
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
-    
      private func onPressPushAboutAsVC() {
         pushAboutAsVC?()
     }
@@ -174,5 +152,4 @@ class SettingsContent: UIView {
     private func onPressOpenMailApp() {
         openMailApp?()
     }
-    
 }

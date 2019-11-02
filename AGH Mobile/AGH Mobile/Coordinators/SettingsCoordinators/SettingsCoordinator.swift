@@ -21,7 +21,7 @@ class SettingsCoordinator: Coordinator {
     }
     
     // MARK: - Methods to navigate to other ViewControllers
-    func showAboutUs(){
+    func showAboutUs() {
         let child = AboutUsCoordinator(navigationController: self.navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)

@@ -46,14 +46,25 @@ class WDRouterNetworking {
      # Use example for performNavigationProcedureToWDSubpage method:
      
      ```
-     loginPageView.pushAboutUsVC = {
-         WDRouterNetworking().performNavigationProcedureToWDSubpage(with: .gradesECTSPoints) { requestResult in
-             if requestResult == .success {
-                 self.navigationController?.pushViewController(AboutAsViewController(), animated: true)
-             } else if requestResult == .credentialsFailiture {
-                 // Return to LoginPageViewController will be added here after coordinator implementation
-                 print("Could not login. Please try again")
+     loginPageView.pushSettingsVC = {
+         guard let userWDLogin = self.loginPageView.idTextField.text else { return}
+         guard let userWDPassword = self.loginPageView.passwordTextField.text else { return}
+         if userWDLogin.isEmpty || userWDPassword.isEmpty {
+             self.loginPageView.loginButton.shake()
+             CustomNotifications.setupAlertOnMissingLoginCredentials()
+             return
+         }
+         self.loginPageView.loginButton.isUserInteractionEnabled = false
+         WDRouterNetworking()
+             .performWDLoginAction(userLogin: userWDLogin,
+                                   userPassword: userWDPassword) { isLoggedIn in
+             if isLoggedIn == .success {
+                 CustomNotifications.setupAlertOnLoginSuccess()
+                 self.coordinator?.signIn()
+             } else if isLoggedIn == .credentialsFailiture {
+                 CustomNotifications.setupAlertOnLoginFailiture()
              }
+             self.loginPageView.loginButton.isUserInteractionEnabled = true
          }
      }
      ```

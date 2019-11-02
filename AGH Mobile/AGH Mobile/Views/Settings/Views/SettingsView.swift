@@ -1,25 +1,11 @@
-//
-//  SettingsView.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 01/04/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 import SnapKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 class SettingsView: UIView {
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
+
+    // MARK: - Instance properties
     // Private
     private lazy var screenHeight = self.frame.height
     private lazy var screenWidth = self.frame.width
@@ -27,10 +13,8 @@ class SettingsView: UIView {
     // Public
     public static let userProfileHightMultipliValue = 0.07
     public var pushLoginPageVC: (() -> Void)?
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
     // MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -39,9 +23,7 @@ class SettingsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup view methods
-    
     public func setupUI() {
         setupView()
         setupConstraints()
@@ -56,9 +38,7 @@ class SettingsView: UIView {
         self.addSubview(logoutButton)
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
-    
     // TabBar Title
     private lazy var tabBarTitleLabel: UILabel = {
         let tabBarPageTitle = TabBarPageTitleLabel(
@@ -99,9 +79,7 @@ class SettingsView: UIView {
         return button
     }()
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup Constraints
-    
     private func setupConstraints() {
         
         // TabBar Title
@@ -146,9 +124,7 @@ class SettingsView: UIView {
         
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Selectors
-    
     @objc private func onPressPushLoginPage() {
         pushLoginPageVC?()
     }

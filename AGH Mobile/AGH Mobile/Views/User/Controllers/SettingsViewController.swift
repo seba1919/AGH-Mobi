@@ -4,18 +4,8 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-<<<<<<< HEAD:AGH Mobile/AGH Mobile/Views/Settings/Controllers/SettingsViewController.swift
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Coordinators
-    weak var coordinator:  SettingsCoordinator?
-    
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
-    // View
-=======
-    // MARK: - Private Properties
->>>>>>> master:AGH Mobile/AGH Mobile/Views/User/Controllers/SettingsViewController.swift
+    weak var coordinator: SettingsCoordinator?
+
     private var settingsView: SettingsView { return self.view as! SettingsView }
     
     // MARK: - Lifecycle
@@ -44,14 +34,8 @@ extension SettingsViewController {
     
     // MARK: - Actions
     private func setupActions() {
-<<<<<<< HEAD:AGH Mobile/AGH Mobile/Views/Settings/Controllers/SettingsViewController.swift
-        
-        settingsView.settingsContent.pushAboutAsVC = {
+    settingsView.settingsContent.pushAboutAsVC = {
             self.coordinator?.showTeamMembers()
-=======
-        settingsView.settingsContentView.pushAboutUsVC = {
-            self.navigationController?.pushViewController(AboutUsViewController(), animated: true)
->>>>>>> master:AGH Mobile/AGH Mobile/Views/User/Controllers/SettingsViewController.swift
         }
         
         settingsView.settingsContentView.openMailApp = {
@@ -63,18 +47,10 @@ extension SettingsViewController {
         }
         
         settingsView.pushLoginPageVC = {
-            WDRouterNetworking().performLogoutAction() {
-                
+            WDRouterNetworking().performLogoutAction {
                 CustomNotifications.setupAlertOnLogoutSuccess()
-                
-                self.navigationController?
-                    .pushViewController(LoginPageViewController(), animated: true)
-                
-                // TODO: Version with coordinators will look like that:
-                // Method that triggers LoginCoordinator with login page view
-                // CustomNotifications.addCustomAlert(with: isLogout ? "SettingsViewController_LogoutSuccess" : "SettingsViewController_LogoutError")
+                self.coordinator?.signOut()
             }
         }
     }
 }
-

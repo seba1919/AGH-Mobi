@@ -1,18 +1,6 @@
-//
-//  SettingsViewController.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 28/03/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
 
 class SettingsViewController: UIViewController {
 
@@ -36,16 +24,12 @@ class SettingsViewController: UIViewController {
         self.setupNavigationAttributs()
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Setup
-    
+    // MARK: - Setup navigation controller
     private func setupNavigationAttributs() {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Actions
-    
     private func setupActions() {
         
         settingsView.settingsContent.pushAboutAsVC = {
@@ -54,7 +38,7 @@ class SettingsViewController: UIViewController {
         
         settingsView.settingsContent.openMailApp = {
             let email = "mackn@agh.edu.pl"
-            // Doesn't work in simulator
+            // Doesn't work in simulator - test in phisical device
             if let url = URL(string: "mailto:\(email)") {
                 UIApplication.shared.open(url)
             }

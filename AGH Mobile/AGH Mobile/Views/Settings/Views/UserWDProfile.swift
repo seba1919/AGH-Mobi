@@ -1,33 +1,18 @@
-//
-//  UserWDProfile.swift
-//  AGH Mobile
-//
-//  Created by Mateusz Bąk on 03/05/2019.
 //  Copyright © 2019 AGH University of Science and Technology. All rights reserved.
-//
-
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Import
 
 import UIKit
 import SnapKit
 
-// ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-// MARK: - Implementation
-
 class UserWDProfile: UIView {
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
-    // MARK: - Properties
-    
+    // MARK: - Instance properties
     // Private
     private let spaceBetweenLabelAndPhoto: CGFloat = 15
     private lazy var screenHeight = Double(UIScreen.main.bounds.size.height)
     private lazy var viewHight = screenHeight * SettingsView.userProfileHightMultipliValue
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
+
     // MARK: - Init
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -37,9 +22,7 @@ class UserWDProfile: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup view methods
-    
     private func setupUI() {
         setupView()
         setupConstraints()
@@ -52,9 +35,7 @@ class UserWDProfile: UIView {
         self.addSubview(userIndexNumber)
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Public Methods
-    
     public func setupProfileImage(named name: String) {
         userPhoto.image = UIImage(named: name)
     }
@@ -71,9 +52,7 @@ class UserWDProfile: UIView {
         userIndexNumber.text = indexNumber
     }
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Components of View
-    
     // User Photo
     private lazy var userPhoto: UIImageView = {
         let image = UIImageView()
@@ -118,9 +97,7 @@ class UserWDProfile: UIView {
         return label
     }()
     
-    // ----- ----- ----- ----- ----- ----- ----- ----- ----- -----
     // MARK: - Setup Constraints
-    
     private func setupConstraints() {
         
         // User Photo
@@ -149,7 +126,5 @@ class UserWDProfile: UIView {
             make.top.equalTo(self.snp.top)
             make.right.equalTo(self.snp.right)
         }
-        
     }
-    
 }
