@@ -43,7 +43,10 @@ class ClassCardView: UIView {
     }()
     
     private lazy var classHoursRowView: RowView = {
-        let rowView = RowView(style: .withDescription, separatorPosition: .none, touchDetect: .off, accessory: .withoutRightAccessory)
+        let rowView = RowView(style: .withDescription,
+                              separatorPosition: .none,
+                              touchDetect: .disabled,
+                              accessory: .withoutRightAccessory)
         rowView.setupLeftAccessory(named: "clock_Classes")
         rowView.setupTextColor(as: .customDarkGrayText)
         return rowView
@@ -175,8 +178,7 @@ class ClassCardView: UIView {
             spacingInRows = screenHeight * 0.01
             subjectNameLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
             subjectTypeLabel.font = UIFont.systemFont(ofSize: 11, weight: .bold)
-        }
-        else if UIScreen.isMediumSize(){
+        } else if UIScreen.isMediumSize() {
             spacing = screenHeight * 0.025
             spacingInRows = screenHeight * 0.01
             subjectNameLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
@@ -189,7 +191,9 @@ class ClassCardView: UIView {
     private func centerMapOnAGH(for map: MKMapView) {
         let initialLocation = CLLocation(latitude: 50.064552, longitude: 19.923064)
         let regionRadius: CLLocationDistance = 200
-        let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        let coordinateRegion = MKCoordinateRegion(center: initialLocation.coordinate,
+                                                  latitudinalMeters: regionRadius,
+                                                  longitudinalMeters: regionRadius)
         map.setRegion(coordinateRegion, animated: true)
     }
     

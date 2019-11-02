@@ -107,7 +107,7 @@ final class RowView: UIView {
     // MARK: - Init
     required init(style: Style = .normal,
                   separatorPosition: SeparatorPosition = .top,
-                  touchDetect: TouchDetect = .on,
+                  touchDetect: TouchDetect = .enabled,
                   accessory: RightAccesory = .withRightAccessory) {
         
         super.init(frame: CGRect.zero)
@@ -130,10 +130,10 @@ final class RowView: UIView {
         case .withDescription:
             setupWithDescriptionStyle()
             switch accessory {
-                case .withRightAccessory:
-                    break
-                case .withoutRightAccessory:
-                    removeRightAccessoryFromWithDescriptionStyle()
+            case .withRightAccessory:
+                break
+            case .withoutRightAccessory:
+                removeRightAccessoryFromWithDescriptionStyle()
             }
         case .empty:
             setupEmptyStyle()

@@ -30,7 +30,9 @@ class ClassCardViewController: UIViewController {
     private func setupNavigationAttributes() {
         self.navigationItem.title = NSLocalizedString("ClassCardView_ClassCard", comment: "")
         self.navigationController?.setNavigationBarHidden(false, animated: true)
-        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(rightBarButtonItemTapped))
+        let rightBarButton = UIBarButtonItem(barButtonSystemItem: .edit,
+                                             target: self,
+                                             action: #selector(rightBarButtonItemTapped))
         rightBarButton.title = NSLocalizedString("ClassCardView_Edit", comment: "")
         self.navigationItem.rightBarButtonItem = rightBarButton
     }
@@ -63,10 +65,13 @@ class ClassCardViewController: UIViewController {
 
 private extension ClassCardViewController {
     
-    private func openMapForPlace(for latitude: CLLocationDegrees,and longitude: CLLocationDegrees) {
+    private func openMapForPlace(for latitude: CLLocationDegrees,
+                                 and longitude: CLLocationDegrees) {
         let regionDistance:CLLocationDistance = 10000
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
-        let regionSpan = MKCoordinateRegion(center: coordinates, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
+        let regionSpan = MKCoordinateRegion(center: coordinates,
+                                            latitudinalMeters: regionDistance,
+                                            longitudinalMeters: regionDistance)
         let options = [
             MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
             MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
