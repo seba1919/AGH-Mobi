@@ -51,8 +51,8 @@ extension LoginPageViewController {
         }
         
         loginPageView.pushSettingsVC = {
-            guard let userWDLogin = self.loginPageView.idTextField.text else { return}
-            guard let userWDPassword = self.loginPageView.passwordTextField.text else { return}
+            guard let userWDLogin = self.loginPageView.idTextField.text else { return }
+            guard let userWDPassword = self.loginPageView.passwordTextField.text else { return }
             if userWDLogin.isEmpty || userWDPassword.isEmpty {
                 self.loginPageView.loginButton.shake()
                 CustomNotifications.setupAlertOnMissingLoginCredentials()

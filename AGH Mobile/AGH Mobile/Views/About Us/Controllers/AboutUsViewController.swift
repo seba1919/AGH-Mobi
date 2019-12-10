@@ -6,6 +6,8 @@ final class AboutUsViewController: UIViewController {
     
     // MARK: - Instance properties
     weak var coordinator: AboutUsCoordinator?
+    var membersViewModel: [MembersViewModel]?
+    
     // View
     private var aboutUsView: AboutUsView { return self.view as! AboutUsView }
     private lazy var screenWidth = UIScreen.main.bounds.size.width
@@ -27,12 +29,21 @@ final class AboutUsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupData()
         self.aboutUsView.setupUI()
-        self.setupCollectionView()
-        self.setupNavigationAttributs()
-        self.setupActions()
-        self.startAutoScrolling()
+        setupCollectionView()
+        setupNavigationAttributs()
+        setupActions()
+        startAutoScrolling()
+        
+    }
+    
+    func setupData() {
+        MembersInfoService().getPeople { people in
+            self.membersViewModel =  people.map { person in
+                MembersViewModel(with: person)
+            }
+        }
     }
 }
 
@@ -120,19 +131,28 @@ extension AboutUsViewController {
 extension AboutUsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return membersViewModel?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = aboutUsView.teamGalleryCollectionView
             .dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
+                    
                                  for: indexPath) as! TeamGalleryCell
-        cell.setupImage(named: "user_large_About")
-        cell.setupName(as: "Mateusz Bąk")
+        configure(cell, with: indexPath)
         return cell
     }
     
+    fileprivate func configure(_ cell: TeamGalleryCell, with indexPath: IndexPath) {
+        if let members = membersViewModel {
+            let member = members[indexPath.row]
+            if let imageName = member.profileImageString {
+                cell.setupImage(named: imageName)
+            }
+            cell.setupName(as: member.name)
+        }
+    }
 }
 
 // MARK: - Extensions of UI Collection View Delegate
