@@ -9,49 +9,37 @@
 import UIKit
 
 class MembersViewModel {
-    var name: String!
-    var specialization: String!
-    var profileImageString: String?
-    var description: String!
-    var gitHubURL: String?
-    var linkedInURL: String?
-    var email: String?
+    var member: Person
     
     init(with person: Person) {
-        self.name = person.name
-        self.specialization = person.specialization
-        self.profileImageString = person.profileImage
-        self.description = person.description
-        self.gitHubURL = person.gitHubURL
-        self.linkedInURL = person.linkedInURL
-        self.email = person.email
+        self.member = person
     }
-//
-//    public func setupName(as name: String) {
-//        self.name = name
-//    }
-//
-//    public func setupSpecialization(as name: String) {
-//        self.specialization = name
-//    }
-//
-//    public func setupImage(named name: String) {
-//        profileImage = UIImage(named: name)
-//    }
-//
-//    public func setupDescription(with text: String) {
-//        self.description = text
-//    }
-//
-//    public func setupGitHubURL(with adress: String) {
-//        self.gitHubURL = URL(fileURLWithPath: adress)
-//    }
-//
-//    public func setuplinkedInURL(with adress: String) {
-//        self.linkedInURL = URL(fileURLWithPath: adress)
-//    }
-//
-//    public func setupEmail(with adress: String) {
-//        self.email = adress
-//    }
+
+    public func getName() -> String {
+        return member.name
+    }
+
+    public func getSpecialization() -> String {
+        return member.specialization
+    }
+
+    public func getImage() -> String? {
+        return member.profileImage
+    }
+
+    public func getDescription() -> String {
+        return member.description
+    }
+
+    public func getGitHubURL() -> String? {
+        return member.gitHubURL
+    }
+
+    public func getlinkedInURL() -> String? {
+        return member.linkedInURL
+    }
+
+    public func getEmail() -> String? {
+        return member.email
+    }
 }

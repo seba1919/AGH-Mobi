@@ -147,10 +147,10 @@ extension AboutUsViewController: UICollectionViewDataSource {
     fileprivate func configure(_ cell: TeamGalleryCell, with indexPath: IndexPath) {
         if let members = membersViewModel {
             let member = members[indexPath.row]
-            if let imageName = member.profileImageString {
+            if let imageName = member.getImage() {
                 cell.setupImage(named: imageName)
             }
-            cell.setupName(as: member.name)
+            cell.setupName(as: member.getName())
         }
     }
 }
