@@ -32,7 +32,14 @@ final class AboutUsViewController: UIViewController {
         self.setupCollectionView()
         self.setupNavigationAttributs()
         self.setupActions()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.startAutoScrolling()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.stopAutoScrolling()
     }
 }
 
@@ -172,14 +179,12 @@ extension AboutUsViewController: UIScrollViewDelegate, UICollectionViewDelegate 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         coordinator?.showMember()
-        self.stopAutoScrolling()
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        // Stop AutoScrolling when scrollView will begin dragging
+        // Stop AutoScrolling when user will begin dragging
         self.stopAutoScrolling()
     }
-    
 }
 
 // MARK: - Extensions of UI Collection View Flow Layout Delegate
@@ -220,5 +225,4 @@ extension AboutUsViewController: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return minimumLineSpacing // Space Between Calls
     }
-    
 }
