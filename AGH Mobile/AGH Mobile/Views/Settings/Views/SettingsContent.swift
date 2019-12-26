@@ -6,7 +6,6 @@ import SnapKit
 class SettingsContent: UIView {
     
     // MARK: - Instance properties
-    weak var coordinator: SettingsCoordinator?
     // Private
     private lazy var screenHeight = UIScreen.main.bounds.size.height
     private lazy var screenWidth =  UIScreen.main.bounds.size.width

@@ -4,9 +4,7 @@ import UIKit
 
 class LoginPageViewController: UIViewController {
     
-    // MARK: Instance properties
-    weak var coordinator: LoginPageCoordinator?
-    // Private
+    // MARK: Private properties
     private var loginPageView: LoginPageView { return view as! LoginPageView }
     private let remindPasswordWebURL = "https://dziekanat.agh.edu.pl/OdzyskiwanieHasla.aspx"
     
@@ -47,11 +45,11 @@ extension LoginPageViewController {
     // MARK: - Actions
     private func setupActions() {
         loginPageView.pushAboutUsVC = {
-            self.coordinator?.showAboutUs()
+            self.navigationController?.pushViewController(AboutUsViewController(), animated: true)
         }
         
         loginPageView.pushSettingsVC = {
-            guard let userWDLogin = self.loginPageView.idTextField.text else { return}
+            guard let userWDLogin = self.loginPageView.idTextField.text else { return }
             guard let userWDPassword = self.loginPageView.passwordTextField.text else { return}
             if userWDLogin.isEmpty || userWDPassword.isEmpty {
                 self.loginPageView.loginButton.shake()
@@ -63,10 +61,10 @@ extension LoginPageViewController {
                 .performWDLoginAction(userLogin: userWDLogin,
                                       userPassword: userWDPassword) { isLoggedIn in
                 if isLoggedIn == .success {
-                    CustomNotifications.setupAlertOnLoginSuccess()
-                    self.coordinator?.signIn()
+                    CustomNotifications.showLoginSuccessAlert()
+                    self.navigationController?.pushViewController(SettingsViewController(), animated: true)
                 } else if isLoggedIn == .credentialsFailiture {
-                    CustomNotifications.setupAlertOnLoginFailiture()
+                    CustomNotifications.showLoginFailitureAlert()
                 }
                 self.loginPageView.loginButton.isUserInteractionEnabled = true
             }
@@ -82,10 +80,4 @@ extension LoginPageViewController {
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-}
-
-// MARK: - Extension of TextFiled Delegate
-extension LoginPageViewController: UITextFieldDelegate {
-    
 }

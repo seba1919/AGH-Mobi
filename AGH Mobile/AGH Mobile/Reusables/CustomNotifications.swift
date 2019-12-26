@@ -12,11 +12,11 @@ import UIKit
 class CustomNotifications {
     
     // MARK: - Custom Alert Notifications Fot LoginPageViewController
-    public static func setupAlertOnLoginFailiture() {
+    public static func showLoginFailitureAlert() {
         UIView.showToast(message: NSLocalizedString("CustomNotifications_InvalidLoginData", comment: ""))
     }
     
-    public static func setupAlertOnLoginSuccess() {
+    public static func showLoginSuccessAlert() {
         UIView.showToast(message: NSLocalizedString("CustomNotifications_LoginSuccess", comment: ""))
     }
     
@@ -25,7 +25,7 @@ class CustomNotifications {
     }
     
     // MARK: - Custom Alert Notifications Fot WDRouterNetworking
-    public static func setupAlertOnServerConnectionFailture() {
+    public static func showServerConnectionFailtureAlert() {
         UIView.showToast(message: NSLocalizedString("CustomNotifications_ServerError", comment: ""))
     }
     

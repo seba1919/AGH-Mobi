@@ -5,7 +5,7 @@ import UIKit
 class MemberProfileViewController: UIViewController {
     
     // MARK: - Instance properties
-    weak var coordinator: MemberProfileViewCoordinator?
+//    weak var coordinator: MemberProfileViewCoordinator?
     // View
     private var memberProfileView: MemberProfileView { return self.view as! MemberProfileView }
     private let cellNumber = 3 //CHANGE!
