@@ -5,10 +5,21 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     // MARK: - Instance properties
-    weak var coordinator: SettingsCoordinator?
+    let viewModel: SettingsViewModel
+    
     // View
     private var settingsView: SettingsView { return self.view as! SettingsView }
 
+    // MARK: - Initialisation
+    init(with settingsViewModel: SettingsViewModel) {
+        self.viewModel = settingsViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Lifecycle
     override func loadView() {
         self.view = SettingsView(frame: UIScreen.main.bounds)
@@ -16,12 +27,18 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViewModelHandlers()
         self.settingsView.setupUI()
         self.setupActions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.setupNavigationAttributs()
+    }
+    
+    fileprivate func setupViewModelHandlers() {
+        let signOutHandler = { CustomNotifications.setupAlertOnLogoutSuccess() }
+        viewModel.setupActionHandlers(forSignOut: signOutHandler)
     }
     
     // MARK: - Setup navigation controller
@@ -33,22 +50,15 @@ class SettingsViewController: UIViewController {
     private func setupActions() {
         
         settingsView.settingsContent.pushAboutAsVC = {
-            self.coordinator?.showAboutUs()
+            self.viewModel.showAboutUs()
         }
         
         settingsView.settingsContent.openMailApp = {
-            let email = "mackn@agh.edu.pl"
-            // Doesn't work in simulator - test in phisical device
-            if let url = URL(string: "mailto:\(email)") {
-                UIApplication.shared.open(url)
-            }
+            self.viewModel.sendMail()
         }
         
         settingsView.pushLoginPageVC = {
-            WDRouterNetworking().performLogoutAction {
-                self.coordinator?.signOut()
-                CustomNotifications.setupAlertOnLogoutSuccess()
-            }
+            self.viewModel.signOut()
         }
     }
 }

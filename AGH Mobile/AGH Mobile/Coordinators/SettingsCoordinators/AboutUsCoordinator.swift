@@ -14,13 +14,16 @@ class AboutUsCoordinator: Coordinator {
     }
 
     internal func start() {
-        let viewController = AboutUsViewController()
-        viewController.coordinator = self
+        let viewModel = AboutUsViewModel(coordinator: self,
+                                         api: MembersInfoService())
+        let viewController = AboutUsViewController(with: viewModel)
+        viewModel.delegate = viewController
         navigationController.pushViewController(viewController, animated: true)
     }
     
     // MARK: - Methods to navigate to other ViewControllers
-    public func showMember() {
+    
+    public func show(_ member: Person) {
         let child = MemberProfileViewCoordinator(navigationController: self.navigationController)
         child.parentCoordinator = self
         childCoordinators.append(child)

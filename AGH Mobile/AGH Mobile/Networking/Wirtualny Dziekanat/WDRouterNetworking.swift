@@ -93,7 +93,7 @@ class WDRouterNetworking {
         }
         .catch(on: DispatchQueue.global(qos: .background)) { error in
             print(error)
-            DispatchQueue.main.async { CustomNotifications.setupAlertOnServerConnectionFailture() }
+            DispatchQueue.main.async { CustomNotifications.showServerConnectionFailtureAlert() }
         }
     }
     
@@ -149,7 +149,7 @@ class WDRouterNetworking {
             print(error)
             DispatchQueue.main.async {
                 CustomNotifications.hideCustomSpinnerAlert()
-                CustomNotifications.setupAlertOnServerConnectionFailture()
+                CustomNotifications.showServerConnectionFailtureAlert()
                 requestHandler(.serverFailiture)
             }
         }

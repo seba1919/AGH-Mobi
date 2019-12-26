@@ -12,8 +12,10 @@ class LoginPageCoordinator: Coordinator {
     }
     
     internal func start() {
-        let viewController = LoginPageViewController()
-        viewController.coordinator = self
+        let viewController = LoginPageViewController(with: LoginViewModel(coordinator: self))
+        let viewModel = LoginViewModel(coordinator: self)
+        viewModel.delegate = viewController
+
         navigationController.pushViewController(viewController, animated: true)
     }
     
@@ -21,11 +23,12 @@ class LoginPageCoordinator: Coordinator {
     fileprivate func navigationControllerSetup() {
         navigationController.navigationBar.tintColor = .mainRed
         
-        let viewController = LoginPageViewController()
-        viewController.coordinator = self
+        let viewController = LoginPageViewController(with: LoginViewModel(coordinator: self))
         viewController.tabBarItem.title = NSLocalizedString("TabBar_Settings", comment: "")
         viewController.tabBarItem.image = UIImage(named: "settings_inactive")
         viewController.tabBarItem.selectedImage = UIImage(named: "settings_active")
+        let viewModel = LoginViewModel(coordinator: self)
+        viewModel.delegate = viewController
         
         navigationController.viewControllers = [viewController]
     }

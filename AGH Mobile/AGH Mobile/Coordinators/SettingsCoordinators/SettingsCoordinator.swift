@@ -14,8 +14,8 @@ class SettingsCoordinator: Coordinator {
     }
     
     internal func start() {
-        let viewController = SettingsViewController()
-        viewController.coordinator = self
+        let viewModel = SettingsViewModel(coordinator: self)
+        let viewController = SettingsViewController(with: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }
     

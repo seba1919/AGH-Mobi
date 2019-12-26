@@ -5,7 +5,8 @@ import UIKit
 final class AboutUsViewController: UIViewController {
     
     // MARK: - Instance properties
-    weak var coordinator: AboutUsCoordinator?
+    var viewModel: AboutUsViewModel
+    
     // View
     private var aboutUsView: AboutUsView { return self.view as! AboutUsView }
     private lazy var screenWidth = UIScreen.main.bounds.size.width
@@ -17,8 +18,16 @@ final class AboutUsViewController: UIViewController {
     private var counter = 1
     private var isAscending = true
     private let dataSize = 10 // CHANGE!
-    // WebPage
-    private let webPageAddress = "https://www.mackn.agh.edu.pl"
+    
+        // MARK: - Instance properties
+    init(with membersViewModel: AboutUsViewModel) {
+        self.viewModel = membersViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -27,13 +36,26 @@ final class AboutUsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.aboutUsView.setupUI()
         self.setupCollectionView()
         self.setupNavigationAttributs()
         self.setupActions()
-        self.startAutoScrolling()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.startAutoScrolling()
+        viewModel.reloadPeople()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.stopAutoScrolling()
+    }
+}
+
+extension AboutUsViewController: AboutUsViewModelDelegate {
+    // Here you can setup view update on viewModel's data update
+    func viewModel(_ viewModel: AboutUsViewModel, isLoading: Bool) { }
+    func viewModelUpdate(_ viewModel: AboutUsViewModel) { }
 }
 
 extension AboutUsViewController {
@@ -109,9 +131,7 @@ extension AboutUsViewController {
     // MARK: - Actions
     private func setupActions() {
         aboutUsView.openWebPage = {
-            if let url = URL(string: self.webPageAddress) {
-                UIApplication.shared.open(url)
-            }
+            self.viewModel.openMacKNWebPage()
         }
     }
 }
@@ -120,19 +140,21 @@ extension AboutUsViewController {
 extension AboutUsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.viewModel.people.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = aboutUsView.teamGalleryCollectionView
             .dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
+                    
                                  for: indexPath) as! TeamGalleryCell
-        cell.setupImage(named: "user_large_About")
-        cell.setupName(as: "Mateusz Bąk")
+        let item = self.viewModel.people[indexPath.row]
+        cell.configure(withProfileImageURL: item.profileImageURL,
+                       withName: item.name,
+                       withSpecialization: item.specialization)
         return cell
     }
-    
 }
 
 // MARK: - Extensions of UI Collection View Delegate
@@ -171,15 +193,13 @@ extension AboutUsViewController: UIScrollViewDelegate, UICollectionViewDelegate 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        coordinator?.showMember()
-        self.stopAutoScrolling()
+        viewModel.personSelected(with: indexPath.row)
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        // Stop AutoScrolling when scrollView will begin dragging
+        // Stop AutoScrolling when user will begin dragging
         self.stopAutoScrolling()
     }
-    
 }
 
 // MARK: - Extensions of UI Collection View Flow Layout Delegate
@@ -220,5 +240,4 @@ extension AboutUsViewController: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return minimumLineSpacing // Space Between Calls
     }
-    
 }

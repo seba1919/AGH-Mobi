@@ -5,10 +5,19 @@ import UIKit
 class LoginPageViewController: UIViewController {
     
     // MARK: Instance properties
-    weak var coordinator: LoginPageCoordinator?
+    var viewModel: LoginViewModel
     // Private
     private var loginPageView: LoginPageView { return view as! LoginPageView }
     private let remindPasswordWebURL = "https://dziekanat.agh.edu.pl/OdzyskiwanieHasla.aspx"
+    
+    init(with loginViewModel: LoginViewModel) {
+        self.viewModel = loginViewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     // MARK: - Lifecycle
     override func loadView() {
@@ -17,7 +26,7 @@ class LoginPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupSignInHandlers()
         loginPageView.setupUI()
         setupActions()
         hideKeyboardWhenTappedAround()
@@ -27,8 +36,26 @@ class LoginPageViewController: UIViewController {
         setupNavigationAttributs()
     }
     
+    fileprivate func setupSignInHandlers() {
+        let signInHandler = { CustomNotifications.showLoginSuccessAlert() }
+        let credentialFailitureHandler = { CustomNotifications.showLoginFailitureAlert() }
+        let serverFailitureHanlder = { CustomNotifications.showServerConnectionFailtureAlert() }
+        let missingLoginCredentials = {
+            self.loginPageView.loginButton.shake()
+            CustomNotifications.setupAlertOnMissingLoginCredentials()
+            
+        }
+        viewModel.setupActionHandlers(forSignIn: signInHandler,
+                                      forCredentialsFailiture: credentialFailitureHandler,
+                                      forServerFailiture: serverFailitureHanlder,
+                                      forMissingLoginCredentials: missingLoginCredentials)
+    }
 }
 
+extension LoginPageViewController: LoginViewModelDelegate {
+    func viewModel(_ viewModel: LoginViewModel, isLoading: Bool) { }
+    func viewModelUpdate(_ viewModel: LoginViewModel) { }
+}
 extension LoginPageViewController {
     
     // MARK: - Setup
@@ -47,27 +74,15 @@ extension LoginPageViewController {
     // MARK: - Actions
     private func setupActions() {
         loginPageView.pushAboutUsVC = {
-            self.coordinator?.showAboutUs()
+            self.viewModel.showAboutUs()
         }
         
         loginPageView.pushSettingsVC = {
-            guard let userWDLogin = self.loginPageView.idTextField.text else { return}
-            guard let userWDPassword = self.loginPageView.passwordTextField.text else { return}
-            if userWDLogin.isEmpty || userWDPassword.isEmpty {
-                self.loginPageView.loginButton.shake()
-                CustomNotifications.setupAlertOnMissingLoginCredentials()
-                return
-            }
+            guard let userWDLogin = self.loginPageView.idTextField.text else { return }
+            guard let userWDPassword = self.loginPageView.passwordTextField.text else { return }
             self.loginPageView.loginButton.isUserInteractionEnabled = false
-            WDRouterNetworking()
-                .performWDLoginAction(userLogin: userWDLogin,
-                                      userPassword: userWDPassword) { isLoggedIn in
-                if isLoggedIn == .success {
-                    CustomNotifications.setupAlertOnLoginSuccess()
-                    self.coordinator?.signIn()
-                } else if isLoggedIn == .credentialsFailiture {
-                    CustomNotifications.setupAlertOnLoginFailiture()
-                }
+            self.viewModel.signIn(withUserWDLogin: userWDLogin,
+                                  withUserWDPassword: userWDPassword) {
                 self.loginPageView.loginButton.isUserInteractionEnabled = true
             }
         }
@@ -82,10 +97,4 @@ extension LoginPageViewController {
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-    
-}
-
-// MARK: - Extension of TextFiled Delegate
-extension LoginPageViewController: UITextFieldDelegate {
-    
 }
