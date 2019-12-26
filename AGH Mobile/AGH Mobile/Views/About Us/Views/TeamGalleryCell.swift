@@ -4,7 +4,7 @@ import UIKit
 import SnapKit
 
 class TeamGalleryCell: UICollectionViewCell {
-    
+
     // MARK: - Public properties
     static let identifier = "teamGalleryCell"
     // MARK: - Private properties
@@ -40,6 +40,15 @@ class TeamGalleryCell: UICollectionViewCell {
         label.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         return label
     }()
+    
+    // MARK: - Public Methods
+    public func configure(withProfileImageURL profileImageURL: String?, withName name: String, withSpecialization specialization: String) {
+        if let imageURL = profileImageURL {
+            self.memberPhotoImageView.image = UIImage(named: imageURL)
+        }
+        self.memberNameLabel.text = name
+        self.memberSpecializationLabel.text = specialization
+    }
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -91,18 +100,5 @@ extension TeamGalleryCell {
             make.bottom.equalTo(self.snp.bottom)
                 .priority(.required)
         }
-    }
-    
-    // MARK: - Public Methods
-    public func setupImage(named name: String) {
-        memberPhotoImageView.image = UIImage(named: name)
-    }
-    
-    public func setupName(as name: String) {
-        memberNameLabel.text = name
-    }
-    
-    public func setupSpecialization(as name: String) {
-        memberSpecializationLabel.text = name
     }
 }
