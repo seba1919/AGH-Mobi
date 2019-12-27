@@ -7,8 +7,7 @@ final class AboutUsViewController: UIViewController {
     // MARK: - Instance properties
     var model: MembersInfoService
     var people: [Person] = []
-    // View
-    private var aboutUsView: AboutUsView { return self.view as! AboutUsView }
+    
     private lazy var screenWidth = UIScreen.main.bounds.size.width
     // Collection View
     private let cellWidthScaling: CGFloat = 0.5
@@ -20,6 +19,46 @@ final class AboutUsViewController: UIViewController {
     private let dataSize = 10 // CHANGE!
     // WebPage
     private let webPageAddress = "https://www.mackn.agh.edu.pl"
+    private lazy var freeSpaceBetweenComponents = UIScreen.main.bounds.height * 0.0225
+    private lazy var topPadding = UIScreen.main.bounds.height * 0.047
+    private lazy var bottomPadding = UIScreen.main.bounds.height * -0.030
+    
+    // MARK: - Components of View
+    private(set) lazy var teamGalleryCollectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        layout.scrollDirection = .horizontal
+        collection.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.isScrollEnabled = true
+        collection.showsHorizontalScrollIndicator = false
+        collection.showsVerticalScrollIndicator = false
+        return collection
+    }()
+    
+    private lazy var aboutUsDescriptionTextView: UITextView = {
+        let descriptionTextView = DescriptionTextView(
+            text: NSLocalizedString("AboutUsView_AboutUsDescription", comment: ""))
+            .build()
+        descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
+        return descriptionTextView
+    }()
+    
+    private lazy var macKnIconImageView: UIImageView = {
+        let image = UIImage(named: "MacKNIcon")
+        let icon = UIImageView(image: image)
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        return icon
+    }()
+    
+    private lazy var webPageButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle(NSLocalizedString("AboutUsView_StudentScienceCircleWebPage", comment: ""), for: .normal)
+        button.setTitleColor(UIColor.mainRed, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(onPressOpenWeb), for: .touchUpInside)
+        return button
+    }()
     
         // MARK: - Instance properties
     init() {
@@ -32,16 +71,11 @@ final class AboutUsViewController: UIViewController {
     }
     
     // MARK: - Lifecycle
-    override func loadView() {
-        self.view = AboutUsView(frame: UIScreen.main.bounds)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.aboutUsView.setupUI()
+        self.setupUI()
         self.setupCollectionView()
         self.setupNavigationAttributs()
-        self.setupActions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,9 +94,9 @@ extension AboutUsViewController {
     
     // MARK: - Setup
     private func setupCollectionView() {
-        aboutUsView.teamGalleryCollectionView.delegate = self
-        aboutUsView.teamGalleryCollectionView.dataSource = self
-        aboutUsView.teamGalleryCollectionView.register(TeamGalleryCell.self,
+        self.teamGalleryCollectionView.delegate = self
+        self.teamGalleryCollectionView.dataSource = self
+        self.teamGalleryCollectionView.register(TeamGalleryCell.self,
                                                        forCellWithReuseIdentifier: TeamGalleryCell.identifier)
     }
     
@@ -119,20 +153,11 @@ extension AboutUsViewController {
     }
     
     private func scroll() {
-        let collection = self.aboutUsView.teamGalleryCollectionView
+        let collection = self.teamGalleryCollectionView
         let index = IndexPath(item: counter, section: 0)
         collection.scrollToItem(at: index,
                                 at: .centeredHorizontally,
                                 animated: true)
-    }
-    
-    // MARK: - Actions
-    private func setupActions() {
-        aboutUsView.openWebPage = {
-            if let url = URL(string: self.webPageAddress) {
-                UIApplication.shared.open(url)
-            }
-        }
     }
 }
 
@@ -145,7 +170,7 @@ extension AboutUsViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = aboutUsView.teamGalleryCollectionView
+        let cell = self.teamGalleryCollectionView
             .dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
                     
                                  for: indexPath) as! TeamGalleryCell
@@ -156,6 +181,67 @@ extension AboutUsViewController: UICollectionViewDataSource {
         return cell
     }
 }
+
+extension AboutUsViewController {
+    
+    // MARK: - Setup view
+    public func setupUI() {
+        setupViews()
+        setupConstraints()
+    }
+    
+    private func setupViews() {
+        self.view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        self.view.addSubview(teamGalleryCollectionView)
+        self.view.addSubview(aboutUsDescriptionTextView)
+        self.view.addSubview(macKnIconImageView)
+        self.view.addSubview(webPageButton)
+    }
+    
+    // MARK: - Setup Constraints
+    private func setupConstraints() {
+        teamGalleryCollectionView.snp.makeConstraints { (make) in
+            make.height.greaterThanOrEqualTo(self.view.frame.height * 0.0685).priority(.high)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(topPadding)
+            make.bottom.equalTo(aboutUsDescriptionTextView.snp.top).offset(-freeSpaceBetweenComponents)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            make.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
+        }
+        
+        aboutUsDescriptionTextView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(macKnIconImageView.snp.top).offset(-freeSpaceBetweenComponents)
+            make.left.equalToSuperview().offset(16)
+            make.right.equalToSuperview().offset(-16)
+        }
+        
+        macKnIconImageView.snp.makeConstraints { (make) in
+            make.bottom.equalTo(webPageButton.snp.top).offset(-freeSpaceBetweenComponents)
+            // Adaptation to the iPhone SE
+            if UIScreen.isSmallSize() {
+                make.height.equalTo(self.view.frame.height * 0.07)
+            } else {
+                make.height.equalTo(self.view.frame.height * 0.123)
+            }
+            make.width.equalTo(macKnIconImageView.snp.height)
+                .multipliedBy(macKnIconImageView.frame.width / macKnIconImageView.frame.height)
+            make.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
+        }
+        
+        webPageButton.snp.makeConstraints { (make) in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(bottomPadding)
+            make.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
+        }
+    }
+    
+    // MARK: - Selectors
+    @objc private func onPressOpenWeb() {
+        if let url = URL(string: self.webPageAddress) {
+            UIApplication.shared.open(url)
+        }
+    }
+}
+
 
 // MARK: - Extensions of UI Collection View Delegate
 extension AboutUsViewController: UIScrollViewDelegate, UICollectionViewDelegate {
@@ -211,7 +297,7 @@ extension AboutUsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellHeight = aboutUsView.teamGalleryCollectionView.frame.height
+        let cellHeight = self.teamGalleryCollectionView.frame.height
         let cellWidth = screenWidth * cellWidthScaling
         return CGSize(width: cellWidth,
                       height: cellHeight)

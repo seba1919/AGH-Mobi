@@ -9,7 +9,7 @@ class SettingsContent: UIView {
     // Private
     private lazy var screenHeight = UIScreen.main.bounds.size.height
     private lazy var screenWidth =  UIScreen.main.bounds.size.width
-    private let topPadding: CGFloat = 3
+    private let topPaddingContent: CGFloat = 3
     // Public
     public var pushAboutAsVC: (() -> Void)?
     public var openMailApp: (() -> Void)?
@@ -124,7 +124,7 @@ class SettingsContent: UIView {
         
         // StackView for Row no. 1 - 3
         stackViewNo1.snp.makeConstraints { (make) in
-            make.top.equalTo(self.snp.top).offset(topPadding)
+            make.top.equalTo(self.snp.top).offset(topPaddingContent)
             make.left.right.equalToSuperview()
             make.bottom.equalTo(rowNo4.snp.top)
             .offset(screenHeight * -0.063)
