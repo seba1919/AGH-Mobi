@@ -5,8 +5,8 @@ import UIKit
 final class AboutUsViewController: UIViewController {
     
     // MARK: - Instance properties
-    var viewModel: AboutUsViewModel
-    
+    var model: MembersInfoService
+    var people: [Person] = []
     // View
     private var aboutUsView: AboutUsView { return self.view as! AboutUsView }
     private lazy var screenWidth = UIScreen.main.bounds.size.width
@@ -18,10 +18,12 @@ final class AboutUsViewController: UIViewController {
     private var counter = 1
     private var isAscending = true
     private let dataSize = 10 // CHANGE!
+    // WebPage
+    private let webPageAddress = "https://www.mackn.agh.edu.pl"
     
         // MARK: - Instance properties
-    init(with membersViewModel: AboutUsViewModel) {
-        self.viewModel = membersViewModel
+    init() {
+        self.model = MembersInfoService()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -44,18 +46,14 @@ final class AboutUsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.startAutoScrolling()
-        viewModel.reloadPeople()
+        model.getPeople { fetchedPeople in
+            self.people = fetchedPeople
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         self.stopAutoScrolling()
     }
-}
-
-extension AboutUsViewController: AboutUsViewModelDelegate {
-    // Here you can setup view update on viewModel's data update
-    func viewModel(_ viewModel: AboutUsViewModel, isLoading: Bool) { }
-    func viewModelUpdate(_ viewModel: AboutUsViewModel) { }
 }
 
 extension AboutUsViewController {
@@ -131,7 +129,9 @@ extension AboutUsViewController {
     // MARK: - Actions
     private func setupActions() {
         aboutUsView.openWebPage = {
-            self.viewModel.openMacKNWebPage()
+            if let url = URL(string: self.webPageAddress) {
+                UIApplication.shared.open(url)
+            }
         }
     }
 }
@@ -140,7 +140,7 @@ extension AboutUsViewController {
 extension AboutUsViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.viewModel.people.count
+        return self.people.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
@@ -149,7 +149,7 @@ extension AboutUsViewController: UICollectionViewDataSource {
             .dequeueReusableCell(withReuseIdentifier: TeamGalleryCell.identifier,
                     
                                  for: indexPath) as! TeamGalleryCell
-        let item = self.viewModel.people[indexPath.row]
+        let item = self.people[indexPath.row]
         cell.configure(withProfileImageURL: item.profileImageURL,
                        withName: item.name,
                        withSpecialization: item.specialization)
@@ -193,7 +193,9 @@ extension AboutUsViewController: UIScrollViewDelegate, UICollectionViewDelegate 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.personSelected(with: indexPath.row)
+        let viewController = MemberProfileViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+        self.stopAutoScrolling()
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

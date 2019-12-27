@@ -9,16 +9,23 @@ class HomeTabBarController: UITabBarController {
     let studies = StudiesCoordinator(navigationController: UINavigationController())
     let maps = MapsCoordinator(navigationController: UINavigationController())
     let informations = InformationsCoordinator(navigationController: UINavigationController())
-    let loginPage = LoginPageCoordinator(navigationController: UINavigationController())
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let loginPageVC = LoginPageViewController()
+        loginPageVC.tabBarItem.title = NSLocalizedString("TabBar_Settings", comment: "")
+        loginPageVC.tabBarItem.image = UIImage(named: "settings_inactive")
+        loginPageVC.tabBarItem.selectedImage = UIImage(named: "settings_active")
+        let vc4 = UINavigationController(rootViewController: loginPageVC)
+        vc4.navigationBar.tintColor = .mainRed
+        
         viewControllers = [forYou.navigationController,
                            studies.navigationController,
                            maps.navigationController,
                            informations.navigationController,
-                           loginPage.navigationController]
+                           vc4]
         self.setupTabBarStyling()
     }
 }
