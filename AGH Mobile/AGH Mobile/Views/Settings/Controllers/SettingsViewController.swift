@@ -9,10 +9,11 @@ class SettingsViewController: UIViewController {
     private lazy var screenHeight = UIScreen.main.bounds.height
     private lazy var screenWidth = UIScreen.main.bounds.width
     private lazy var topPadding = UIScreen.main.bounds.height * 0.0225
-    
+    private let topPaddingContent: CGFloat = 3
+    private let spaceBetweenLabelAndPhoto: CGFloat = 15
+    private lazy var viewHight = Double(screenHeight) * SettingsViewController.userProfileHightMultipliValue
     // Public
     public static let userProfileHightMultipliValue = 0.07
-    
     // MARK: - Components of View
     // TabBar Title
     private lazy var tabBarTitleLabel: UILabel = {
@@ -64,10 +65,7 @@ class SettingsViewController: UIViewController {
     }
     
     // MARK: - Lifecycle
-    override func loadView() {
-        self.view = SettingsView(frame: UIScreen.main.bounds)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -105,7 +103,7 @@ class SettingsViewController: UIViewController {
             make.top.equalTo(tabBarTitleLabel.snp.bottom).offset(screenHeight * 0.04)
             make.left.equalToSuperview().offset(20)
             make.right.equalToSuperview().offset(-20)
-            make.height.equalTo(Double(screenHeight) * SettingsView.userProfileHightMultipliValue)
+            make.height.equalTo(Double(screenHeight) * SettingsViewController.userProfileHightMultipliValue)
         }
         
         // Section Title
