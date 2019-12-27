@@ -8,6 +8,7 @@ class TeamGalleryCell: UICollectionViewCell {
     // MARK: - Public properties
     static let identifier = "teamGalleryCell"
     // MARK: - Private properties
+//    var membersViewModel = MembersViewModel
     private lazy var memberPhotoImageHight = self.frame.height * 0.75
 
     // MARK: - Components of View

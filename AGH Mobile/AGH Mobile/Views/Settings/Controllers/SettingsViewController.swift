@@ -5,14 +5,11 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     // MARK: - Instance properties
-    let viewModel: SettingsViewModel
-    
     // View
     private var settingsView: SettingsView { return self.view as! SettingsView }
 
     // MARK: - Initialisation
-    init(with settingsViewModel: SettingsViewModel) {
-        self.viewModel = settingsViewModel
+    init() {
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,7 +24,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViewModelHandlers()
         self.settingsView.setupUI()
         self.setupActions()
     }
@@ -35,12 +31,7 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.setupNavigationAttributs()
     }
-    
-    fileprivate func setupViewModelHandlers() {
-        let signOutHandler = { CustomNotifications.setupAlertOnLogoutSuccess() }
-        viewModel.setupActionHandlers(forSignOut: signOutHandler)
-    }
-    
+        
     // MARK: - Setup navigation controller
     private func setupNavigationAttributs() {
         self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -50,15 +41,20 @@ class SettingsViewController: UIViewController {
     private func setupActions() {
         
         settingsView.settingsContent.pushAboutAsVC = {
-            self.viewModel.showAboutUs()
+            let viewController = AboutUsViewController()
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
         
         settingsView.settingsContent.openMailApp = {
-            self.viewModel.sendMail()
+            let email = "mackn@agh.edu.pl"
+            // Doesn't work in simulator
+            if let url = URL(string: "mailto:\(email)") {
+                UIApplication.shared.open(url)
+            }
         }
         
         settingsView.pushLoginPageVC = {
-            self.viewModel.signOut()
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
